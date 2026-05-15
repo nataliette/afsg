@@ -1,16 +1,16 @@
 {
   "gyms": {
-    "Harbourfront (HB)": {
+    "Harbourfront": {
       "Cables": [
         "Unknown: Dual Cable Station"
       ],
-      "Selectorized – Upper": [
+      "Upper": [
         "Precor: Seated Row (unloaded 4.5kg)",
         "Unknown: Rear Delt Reverse Fly Machine",
         "Precor: Converging Shoulder Press",
         "Precor: Standing Lateral Raise"
       ],
-      "Selectorized – Lower": [
+      "Lower": [
         "Precor: Angled Leg Press (unloaded 62kg)",
         "Precor: Leg Extension",
         "Precor: Prone Leg Curl",
@@ -29,18 +29,18 @@
       ],
       "Other": []
     },
-    "Labrador View (LV)": {
+    "Labrador View": {
       "Cables": [
         "Precor: Multistation Adjustable Pulley",
         "Precor: FTS Glide"
       ],
-      "Selectorized – Upper": [
+      "Upper": [
         "Precor: Converging Chest Press",
         "Precor: Multi-Press",
         "Precor: Shoulder Press",
         "Precor: Rear Delt Machine"
       ],
-      "Selectorized – Lower": [
+      "Lower": [
         "Precor: Angled Leg Press",
         "Precor: Leg Extension",
         "Precor: Hack Squat",
@@ -62,16 +62,16 @@
         "Unknown: Bosu Ball"
       ]
     },
-    "Telok Blangah (TB)": {
+    "Telok Blangah": {
       "Cables": [
         "LifeFitness: Adjustable Pulley"
       ],
-      "Selectorized – Upper": [
+      "Upper": [
         "LifeFitness: Chest Press",
         "LifeFitness: Lat Pulldown",
         "Unknown: Rear Delt Reverse Fly Machine"
       ],
-      "Selectorized – Lower": [
+      "Lower": [
         "LifeFitness: Seated Leg Press",
         "Unknown: Leg Extension",
         "Unknown: Calf Press"
@@ -87,50 +87,51 @@
         "Unknown: Bosu Ball"
       ]
     },
-    "International Plaza (IP)": {
+    "Tanjong Pagar": {
       "Cables": [
+        "LifeFitness: Single Pulley",
         "LifeFitness: Dual Adjustable Pulley"
       ],
-      "Selectorized – Upper": [
+      "Upper": [
         "LifeFitness: Chest Press",
-        "LifeFitness: Pectoral Fly"
+        "LifeFitness: Pec Fly + Rear Deltoid",
+        "LifeFitness: Shoulder Press",
+        "LifeFitness: Row",
+        "LifeFitness: Biceps Curl",
+        "LifeFitness: Abdominal"
       ],
-      "Selectorized – Lower": [],
-      "Plate-Loaded": [],
+      "Lower": [
+        "LifeFitness: Leg Press",
+        "LifeFitness: Linear Leg Press",
+        "LifeFitness: Leg Extension",
+        "LifeFitness: Seated Leg Curl",
+        "LifeFitness: Leg Curl",
+        "LifeFitness: Hip Ab/Ad"
+      ],
+      "Plate-Loaded": [
+        "Hammer Strength: ISO Lateral Bench Press",
+        "Hammer Strength: Linear Hack Squat",
+        "Hammer Strength: Belt Squat",
+        "Hammer Strength: Glute Drive",
+        "Hammer Strength: Plate Loaded Lat Raise",
+        "Hammer Strength: T-Bar Row",
+        "Hammer Strength: ISO Lateral Front Lat Pulldown"
+      ],
       "Barbells & Racks": [
-        "Unknown: Barbell Rack"
+        "Unknown: Squat Rack (x6)",
+        "Unknown: Deadlift Platform (x2)"
       ],
       "Calisthenics": [
-        "Unknown: Pull-up Bar"
+        "Unknown: Captain's Chair"
       ],
       "Other": []
     },
-    "Eastwood (EW)": {
-      "Cables": [
-        "Precor: Pulldown 304",
-        "Precor: Longpull 302",
-        "Precor: Multistation"
-      ],
-      "Selectorized – Upper": [
-        "Precor: Chest Press (seat 7)",
-        "Unknown: Rear Delt Reverse Fly Machine"
-      ],
-      "Selectorized – Lower": [
-        "Unknown: Horizontal Leg Press"
-      ],
-      "Plate-Loaded": [],
-      "Barbells & Racks": [],
-      "Calisthenics": [
-        "Unknown: Pull-up Bar"
-      ],
-      "Other": []
-    },
-    "Pasir Panjang (PP)": {
+    "Pasir Panjang": {
       "Cables": [
         "Unknown: Cable Station"
       ],
-      "Selectorized – Upper": [],
-      "Selectorized – Lower": [
+      "Upper": [],
+      "Lower": [
         "Precor: Leg Press",
         "Unknown: Leg Extension",
         "Precor: Abdominal Crunch",
@@ -147,13 +148,13 @@
         "Unknown: Air Bike"
       ]
     },
-    "Queensway (QS)": {
+    "New Queensway": {
       "Cables": [
         "Matrix: Adjustable Pulley",
         "Matrix: Low Row"
       ],
-      "Selectorized – Upper": [],
-      "Selectorized – Lower": [
+      "Upper": [],
+      "Lower": [
         "Matrix: Leg Press"
       ],
       "Plate-Loaded": [],
@@ -163,14 +164,14 @@
       ],
       "Other": []
     },
-    "Grandtral (GT)": {
+    "Grandtral": {
       "Cables": [
         "Matrix: Multistation"
       ],
-      "Selectorized – Upper": [
+      "Upper": [
         "Matrix: Fly/Delt Machine"
       ],
-      "Selectorized – Lower": [
+      "Lower": [
         "Matrix: Seated Leg Curl"
       ],
       "Plate-Loaded": [],
@@ -182,12 +183,12 @@
       ],
       "Other": []
     },
-    "Cecil (C)": {
+    "Cecil": {
       "Cables": [
         "LifeFitness: Dual Pulley Pulldown"
       ],
-      "Selectorized – Upper": [],
-      "Selectorized – Lower": [
+      "Upper": [],
+      "Lower": [
         "LifeFitness: Hip Abduction Machine",
         "Unknown: Seated Leg Curl"
       ],
@@ -200,10 +201,10 @@
         "Unknown: Bosu Ball"
       ]
     },
-    "Wheelock (WL)": {
+    "Wheelock": {
       "Cables": [],
-      "Selectorized – Upper": [],
-      "Selectorized – Lower": [
+      "Upper": [],
+      "Lower": [
         "Unknown: Hip Thrust Machine",
         "Unknown: Seated Leg Curl"
       ],
