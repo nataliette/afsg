@@ -1,221 +1,931 @@
 {
   "gyms": {
     "Harbourfront": {
-      "Cables": [
-        "Unknown: Dual Cable Station"
-      ],
-      "Upper": [
-        "Precor: Seated Row (unloaded 4.5kg)",
-        "Unknown: Rear Delt Reverse Fly Machine",
-        "Precor: Converging Shoulder Press",
-        "Precor: Standing Lateral Raise"
-      ],
-      "Lower": [
-        "Precor: Angled Leg Press (unloaded 62kg)",
-        "Precor: Leg Extension",
-        "Precor: Prone Leg Curl",
-        "Precor: Inner/Outer Thigh Machine",
-        "Glute Builder: Hip Thrust Elite (unloaded 30kg)",
-        "Precor: Glute Extension",
-        "Precor: Seated Calf Raise (unloaded 11kg)"
-      ],
-      "Plate-Loaded": [],
-      "Barbells & Racks": [
-        "Precor: Smith Machine Icarian Line (unloaded 6.8kg)",
-        "Unknown: Barbell Rack"
-      ],
-      "Calisthenics": [
-        "Unknown: Parallel Bars"
-      ],
-      "Other": []
+      "status": "ongoing",
+      "categories": {
+        "Cables": [
+          {
+            "label": "Unknown: Dual Cable Station",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          }
+        ],
+        "Upper": [
+          {
+            "label": "Precor: Seated Row (unloaded 4.5kg)",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          },
+          {
+            "label": "Unknown: Rear Delt Reverse Fly Machine",
+            "tags": [
+              "back",
+              "shoulders"
+            ]
+          },
+          {
+            "label": "Precor: Converging Shoulder Press",
+            "tags": [
+              "shoulders"
+            ]
+          },
+          {
+            "label": "Precor: Standing Lateral Raise",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "shoulders"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "Precor: Angled Leg Press (unloaded 62kg)",
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Precor: Leg Extension",
+            "tags": [
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Precor: Prone Leg Curl",
+            "tags": [
+              "hamstrings",
+              "legs"
+            ]
+          },
+          {
+            "label": "Precor: Inner/Outer Thigh Machine",
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ]
+          },
+          {
+            "label": "Glute Builder: Hip Thrust Elite (unloaded 30kg)",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ]
+          },
+          {
+            "label": "Precor: Glute Extension",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ]
+          },
+          {
+            "label": "Precor: Seated Calf Raise (unloaded 11kg)",
+            "tags": [
+              "calves",
+              "legs"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Precor: Smith Machine Icarian Line (unloaded 6.8kg)",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Unknown: Barbell Rack",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Calisthenics": [
+          {
+            "label": "Unknown: Parallel Bars",
+            "tags": [
+              "arms",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          }
+        ]
+      }
     },
     "Labrador View": {
-      "Cables": [
-        "Precor: Multistation Adjustable Pulley",
-        "Precor: FTS Glide"
-      ],
-      "Upper": [
-        "Precor: Converging Chest Press",
-        "Precor: Multi-Press",
-        "Precor: Shoulder Press",
-        "Precor: Rear Delt Machine"
-      ],
-      "Lower": [
-        "Precor: Angled Leg Press",
-        "Precor: Leg Extension",
-        "Precor: Hack Squat",
-        "Unknown: Seated Leg Curl",
-        "Precor: Glutebuilder Dual 45° Hip Extension (unloaded 10kg)"
-      ],
-      "Plate-Loaded": [
-        "Precor: Plate-Loaded Seated Row (unloaded 10kg)"
-      ],
-      "Barbells & Racks": [
-        "Precor: Smith Machine (unloaded 15.9kg)",
-        "Unknown: Barbell Rack"
-      ],
-      "Calisthenics": [
-        "Unknown: Parallel Bars",
-        "Unknown: Suspension Rings"
-      ],
-      "Other": [
-        "Unknown: Bosu Ball"
-      ]
+      "status": "ongoing",
+      "categories": {
+        "Cables": [
+          {
+            "label": "Precor: Multistation Adjustable Pulley",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "Precor: FTS Glide",
+            "tags": [
+              "core"
+            ]
+          }
+        ],
+        "Upper": [
+          {
+            "label": "Precor: Converging Chest Press",
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "Precor: Multi-Press",
+            "tags": [
+              "core"
+            ]
+          },
+          {
+            "label": "Precor: Shoulder Press",
+            "tags": [
+              "shoulders"
+            ]
+          },
+          {
+            "label": "Precor: Rear Delt Machine",
+            "tags": [
+              "back",
+              "shoulders"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "Precor: Angled Leg Press",
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Precor: Leg Extension",
+            "tags": [
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Precor: Hack Squat",
+            "tags": [
+              "calves",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Unknown: Seated Leg Curl",
+            "tags": [
+              "hamstrings",
+              "legs"
+            ]
+          },
+          {
+            "label": "Precor: Glutebuilder Dual 45\u00b0 Hip Extension (unloaded 10kg)",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ]
+          }
+        ],
+        "Plate-Loaded": [
+          {
+            "label": "Precor: Plate-Loaded Seated Row (unloaded 10kg)",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Precor: Smith Machine (unloaded 15.9kg)",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Unknown: Barbell Rack",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Calisthenics": [
+          {
+            "label": "Unknown: Parallel Bars",
+            "tags": [
+              "arms",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "Unknown: Suspension Rings",
+            "tags": [
+              "arms",
+              "back",
+              "chest",
+              "core",
+              "shoulders"
+            ]
+          }
+        ],
+        "Other": [
+          {
+            "label": "Unknown: Bosu Ball",
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ]
+          }
+        ]
+      }
     },
     "Telok Blangah": {
-      "Cables": [
-        "LifeFitness: Adjustable Pulley"
-      ],
-      "Upper": [
-        "LifeFitness: Chest Press",
-        "LifeFitness: Lat Pulldown",
-        "Unknown: Rear Delt Reverse Fly Machine"
-      ],
-      "Lower": [
-        "LifeFitness: Seated Leg Press",
-        "Unknown: Leg Extension",
-        "Unknown: Calf Press"
-      ],
-      "Plate-Loaded": [],
-      "Barbells & Racks": [
-        "Unknown: Smith Machine"
-      ],
-      "Calisthenics": [
-        "Unknown: Pull-up Bar"
-      ],
-      "Other": [
-        "Unknown: Bosu Ball"
-      ]
+      "status": "ongoing",
+      "categories": {
+        "Cables": [
+          {
+            "label": "LifeFitness: Adjustable Pulley",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          }
+        ],
+        "Upper": [
+          {
+            "label": "LifeFitness: Chest Press",
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "LifeFitness: Lat Pulldown",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          },
+          {
+            "label": "Unknown: Rear Delt Reverse Fly Machine",
+            "tags": [
+              "back",
+              "shoulders"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "LifeFitness: Seated Leg Press",
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Unknown: Leg Extension",
+            "tags": [
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Unknown: Calf Press",
+            "tags": [
+              "calves",
+              "legs"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Unknown: Smith Machine",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Calisthenics": [
+          {
+            "label": "Unknown: Pull-up Bar",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core"
+            ]
+          }
+        ],
+        "Other": [
+          {
+            "label": "Unknown: Bosu Ball",
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ]
+          }
+        ]
+      }
     },
     "Tanjong Pagar": {
-      "Cables": [
-        "LifeFitness: Single Pulley",
-        "LifeFitness: Dual Adjustable Pulley"
-      ],
-      "Upper": [
-        "LifeFitness: Chest Press",
-        "LifeFitness: Pec Fly + Rear Deltoid",
-        "LifeFitness: Shoulder Press",
-        "LifeFitness: Row",
-        "LifeFitness: Biceps Curl",
-        "LifeFitness: Abdominal"
-      ],
-      "Lower": [
-        "LifeFitness: Leg Press",
-        "LifeFitness: Linear Leg Press",
-        "LifeFitness: Leg Extension",
-        "LifeFitness: Seated Leg Curl",
-        "LifeFitness: Leg Curl",
-        "LifeFitness: Hip Ab/Ad"
-      ],
-      "Plate-Loaded": [
-        "Hammer Strength: ISO Lateral Bench Press",
-        "Hammer Strength: Linear Hack Squat",
-        "Hammer Strength: Belt Squat",
-        "Hammer Strength: Glute Drive",
-        "Hammer Strength: Plate Loaded Lat Raise",
-        "Hammer Strength: T-Bar Row",
-        "Hammer Strength: ISO Lateral Front Lat Pulldown"
-      ],
-      "Barbells & Racks": [
-        "Unknown: Squat Rack (x6)",
-        "Unknown: Deadlift Platform (x2)"
-      ],
-      "Calisthenics": [
-        "Unknown: Captain's Chair"
-      ],
-      "Other": []
+      "status": "complete",
+      "categories": {
+        "Cables": [
+          {
+            "label": "LifeFitness: Single Pulley",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "LifeFitness: Dual Adjustable Pulley",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          }
+        ],
+        "Upper": [
+          {
+            "label": "LifeFitness: Chest Press",
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "LifeFitness: Pec Fly + Rear Deltoid",
+            "tags": [
+              "back",
+              "chest",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "LifeFitness: Shoulder Press",
+            "tags": [
+              "shoulders"
+            ]
+          },
+          {
+            "label": "LifeFitness: Row",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          },
+          {
+            "label": "LifeFitness: Biceps Curl",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          },
+          {
+            "label": "LifeFitness: Abdominal",
+            "tags": [
+              "core"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "LifeFitness: Leg Press",
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "LifeFitness: Linear Leg Press",
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "LifeFitness: Leg Extension",
+            "tags": [
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "LifeFitness: Seated Leg Curl",
+            "tags": [
+              "hamstrings",
+              "legs"
+            ]
+          },
+          {
+            "label": "LifeFitness: Leg Curl",
+            "tags": [
+              "hamstrings",
+              "legs"
+            ]
+          },
+          {
+            "label": "LifeFitness: Hip Ab/Ad",
+            "tags": [
+              "core"
+            ]
+          }
+        ],
+        "Plate-Loaded": [
+          {
+            "label": "Hammer Strength: ISO Lateral Bench Press",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "Hammer Strength: Linear Hack Squat",
+            "tags": [
+              "calves",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Hammer Strength: Belt Squat",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Hammer Strength: Glute Drive",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ]
+          },
+          {
+            "label": "Hammer Strength: Plate Loaded Lat Raise",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          },
+          {
+            "label": "Hammer Strength: T-Bar Row",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          },
+          {
+            "label": "Hammer Strength: ISO Lateral Front Lat Pulldown",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Unknown: Squat Rack (x6)",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Unknown: Deadlift Platform (x2)",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ]
+          }
+        ],
+        "Calisthenics": [
+          {
+            "label": "Unknown: Captain's Chair",
+            "tags": [
+              "core"
+            ]
+          }
+        ]
+      }
     },
     "Pasir Panjang": {
-      "Cables": [
-        "Unknown: Cable Station"
-      ],
-      "Upper": [],
-      "Lower": [
-        "Precor: Leg Press",
-        "Unknown: Leg Extension",
-        "Precor: Abdominal Crunch",
-        "LifeFitness: Seated Calf Raise (unloaded 43kg)",
-        "Unknown: Hip Adduction Machine"
-      ],
-      "Plate-Loaded": [],
-      "Barbells & Racks": [
-        "Unknown: Barbell Rack"
-      ],
-      "Calisthenics": [],
-      "Other": [
-        "Unknown: Bosu Ball",
-        "Unknown: Air Bike"
-      ]
+      "status": "ongoing",
+      "categories": {
+        "Cables": [
+          {
+            "label": "Unknown: Cable Station",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "Precor: Leg Press",
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Unknown: Leg Extension",
+            "tags": [
+              "legs",
+              "quads"
+            ]
+          },
+          {
+            "label": "Precor: Abdominal Crunch",
+            "tags": [
+              "core"
+            ]
+          },
+          {
+            "label": "LifeFitness: Seated Calf Raise (unloaded 43kg)",
+            "tags": [
+              "calves",
+              "legs"
+            ]
+          },
+          {
+            "label": "Unknown: Hip Adduction Machine",
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Unknown: Barbell Rack",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Other": [
+          {
+            "label": "Unknown: Bosu Ball",
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ]
+          },
+          {
+            "label": "Unknown: Air Bike",
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ]
+          }
+        ]
+      }
     },
     "New Queensway": {
-      "Cables": [
-        "Matrix: Adjustable Pulley",
-        "Matrix: Low Row"
-      ],
-      "Upper": [],
-      "Lower": [
-        "Matrix: Leg Press"
-      ],
-      "Plate-Loaded": [],
-      "Barbells & Racks": [],
-      "Calisthenics": [
-        "Unknown: Pull-up Bar"
-      ],
-      "Other": []
+      "status": "ongoing",
+      "categories": {
+        "Cables": [
+          {
+            "label": "Matrix: Adjustable Pulley",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          },
+          {
+            "label": "Matrix: Low Row",
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "Matrix: Leg Press",
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Calisthenics": [
+          {
+            "label": "Unknown: Pull-up Bar",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core"
+            ]
+          }
+        ]
+      }
     },
     "Grandtral": {
-      "Cables": [
-        "Matrix: Multistation"
-      ],
-      "Upper": [
-        "Matrix: Fly/Delt Machine"
-      ],
-      "Lower": [
-        "Matrix: Seated Leg Curl"
-      ],
-      "Plate-Loaded": [],
-      "Barbells & Racks": [
-        "Unknown: Barbell Rack"
-      ],
-      "Calisthenics": [
-        "Unknown: Pull-up Bar"
-      ],
-      "Other": []
+      "status": "ongoing",
+      "categories": {
+        "Cables": [
+          {
+            "label": "Matrix: Multistation",
+            "tags": [
+              "core"
+            ]
+          }
+        ],
+        "Upper": [
+          {
+            "label": "Matrix: Fly/Delt Machine",
+            "tags": [
+              "back",
+              "shoulders"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "Matrix: Seated Leg Curl",
+            "tags": [
+              "hamstrings",
+              "legs"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Unknown: Barbell Rack",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Calisthenics": [
+          {
+            "label": "Unknown: Pull-up Bar",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core"
+            ]
+          }
+        ]
+      }
     },
     "Cecil": {
-      "Cables": [
-        "LifeFitness: Dual Pulley Pulldown"
-      ],
-      "Upper": [],
-      "Lower": [
-        "LifeFitness: Hip Abduction Machine",
-        "Unknown: Seated Leg Curl"
-      ],
-      "Plate-Loaded": [],
-      "Barbells & Racks": [
-        "Unknown: Barbell Rack"
-      ],
-      "Calisthenics": [],
-      "Other": [
-        "Unknown: Bosu Ball"
-      ]
+      "status": "ongoing",
+      "categories": {
+        "Cables": [
+          {
+            "label": "LifeFitness: Dual Pulley Pulldown",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "LifeFitness: Hip Abduction Machine",
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ]
+          },
+          {
+            "label": "Unknown: Seated Leg Curl",
+            "tags": [
+              "hamstrings",
+              "legs"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Unknown: Barbell Rack",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Other": [
+          {
+            "label": "Unknown: Bosu Ball",
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ]
+          }
+        ]
+      }
     },
     "Wheelock": {
-      "Cables": [],
-      "Upper": [],
-      "Lower": [
-        "Unknown: Hip Thrust Machine",
-        "Unknown: Seated Leg Curl"
-      ],
-      "Plate-Loaded": [],
-      "Barbells & Racks": [
-        "Unknown: Barbell Rack"
-      ],
-      "Calisthenics": [],
-      "Other": [
-        "Unknown: Back Extension Machine"
-      ]
+      "status": "ongoing",
+      "categories": {
+        "Lower": [
+          {
+            "label": "Unknown: Hip Thrust Machine",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ]
+          },
+          {
+            "label": "Unknown: Seated Leg Curl",
+            "tags": [
+              "hamstrings",
+              "legs"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Unknown: Barbell Rack",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Other": [
+          {
+            "label": "Unknown: Back Extension Machine",
+            "tags": [
+              "back",
+              "core",
+              "glutes",
+              "hamstrings"
+            ]
+          }
+        ]
+      }
     }
   }
 }
