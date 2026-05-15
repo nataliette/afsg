@@ -121,13 +121,24 @@
     header h1 {
       font-size: 24px;
       font-weight: 600;
+    }
+
+    .header-top {
+      display: flex;
+      gap: 16px;
+      align-items: center;
       margin-bottom: 16px;
+    }
+
+    .header-top h1 {
+      margin-bottom: 0;
+      flex-shrink: 0;
     }
 
     .search-container {
       display: flex;
       gap: 8px;
-      margin-bottom: 12px;
+      flex: 1;
     }
 
     .search-input {
@@ -191,18 +202,28 @@
       padding: 24px 32px;
     }
 
-    .status-badge {
-      font-size: 12px;
-      color: #999;
+    .gym-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e0e0e0;
     }
 
     .gym-title {
       font-size: 20px;
       font-weight: 600;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .status-badge {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 0;
+      white-space: nowrap;
     }
 
     .search-result-header {
@@ -218,27 +239,6 @@
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 32px;
-      table-layout: fixed;
-    }
-
-    table th:nth-child(1),
-    table td:nth-child(1) {
-      width: 15%;
-    }
-
-    table th:nth-child(2),
-    table td:nth-child(2) {
-      width: 20%;
-    }
-
-    table th:nth-child(3),
-    table td:nth-child(3) {
-      width: 25%;
-    }
-
-    table th:nth-child(4),
-    table td:nth-child(4) {
-      width: 40%;
     }
 
     table thead {
@@ -255,8 +255,17 @@
 
     table td {
       padding: 12px;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: none;
       font-size: 14px;
+    }
+
+    table tr:not(.tags-row) td {
+      border-bottom: none;
+    }
+
+    .tags-row td {
+      padding: 12px;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     table tr:hover {
@@ -303,6 +312,28 @@
       border-color: #64b5f6;
     }
 
+    .outlet-link {
+      color: #2196f3;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .outlet-link:hover {
+      text-decoration: underline;
+    }
+
+    .outlet-link:visited {
+      color: #2196f3;
+    }
+
+    .tags-row {
+      display: none;
+    }
+
+    .tags-row .tags-cell {
+      padding: 12px;
+    }
+
     .empty-state {
       padding: 32px;
       text-align: center;
@@ -315,56 +346,175 @@
       color: #d32f2f;
     }
 
+    .hamburger-btn,
+    .search-toggle-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hamburger-btn svg,
+    .search-toggle-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 240px;
+      background: #f5f5f5;
+      border-right: 1px solid #e0e0e0;
+      z-index: 1000;
+      padding: 20px;
+      overflow-y: auto;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-menu h2 {
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .menu-overlay.active {
+      display: block;
+    }
+
     @media (max-width: 768px) {
       body {
         flex-direction: column;
       }
 
       aside {
-        width: 100%;
-        max-height: auto;
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
-        padding: 12px;
+        display: none;
+      }
+
+      .hamburger-btn,
+      .search-toggle-btn {
         display: flex;
-        align-items: center;
-        gap: 12px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        position: relative;
-      }
-
-      aside h2 {
-        margin-bottom: 0;
-        flex-shrink: 0;
-      }
-
-      .gym-list {
-        flex-direction: row;
-        gap: 8px;
-        overflow-x: auto;
-        padding-bottom: 4px;
-        flex: 1;
-      }
-
-      .gym-item {
-        flex-shrink: 0;
       }
 
       header {
         padding: 12px 16px;
       }
 
-      header h1 {
+      .header-top {
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 0;
+      }
+
+      .header-top h1 {
         font-size: 20px;
-        margin-bottom: 12px;
+        margin-bottom: 0;
+        flex: 1;
+      }
+
+      .search-container {
+        display: none;
+        flex: none;
+      }
+
+      .search-container.active {
+        display: flex;
+      }
+
+      .search-toggle-btn {
+        display: flex;
+      }
+
+      .suggestions {
+        display: none;
+        margin-top: 12px;
+      }
+
+      .suggestions.active {
+        display: flex;
       }
 
       .content {
         padding: 16px;
       }
 
-      table th, table td {
+      table {
+        display: block;
+      }
+
+      table thead {
+        display: block;
+      }
+
+      table tbody {
+        display: block;
+      }
+
+      table tr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+        gap: 0;
+      }
+
+      table tr:not(.tags-row) td:nth-child(4) {
+        display: none;
+      }
+
+      .tags-row {
+        display: block;
+        width: 100%;
+        margin-top: -6px;
+      }
+
+      .tags-row td {
+        display: block;
+        width: 100%;
+        padding: 0px 12px 6px 12px;
+      }
+
+      .tags-row .tags-cell {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      table th {
+        padding: 8px;
+        font-size: 13px;
+      }
+
+      table th:nth-child(4) {
+        display: none;
+      }
+
+      table td {
         padding: 8px;
         font-size: 13px;
       }
@@ -383,9 +533,25 @@
   </aside>
 
   <main>
+    <button class="hamburger-btn" id="hamburgerBtn">
+      <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.174 45.174" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M41.573,15.879v-1.675c0-1.922-1.558-3.495-3.479-3.495h-2.761c-1.921,0-3.479,1.573-3.479,3.495v4.693H13.319v-4.693 c0-1.922-1.558-3.495-3.479-3.495H7.079c-1.921,0-3.479,1.573-3.479,3.495v1.675c-1.979,0-3.6,1.617-3.6,3.613v6.172 c0,1.996,1.71,3.613,3.6,3.613v1.674c0,1.922,1.558,3.513,3.479,3.513H9.84c1.921,0,3.479-1.591,3.479-3.513v-4.676h18.536v4.676 c0,1.922,1.558,3.513,3.479,3.513h2.762c1.92,0,3.479-1.591,3.479-3.513v-1.674c1.979,0,3.6-1.619,3.6-3.613v-6.172 C45.172,17.496,43.462,15.879,41.573,15.879z"></path> </g> </g></svg>
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <h2>Gyms</h2>
+      <div class="gym-list" id="mobileGymList"></div>
+    </div>
+
     <header>
-      <h1>Equipment Tracker</h1>
-      <div class="search-container">
+      <div class="header-top">
+        <h1>Equipment Tracker</h1>
+        <button class="search-toggle-btn" id="searchToggleBtn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+      </div>
+      <div class="search-container" id="searchContainer">
         <input
           type="text"
           id="searchInput"
@@ -479,17 +645,28 @@
         }
 
         renderGymList();
-        loadGymFromHash();
-        window.addEventListener('hashchange', loadGymFromHash);
+        loadGymFromUrl();
+        window.addEventListener('popstate', loadGymFromUrl);
       } catch (error) {
         showError(`Error: ${error.message}`);
       }
     }
 
-    function loadGymFromHash() {
-      const hash = window.location.hash.slice(1).toLowerCase();
-      if (hash && INITIAL_TO_GYM[hash]) {
-        selectGym(INITIAL_TO_GYM[hash]);
+    function loadGymFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const tagFromUrl = params.get('tag');
+      const gymFromUrl = params.get('gym');
+
+      if (tagFromUrl) {
+        selectedTags = [tagFromUrl];
+        searchMode = true;
+        document.getElementById('searchInput').value = '';
+        document.getElementById('clearBtn').disabled = false;
+        updateSuggestions('');
+        renderGymList();
+        renderSearchResults();
+      } else if (gymFromUrl && INITIAL_TO_GYM[gymFromUrl]) {
+        selectGym(INITIAL_TO_GYM[gymFromUrl]);
       } else if (!currentGym) {
         currentGym = gyms[0];
         renderEquipment();
@@ -498,29 +675,39 @@
 
     function renderGymList() {
       const gymList = document.getElementById('gymList');
-      gymList.innerHTML = '';
+      const mobileGymList = document.getElementById('mobileGymList');
+      [gymList, mobileGymList].forEach(list => {
+        if (!list) return;
+        list.innerHTML = '';
 
-      gyms.forEach(gym => {
-        const link = document.createElement('a');
-        link.className = 'gym-item' + (gym === currentGym ? ' active' : '');
-        link.href = '#' + GYM_INITIALS[gym].toLowerCase();
+        gyms.forEach(gym => {
+          const link = document.createElement('a');
+          link.className = 'gym-item' + (gym === currentGym ? ' active' : '');
+          link.href = '?gym=' + GYM_INITIALS[gym].toLowerCase();
 
-        const dot = document.createElement('div');
-        dot.className = 'status-dot ' + equipmentData.gyms[gym].status;
+          const dot = document.createElement('div');
+          dot.className = 'status-dot ' + equipmentData.gyms[gym].status;
 
-        const name = document.createElement('span');
-        name.className = 'gym-name';
-        name.textContent = gym;
+          const name = document.createElement('span');
+          name.className = 'gym-name';
+          name.textContent = gym;
 
-        const initial = document.createElement('span');
-        initial.className = 'gym-initial';
-        initial.textContent = GYM_INITIALS[gym];
+          const initial = document.createElement('span');
+          initial.className = 'gym-initial';
+          initial.textContent = GYM_INITIALS[gym];
 
-        link.appendChild(dot);
-        link.appendChild(name);
-        link.appendChild(initial);
-        gymList.appendChild(link);
+          link.appendChild(dot);
+          link.appendChild(name);
+          link.appendChild(initial);
+          link.addEventListener('click', closeMobileMenu);
+          list.appendChild(link);
+        });
       });
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.remove('active');
+      document.getElementById('menuOverlay').classList.remove('active');
     }
 
     function selectGym(gym) {
@@ -530,6 +717,7 @@
       document.getElementById('searchInput').value = '';
       document.getElementById('clearBtn').disabled = true;
       updateSuggestions('');
+      window.history.pushState(null, '', `?gym=${GYM_INITIALS[gym].toLowerCase()}`);
       renderGymList();
       renderEquipment();
     }
@@ -571,6 +759,7 @@
       selectedTags = [tag];
       searchMode = true;
       document.getElementById('clearBtn').disabled = false;
+      window.history.pushState(null, '', `?tag=${tag}`);
       renderGymList();
       renderSearchResults();
     }
@@ -583,70 +772,68 @@
         return;
       }
 
-      const results = [];
+      const allMatches = [];
       let totalMachines = 0;
       const gymsWithMatches = new Set();
 
       for (const gymName of gyms) {
         const gymData = equipmentData.gyms[gymName];
-        const gymMatches = [];
 
         for (const [category, machines] of Object.entries(gymData.categories || {})) {
           for (const machine of machines) {
             const machineMatches = selectedTags.some(tag => machine.tags.includes(tag));
             if (machineMatches) {
-              gymMatches.push({ category, machine });
+              allMatches.push({ gymName, category, machine });
               totalMachines++;
               gymsWithMatches.add(gymName);
             }
           }
         }
-
-        if (gymMatches.length > 0) {
-          results.push({ gymName, matches: gymMatches });
-        }
       }
 
-      results.sort((a, b) => a.gymName.localeCompare(b.gymName));
+      allMatches.sort((a, b) => a.gymName.localeCompare(b.gymName));
 
       let html = `<div class="search-result-header">${totalMachines} machines across ${gymsWithMatches.size} gyms matching: ${selectedTags.map(t => '<strong>' + t + '</strong>').join(', ')}</div>`;
 
-      for (const { gymName, matches } of results) {
-        const status = equipmentData.gyms[gymName].status;
-        const statusBadge = status === 'complete' ? '✓' : '⚠';
-
-        html += `<div class="gym-title">${statusBadge} ${gymName}</div>`;
-
-        const tableRows = matches.map(({ category, machine }) => {
-          const { brand, machine: machineName } = parseMachine(machine.label);
-          return `
-            <tr>
-              <td>${category}</td>
-              <td class="brand">${brand}</td>
-              <td>${machineName}</td>
-              <td class="tags-cell">
-                ${machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('')}
-              </td>
-            </tr>
-          `;
-        }).join('');
-
-        html += `
-          <table>
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Brand</th>
-                <th>Machine</th>
-                <th>Muscle Groups</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${tableRows}
-            </tbody>
-          </table>
+      const tableRows = allMatches.map(({ gymName, category, machine }) => {
+        const { brand, machine: machineName } = parseMachine(machine.label);
+        const gymInitial = GYM_INITIALS[gymName].toLowerCase();
+        const displayBrand = brand === '' ? '—' : brand;
+        const tagsHtml = machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('');
+        return `
+          <tr>
+            <td>${category}</td>
+            <td class="brand">${displayBrand}</td>
+            <td>${machineName}</td>
+            <td class="tags-cell">
+              ${tagsHtml}
+            </td>
+            <td><a href="?gym=${gymInitial}" class="outlet-link">${gymName}</a></td>
+          </tr>
+          <tr class="tags-row">
+            <td colspan="5" class="tags-cell">
+              ${tagsHtml}
+            </td>
+          </tr>
         `;
-      }
+      }).join('');
+
+      html += `
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Brand</th>
+              <th>Equipment</th>
+              <th>Muscle Groups</th>
+              <th>Gym</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tableRows}
+          </tbody>
+        </table>
+      `;
 
       content.innerHTML = html || '<div class="empty-state">No equipment matches your search</div>';
     }
@@ -657,8 +844,12 @@
       const status = gymData.status;
       const statusBadge = status === 'complete' ? '✓ Equipment list complete' : '⚠ Partial — last updated from session logs';
 
-      let html = `<div class="status-badge">${statusBadge}</div>`;
-      html += `<div class="gym-title">${currentGym}</div>`;
+      let html = `
+        <div class="gym-header">
+          <div class="gym-title">${currentGym}</div>
+          <div class="status-badge">${statusBadge}</div>
+        </div>
+      `;
 
       const allMachines = [];
       for (const [category, machines] of Object.entries(gymData.categories || {})) {
@@ -675,13 +866,20 @@
 
       const tableRows = allMachines.map(({ category, machine }) => {
         const { brand, machine: machineName } = parseMachine(machine.label);
+        const displayBrand = brand === '' ? '—' : brand;
+        const tagsHtml = machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('');
         return `
           <tr>
             <td>${category}</td>
-            <td class="brand">${brand}</td>
+            <td class="brand">${displayBrand}</td>
             <td>${machineName}</td>
             <td class="tags-cell">
-              ${machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('')}
+              ${tagsHtml}
+            </td>
+          </tr>
+          <tr class="tags-row">
+            <td colspan="4" class="tags-cell">
+              ${tagsHtml}
             </td>
           </tr>
         `;
@@ -693,7 +891,7 @@
             <tr>
               <th>Category</th>
               <th>Brand</th>
-              <th>Machine</th>
+              <th>Equipment</th>
               <th>Muscle Groups</th>
             </tr>
           </thead>
@@ -721,8 +919,24 @@
       document.getElementById('searchInput').value = '';
       document.getElementById('clearBtn').disabled = true;
       updateSuggestions('');
+      window.history.pushState(null, '', window.location.pathname);
       renderGymList();
       renderEquipment();
+    });
+
+    document.getElementById('hamburgerBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('active');
+      document.getElementById('menuOverlay').classList.toggle('active');
+    });
+
+    document.getElementById('menuOverlay').addEventListener('click', closeMobileMenu);
+
+    document.getElementById('searchToggleBtn').addEventListener('click', () => {
+      document.getElementById('searchContainer').classList.toggle('active');
+      document.getElementById('suggestions').classList.toggle('active');
+      if (document.getElementById('searchContainer').classList.contains('active')) {
+        document.getElementById('searchInput').focus();
+      }
     });
 
     document.addEventListener('DOMContentLoaded', loadEquipment);
