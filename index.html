@@ -17,6 +17,9 @@
       color: #333333;
       display: flex;
       min-height: 100vh;
+    }
+
+    body.menu-open {
       overflow: hidden;
     }
 
@@ -841,6 +844,7 @@
     function closeMobileMenu() {
       document.getElementById('mobileMenu').classList.remove('active');
       document.getElementById('menuOverlay').classList.remove('active');
+      document.body.classList.remove('menu-open');
     }
 
     function selectGym(gym) {
@@ -1072,8 +1076,15 @@
       searchContainer.classList.remove('active');
       document.getElementById('suggestions').classList.remove('active');
 
-      document.getElementById('mobileMenu').classList.toggle('active');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('active');
       document.getElementById('menuOverlay').classList.toggle('active');
+
+      if (mobileMenu.classList.contains('active')) {
+        document.body.classList.add('menu-open');
+      } else {
+        document.body.classList.remove('menu-open');
+      }
     });
 
     document.getElementById('menuOverlay').addEventListener('click', closeMobileMenu);
