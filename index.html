@@ -135,15 +135,38 @@
       flex-shrink: 0;
     }
 
+    .search-toggle-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .search-toggle-btn svg {
+      width: 24px;
+      height: 24px;
+      color: #333;
+    }
+
     .search-container {
       display: flex;
-      gap: 8px;
-      flex: 1;
+      position: relative;
+      gap: 0;
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
     }
 
     .search-input {
       flex: 1;
       padding: 10px 16px;
+      padding-right: 80px;
       border: 1px solid #e0e0e0;
       border-radius: 6px;
       font-size: 14px;
@@ -157,23 +180,55 @@
     }
 
     .clear-btn {
-      padding: 10px 16px;
-      background-color: #f0f0f0;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
+      position: absolute;
+      right: 44px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
       cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      transition: all 0.2s;
+      font-size: 18px;
+      color: #999;
+      padding: 4px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+    }
+
+    .clear-btn:not(:disabled) {
+      display: flex;
     }
 
     .clear-btn:hover {
-      background-color: #e0e0e0;
+      color: #333;
     }
 
-    .clear-btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
+    .search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-btn svg {
+      width: 20px;
+      height: 20px;
+      color: #666;
+      stroke-width: 1.5;
+    }
+
+    .search-btn:hover svg {
+      color: #333;
     }
 
     .suggestions {
@@ -425,6 +480,7 @@
 
       header {
         padding: 12px 16px;
+        position: relative;
       }
 
       .header-top {
@@ -439,17 +495,24 @@
         flex: 1;
       }
 
+      .search-toggle-btn {
+        display: flex;
+      }
+
       .search-container {
         display: none;
-        flex: none;
+        margin-left: 0;
+        max-width: none;
       }
 
       .search-container.active {
+        position: fixed;
+        top: 12px;
+        left: 16px;
+        right: 16px;
+        width: calc(100% - 32px);
         display: flex;
-      }
-
-      .search-toggle-btn {
-        display: flex;
+        z-index: 1000;
       }
 
       .suggestions {
@@ -554,7 +617,10 @@
             class="search-input"
             placeholder="Search by muscle group (e.g., leg, back, chest...)"
           >
-          <button id="clearBtn" class="clear-btn" disabled>Clear</button>
+          <button id="clearBtn" class="clear-btn" disabled>×</button>
+          <button id="searchBtn" class="search-btn" type="button">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </button>
         </div>
         <button class="search-toggle-btn" id="searchToggleBtn">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -936,6 +1002,44 @@
       document.getElementById('suggestions').classList.toggle('active');
       if (document.getElementById('searchContainer').classList.contains('active')) {
         document.getElementById('searchInput').focus();
+      }
+    });
+
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      const input = document.getElementById('searchInput').value.toLowerCase().trim();
+      if (!input) return;
+
+      let matchingTags = [];
+
+      if (ALL_TAGS.includes(input)) {
+        matchingTags = [input];
+      } else {
+        for (const [key, tags] of Object.entries(TAG_SUGGESTIONS)) {
+          if (key.includes(input) || input.includes(key)) {
+            matchingTags.push(...tags);
+            break;
+          }
+        }
+
+        if (matchingTags.length === 0) {
+          matchingTags = ALL_TAGS.filter(tag => tag.includes(input));
+        }
+      }
+
+      if (matchingTags.length > 0) {
+        selectTag(matchingTags[0]);
+        document.getElementById('searchContainer').classList.remove('active');
+        document.getElementById('suggestions').classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const searchContainer = document.getElementById('searchContainer');
+        if (searchContainer.classList.contains('active')) {
+          searchContainer.classList.remove('active');
+          document.getElementById('suggestions').classList.remove('active');
+        }
       }
     });
 
