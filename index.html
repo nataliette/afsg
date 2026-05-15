@@ -17,6 +17,7 @@
       color: #333333;
       display: flex;
       min-height: 100vh;
+      overflow: hidden;
     }
 
     aside {
@@ -255,15 +256,24 @@
     .suggestion-chip {
       padding: 6px 12px;
       background-color: #e3f2fd;
-      border: 1px solid #90caf9;
       border-radius: 16px;
       cursor: pointer;
       font-size: 13px;
+      color: #1565c0;
       transition: all 0.2s;
     }
 
     .suggestion-chip:hover {
       background-color: #bbdefb;
+    }
+
+    .suggestion-chip.primary {
+      background-color: #1565c0;
+      color: #ffffff;
+    }
+
+    .suggestion-chip.primary:hover {
+      background-color: #0d47a1;
     }
 
     .content {
@@ -356,30 +366,26 @@
     .tag {
       display: inline-block;
       padding: 2px 8px;
-      background-color: #e8f5e9;
-      border: 1px solid #c8e6c9;
+      background-color: #e3f2fd;
       border-radius: 12px;
       font-size: 12px;
-      color: #2e7d32;
+      color: #1565c0;
       white-space: nowrap;
       cursor: pointer;
       transition: all 0.2s;
     }
 
     .tag:hover {
-      background-color: #c8e6c9;
-      border-color: #a5d6a7;
+      background-color: #bbdefb;
     }
 
     .tag.primary {
-      background-color: #e3f2fd;
-      border-color: #90caf9;
-      color: #1565c0;
+      background-color: #1565c0;
+      color: #ffffff;
     }
 
     .tag.primary:hover {
-      background-color: #90caf9;
-      border-color: #64b5f6;
+      background-color: #0d47a1;
     }
 
     .outlet-link {
@@ -436,7 +442,6 @@
     }
 
     .mobile-menu {
-      display: none;
       position: fixed;
       top: 0;
       left: 0;
@@ -449,19 +454,52 @@
       overflow-y: auto;
       flex-direction: column;
       gap: 4px;
+      display: flex;
+      transform: translateX(-100%);
+      transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      pointer-events: none;
     }
 
-    .mobile-menu h2 {
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 12px;
+    }
+
+    .mobile-menu-header h2 {
+      margin-bottom: 0;
       font-size: 14px;
       font-weight: 600;
       color: #666;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      flex: 1;
+    }
+
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      color: #333;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu-close:hover {
+      color: #666;
     }
 
     .mobile-menu.active {
-      display: flex;
+      transform: translateX(0);
+      pointer-events: auto;
     }
 
     .menu-overlay {
@@ -502,12 +540,19 @@
         flex-direction: row;
         gap: 8px;
         margin-bottom: 0;
+        justify-content: space-between;
+        align-items: center;
       }
 
       .header-top h1 {
         font-size: 20px;
         margin-bottom: 0;
         flex: 1;
+        text-align: center;
+      }
+
+      .hamburger-btn {
+        display: flex;
       }
 
       .search-toggle-btn {
@@ -616,26 +661,28 @@
   </aside>
 
   <main>
-    <button class="hamburger-btn" id="hamburgerBtn">
-      <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.174 45.174" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M41.573,15.879v-1.675c0-1.922-1.558-3.495-3.479-3.495h-2.761c-1.921,0-3.479,1.573-3.479,3.495v4.693H13.319v-4.693 c0-1.922-1.558-3.495-3.479-3.495H7.079c-1.921,0-3.479,1.573-3.479,3.495v1.675c-1.979,0-3.6,1.617-3.6,3.613v6.172 c0,1.996,1.71,3.613,3.6,3.613v1.674c0,1.922,1.558,3.513,3.479,3.513H9.84c1.921,0,3.479-1.591,3.479-3.513v-4.676h18.536v4.676 c0,1.922,1.558,3.513,3.479,3.513h2.762c1.92,0,3.479-1.591,3.479-3.513v-1.674c1.979,0,3.6-1.619,3.6-3.613v-6.172 C45.172,17.496,43.462,15.879,41.573,15.879z"></path> </g> </g></svg>
-    </button>
-
     <div class="menu-overlay" id="menuOverlay"></div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <h2>Gyms</h2>
+      <div class="mobile-menu-header">
+        <button class="mobile-menu-close" id="mobileMenuCloseBtn">×</button>
+        <h2>Gyms</h2>
+      </div>
       <div class="gym-list" id="mobileGymList"></div>
     </div>
 
     <header>
       <div class="header-top">
+        <button class="hamburger-btn" id="hamburgerBtn">
+          <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.174 45.174" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M41.573,15.879v-1.675c0-1.922-1.558-3.495-3.479-3.495h-2.761c-1.921,0-3.479,1.573-3.479,3.495v4.693H13.319v-4.693 c0-1.922-1.558-3.495-3.479-3.495H7.079c-1.921,0-3.479,1.573-3.479,3.495v1.675c-1.979,0-3.6,1.617-3.6,3.613v6.172 c0,1.996,1.71,3.613,3.6,3.613v1.674c0,1.922,1.558,3.513,3.479,3.513H9.84c1.921,0,3.479-1.591,3.479-3.513v-4.676h18.536v4.676 c0,1.922,1.558,3.513,3.479,3.513h2.762c1.92,0,3.479-1.591,3.479-3.513v-1.674c1.979,0,3.6-1.619,3.6-3.613v-6.172 C45.172,17.496,43.462,15.879,41.573,15.879z"></path> </g> </g></svg>
+        </button>
         <h1>AF Gym Equipment List</h1>
         <div class="search-container" id="searchContainer">
           <input
             type="text"
             id="searchInput"
             class="search-input"
-            placeholder="Search by muscle group (e.g., leg, back, chest...)"
+            placeholder="Search by muscle group"
           >
           <button id="clearBtn" class="clear-btn" disabled>×</button>
           <button id="searchBtn" class="search-btn" type="button">
@@ -836,7 +883,7 @@
       suggestionsDiv.innerHTML = Array.from(relatedTags)
         .slice(0, 8)
         .map(tag => `
-          <div class="suggestion-chip" onclick="selectTag('${tag}')">${tag}</div>
+          <div class="suggestion-chip${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</div>
         `)
         .join('');
     }
@@ -999,6 +1046,16 @@
       updateSuggestions(e.target.value);
     });
 
+    document.getElementById('searchInput').addEventListener('focus', () => {
+      const suggestionsDiv = document.getElementById('suggestions');
+      suggestionsDiv.innerHTML = Array.from(PRIMARY_TAGS)
+        .sort()
+        .map(tag => `
+          <div class="suggestion-chip primary" onclick="selectTag('${tag}')">${tag}</div>
+        `)
+        .join('');
+    });
+
     document.getElementById('clearBtn').addEventListener('click', () => {
       searchMode = false;
       selectedTags = [];
@@ -1020,6 +1077,8 @@
     });
 
     document.getElementById('menuOverlay').addEventListener('click', closeMobileMenu);
+
+    document.getElementById('mobileMenuCloseBtn').addEventListener('click', closeMobileMenu);
 
     document.getElementById('searchToggleBtn').addEventListener('click', () => {
       document.getElementById('searchContainer').classList.toggle('active');
@@ -1064,6 +1123,13 @@
           searchContainer.classList.remove('active');
           document.getElementById('suggestions').classList.remove('active');
         }
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const searchContainer = document.getElementById('searchContainer');
+      if (!searchContainer.contains(e.target)) {
+        document.getElementById('suggestions').innerHTML = '';
       }
     });
 
