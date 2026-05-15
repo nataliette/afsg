@@ -16,17 +16,106 @@
       background-color: #ffffff;
       color: #333333;
       display: flex;
-      flex-direction: column;
       min-height: 100vh;
     }
 
-    header {
+    aside {
+      width: 240px;
+      background-color: #f5f5f5;
+      border-right: 1px solid #e0e0e0;
+      padding: 20px;
+      flex-shrink: 0;
+      overflow-y: auto;
+      max-height: 100vh;
       position: sticky;
       top: 0;
+    }
+
+    aside h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .gym-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .gym-item {
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .gym-item:hover {
+      background-color: #e8e8e8;
+    }
+
+    .gym-item.active {
+      background-color: #2196f3;
+      color: white;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-dot.complete {
+      background-color: #4caf50;
+    }
+
+    .status-dot.ongoing {
+      background-color: #ff9800;
+    }
+
+    .gym-name {
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .gym-initial {
+      font-size: 11px;
+      color: #999;
+      font-weight: 500;
+      min-width: 20px;
+      text-align: right;
+    }
+
+    .gym-item.active .gym-initial {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    header {
       background-color: #f5f5f5;
       border-bottom: 1px solid #e0e0e0;
-      padding: 16px;
-      z-index: 100;
+      padding: 16px 32px;
+      flex-shrink: 0;
     }
 
     header h1 {
@@ -96,76 +185,24 @@
       background-color: #bbdefb;
     }
 
-    .main-container {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-    }
-
-    aside {
-      width: 200px;
-      background-color: #f9f9f9;
-      border-right: 1px solid #e0e0e0;
-      overflow-y: auto;
-      padding: 16px 0;
-    }
-
-    .gym-list {
-      list-style: none;
-    }
-
-    .gym-item {
-      padding: 10px 16px;
-      cursor: pointer;
-      border-left: 3px solid transparent;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .gym-item:hover {
-      background-color: #efefef;
-    }
-
-    .gym-item.active {
-      background-color: #e3f2fd;
-      border-left-color: #2196f3;
-      font-weight: 500;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .status-dot.complete {
-      background-color: #4caf50;
-    }
-
-    .status-dot.ongoing {
-      background-color: #ff9800;
-    }
-
-    main {
+    .content {
       flex: 1;
       overflow-y: auto;
       padding: 24px 32px;
     }
 
-    h2 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-top: 24px;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #e0e0e0;
+    .status-badge {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 16px;
     }
 
-    h2:first-of-type {
-      margin-top: 0;
+    .gym-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e0e0e0;
     }
 
     .search-result-header {
@@ -177,36 +214,93 @@
       border-radius: 4px;
     }
 
-    .gym-section {
+    table {
+      width: 100%;
+      border-collapse: collapse;
       margin-bottom: 32px;
+      table-layout: fixed;
     }
 
-    .gym-section h3 {
-      font-size: 18px;
+    table th:nth-child(1),
+    table td:nth-child(1) {
+      width: 15%;
+    }
+
+    table th:nth-child(2),
+    table td:nth-child(2) {
+      width: 20%;
+    }
+
+    table th:nth-child(3),
+    table td:nth-child(3) {
+      width: 25%;
+    }
+
+    table th:nth-child(4),
+    table td:nth-child(4) {
+      width: 40%;
+    }
+
+    table thead {
+      background-color: #f5f5f5;
+    }
+
+    table th {
+      padding: 12px;
+      text-align: left;
       font-weight: 600;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
+      font-size: 14px;
       border-bottom: 2px solid #e0e0e0;
     }
 
-    .category-list {
-      list-style: none;
-      margin-bottom: 20px;
+    table td {
+      padding: 12px;
+      border-bottom: 1px solid #e0e0e0;
+      font-size: 14px;
     }
 
-    .category-list li {
-      padding: 6px 0;
-      padding-left: 20px;
-      position: relative;
-      line-height: 1.5;
-      font-size: 15px;
+    table tr:hover {
+      background-color: #fafafa;
     }
 
-    .category-list li:before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #666666;
+    .brand {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .tags-cell {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      background-color: #e8f5e9;
+      border: 1px solid #c8e6c9;
+      border-radius: 12px;
+      font-size: 12px;
+      color: #2e7d32;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tag:hover {
+      background-color: #c8e6c9;
+      border-color: #a5d6a7;
+    }
+
+    .tag.primary {
+      background-color: #e3f2fd;
+      border-color: #90caf9;
+      color: #1565c0;
+    }
+
+    .tag.primary:hover {
+      background-color: #90caf9;
+      border-color: #64b5f6;
     }
 
     .empty-state {
@@ -221,47 +315,44 @@
       color: #d32f2f;
     }
 
-    .search-active aside {
-      display: none;
-    }
-
     @media (max-width: 768px) {
-      .main-container {
+      body {
         flex-direction: column;
       }
 
       aside {
         width: 100%;
+        max-height: auto;
         border-right: none;
         border-bottom: 1px solid #e0e0e0;
-        max-height: 120px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
         overflow-x: auto;
         overflow-y: hidden;
+        position: relative;
+      }
+
+      aside h2 {
+        margin-bottom: 0;
+        flex-shrink: 0;
       }
 
       .gym-list {
-        display: flex;
         flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        flex: 1;
       }
 
       .gym-item {
-        white-space: nowrap;
-        border-bottom: 3px solid transparent;
-        border-left: none;
-        padding: 10px 16px;
-      }
-
-      .gym-item.active {
-        border-bottom-color: #2196f3;
-        border-left: none;
-      }
-
-      main {
-        padding: 16px;
+        flex-shrink: 0;
       }
 
       header {
-        padding: 12px;
+        padding: 12px 16px;
       }
 
       header h1 {
@@ -269,36 +360,47 @@
         margin-bottom: 12px;
       }
 
-      .search-input {
-        font-size: 16px;
+      .content {
+        padding: 16px;
+      }
+
+      table th, table td {
+        padding: 8px;
+        font-size: 13px;
+      }
+
+      .tag {
+        font-size: 11px;
+        padding: 2px 6px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Gym Equipment Tracker</h1>
-    <div class="search-container">
-      <input
-        type="text"
-        id="searchInput"
-        class="search-input"
-        placeholder="Search by muscle group (e.g., leg, back, chest...)"
-      >
-      <button id="clearBtn" class="clear-btn" disabled>Clear</button>
-    </div>
-    <div class="suggestions" id="suggestions"></div>
-  </header>
+  <aside>
+    <h2>Gyms</h2>
+    <div class="gym-list" id="gymList"></div>
+  </aside>
 
-  <div class="main-container" id="mainContainer">
-    <aside>
-      <ul class="gym-list" id="gymList"></ul>
-    </aside>
+  <main>
+    <header>
+      <h1>Equipment Tracker</h1>
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search by muscle group (e.g., leg, back, chest...)"
+        >
+        <button id="clearBtn" class="clear-btn" disabled>Clear</button>
+      </div>
+      <div class="suggestions" id="suggestions"></div>
+    </header>
 
-    <main id="main">
+    <div class="content" id="content">
       <div class="empty-state">Loading equipment data...</div>
-    </main>
-  </div>
+    </div>
+  </main>
 
   <script>
     const TAG_SUGGESTIONS = {
@@ -327,11 +429,42 @@
 
     const ALL_TAGS = ['chest', 'back', 'shoulders', 'arms', 'biceps', 'triceps', 'legs', 'quads', 'hamstrings', 'glutes', 'calves', 'adductors', 'abductors', 'core', 'cardio', 'calisthenics'];
 
+    const PRIMARY_TAGS = new Set(['chest', 'back', 'shoulders', 'arms', 'legs', 'core', 'cardio', 'calisthenics']);
+
+    function isPrimaryTag(tag) {
+      return PRIMARY_TAGS.has(tag);
+    }
+
+    const GYM_INITIALS = {
+      'Cecil Street': 'CS',
+      'Grandtral Complex': 'GC',
+      'Harbourfront': 'H',
+      'Labrador View': 'LV',
+      'New Queensway': 'NQ',
+      'Pasir Panjang': 'PP',
+      'Tanjong Pagar': 'TP',
+      'Telok Blangah': 'TB',
+      'Wheelock Place': 'WP'
+    };
+
+    const INITIAL_TO_GYM = {};
+    Object.entries(GYM_INITIALS).forEach(([gym, initial]) => {
+      INITIAL_TO_GYM[initial.toLowerCase()] = gym;
+    });
+
     let equipmentData = null;
     let currentGym = null;
     let gyms = [];
     let searchMode = false;
     let selectedTags = [];
+
+    function parseMachine(label) {
+      const match = label.match(/^([^:]+):\s*(.+)$/);
+      if (match) {
+        return { brand: match[1], machine: match[2] };
+      }
+      return { brand: '', machine: label };
+    }
 
     async function loadEquipment() {
       try {
@@ -345,11 +478,21 @@
           return;
         }
 
-        currentGym = gyms[0];
         renderGymList();
-        renderEquipment();
+        loadGymFromHash();
+        window.addEventListener('hashchange', loadGymFromHash);
       } catch (error) {
         showError(`Error: ${error.message}`);
+      }
+    }
+
+    function loadGymFromHash() {
+      const hash = window.location.hash.slice(1).toLowerCase();
+      if (hash && INITIAL_TO_GYM[hash]) {
+        selectGym(INITIAL_TO_GYM[hash]);
+      } else if (!currentGym) {
+        currentGym = gyms[0];
+        renderEquipment();
       }
     }
 
@@ -358,19 +501,25 @@
       gymList.innerHTML = '';
 
       gyms.forEach(gym => {
-        const li = document.createElement('li');
-        li.className = 'gym-item' + (gym === currentGym && !searchMode ? ' active' : '');
+        const link = document.createElement('a');
+        link.className = 'gym-item' + (gym === currentGym ? ' active' : '');
+        link.href = '#' + GYM_INITIALS[gym].toLowerCase();
 
-        const statusDot = document.createElement('div');
-        statusDot.className = 'status-dot ' + equipmentData.gyms[gym].status;
+        const dot = document.createElement('div');
+        dot.className = 'status-dot ' + equipmentData.gyms[gym].status;
 
-        const label = document.createElement('span');
-        label.textContent = gym;
+        const name = document.createElement('span');
+        name.className = 'gym-name';
+        name.textContent = gym;
 
-        li.appendChild(statusDot);
-        li.appendChild(label);
-        li.onclick = () => selectGym(gym);
-        gymList.appendChild(li);
+        const initial = document.createElement('span');
+        initial.className = 'gym-initial';
+        initial.textContent = GYM_INITIALS[gym];
+
+        link.appendChild(dot);
+        link.appendChild(name);
+        link.appendChild(initial);
+        gymList.appendChild(link);
       });
     }
 
@@ -383,7 +532,6 @@
       updateSuggestions('');
       renderGymList();
       renderEquipment();
-      document.getElementById('mainContainer').classList.remove('search-active');
     }
 
     function updateSuggestions(input) {
@@ -397,14 +545,12 @@
 
       let relatedTags = new Set();
 
-      // Check if input matches a suggestion category
       for (const [key, tags] of Object.entries(TAG_SUGGESTIONS)) {
         if (key.includes(inputLower) || inputLower.includes(key)) {
           tags.forEach(tag => relatedTags.add(tag));
         }
       }
 
-      // If no category match, show all tags that contain the input
       if (relatedTags.size === 0) {
         ALL_TAGS.forEach(tag => {
           if (tag.includes(inputLower)) {
@@ -422,18 +568,15 @@
     }
 
     function selectTag(tag) {
-      if (!selectedTags.includes(tag)) {
-        selectedTags.push(tag);
-      }
+      selectedTags = [tag];
       searchMode = true;
-      document.getElementById('mainContainer').classList.add('search-active');
       document.getElementById('clearBtn').disabled = false;
       renderGymList();
       renderSearchResults();
     }
 
     function renderSearchResults() {
-      const main = document.getElementById('main');
+      const content = document.getElementById('content');
 
       if (selectedTags.length === 0) {
         renderEquipment();
@@ -444,7 +587,6 @@
       let totalMachines = 0;
       const gymsWithMatches = new Set();
 
-      // Collect all matching equipment
       for (const gymName of gyms) {
         const gymData = equipmentData.gyms[gymName];
         const gymMatches = [];
@@ -465,7 +607,6 @@
         }
       }
 
-      // Sort by gym name
       results.sort((a, b) => a.gymName.localeCompare(b.gymName));
 
       let html = `<div class="search-result-header">${totalMachines} machines across ${gymsWithMatches.size} gyms matching: ${selectedTags.map(t => '<strong>' + t + '</strong>').join(', ')}</div>`;
@@ -474,50 +615,99 @@
         const status = equipmentData.gyms[gymName].status;
         const statusBadge = status === 'complete' ? '✓' : '⚠';
 
+        html += `<div class="gym-title">${statusBadge} ${gymName}</div>`;
+
+        const tableRows = matches.map(({ category, machine }) => {
+          const { brand, machine: machineName } = parseMachine(machine.label);
+          return `
+            <tr>
+              <td>${category}</td>
+              <td class="brand">${brand}</td>
+              <td>${machineName}</td>
+              <td class="tags-cell">
+                ${machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('')}
+              </td>
+            </tr>
+          `;
+        }).join('');
+
         html += `
-          <div class="gym-section">
-            <h3>${statusBadge} ${gymName}</h3>
-            <ul class="category-list">
-              ${matches.map(({ category, machine }) => `<li>${machine.label}</li>`).join('')}
-            </ul>
-          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Machine</th>
+                <th>Muscle Groups</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableRows}
+            </tbody>
+          </table>
         `;
       }
 
-      main.innerHTML = html || '<div class="empty-state">No equipment matches your search</div>';
+      content.innerHTML = html || '<div class="empty-state">No equipment matches your search</div>';
     }
 
     function renderEquipment() {
-      const main = document.getElementById('main');
+      const content = document.getElementById('content');
       const gymData = equipmentData.gyms[currentGym];
       const status = gymData.status;
       const statusBadge = status === 'complete' ? '✓ Equipment list complete' : '⚠ Partial — last updated from session logs';
 
-      let html = `<div style="font-size: 12px; color: #999; margin-bottom: 16px;">${statusBadge}</div>`;
-      let hasAnyCategory = false;
+      let html = `<div class="status-badge">${statusBadge}</div>`;
+      html += `<div class="gym-title">${currentGym}</div>`;
 
+      const allMachines = [];
       for (const [category, machines] of Object.entries(gymData.categories || {})) {
         if (!machines || machines.length === 0) continue;
-
-        hasAnyCategory = true;
-        html += `
-          <h2>${category}</h2>
-          <ul class="category-list">
-            ${machines.map(machine => `<li>${machine.label}</li>`).join('')}
-          </ul>
-        `;
+        for (const machine of machines) {
+          allMachines.push({ category, machine });
+        }
       }
 
-      if (!hasAnyCategory) {
-        main.innerHTML = '<div class="empty-state">No equipment data for this gym</div>';
+      if (allMachines.length === 0) {
+        content.innerHTML = '<div class="empty-state">No equipment data for this gym</div>';
         return;
       }
 
-      main.innerHTML = html;
+      const tableRows = allMachines.map(({ category, machine }) => {
+        const { brand, machine: machineName } = parseMachine(machine.label);
+        return `
+          <tr>
+            <td>${category}</td>
+            <td class="brand">${brand}</td>
+            <td>${machineName}</td>
+            <td class="tags-cell">
+              ${machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('')}
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      html += `
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Brand</th>
+              <th>Machine</th>
+              <th>Muscle Groups</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tableRows}
+          </tbody>
+        </table>
+      `;
+
+      content.innerHTML = html;
     }
 
     function showError(message) {
-      document.getElementById('main').innerHTML = `<div class="error">${message}</div>`;
+      document.getElementById('content').innerHTML = `<div class="error">${message}</div>`;
     }
 
     // Event listeners
@@ -533,7 +723,6 @@
       updateSuggestions('');
       renderGymList();
       renderEquipment();
-      document.getElementById('mainContainer').classList.remove('search-active');
     });
 
     document.addEventListener('DOMContentLoaded', loadEquipment);

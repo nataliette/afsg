@@ -231,7 +231,7 @@
             ]
           },
           {
-            "label": "Precor: Glutebuilder Dual 45\u00b0 Hip Extension (unloaded 10kg)",
+            "label": "Precor: Glutebuilder Dual 45° Hip Extension (unloaded 10kg)",
             "tags": [
               "core",
               "glutes",
@@ -769,61 +769,7 @@
         ]
       }
     },
-    "Grandtral": {
-      "status": "ongoing",
-      "categories": {
-        "Cables": [
-          {
-            "label": "Matrix: Multistation",
-            "tags": [
-              "core"
-            ]
-          }
-        ],
-        "Upper": [
-          {
-            "label": "Matrix: Fly/Delt Machine",
-            "tags": [
-              "back",
-              "shoulders"
-            ]
-          }
-        ],
-        "Lower": [
-          {
-            "label": "Matrix: Seated Leg Curl",
-            "tags": [
-              "hamstrings",
-              "legs"
-            ]
-          }
-        ],
-        "Barbells & Racks": [
-          {
-            "label": "Unknown: Barbell Rack",
-            "tags": [
-              "core",
-              "glutes",
-              "hamstrings",
-              "legs",
-              "quads"
-            ]
-          }
-        ],
-        "Calisthenics": [
-          {
-            "label": "Unknown: Pull-up Bar",
-            "tags": [
-              "arms",
-              "back",
-              "biceps",
-              "core"
-            ]
-          }
-        ]
-      }
-    },
-    "Cecil": {
+    "Cecil Street": {
       "status": "ongoing",
       "categories": {
         "Cables": [
@@ -881,7 +827,61 @@
         ]
       }
     },
-    "Wheelock": {
+    "Grandtral Complex": {
+      "status": "ongoing",
+      "categories": {
+        "Cables": [
+          {
+            "label": "Matrix: Multistation",
+            "tags": [
+              "core"
+            ]
+          }
+        ],
+        "Upper": [
+          {
+            "label": "Matrix: Fly/Delt Machine",
+            "tags": [
+              "back",
+              "shoulders"
+            ]
+          }
+        ],
+        "Lower": [
+          {
+            "label": "Matrix: Seated Leg Curl",
+            "tags": [
+              "hamstrings",
+              "legs"
+            ]
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "label": "Unknown: Barbell Rack",
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ]
+          }
+        ],
+        "Calisthenics": [
+          {
+            "label": "Unknown: Pull-up Bar",
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core"
+            ]
+          }
+        ]
+      }
+    },
+    "Wheelock Place": {
       "status": "ongoing",
       "categories": {
         "Lower": [
