@@ -1,0 +1,220 @@
+{
+  "gyms": {
+    "Harbourfront (HB)": {
+      "Cables": [
+        "Unknown: Dual Cable Station"
+      ],
+      "Selectorized – Upper": [
+        "Precor: Seated Row (unloaded 4.5kg)",
+        "Unknown: Rear Delt Reverse Fly Machine",
+        "Precor: Converging Shoulder Press",
+        "Precor: Standing Lateral Raise"
+      ],
+      "Selectorized – Lower": [
+        "Precor: Angled Leg Press (unloaded 62kg)",
+        "Precor: Leg Extension",
+        "Precor: Prone Leg Curl",
+        "Precor: Inner/Outer Thigh Machine",
+        "Glute Builder: Hip Thrust Elite (unloaded 30kg)",
+        "Precor: Glute Extension",
+        "Precor: Seated Calf Raise (unloaded 11kg)"
+      ],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [
+        "Precor: Smith Machine Icarian Line (unloaded 6.8kg)",
+        "Unknown: Barbell Rack"
+      ],
+      "Calisthenics": [
+        "Unknown: Parallel Bars"
+      ],
+      "Other": []
+    },
+    "Labrador View (LV)": {
+      "Cables": [
+        "Precor: Multistation Adjustable Pulley",
+        "Precor: FTS Glide"
+      ],
+      "Selectorized – Upper": [
+        "Precor: Converging Chest Press",
+        "Precor: Multi-Press",
+        "Precor: Shoulder Press",
+        "Precor: Rear Delt Machine"
+      ],
+      "Selectorized – Lower": [
+        "Precor: Angled Leg Press",
+        "Precor: Leg Extension",
+        "Precor: Hack Squat",
+        "Unknown: Seated Leg Curl",
+        "Precor: Glutebuilder Dual 45° Hip Extension (unloaded 10kg)"
+      ],
+      "Plate-Loaded": [
+        "Precor: Plate-Loaded Seated Row (unloaded 10kg)"
+      ],
+      "Barbells & Racks": [
+        "Precor: Smith Machine (unloaded 15.9kg)",
+        "Unknown: Barbell Rack"
+      ],
+      "Calisthenics": [
+        "Unknown: Parallel Bars",
+        "Unknown: Suspension Rings"
+      ],
+      "Other": [
+        "Unknown: Bosu Ball"
+      ]
+    },
+    "Telok Blangah (TB)": {
+      "Cables": [
+        "LifeFitness: Adjustable Pulley"
+      ],
+      "Selectorized – Upper": [
+        "LifeFitness: Chest Press",
+        "LifeFitness: Lat Pulldown",
+        "Unknown: Rear Delt Reverse Fly Machine"
+      ],
+      "Selectorized – Lower": [
+        "LifeFitness: Seated Leg Press",
+        "Unknown: Leg Extension",
+        "Unknown: Calf Press"
+      ],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [
+        "Unknown: Smith Machine"
+      ],
+      "Calisthenics": [
+        "Unknown: Pull-up Bar"
+      ],
+      "Other": [
+        "Unknown: Bosu Ball"
+      ]
+    },
+    "International Plaza (IP)": {
+      "Cables": [
+        "LifeFitness: Dual Adjustable Pulley"
+      ],
+      "Selectorized – Upper": [
+        "LifeFitness: Chest Press",
+        "LifeFitness: Pectoral Fly"
+      ],
+      "Selectorized – Lower": [],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [
+        "Unknown: Barbell Rack"
+      ],
+      "Calisthenics": [
+        "Unknown: Pull-up Bar"
+      ],
+      "Other": []
+    },
+    "Eastwood (EW)": {
+      "Cables": [
+        "Precor: Pulldown 304",
+        "Precor: Longpull 302",
+        "Precor: Multistation"
+      ],
+      "Selectorized – Upper": [
+        "Precor: Chest Press (seat 7)",
+        "Unknown: Rear Delt Reverse Fly Machine"
+      ],
+      "Selectorized – Lower": [
+        "Unknown: Horizontal Leg Press"
+      ],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [],
+      "Calisthenics": [
+        "Unknown: Pull-up Bar"
+      ],
+      "Other": []
+    },
+    "Pasir Panjang (PP)": {
+      "Cables": [
+        "Unknown: Cable Station"
+      ],
+      "Selectorized – Upper": [],
+      "Selectorized – Lower": [
+        "Precor: Leg Press",
+        "Unknown: Leg Extension",
+        "Precor: Abdominal Crunch",
+        "LifeFitness: Seated Calf Raise (unloaded 43kg)",
+        "Unknown: Hip Adduction Machine"
+      ],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [
+        "Unknown: Barbell Rack"
+      ],
+      "Calisthenics": [],
+      "Other": [
+        "Unknown: Bosu Ball",
+        "Unknown: Air Bike"
+      ]
+    },
+    "Queensway (QS)": {
+      "Cables": [
+        "Matrix: Adjustable Pulley",
+        "Matrix: Low Row"
+      ],
+      "Selectorized – Upper": [],
+      "Selectorized – Lower": [
+        "Matrix: Leg Press"
+      ],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [],
+      "Calisthenics": [
+        "Unknown: Pull-up Bar"
+      ],
+      "Other": []
+    },
+    "Grandtral (GT)": {
+      "Cables": [
+        "Matrix: Multistation"
+      ],
+      "Selectorized – Upper": [
+        "Matrix: Fly/Delt Machine"
+      ],
+      "Selectorized – Lower": [
+        "Matrix: Seated Leg Curl"
+      ],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [
+        "Unknown: Barbell Rack"
+      ],
+      "Calisthenics": [
+        "Unknown: Pull-up Bar"
+      ],
+      "Other": []
+    },
+    "Cecil (C)": {
+      "Cables": [
+        "LifeFitness: Dual Pulley Pulldown"
+      ],
+      "Selectorized – Upper": [],
+      "Selectorized – Lower": [
+        "LifeFitness: Hip Abduction Machine",
+        "Unknown: Seated Leg Curl"
+      ],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [
+        "Unknown: Barbell Rack"
+      ],
+      "Calisthenics": [],
+      "Other": [
+        "Unknown: Bosu Ball"
+      ]
+    },
+    "Wheelock (WL)": {
+      "Cables": [],
+      "Selectorized – Upper": [],
+      "Selectorized – Lower": [
+        "Unknown: Hip Thrust Machine",
+        "Unknown: Seated Leg Curl"
+      ],
+      "Plate-Loaded": [],
+      "Barbells & Racks": [
+        "Unknown: Barbell Rack"
+      ],
+      "Calisthenics": [],
+      "Other": [
+        "Unknown: Back Extension Machine"
+      ]
+    }
+  }
+}
