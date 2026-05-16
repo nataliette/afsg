@@ -44,9 +44,25 @@
 - Mobile breaks at 768px; tables convert to card grid layout
 
 ## Testing
-- Dev server not used; open `index.html` directly in browser
-- Claude preview panel: equipment.json fetch may fail, falls back to mock data (intentional for preview)
-- Mobile testing: resize browser or use device preview tools
+
+### Server Setup
+- Start HTTP server: `python -m http.server 8000` (in project root)
+- If port 8000 busy: check `lsof -i :8000` and kill process as needed
+- If port 8080 busy with unrelated site: close that to avoid confusion
+
+### Testing Workflow
+**Claude Code Preview Panel (Desktop):** Opens `http://localhost:8000/` automatically when configured
+
+**Mobile Device (iPhone/Brave):**
+1. Find your machine's local IP: Run `ifconfig | grep "inet " | grep -v 127.0.0.1` in Terminal
+   - Or check System Preferences > Network
+2. Visit `http://<LOCAL_IP>:8000` on your iPhone (e.g., `http://192.168.1.50:8000`)
+3. Both desktop and mobile use the same server instance — changes visible on both after refresh
+
+### Key Notes
+- equipment.json fetch works correctly with server (no mock fallback)
+- After code changes: refresh both devices to see updates
+- Mobile layout testing: rotate iPhone to verify responsive breakpoints (768px)
 
 ## No Shortcuts
 - Don't skip structural audits
