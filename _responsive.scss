@@ -71,6 +71,40 @@
     }
   }
 
+  // Modal
+  .modal-section.inline-label {
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    > label {
+      margin-top: 0;
+    }
+  }
+
+  // Gym Header
+  .gym-header {
+    flex-wrap: wrap;
+    gap: $spacing-md;
+  }
+
+  .gym-title-section {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .btn-copy-equipment {
+    padding: $spacing-sm;
+    font-size: 0;
+    gap: 0;
+    justify-content: center;
+
+    .btn-icon {
+      width: 20px;
+      height: 20px;
+      margin: 0;
+    }
+  }
+
   // Content
   .content {
     padding: $spacing-lg;

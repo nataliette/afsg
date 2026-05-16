@@ -300,7 +300,7 @@ button {
 
 // Modal Overlay
 .modal-overlay {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -308,15 +308,22 @@ button {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-snappy, visibility $transition-snappy;
+  pointer-events: none;
 
   &.active {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 }
 
 // Modal
 .modal {
-  display: none;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -329,10 +336,23 @@ button {
   max-height: 85vh;
   overflow-y: auto;
   z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-snappy;
+  pointer-events: none;
 
   &.active {
-    display: flex;
-    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+#equipmentModal {
+  transform: translate(-50%, calc(-50% - 20px));
+
+  &.active {
+    transform: translate(-50%, -50%);
   }
 }
 

@@ -700,7 +700,7 @@
 
     // Equipment Modal Event Listeners
     document.addEventListener('click', (e) => {
-      if (e.target.id === 'openEquipmentModalBtn') {
+      if (e.target.closest('#openEquipmentModalBtn')) {
         openEquipmentModal();
       }
     });

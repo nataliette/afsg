@@ -6,6 +6,8 @@
 ## Git Workflow
 **Only commit when the user explicitly says "commit".** Do not commit automatically. User will handle pushing to remote manually—never push. Wait for explicit "commit" before running any git commands.
 
+**Before committing:** Update CLAUDE.md and memory files (in `.claude/projects/-Users-natalie-Sites-afsg/memory/`) with any new context, patterns, or decisions discovered during the session. This ensures future sessions have up-to-date guidance and understanding of the project.
+
 ## Structural Changes
 **Before making any structural change, step back and review the entire structure at a high level.** Optimize holistically—don't hack together a function to solve the immediate problem. Consider:
 - How does this fit into the overall app flow and layout?

@@ -146,7 +146,7 @@ header {
 }
 
 .menu-overlay {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -154,9 +154,15 @@ header {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: $z-overlay;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-snappy, visibility $transition-snappy;
+  pointer-events: none;
 
   &.active {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 }
 
