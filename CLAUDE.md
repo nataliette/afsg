@@ -54,6 +54,7 @@ When discussing pages, use these parameter-based names for clarity:
 - **isPrimaryTag()**: Determines tag styling (dark blue for primary, light blue for secondary)
 - Status dots: green = complete, orange = ongoing
 - Mobile breaks at 768px; tables convert to card grid layout
+- **CSS Grids:** Result displays (gym page, tag page, equipment page) use CSS Grid layouts (divs), not HTML `<table>` elements. When user says "table" they mean the CSS Grid result display.
 
 ## Testing
 

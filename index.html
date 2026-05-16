@@ -451,32 +451,28 @@
 
       let html = `<div class="search-result-header">${machineType} found in ${uniqueGyms.size} gym${uniqueGyms.size !== 1 ? 's' : ''}</div>`;
 
-      const tableRows = locations.map(({ gym, brand, name, notes }) => {
+      const gridRows = locations.map(({ gym, brand, name, notes }) => {
         const gymInitial = GYM_INITIALS[gym].toLowerCase();
         const displayBrand = brand === 'Unknown' ? '—' : brand;
         const equipmentDisplay = notes ? `${name} <span class="equipment-notes">${notes}</span>` : name;
         return `
-          <tr>
-            <td><a href="?gym=${gymInitial}" class="outlet-link">${gym}</a></td>
-            <td class="brand">${displayBrand}</td>
-            <td>${equipmentDisplay}</td>
-          </tr>
+          <div class="grid-row">
+            <div class="grid-cell"><a href="?gym=${gymInitial}" class="outlet-link">${gym}</a></div>
+            <div class="grid-cell brand">${displayBrand}</div>
+            <div class="grid-cell">${equipmentDisplay}</div>
+          </div>
         `;
       }).join('');
 
       html += `
-        <table>
-          <thead>
-            <tr>
-              <th>Gym</th>
-              <th>Brand</th>
-              <th>Equipment</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${tableRows}
-          </tbody>
-        </table>
+        <div class="results-grid" style="--grid-cols: 3">
+          <div class="grid-header">
+            <div class="grid-cell"><strong>Gym</strong></div>
+            <div class="grid-cell"><strong>Brand</strong></div>
+            <div class="grid-cell"><strong>Equipment</strong></div>
+          </div>
+          ${gridRows}
+        </div>
       `;
 
       content.innerHTML = html;
@@ -509,48 +505,43 @@
         }
       }
 
-      allMatches.sort((a, b) => a.gymName.localeCompare(b.gymName));
+      // Sort by category, then by gym
+      allMatches.sort((a, b) => {
+        if (a.category !== b.category) return a.category.localeCompare(b.category);
+        return a.gymName.localeCompare(b.gymName);
+      });
 
       let html = `<div class="search-result-header">${totalMachines} machines across ${gymsWithMatches.size} gyms matching: ${selectedTags.map(t => '<strong>' + t + '</strong>').join(', ')}</div>`;
 
-      const tableRows = allMatches.map(({ gymName, category, machine }) => {
+      const gridRows = allMatches.map(({ gymName, category, machine }) => {
         const gymInitial = GYM_INITIALS[gymName].toLowerCase();
         const displayBrand = machine.brand === 'Unknown' ? '—' : machine.brand;
         const tagsHtml = machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('');
         const equipmentDisplay = machine.notes ? `${machine.name} <span class="equipment-notes">${machine.notes}</span>` : machine.name;
         return `
-          <tr>
-            <td>${category}</td>
-            <td class="brand">${displayBrand}</td>
-            <td><span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${equipmentDisplay}</span></td>
-            <td class="tags-cell">
+          <div class="grid-row">
+            <div class="grid-cell"><a href="?gym=${gymInitial}" class="outlet-link">${gymName}</a></div>
+            <div class="grid-cell">${category}</div>
+            <div class="grid-cell brand">${displayBrand}</div>
+            <div class="grid-cell"><span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${equipmentDisplay}</span></div>
+            <div class="grid-cell tags-cell">
               ${tagsHtml}
-            </td>
-            <td><a href="?gym=${gymInitial}" class="outlet-link">${gymName}</a></td>
-          </tr>
-          <tr class="tags-row">
-            <td colspan="5" class="tags-cell">
-              ${tagsHtml}
-            </td>
-          </tr>
+            </div>
+          </div>
         `;
       }).join('');
 
       html += `
-        <table>
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Brand</th>
-              <th>Equipment</th>
-              <th>Muscle Groups</th>
-              <th>Gym</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${tableRows}
-          </tbody>
-        </table>
+        <div class="results-grid" style="--grid-cols: 5">
+          <div class="grid-header">
+            <div class="grid-cell"><strong>Gym</strong></div>
+            <div class="grid-cell"><strong>Category</strong></div>
+            <div class="grid-cell"><strong>Brand</strong></div>
+            <div class="grid-cell"><strong>Equipment</strong></div>
+            <div class="grid-cell"><strong>Muscle Groups</strong></div>
+          </div>
+          ${gridRows}
+        </div>
       `;
 
       content.innerHTML = html || '<div class="empty-state">No equipment matches your search</div>';
@@ -588,41 +579,32 @@
         return;
       }
 
-      const tableRows = allMachines.map(({ category, machine }) => {
+      const gridRows = allMachines.map(({ category, machine }) => {
         const displayBrand = machine.brand === 'Unknown' ? '—' : machine.brand;
         const tagsHtml = machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('');
         const equipmentDisplay = machine.notes ? `${machine.name} <span class="equipment-notes">${machine.notes}</span>` : machine.name;
         return `
-          <tr>
-            <td>${category}</td>
-            <td class="brand">${displayBrand}</td>
-            <td><span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${equipmentDisplay}</span></td>
-            <td class="tags-cell">
+          <div class="grid-row">
+            <div class="grid-cell">${category}</div>
+            <div class="grid-cell brand">${displayBrand}</div>
+            <div class="grid-cell"><span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${equipmentDisplay}</span></div>
+            <div class="grid-cell tags-cell">
               ${tagsHtml}
-            </td>
-          </tr>
-          <tr class="tags-row">
-            <td colspan="4" class="tags-cell">
-              ${tagsHtml}
-            </td>
-          </tr>
+            </div>
+          </div>
         `;
       }).join('');
 
       html += `
-        <table>
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Brand</th>
-              <th>Equipment</th>
-              <th>Muscle Groups</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${tableRows}
-          </tbody>
-        </table>
+        <div class="results-grid" style="--grid-cols: 4">
+          <div class="grid-header">
+            <div class="grid-cell"><strong>Category</strong></div>
+            <div class="grid-cell"><strong>Brand</strong></div>
+            <div class="grid-cell"><strong>Equipment</strong></div>
+            <div class="grid-cell"><strong>Muscle Groups</strong></div>
+          </div>
+          ${gridRows}
+        </div>
       `;
 
       content.innerHTML = html;

@@ -60,12 +60,57 @@ table td {
   font-size: 14px;
 }
 
-table tr:not(.tags-row) td {
+table tr td {
   border-bottom: none;
 }
 
 table tr:hover {
   background-color: #fafafa;
+}
+
+/* CSS Grid Results */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  gap: 0;
+  margin-bottom: 32px;
+}
+
+.grid-header {
+  display: contents;
+}
+
+.grid-header .grid-cell {
+  background-color: #f5f5f5;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 2px solid #e0e0e0;
+  text-align: left;
+}
+
+.grid-row {
+  display: contents;
+}
+
+.grid-cell {
+  padding: 12px;
+  border-bottom: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.results-grid .grid-row:nth-child(odd) .grid-cell {
+  background-color: #ffffff;
+}
+
+.results-grid .grid-row:nth-child(even) .grid-cell {
+  background-color: #fafafa;
+}
+
+.results-grid .grid-row:hover .grid-cell {
+  background-color: #f0f0f0;
 }
 
 a {
@@ -275,16 +320,6 @@ button {
   gap: 4px;
 }
 
-.tags-row {
-  display: none;
-}
-.tags-row td {
-  padding: 12px;
-  border-bottom: 1px solid #e0e0e0;
-}
-.tags-row .tags-cell {
-  padding: 12px;
-}
 
 .outlet-link {
   color: #2196f3;
@@ -850,26 +885,15 @@ header h1 {
   }
   table tr {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 0;
   }
-  table tr:not(.tags-row) td:nth-child(4) {
-    display: none;
+  table tr td:nth-child(4) {
+    grid-column: 1 / -1;
+    padding: 0 12px 6px 12px;
   }
-  .tags-row {
-    display: block;
-    width: 100%;
-    margin-top: -6px;
-  }
-  .tags-row td {
-    display: block;
-    width: 100%;
-    padding: 0px 12px 6px 12px;
-  }
-  .tags-row .tags-cell {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
+  table tr td:nth-child(4) .tag {
+    display: inline-flex;
   }
   table th {
     padding: 8px;
