@@ -62,12 +62,20 @@
     top: calc(100% + 4px);
     left: 0;
     right: 0;
-    display: none;
+    display: flex;
     padding: $spacing-sm;
     gap: $spacing-xs;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
 
-    &:not(:empty) {
-      display: flex;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
     }
   }
 
