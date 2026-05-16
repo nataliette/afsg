@@ -51,6 +51,45 @@
     <div class="content" id="content">
       <div class="empty-state">Loading equipment data...</div>
     </div>
+
+    <div class="modal-overlay" id="equipmentModalOverlay"></div>
+    <div class="modal" id="equipmentModal">
+      <div class="modal-body">
+        <div class="modal-section inline-label">
+          <label>Duration:</label>
+          <div class="pill-group" id="durationGroup">
+            <button type="button" class="pill-btn" data-value="30min">30min</button>
+            <button type="button" class="pill-btn" data-value="45min">45min</button>
+            <button type="button" class="pill-btn active" data-value="60min">60min</button>
+            <button type="button" class="pill-btn" data-value="75min">75min</button>
+            <button type="button" class="pill-btn" data-value="90min">90min</button>
+          </div>
+        </div>
+
+        <div class="modal-section inline-label">
+          <label>Focus:</label>
+          <div class="pill-group" id="focusGroup">
+            <button type="button" class="pill-btn" data-value="Push">Push</button>
+            <button type="button" class="pill-btn" data-value="Pull">Pull</button>
+            <button type="button" class="pill-btn" data-value="Legs">Legs</button>
+            <button type="button" class="pill-btn active" data-value="Full Body">Full Body</button>
+            <button type="button" class="pill-btn" data-value="Upper">Upper</button>
+            <button type="button" class="pill-btn" data-value="Lower">Lower</button>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <pre id="equipmentText" class="equipment-text"></pre>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="copyEquipmentBtn" class="btn-primary">
+          <svg class="btn-icon" width='20' height='20' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><g transform="matrix(1 0 0 1 12 12)"><path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform="translate(-12, -12)" d="M 4 2 C 2.895 2 2 2.895 2 4 L 2 17 C 2 17.552 2.448 18 3 18 C 3.552 18 4 17.552 4 17 L 4 4 L 17 4 C 17.552 4 18 3.552 18 3 C 18 2.448 17.552 2 17 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z"/></g></svg>
+          <span id="copyBtnText">Copy to Clipboard</span>
+        </button>
+        <button id="equipmentModalCloseBtn" class="btn-secondary">Close</button>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -378,8 +417,14 @@
 
       let html = `
         <div class="gym-header">
-          <div class="gym-title">${currentGym}</div>
-          <div class="status-badge">${statusBadge}</div>
+          <div class="gym-title-section">
+            <div class="gym-title">${currentGym}</div>
+            <div class="status-badge">${statusBadge}</div>
+          </div>
+          <button class="btn-copy-equipment" id="openEquipmentModalBtn">
+            <svg class="btn-icon" width='20' height='20' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><g transform="matrix(1 0 0 1 12 12)"><path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform="translate(-12, -12)" d="M 4 2 C 2.895 2 2 2.895 2 4 L 2 17 C 2 17.552 2.448 18 3 18 C 3.552 18 4 17.552 4 17 L 4 4 L 17 4 C 17.552 4 18 3.552 18 3 C 18 2.448 17.552 2 17 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z"/></g></svg>
+            Copy Equipment
+          </button>
         </div>
       `;
 
@@ -486,6 +531,74 @@
       content.innerHTML = html;
     }
 
+    // Equipment Modal Functions
+    function openEquipmentModal() {
+      if (!currentGym) return;
+
+      const modal = document.getElementById('equipmentModal');
+      const overlay = document.getElementById('equipmentModalOverlay');
+
+      // Reset to defaults
+      document.querySelectorAll('.pill-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector('[data-value="60min"]').classList.add('active');
+      document.querySelector('[data-value="Full Body"]').classList.add('active');
+
+      modal.classList.add('active');
+      overlay.classList.add('active');
+
+      updateEquipmentModalText();
+    }
+
+    function closeEquipmentModal() {
+      const modal = document.getElementById('equipmentModal');
+      const overlay = document.getElementById('equipmentModalOverlay');
+      modal.classList.remove('active');
+      overlay.classList.remove('active');
+    }
+
+    function updateEquipmentModalText() {
+      const gymData = equipmentData.gyms[currentGym];
+      const status = gymData.status === 'complete' ? 'Complete' : 'Incomplete';
+
+      const duration = document.querySelector('#durationGroup .pill-btn.active').dataset.value;
+      const focusArea = document.querySelector('#focusGroup .pill-btn.active').dataset.value;
+
+      let text = `I'm at ${currentGym}. Generate me a ${duration} ${focusArea} workout from these equipment:\n\n`;
+
+      // Organize by category
+      for (const [category, machines] of Object.entries(gymData.categories || {})) {
+        if (!machines || machines.length === 0) continue;
+        text += `${category}:\n`;
+        machines.forEach(machine => {
+          text += `- ${machine.label}\n`;
+        });
+        text += `\n`;
+      }
+
+      text += `${currentGym} (${status})`;
+
+      document.getElementById('equipmentText').textContent = text;
+    }
+
+    function copyEquipmentToClipboard() {
+      const text = document.getElementById('equipmentText').textContent;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyEquipmentBtn');
+        const textSpan = document.getElementById('copyBtnText');
+        const originalText = textSpan.textContent;
+        textSpan.textContent = 'Copied!';
+        btn.disabled = true;
+
+        setTimeout(() => {
+          textSpan.textContent = originalText;
+          btn.disabled = false;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+      });
+    }
+
     // Event listeners
     document.getElementById('searchInput').addEventListener('input', (e) => {
       updateSuggestions(e.target.value);
@@ -584,6 +697,28 @@
         document.getElementById('suggestions').innerHTML = '';
       }
     });
+
+    // Equipment Modal Event Listeners
+    document.addEventListener('click', (e) => {
+      if (e.target.id === 'openEquipmentModalBtn') {
+        openEquipmentModal();
+      }
+    });
+
+    document.getElementById('equipmentModalCloseBtn').addEventListener('click', closeEquipmentModal);
+
+    document.getElementById('equipmentModalOverlay').addEventListener('click', closeEquipmentModal);
+
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('pill-btn')) {
+        const group = e.target.parentElement;
+        group.querySelectorAll('.pill-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        updateEquipmentModalText();
+      }
+    });
+
+    document.getElementById('copyEquipmentBtn').addEventListener('click', copyEquipmentToClipboard);
 
     document.addEventListener('DOMContentLoaded', loadEquipment);
   </script>
