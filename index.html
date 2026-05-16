@@ -680,15 +680,19 @@
 
     // Equipment Modal Functions
     function openEquipmentModal() {
-      if (!currentGym) return;
+      if (!currentGym) {
+        console.warn('No gym selected');
+        return;
+      }
 
       const modal = document.getElementById('equipmentModal');
       const overlay = document.getElementById('equipmentModalOverlay');
 
-      // Reset to defaults
-      document.querySelectorAll('.pill-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelector('[data-value="60min"]').classList.add('active');
-      document.querySelector('[data-value="Full Body"]').classList.add('active');
+      // Reset to defaults - be more specific with selectors
+      document.querySelectorAll('#durationGroup .pill-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('#focusGroup .pill-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('durationGroup').querySelector('[data-value="60min"]').classList.add('active');
+      document.getElementById('focusGroup').querySelector('[data-value="Full Body"]').classList.add('active');
 
       modal.classList.add('active');
       overlay.classList.add('active');
@@ -730,22 +734,69 @@
     }
 
     function copyEquipmentToClipboard() {
-      const text = document.getElementById('equipmentText').textContent;
+      const textEl = document.getElementById('equipmentText');
+      if (!textEl) {
+        console.error('Equipment text element not found');
+        return;
+      }
 
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById('copyEquipmentBtn');
-        const textSpan = document.getElementById('copyBtnText');
-        const originalText = textSpan.textContent;
-        textSpan.textContent = 'Copied!';
-        btn.disabled = true;
+      const text = textEl.textContent;
+      if (!text) {
+        console.error('No text to copy');
+        return;
+      }
 
+      const btn = document.getElementById('copyEquipmentBtn');
+      const textSpan = document.getElementById('copyBtnText');
+      const originalText = textSpan.textContent;
+
+      // Try modern Clipboard API first
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          textSpan.textContent = 'Copied!';
+          btn.disabled = true;
+          setTimeout(() => {
+            textSpan.textContent = originalText;
+            btn.disabled = false;
+          }, 2000);
+        }).catch(() => {
+          fallbackCopy(text, btn, textSpan, originalText);
+        });
+      } else {
+        // Fallback for HTTP or older browsers
+        fallbackCopy(text, btn, textSpan, originalText);
+      }
+    }
+
+    function fallbackCopy(text, btn, textSpan, originalText) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+
+      try {
+        textarea.select();
+        const success = document.execCommand('copy');
+        if (success) {
+          textSpan.textContent = 'Copied!';
+          btn.disabled = true;
+          setTimeout(() => {
+            textSpan.textContent = originalText;
+            btn.disabled = false;
+          }, 2000);
+        } else {
+          throw new Error('execCommand failed');
+        }
+      } catch (err) {
+        console.error('Fallback copy failed:', err);
+        textSpan.textContent = 'Copy failed';
         setTimeout(() => {
           textSpan.textContent = originalText;
-          btn.disabled = false;
         }, 2000);
-      }).catch(err => {
-        console.error('Failed to copy:', err);
-      });
+      } finally {
+        document.body.removeChild(textarea);
+      }
     }
 
     // Event listeners
@@ -880,7 +931,7 @@
 
     document.getElementById('copyEquipmentBtn').addEventListener('click', copyEquipmentToClipboard);
 
-    document.addEventListener('DOMContentLoaded', loadEquipment);
+    loadEquipment();
   </script>
 </body>
 </html>
