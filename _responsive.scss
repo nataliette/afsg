@@ -1,0 +1,159 @@
+@import 'variables';
+
+// ============================================================================
+// Responsive / Mobile Styles
+// ============================================================================
+
+@media (max-width: $bp-mobile) {
+  body {
+    flex-direction: column;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .hamburger-btn,
+  .search-toggle-btn {
+    display: flex;
+  }
+
+  // Header
+  header {
+    padding: 12px $spacing-lg;
+    position: relative;
+  }
+
+  .header-top {
+    flex-direction: row;
+    gap: $spacing-sm;
+    margin-bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: $font-size-lg;
+      margin-bottom: 0;
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  // Search
+  .search-container {
+    display: none;
+    margin-left: 0;
+    max-width: none;
+    position: absolute;
+    top: 12px;
+    left: $spacing-lg;
+    right: $spacing-lg;
+    width: calc(100% - 32px);
+    overflow: visible;
+
+    &.active {
+      display: flex;
+      z-index: $z-menu;
+    }
+  }
+
+  .suggestions {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    display: none;
+    padding: $spacing-sm;
+    gap: $spacing-xs;
+
+    &:not(:empty) {
+      display: flex;
+    }
+  }
+
+  // Content
+  .content {
+    padding: $spacing-lg;
+  }
+
+  // Tables - Convert to mobile view
+  table {
+    display: block;
+  }
+
+  table thead {
+    display: block;
+  }
+
+  table tbody {
+    display: block;
+  }
+
+  table tr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  table tr:not(.tags-row) td:nth-child(4) {
+    display: none;
+  }
+
+  .tags-row {
+    display: block;
+    width: 100%;
+    margin-top: -6px;
+
+    td {
+      display: block;
+      width: 100%;
+      padding: 0px $spacing-md 6px $spacing-md;
+    }
+
+    .tags-cell {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-xs;
+    }
+  }
+
+  table th {
+    padding: $spacing-sm;
+    font-size: 13px;
+
+    &:nth-child(4) {
+      display: none;
+    }
+  }
+
+  table td {
+    padding: $spacing-sm;
+    font-size: 13px;
+  }
+
+  .tag {
+    font-size: $font-size-xs;
+    padding: 2px 6px;
+  }
+
+  // Landing Page
+  .landing-page h1 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-2xl;
+  }
+
+  .landing-columns {
+    grid-template-columns: 1fr;
+    gap: $spacing-3xl;
+  }
+
+  .landing-left h3,
+  .landing-right h3 {
+    font-size: 15px;
+  }
+
+  .landing-tag {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}

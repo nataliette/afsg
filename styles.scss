@@ -1,0 +1,12 @@
+// ============================================================================
+// SCSS Main Stylesheet
+// ============================================================================
+// This file imports all SCSS partials in the correct order.
+// Compile this file to generate styles.css
+// ============================================================================
+
+@import 'variables';
+@import 'base';
+@import 'components';
+@import 'layout';
+@import 'responsive';
