@@ -1,5 +1,7 @@
 # CLAUDE.md — Project Guidelines
 
+**📖 Project Documentation:** See [docs/project.md](docs/project.md) for project purpose, scope, and decision framework. Reference this when evaluating new features to avoid feature creep.
+
 ## Planning & Execution
 **For any structural change or non-trivial task: propose a plan first, then wait for explicit user approval before executing.** Use EnterPlanMode when appropriate. Don't implement until the user says "go ahead" or similar.
 
