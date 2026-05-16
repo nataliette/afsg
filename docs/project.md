@@ -13,7 +13,7 @@ Instead of a static Google Sheet, this evolved into an **interactive web applica
 **Core Purpose:** Help you quickly find what equipment is available at each gym and discover which gyms have equipment that targets specific muscle groups.
 
 **Key capabilities:**
-- Browse equipment at any of 9 Singapore Anytime Fitness gyms
+- Browse equipment at any gym in Singapore
 - Search for equipment by muscle group (chest, back, shoulders, arms, legs, etc.)
 - See which gyms have the equipment you want to use
 - Generate a pre-formatted prompt for AI to create custom workouts based on available equipment

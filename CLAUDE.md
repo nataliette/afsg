@@ -8,7 +8,10 @@
 ## Git Workflow
 **Only commit when the user explicitly says "commit".** Do not commit automatically. User will handle pushing to remote manually—never push. Wait for explicit "commit" before running any git commands.
 
-**Before committing:** Update CLAUDE.md and memory files (in `.claude/projects/-Users-natalie-Sites-afsg/memory/`) with any new context, patterns, or decisions discovered during the session. This ensures future sessions have up-to-date guidance and understanding of the project.
+**Before committing:** 
+- Update CLAUDE.md and memory files (in `.claude/projects/-Users-natalie-Sites-afsg/memory/`) with any new context, patterns, or decisions discovered during the session. This ensures future sessions have up-to-date guidance and understanding of the project.
+- If the project's scope or purpose has evolved, update `docs/project.md` to reflect the current state. The decision framework there guides future feature evaluations.
+- When implementing new features, consult `docs/project.md`'s decision framework to ensure alignment with core purpose and avoid scope creep.
 
 ## Structural Changes
 **Before making any structural change, step back and review the entire structure at a high level.** Optimize holistically—don't hack together a function to solve the immediate problem. Consider:
@@ -31,9 +34,16 @@
 - Compile with: `sass styles.scss styles.css`
 - Or watch mode: `sass --watch styles.scss:styles.css`
 
+## Page Terminology
+When discussing pages, use these parameter-based names for clarity:
+- **gym page**: `?gym=xx` — shows equipment in a specific gym
+- **equipment page**: `?equipment=xx` — shows all gyms with a specific equipment type
+- **tag page**: `?tag=xx` — shows equipment matching a muscle group tag
+- **landing page**: no params — entry point with gym and tag browsing
+
 ## App Architecture
 - Single-page SPA with vanilla JavaScript
-- Client-side routing via URL params: `?gym=xx` for gym view, `?tag=xx` for search
+- Client-side routing via URL params: `?gym=xx` for gym view, `?tag=xx` for search, `?equipment=xx` for equipment lookup
 - Landing page shows when no params (entry point)
 - Event delegation, CSS class toggling for state management
 - Equipment data from `equipment.json` with mock fallback for preview

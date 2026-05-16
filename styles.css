@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -297,6 +298,27 @@ button {
   color: #2196f3;
 }
 
+.clickable-equipment {
+  cursor: pointer;
+  color: #2196f3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.clickable-equipment:hover {
+  color: #1976d2;
+  text-decoration: underline;
+}
+.clickable-equipment::after {
+  content: "↗";
+  margin-left: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.clickable-equipment:hover::after {
+  opacity: 1;
+}
+
 .search-result-header {
   font-size: 16px;
   color: #666;
@@ -510,6 +532,12 @@ button {
 
 .gym-title-section {
   flex: 1;
+}
+
+.equipment-notes {
+  color: #999;
+  font-size: 12px;
+  font-style: italic;
 }
 
 aside {

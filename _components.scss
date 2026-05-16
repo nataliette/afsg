@@ -250,6 +250,31 @@ button {
   }
 }
 
+// Clickable Equipment
+.clickable-equipment {
+  cursor: pointer;
+  color: #2196f3;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: #1976d2;
+    text-decoration: underline;
+  }
+
+  &::after {
+    content: "↗";
+    margin-left: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity $transition-fast;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
 // Search Result
 .search-result-header {
   font-size: $font-size-md;
@@ -482,4 +507,11 @@ button {
 
 .gym-title-section {
   flex: 1;
+}
+
+// Equipment notes
+.equipment-notes {
+  color: $color-gray-600;
+  font-size: $font-size-sm;
+  font-style: italic;
 }
