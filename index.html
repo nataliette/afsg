@@ -151,14 +151,18 @@
       "Incline Chest Press": "Chest Press",
       "Decline Chest Press": "Chest Press",
       "Plate-Loaded Chest Press": "Chest Press",
+      "Converging Chest Press": "Chest Press",
+      "ISO Lateral Bench Press": "Chest Press",
 
-      // Row machines
-      "Seated Row": "Row",
-      "Machine Row": "Row",
-      "T-Bar Row": "Row",
-      "Iso-Lateral Row": "Row",
-      "Seal Row": "Row",
-      "Plate-Loaded Row": "Row",
+      // Seated row machines
+      "Seated Row": "Seated Row",
+      "Machine Row": "Seated Row",
+      "Iso-Lateral Row": "Seated Row",
+      "Seal Row": "Seated Row",
+      "Plate-Loaded Row": "Seated Row",
+      "Plate-Loaded Seated Row": "Seated Row",
+      "Row": "Seated Row",
+      "Low Row": "Seated Row",
 
       // Lat pulldown machines
       "Lat Pulldown": "Lat Pulldown",
@@ -166,6 +170,7 @@
       "Iso-Lateral Lat Pulldown": "Lat Pulldown",
       "Wide-Grip Lat Pulldown": "Lat Pulldown",
       "Close-Grip Lat Pulldown": "Lat Pulldown",
+      "ISO Lateral Front Lat Pulldown": "Lat Pulldown",
 
       // Leg press machines
       "Leg Press": "Leg Press",
@@ -173,6 +178,48 @@
       "Angled Leg Press": "Leg Press",
       "Horizontal Leg Press": "Leg Press",
       "Vertical Leg Press": "Leg Press",
+      "Seated Leg Press": "Leg Press",
+      "Linear Leg Press": "Leg Press",
+      "Hack Squat": "Leg Press",
+      "Linear Hack Squat": "Leg Press",
+      "Belt Squat": "Leg Press",
+
+      // Shoulder press machines
+      "Shoulder Press": "Shoulder Press",
+      "Converging Shoulder Press": "Shoulder Press",
+      "Multi-Press": "Shoulder Press",
+
+      // Leg curl machines
+      "Leg Curl": "Leg Curl",
+      "Seated Leg Curl": "Leg Curl",
+      "Prone Leg Curl": "Leg Curl",
+
+      // Hip abduction/adduction machines
+      "Hip Ab/Ad": "Hip Abduction/Adduction Machine",
+      "Hip Abduction Machine": "Hip Abduction/Adduction Machine",
+      "Hip Adduction Machine": "Hip Abduction/Adduction Machine",
+      "Inner/Outer Thigh Machine": "Hip Abduction/Adduction Machine",
+
+      // Hip thrust machines
+      "Hip Thrust": "Hip Thrust",
+      "Hip Thrust Machine": "Hip Thrust",
+      "Hip Thrust Elite": "Hip Thrust",
+      "Glute Drive": "Hip Thrust",
+
+      // Rear delt/fly machines
+      "Rear Delt Fly": "Rear Delt Fly",
+      "Rear Delt Reverse Fly Machine": "Rear Delt Fly",
+      "Fly/Delt Machine": "Rear Delt Fly",
+      "Rear Delt Machine": "Rear Delt Fly",
+
+      // Abdominal machines
+      "Abdominal": "Abdominal",
+      "Abdominal Crunch": "Abdominal",
+
+      // Lateral raise machines
+      "Lateral Raise": "Lateral Raise",
+      "Standing Lateral Raise": "Lateral Raise",
+      "Plate Loaded Lat Raise": "Lateral Raise",
 
       // Cable equipment
       "Cable Station": "Cable Station",
@@ -182,7 +229,8 @@
       "Single Pulley": "Cable Station",
       "Dual Adjustable Pulley": "Cable Station",
       "Multistation": "Cable Station",
-      "Dual Pulley Pulldown": "Cable Station"
+      "Dual Pulley Pulldown": "Cable Station",
+      "FTS Glide": "Cable Station"
     };
 
     let equipmentData = null;
@@ -195,11 +243,11 @@
     let selectedEquipment = null;
 
     function encodeEquipmentKey(machineType) {
-      return machineType.replace(/ /g, '_');
+      return machineType.replace(/ /g, '_').replace(/\//g, '-');
     }
 
     function decodeEquipmentKey(encoded) {
-      return encoded.replace(/_/g, ' ');
+      return encoded.replace(/_/g, ' ').replace(/-/g, '/');
     }
 
     function buildEquipmentIndex() {
