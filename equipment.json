@@ -863,7 +863,7 @@
       }
     },
     "Pasir Panjang": {
-      "status": "ongoing",
+      "status": "complete",
       "categories": {
         "Cables": [
           {
@@ -876,12 +876,230 @@
               "shoulders",
               "triceps"
             ],
-            "brand": "Unknown",
-            "name": "Cable Station",
+            "brand": "TechnoGym",
+            "name": "Cable Tower",
+            "notes": null
+          }
+        ],
+        "Upper": [
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "LifeFitness",
+            "name": "Incline Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "LifeFitness",
+            "name": "Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "shoulders"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Plate Loaded Lat Raise",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Hammer Strength",
+            "name": "ISO-Lateral Front Lat Pulldown",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Hammer Strength",
+            "name": "T-Bar Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "chest",
+              "shoulders"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Super Fly",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "biceps"
+            ],
+            "brand": "Precor",
+            "name": "Biceps Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "triceps"
+            ],
+            "brand": "Precor",
+            "name": "Triceps Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "shoulders"
+            ],
+            "brand": "Precor",
+            "name": "Rear Delt Pec Fly",
+            "notes": null
+          },
+          {
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Precor",
+            "name": "Converging Shoulder Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Precor",
+            "name": "Diverging Lat Pulldown",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "triceps"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Assisted Dip/Chin",
             "notes": null
           }
         ],
         "Lower": [
+          {
+            "tags": [
+              "calves",
+              "legs"
+            ],
+            "brand": "LifeFitness",
+            "name": "Calf Raise",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Glute Drive",
+            "notes": null
+          },
+          {
+            "tags": [
+              "calves",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Pendulum X Squat",
+            "notes": null
+          },
+          {
+            "tags": [
+              "calves",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Linear Hack Squat",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads",
+              "shoulders"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Super Squat Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ],
+            "brand": "Precor",
+            "name": "Angled Leg Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "legs",
+              "quads"
+            ],
+            "brand": "Precor",
+            "name": "Leg Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "LifeFitness",
+            "name": "Seated Leg Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ],
+            "brand": "Precor",
+            "name": "Inner/Outer Thigh",
+            "notes": null
+          },
           {
             "tags": [
               "calves",
@@ -891,42 +1109,6 @@
             ],
             "brand": "Precor",
             "name": "Leg Press",
-            "notes": null
-          },
-          {
-            "tags": [
-              "legs",
-              "quads"
-            ],
-            "brand": "Unknown",
-            "name": "Leg Extension",
-            "notes": null
-          },
-          {
-            "tags": [
-              "core"
-            ],
-            "brand": "Precor",
-            "name": "Abdominal Crunch",
-            "notes": null
-          },
-          {
-            "tags": [
-              "calves",
-              "legs"
-            ],
-            "brand": "LifeFitness",
-            "name": "Seated Calf Raise",
-            "notes": "unloaded 43kg"
-          },
-          {
-            "tags": [
-              "abductors",
-              "adductors",
-              "legs"
-            ],
-            "brand": "Unknown",
-            "name": "Hip Adduction Machine",
             "notes": null
           }
         ],
@@ -939,21 +1121,102 @@
               "legs",
               "quads"
             ],
+            "brand": "Precor",
+            "name": "Smith Machine",
+            "notes": "unloaded 11.4kg"
+          },
+          {
+            "tags": [
+              "calves",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Squat Rack",
+            "notes": "x5"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
             "brand": "Unknown",
-            "name": "Barbell Rack",
+            "name": "Deadlift Platform",
+            "notes": "x2"
+          }
+        ],
+        "Calisthenics": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "triceps"
+            ],
+            "brand": "Vicore",
+            "name": "Captain's Chair",
             "notes": null
           }
         ],
         "Other": [
           {
             "tags": [
-              "cardio",
-              "core",
-              "legs"
+              "core"
             ],
-            "brand": "Unknown",
-            "name": "Bosu Ball",
+            "brand": "Precor",
+            "name": "Abdominal",
             "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Precor",
+            "name": "FTS Glide",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "core",
+              "lats"
+            ],
+            "brand": "Torque",
+            "name": "Relentless Ripper",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Concept2",
+            "name": "RowErg",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Assault",
+            "name": "Air Bike",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "LifeFitness",
+            "name": "Treadmill",
+            "notes": "x7"
           },
           {
             "tags": [
@@ -962,8 +1225,24 @@
               "legs"
             ],
             "brand": "Unknown",
-            "name": "Air Bike",
+            "name": "Stairmaster",
             "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Precor",
+            "name": "Elliptical",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Precor",
+            "name": "Stationary Bike",
+            "notes": "x3"
           }
         ]
       }
