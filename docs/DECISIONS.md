@@ -53,6 +53,7 @@ Log of session decisions, directional choices, and reasoning.
 
 **Patterns observed:**
 - You prefer explicit rituals (session close ceremony) over ad-hoc documentation, enabling better retrospection and pattern discovery across projects.
+- During review, you flagged that METHODOLOGY.md should reference existing patterns from memory files, not just capture new ones. Expanded it to include 4 observed patterns: quality verification first, semantic markup preferences, code safety checks, and structured workflows.
 
 ---
 
