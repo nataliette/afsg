@@ -106,6 +106,21 @@ When entering equipment quickly, these abbreviations expand to full brand names:
 
 **Example:** When adding "Depot Heights", add `'Depot Heights': 'DH'` to the GYM_INITIALS object immediately.
 
+## Tracking Equipment Update Dates
+**Every gym in equipment.json has a `lastUpdated` field** (format: `"DD MMM YYYY"`, e.g., `"21 May 2026"`). This is derived from git commit history:
+- When you provide updated equipment data, capture today's date in human-readable format with 3-letter month abbreviation (e.g., "21 May 2026", "15 Jan 2026", "03 Dec 2025")
+- Update the gym's `lastUpdated` field in equipment.json to this date
+- The UI displays this as "✓ Complete — updated 21 May 2026" or "⚠ Partial — updated 15 May 2026"
+
+**Process when adding/updating equipment:**
+1. Add or modify equipment data in equipment.json
+2. Update the gym's `lastUpdated` field to today's date (format: "DD MMM YYYY" with 3-letter month)
+3. Commit with the gym name and date in message: `feat: update [Gym Name] equipment — 21 May 2026`
+
+**Dates are tracked via:**
+- Git commit history (primary source of truth)
+- `lastUpdated` field in equipment.json (displayed to users)
+
 ## Testing
 
 ### Server Setup

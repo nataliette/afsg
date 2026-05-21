@@ -613,7 +613,8 @@
       const content = document.getElementById('content');
       const gymData = equipmentData.gyms[currentGym];
       const status = gymData.status;
-      const statusBadge = status === 'complete' ? '✓ Equipment list complete' : '⚠ Partial — last updated from session logs';
+      const lastUpdatedDate = gymData.lastUpdated || 'Unknown';
+      const statusBadge = status === 'complete' ? `✓ Complete — updated ${lastUpdatedDate}` : `⚠ Partial — updated ${lastUpdatedDate}`;
 
       let html = `
         <div class="gym-header">
