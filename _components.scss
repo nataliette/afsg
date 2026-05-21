@@ -409,7 +409,7 @@ button {
   white-space: nowrap;
 
   &:hover {
-    background-color: darken($color-gray-100, 5%);
+    background-color: #ececec;
   }
 
   &.active {
@@ -460,7 +460,7 @@ button {
   color: $color-white;
 
   &:hover:not(:disabled) {
-    background-color: darken($color-secondary, 10%);
+    background-color: #1976d2;
   }
 
   &:disabled {
@@ -474,7 +474,7 @@ button {
   color: $color-gray-900;
 
   &:hover {
-    background-color: darken($color-gray-200, 5%);
+    background-color: #d4d4d4;
   }
 }
 
@@ -495,7 +495,7 @@ button {
   gap: $spacing-sm;
 
   &:hover {
-    background-color: darken($color-secondary, 10%);
+    background-color: #1976d2;
   }
 
   .btn-icon {
@@ -514,4 +514,77 @@ button {
   color: $color-gray-600;
   font-size: $font-size-sm;
   font-style: italic;
+}
+
+// Gym Summaries (search results grouped by gym)
+.gym-summaries {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.gym-summary-header {
+  display: none;
+}
+
+.gym-summary-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: $spacing-lg;
+  padding: $spacing-lg;
+  background-color: $color-white;
+  border: 1px solid $color-gray-200;
+  border-radius: $radius-md;
+  align-items: center;
+  transition: all $transition-fast;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    background-color: #fafafa;
+    border-color: $color-secondary;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.gym-summary-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-secondary;
+  background-color: rgba($color-secondary, 0.1);
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-sm;
+  min-height: 60px;
+  flex-shrink: 0;
+}
+
+.gym-summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  min-width: 0;
+}
+
+.gym-summary-name {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-gray-900;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.gym-summary-preview {
+  font-size: $font-size-sm;
+  color: $color-gray-600;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
