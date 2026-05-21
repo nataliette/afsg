@@ -537,7 +537,7 @@
         gymGroups[gym].forEach(({ brand, name, notes }) => {
           const isBranded = brand && brand !== 'Unknown';
           const brandDisplay = isBranded ? `<strong>${brand}</strong> ` : '';
-          html += `<div class="equipment-item">${brandDisplay}${name}</div>`;
+          html += `<div class="equipment-item"><span>${brandDisplay}${name}</span></div>`;
         });
       });
 
@@ -715,6 +715,14 @@
 
       content.innerHTML = html;
       setupEquipmentTooltips();
+      styleClickableEquipment();
+    }
+
+    function styleClickableEquipment() {
+      const equipmentElements = document.querySelectorAll('.clickable-equipment');
+      equipmentElements.forEach(elem => {
+        elem.style.color = '#333333';
+      });
     }
 
     function setupEquipmentTooltips() {
