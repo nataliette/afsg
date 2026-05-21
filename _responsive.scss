@@ -198,4 +198,21 @@
     font-size: 13px;
     padding: 6px 12px;
   }
+
+  // Category Cards - Mobile
+  .category-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card-heading {
+    font-size: $font-size-sm;
+    padding: $spacing-md;
+  }
+}
+
+// Tablet breakpoint
+@media (min-width: 769px) and (max-width: 1024px) {
+  .category-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

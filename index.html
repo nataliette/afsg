@@ -637,66 +637,120 @@
         </div>
       `;
 
-      const allMachines = [];
+      // Collect all machines grouped by category
+      const categoryGroups = {};
       for (const [category, machines] of Object.entries(gymData.categories || {})) {
         if (!machines || machines.length === 0) continue;
-        for (const machine of machines) {
-          allMachines.push({ category, machine });
-        }
+        categoryGroups[category] = machines;
       }
 
-      if (allMachines.length === 0) {
+      if (Object.keys(categoryGroups).length === 0) {
         content.innerHTML = '<div class="empty-state">No equipment data for this gym</div>';
         return;
       }
 
       // Filter by tags if present in URL
-      let displayMachines = allMachines;
       const filterTags = selectedTags.length > 0 ? selectedTags : [];
       if (filterTags.length > 0) {
-        displayMachines = allMachines.filter(({ machine }) =>
-          filterTags.some(tag => machine.tags.includes(tag))
-        );
-        const matchCount = displayMachines.length;
+        const matchCount = Object.values(categoryGroups).reduce((count, machines) => {
+          return count + machines.filter(m => filterTags.some(tag => m.tags.includes(tag))).length;
+        }, 0);
         const tagDisplay = filterTags.map(t => `<strong>${t}</strong>`).join(', ');
         html += `<div class="search-result-header">${currentGym} has ${matchCount} machines matching: ${tagDisplay} — <a href="?gym=${GYM_INITIALS[currentGym].toLowerCase()}">view full equipment list</a></div>`;
       }
 
-      if (displayMachines.length === 0) {
+      // Check if any machines match filters
+      const hasMatchingMachines = Object.values(categoryGroups).some(machines =>
+        filterTags.length === 0 || machines.some(m => filterTags.some(tag => m.tags.includes(tag)))
+      );
+
+      if (!hasMatchingMachines) {
         html += '<div class="empty-state">No equipment matches these filters</div>';
         content.innerHTML = html;
         return;
       }
 
-      const gridRows = displayMachines.map(({ category, machine }) => {
-        const displayBrand = machine.brand === 'Unknown' ? '—' : machine.brand;
-        const tagsHtml = machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('');
-        const equipmentDisplay = machine.notes ? `${machine.name} <span class="equipment-notes">${machine.notes}</span>` : machine.name;
+      // Render category cards
+      const categoryCards = Object.entries(categoryGroups).map(([category, machines]) => {
+        // Filter machines by tags if present
+        const displayedMachines = filterTags.length > 0
+          ? machines.filter(m => filterTags.some(tag => m.tags.includes(tag)))
+          : machines;
+
+        if (displayedMachines.length === 0) return '';
+
+        const machinesHtml = displayedMachines.map(machine => {
+          const isBranded = machine.brand !== 'Unknown';
+          const brandDisplay = isBranded ? `<strong>${machine.brand}</strong> ` : '';
+          const tagsHtml = machine.tags.map(tag => `<span class="tag" onclick="selectTag('${tag}')">${tag}</span>`).join('');
+          return `
+            <div class="equipment-item">
+              <span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${brandDisplay}${machine.name}</span>
+              <div class="equipment-tags">
+                ${tagsHtml}
+              </div>
+            </div>
+          `;
+        }).join('');
+
         return `
-          <div class="grid-row">
-            <div class="grid-cell">${category}</div>
-            <div class="grid-cell brand">${displayBrand}</div>
-            <div class="grid-cell"><span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${equipmentDisplay}</span></div>
-            <div class="grid-cell tags-cell">
-              ${tagsHtml}
+          <div class="category-card">
+            <div class="category-card-header">
+              <h3 class="category-card-heading">${category}</h3>
+            </div>
+            <div class="category-card-content">
+              <div class="equipment-list">
+                ${machinesHtml}
+              </div>
             </div>
           </div>
         `;
-      }).join('');
+      }).filter(card => card !== '').join('');
 
       html += `
-        <div class="results-grid" style="--grid-cols: 4">
-          <div class="grid-header">
-            <div class="grid-cell"><strong>Category</strong></div>
-            <div class="grid-cell"><strong>Brand</strong></div>
-            <div class="grid-cell"><strong>Equipment</strong></div>
-            <div class="grid-cell"><strong>Muscle Groups</strong></div>
-          </div>
-          ${gridRows}
+        <div class="category-cards">
+          ${categoryCards}
         </div>
       `;
 
       content.innerHTML = html;
+      setupEquipmentTooltips();
+    }
+
+    function setupEquipmentTooltips() {
+      const equipmentItems = document.querySelectorAll('.category-card .equipment-item');
+      equipmentItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          const tagsDiv = this.querySelector('.equipment-tags');
+          if (tagsDiv && tagsDiv.children.length > 0) {
+            let tooltip = this.querySelector('.equipment-tooltip');
+            if (!tooltip) {
+              tooltip = document.createElement('div');
+              tooltip.className = 'equipment-tooltip';
+              // Apply positioning styles inline to ensure they work
+              tooltip.style.position = 'absolute';
+              tooltip.style.left = '50%';
+              tooltip.style.top = '50%';
+              tooltip.style.transform = 'translateY(-50%)';
+              const tagsClone = tagsDiv.cloneNode(true);
+              tagsClone.style.display = 'flex';
+              tagsClone.style.gap = '2px';
+              tagsClone.className = '';
+              tagsClone.style.margin = '0';
+              tagsClone.style.padding = '0';
+              tooltip.appendChild(tagsClone);
+              this.appendChild(tooltip);
+            }
+          }
+        });
+
+        item.addEventListener('mouseleave', function() {
+          const tooltip = this.querySelector('.equipment-tooltip');
+          if (tooltip) {
+            tooltip.remove();
+          }
+        });
+      });
     }
 
     function showError(message) {
