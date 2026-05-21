@@ -30,7 +30,7 @@ This prevents wasted work and ensures alignment on approach.
 - Example: `feat: add dark mode toggle`
 
 **"session close":** Use this at the end of a work session to wrap up and document:
-- Claude updates CLAUDE.md, DECISIONS.md, METHODOLOGY.md, and docs/project.md
+- Claude updates CLAUDE.md, docs/DECISIONS.md, docs/METHODOLOGY.md, and docs/project.md
 - Claude creates the commit automatically
 - This increments the template review counter (at 20 session closes, you'll be reminded to run `/review-workflow`)
 
