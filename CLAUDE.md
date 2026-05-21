@@ -90,6 +90,24 @@ When discussing pages, use these parameter-based names for clarity:
 - Mobile breaks at 768px; tables convert to card grid layout
 - **CSS Grids:** Result displays (gym page, tag page, equipment page) use CSS Grid layouts (divs), not HTML `<table>` elements. When user says "table" they mean the CSS Grid result display.
 
+## Equipment Categories (Standardized)
+
+**Consistent order across all gyms:**
+1. **Cables** — Cable machines & pulleys
+2. **Upper** — Upper body machines (chest, back, shoulders, arms)
+3. **Lower** — Lower body machines (legs, quads, hamstrings, glutes, calves, hip ab/ad)
+4. **Cardio** — Cardiovascular equipment (treadmills, bikes, rowers, ellipticals, stair climbers)
+5. **Barbells & Racks** — Free weight equipment
+6. **Calisthenics** — Bodyweight stations (pull-up bars, dip stations)
+7. **Core** — Core/abdominal machines & exercises
+8. **Other** — Miscellaneous items (medicine balls, bosu balls, tools)
+
+**Notes:**
+- "Plate-Loaded" category removed in May 2026 (items redistributed to Upper/Lower)
+- "Core" category added to consolidate abdominal equipment
+- All cardio equipment consolidated under "Cardio" instead of "Other"
+- equipmentIndex in index.html automatically maps equipment via machineTypeMap
+
 ## Equipment Brand Abbreviations
 When entering equipment quickly, these abbreviations expand to full brand names:
 - **C2** = Concept2 (rowing/ski machines)

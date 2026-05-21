@@ -177,30 +177,14 @@
     "Labrador View": {
       "status": "complete",
       "categories": {
-        "Barbells & Racks": [
+        "Cables": [
           {
             "tags": [
-              "core",
-              "glutes",
-              "hamstrings",
-              "legs",
-              "quads"
+              "core"
             ],
-            "brand": "Ziva",
-            "name": "Deadlift Platform",
+            "brand": "Precor",
+            "name": "FTS Glide",
             "notes": null
-          },
-          {
-            "tags": [
-              "core",
-              "glutes",
-              "hamstrings",
-              "legs",
-              "quads"
-            ],
-            "brand": "Ziva",
-            "name": "Power Rack",
-            "notes": "XP Half Rack with Storage 2.0, x3"
           }
         ],
         "Upper": [
@@ -395,23 +379,46 @@
             "notes": null
           }
         ],
-        "Other": [
+        "Barbells & Racks": [
           {
             "tags": [
-              "core"
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
             ],
-            "brand": "Precor",
-            "name": "Abdominal Crunch",
+            "brand": "Ziva",
+            "name": "Deadlift Platform",
             "notes": null
           },
           {
             "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Ziva",
+            "name": "Power Rack",
+            "notes": "XP Half Rack with Storage 2.0, x3"
+          }
+        ],
+        "Calisthenics": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
               "core"
             ],
-            "brand": "Precor",
-            "name": "Decline Crunch Bench",
+            "brand": "Unknown",
+            "name": "Pull-up Bar",
             "notes": null
-          },
+          }
+        ],
+        "Cardio": [
           {
             "tags": [
               "cardio",
@@ -455,7 +462,27 @@
             "brand": "Concept2",
             "name": "RowErg",
             "notes": null
+          }
+        ],
+        "Core": [
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Precor",
+            "name": "Abdominal Crunch",
+            "notes": null
           },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Precor",
+            "name": "Decline Crunch Bench",
+            "notes": null
+          }
+        ],
+        "Other": [
           {
             "tags": [
               "cardio",
@@ -678,10 +705,45 @@
           },
           {
             "tags": [
-              "core"
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "shoulders",
+              "triceps"
             ],
-            "brand": "Life Fitness",
-            "name": "Abdominal",
+            "brand": "Hammer Strength",
+            "name": "ISO Lateral Bench Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Plate Loaded Lat Raise",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Hammer Strength",
+            "name": "T-Bar Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Hammer Strength",
+            "name": "ISO Lateral Front Lat Pulldown",
             "notes": null
           }
         ],
@@ -737,25 +799,12 @@
           },
           {
             "tags": [
-              "core"
+              "abductors",
+              "adductors",
+              "legs"
             ],
             "brand": "Life Fitness",
             "name": "Hip Ab/Ad",
-            "notes": null
-          }
-        ],
-        "Plate-Loaded": [
-          {
-            "tags": [
-              "arms",
-              "back",
-              "biceps",
-              "chest",
-              "shoulders",
-              "triceps"
-            ],
-            "brand": "Hammer Strength",
-            "name": "ISO Lateral Bench Press",
             "notes": null
           },
           {
@@ -793,35 +842,15 @@
             "brand": "Hammer Strength",
             "name": "Glute Drive",
             "notes": null
-          },
+          }
+        ],
+        "Core": [
           {
             "tags": [
-              "arms",
-              "back",
-              "biceps"
+              "core"
             ],
-            "brand": "Hammer Strength",
-            "name": "Plate Loaded Lat Raise",
-            "notes": null
-          },
-          {
-            "tags": [
-              "arms",
-              "back",
-              "biceps"
-            ],
-            "brand": "Hammer Strength",
-            "name": "T-Bar Row",
-            "notes": null
-          },
-          {
-            "tags": [
-              "arms",
-              "back",
-              "biceps"
-            ],
-            "brand": "Hammer Strength",
-            "name": "ISO Lateral Front Lat Pulldown",
+            "brand": "Life Fitness",
+            "name": "Abdominal",
             "notes": null
           }
         ],
@@ -1171,33 +1200,7 @@
             "notes": null
           }
         ],
-        "Other": [
-          {
-            "tags": [
-              "core"
-            ],
-            "brand": "Precor",
-            "name": "Abdominal",
-            "notes": null
-          },
-          {
-            "tags": [
-              "core"
-            ],
-            "brand": "Precor",
-            "name": "FTS Glide",
-            "notes": null
-          },
-          {
-            "tags": [
-              "back",
-              "core",
-              "lats"
-            ],
-            "brand": "Torque",
-            "name": "Relentless Ripper",
-            "notes": null
-          },
+        "Cardio": [
           {
             "tags": [
               "cardio"
@@ -1247,6 +1250,36 @@
             "brand": "Precor",
             "name": "Stationary Bike",
             "notes": "x3"
+          }
+        ],
+        "Core": [
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Precor",
+            "name": "Abdominal",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Precor",
+            "name": "FTS Glide",
+            "notes": null
+          }
+        ],
+        "Other": [
+          {
+            "tags": [
+              "back",
+              "core",
+              "lats"
+            ],
+            "brand": "Torque",
+            "name": "Relentless Ripper",
+            "notes": null
           }
         ]
       },
@@ -1800,6 +1833,16 @@
             "notes": null
           }
         ],
+        "Core": [
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Abdominal Crunch",
+            "notes": null
+          }
+        ],
         "Other": [
           {
             "tags": [
@@ -1807,14 +1850,6 @@
             ],
             "brand": "BodyMetrix",
             "name": "EvoL Scanner",
-            "notes": null
-          },
-          {
-            "tags": [
-              "core"
-            ],
-            "brand": "Hammer Strength",
-            "name": "Abdominal Crunch",
             "notes": null
           },
           {
