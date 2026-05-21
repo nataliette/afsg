@@ -1,6 +1,6 @@
 # CLAUDE.md — Equipment Gym Tracker
 
-**📖 Project Documentation:** See [docs/project.md](docs/project.md) for project purpose, scope, and decision framework. Reference this when evaluating new features to avoid feature creep.
+**📖 Product Documentation:** See [PRODUCT.md](PRODUCT.md) for product purpose, scope, and decision framework. Reference this when evaluating new features to avoid feature creep.
 
 ---
 
@@ -30,7 +30,7 @@ This prevents wasted work and ensures alignment on approach.
 - Example: `feat: add dark mode toggle`
 
 **"session close":** Use this at the end of a work session to wrap up and document:
-- Claude updates CLAUDE.md, docs/DECISIONS.md, docs/METHODOLOGY.md, and docs/project.md
+- Claude updates CLAUDE.md, docs/DECISIONS.md, docs/METHODOLOGY.md, and PRODUCT.md
 - Claude creates the commit automatically
 - This increments the template review counter (at 20 session closes, you'll be reminded to run `/review-workflow`)
 
@@ -43,8 +43,8 @@ This prevents wasted work and ensures alignment on approach.
 
 **Before committing:**
 - Update CLAUDE.md and memory files (in `.claude/projects/-Users-natalie-Sites-afsg/memory/`) with any new context, patterns, or decisions discovered during the session.
-- If the project's scope or purpose has evolved, update `docs/project.md` to reflect the current state.
-- When implementing new features, consult `docs/project.md`'s decision framework to ensure alignment with core purpose and avoid scope creep.
+- If the product's scope or purpose has evolved, update `PRODUCT.md` to reflect the current state.
+- When implementing new features, consult `PRODUCT.md`'s decision framework to ensure alignment with core purpose and avoid scope creep.
 
 ## Structural Changes
 **Before making any structural change, step back and review the entire structure at a high level.** Optimize holistically—don't hack together a function to solve the immediate problem. Consider:
