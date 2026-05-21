@@ -8,9 +8,9 @@ Captures patterns in how you direct AI-assisted builds.
 
 ## Observed patterns (updated per session)
 
-[Patterns will be added as sessions progress and directional decisions emerge.]
+### Pattern: Preference for structured rituals and consistency
 
-### Pattern: [To be filled in by Claude after observing work style]
+You use explicit, repeatable workflows (session close ceremony, git commit conventions, structured documentation). This suggests you value clarity, maintainability, and the ability to retrospect on decisions over time. When proposing approaches, favor explicit structure and consistency over ad-hoc or flexible solutions.
 
 ---
 
