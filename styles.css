@@ -301,14 +301,14 @@ button {
 
 .clickable-equipment {
   cursor: pointer;
-  color: #2196f3;
+  color: #333333;
   text-decoration: none;
   transition: color 0.2s;
   position: relative;
   display: inline-block;
 }
 .clickable-equipment:hover {
-  color: #1976d2;
+  color: #2196f3;
   text-decoration: underline;
 }
 .clickable-equipment::after {

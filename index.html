@@ -535,9 +535,9 @@
         html += `<h3 class="equipment-gym-heading"><a href="?gym=${gymInitial}" class="outlet-link">${gym}</a></h3>`;
 
         gymGroups[gym].forEach(({ brand, name, notes }) => {
-          const displayBrand = brand === 'Unknown' ? '—' : brand;
-          const equipmentDisplay = notes ? `${name} <span class="equipment-notes">${notes}</span>` : name;
-          html += `<div class="equipment-item"><strong>${displayBrand}</strong> ${equipmentDisplay}</div>`;
+          const isBranded = brand && brand !== 'Unknown';
+          const brandDisplay = isBranded ? `<strong>${brand}</strong> ` : '';
+          html += `<div class="equipment-item">${brandDisplay}${name}</div>`;
         });
       });
 
@@ -681,11 +681,11 @@
 
         const machinesHtml = displayedMachines.map(machine => {
           const isBranded = machine.brand !== 'Unknown';
-          const brandDisplay = isBranded ? `<strong>${machine.brand}</strong> ` : '';
+          const brandDisplay = isBranded ? `${machine.brand} ` : '';
           const tagsHtml = machine.tags.map(tag => `<span class="tag" onclick="selectTag('${tag}')">${tag}</span>`).join('');
           return `
             <div class="equipment-item">
-              <span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${brandDisplay}${machine.name}</span>
+              <span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${brandDisplay}<strong>${machine.name}</strong></span>
               <div class="equipment-tags">
                 ${tagsHtml}
               </div>

@@ -254,14 +254,14 @@ button {
 // Clickable Equipment
 .clickable-equipment {
   cursor: pointer;
-  color: #2196f3;
+  color: $color-gray-900;
   text-decoration: none;
   transition: color $transition-fast;
   position: relative;
   display: inline-block;
 
   &:hover {
-    color: #1976d2;
+    color: $color-secondary;
     text-decoration: underline;
   }
 
