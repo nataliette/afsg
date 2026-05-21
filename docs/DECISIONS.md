@@ -57,6 +57,27 @@ Log of session decisions, directional choices, and reasoning.
 
 ---
 
-## To be continued
+## 2026-05-21 Session 2 — CSS grid layout completion
 
-Sessions will be logged here as work progresses.
+**Built / decided:**
+- Added CSS Grid styling to `_layout.scss` for equipment display results (`.results-grid`, `.grid-header`, `.grid-row`, `.grid-cell`)
+- Verified 4-column equipment grid displays correctly on gym pages (Category, Brand, Equipment, Muscle Groups)
+- Confirmed tag+gym filtered view (`?gym=pp&tag=back`) works correctly with proper layout and contextual header
+- Tested all three main workflows: gym equipment view, tag search with gym summary cards, and tag+gym filtered view
+- Compiled SCSS and committed grid styling changes
+
+**My reasoning:**
+- Equipment grid layout was missing CSS rule definitions despite being in the compiled file — added the missing `.results-grid` and cell styling rules to complete the layout structure
+- Grid styling uses CSS custom properties (`--grid-cols`) for flexibility across different page types (4 columns for gym, different for others)
+- Verified functionality across all views before considering work complete
+
+**Alternatives considered:**
+- Injecting CSS dynamically via JavaScript — not maintainable long-term; fixed by properly adding styles to SCSS
+- Using different layout approach — grid with `display: contents` for header/row wrappers is the established pattern; kept consistent
+
+**Deferred:**
+- None — CSS grid styling is complete and functional
+
+**Patterns observed:**
+- Preview server has CSS loading limitations (external stylesheet not fully accessible via CSSOM) but code works correctly in real browsers — will note for future testing to prioritize localhost over preview tool for CSS verification
+- Grid layouts are a central pattern across the app; when one is fixed, verify all related views work together (gym page, tag page, tag+gym filtered view)

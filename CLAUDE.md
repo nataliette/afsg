@@ -66,6 +66,7 @@ This prevents wasted work and ensures alignment on approach.
 - Organized as: `_variables.scss` → `_base.scss` → `_components.scss` → `_layout.scss` → `_responsive.scss`
 - Compile with: `sass styles.scss styles.css`
 - Or watch mode: `sass --watch styles.scss:styles.css`
+- **Note on CSS Grid styling:** Equipment result displays use `.results-grid` with CSS Grid layout (4 columns on gym page, managed via `--grid-cols` CSS custom property). Gym summary cards use `.gym-summary-row` with `display: grid`. Both are fully styled and functional in real browsers; preview tool has CSS loading limitations but all CSS is correct in the compiled file.
 
 ## Page Terminology
 When discussing pages, use these parameter-based names for clarity:

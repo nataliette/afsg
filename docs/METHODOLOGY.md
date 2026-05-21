@@ -32,6 +32,12 @@ You use explicit, repeatable workflows (session close ceremony, git commit conve
 
 **Why:** Enables better retrospection and pattern discovery across projects.
 
+### Pattern: Prioritize localhost testing over preview tool for CSS/styling verification
+
+When verifying CSS changes, the preview tool has limitations loading external stylesheets (only some rules load via CSSOM). Real browser testing on localhost:8000 is more reliable for confirming styling works correctly.
+
+**Why:** Saves debugging time by testing against the actual target environment rather than a tool with known CSS loading constraints. Manual CSS injection in preview proves the code is correct; localhost confirms it works as deployed.
+
 ---
 
 ## How Claude uses this
