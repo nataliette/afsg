@@ -1489,6 +1489,361 @@
           }
         ]
       }
+    },
+    "Depot Heights": {
+      "status": "complete",
+      "categories": {
+        "Cables": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "LifeFitness",
+            "name": "Adjustable Pulley",
+            "notes": null
+          }
+        ],
+        "Upper": [
+          {
+            "tags": [
+              "back",
+              "core",
+              "glutes",
+              "hamstrings"
+            ],
+            "brand": "LifeFitness",
+            "name": "Back Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "LifeFitness",
+            "name": "Shoulder Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "LifeFitness",
+            "name": "Chest Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "LifeFitness",
+            "name": "Multistation",
+            "notes": "seated row, lat pulldown (x2), dip/chin assist"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Iso-Lateral Shoulder Press",
+            "notes": "unloaded 4.5kg"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Hammerstrength",
+            "name": "T-Bar Row",
+            "notes": "unloaded 18.1kg"
+          },
+          {
+            "tags": [
+              "chest",
+              "core",
+              "shoulders"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Iso-Lateral Chest/Back",
+            "notes": "unloaded 3.2kg"
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Iso-Lateral Bench Press",
+            "notes": "unloaded 3.2kg"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "LifeFitness",
+            "name": "Seated Row",
+            "notes": "unloaded 5.5kg per arm"
+          }
+        ],
+        "Lower": [
+          {
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "LifeFitness",
+            "name": "Leg Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ],
+            "brand": "LifeFitness",
+            "name": "Hip Abductor/Adductor",
+            "notes": null
+          },
+          {
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ],
+            "brand": "LifeFitness",
+            "name": "Leg Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "legs",
+              "quads"
+            ],
+            "brand": "LifeFitness",
+            "name": "Leg Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "calves",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Hack Squat",
+            "notes": "unloaded 57kg"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Glute Drive",
+            "notes": "unloaded 20.4kg"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Belt Squat",
+            "notes": "unloaded 30.8kg"
+          }
+        ],
+        "Cardio": [
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Concept2",
+            "name": "RowErg",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Concept2",
+            "name": "SkiErg",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "LifeFitness",
+            "name": "Stationary Bike",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Torque",
+            "name": "Air Bike",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "LifeFitness",
+            "name": "Elliptical",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "StairMaster",
+            "name": "Stairmaster",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Treadmill",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "LifeFitness",
+            "name": "Treadmill",
+            "notes": "x4"
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Power Rack",
+            "notes": "double x1, single x1"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Deadlift",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "LifeFitness",
+            "name": "Smith Machine",
+            "notes": null
+          }
+        ],
+        "Other": [
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "BodyMetrix",
+            "name": "EvoL Scanner",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Hammerstrength",
+            "name": "Abdominal Crunch",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "full body"
+            ],
+            "brand": "Torque",
+            "name": "Ripper",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "legs"
+            ],
+            "brand": "Unknown",
+            "name": "Bosu Ball",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Unknown",
+            "name": "Medicine Ball 65cm",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "LifeFitness",
+            "name": "Arm Curl Bench",
+            "notes": null
+          }
+        ]
+      }
     }
   }
 }

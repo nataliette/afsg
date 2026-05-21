@@ -69,7 +69,7 @@ When evaluating a feature request, ask:
 
 ## Success Metrics
 
-- Equipment database is complete for all 9 gyms
+- Equipment database is complete for all 10 gyms
 - You can quickly find which gym has what you want to use
 - You can easily copy equipment to generate AI workouts
 - App works smoothly on desktop and mobile

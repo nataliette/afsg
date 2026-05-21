@@ -56,6 +56,23 @@ When discussing pages, use these parameter-based names for clarity:
 - Mobile breaks at 768px; tables convert to card grid layout
 - **CSS Grids:** Result displays (gym page, tag page, equipment page) use CSS Grid layouts (divs), not HTML `<table>` elements. When user says "table" they mean the CSS Grid result display.
 
+## Equipment Brand Abbreviations
+When entering equipment quickly, these abbreviations expand to full brand names:
+- **C2** = Concept2 (rowing/ski machines)
+- **LF** = LifeFitness (machines, cardio)
+- **HS** = Hammerstrength (iso-lateral machines, racks)
+- **HA** = Hammerstrength (typo variant of HS)
+- **LG** = LifeFitness (typo variant of LF)
+
+## Adding New Gyms
+**When adding a new gym to equipment.json, immediately add it to `GYM_INITIALS` in index.html.** This is critical:
+- **GYM_INITIALS** maps gym names to 2-letter codes and is used throughout the app when generating URLs and processing gym data
+- Without an entry, any code calling `GYM_INITIALS[gymName].toLowerCase()` throws `"Cannot read properties of undefined"` error
+- The app will load but crash when trying to interact with the gym
+- Always follow the pattern: `'Gym Name': 'GN'` (first letter of each word)
+
+**Example:** When adding "Depot Heights", add `'Depot Heights': 'DH'` to the GYM_INITIALS object immediately.
+
 ## Testing
 
 ### Server Setup
