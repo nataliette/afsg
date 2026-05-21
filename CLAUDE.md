@@ -93,10 +93,10 @@ When discussing pages, use these parameter-based names for clarity:
 ## Equipment Brand Abbreviations
 When entering equipment quickly, these abbreviations expand to full brand names:
 - **C2** = Concept2 (rowing/ski machines)
-- **LF** = LifeFitness (machines, cardio)
-- **HS** = Hammerstrength (iso-lateral machines, racks)
-- **HA** = Hammerstrength (typo variant of HS)
-- **LG** = LifeFitness (typo variant of LF)
+- **LF** = Life Fitness (machines, cardio)
+- **HS** = Hammer Strength (iso-lateral machines, racks)
+- **HA** = Hammer Strength (typo variant of HS)
+- **LG** = Life Fitness (typo variant of LF)
 
 ## Adding New Gyms
 **When adding a new gym to equipment.json, immediately add it to `GYM_INITIALS` in index.html.** This is critical:
