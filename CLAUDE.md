@@ -1,16 +1,49 @@
-# CLAUDE.md — Project Guidelines
+# CLAUDE.md — Equipment Gym Tracker
 
 **📖 Project Documentation:** See [docs/project.md](docs/project.md) for project purpose, scope, and decision framework. Reference this when evaluating new features to avoid feature creep.
 
+---
+
 ## Planning & Execution
-**For any structural change or non-trivial task: propose a plan first, then wait for explicit user approval before executing.** Use EnterPlanMode when appropriate. Don't implement until the user says "go ahead" or similar.
 
-## Git Workflow
-**Only commit when the user explicitly says "commit".** Do not commit automatically. User will handle pushing to remote manually—never push. Wait for explicit "commit" before running any git commands.
+**For any structural change or non-trivial task:**
+1. Claude proposes a plan first
+2. You approve or redirect before implementation begins
+3. Do not implement until you explicitly say "go ahead" or similar
 
-**Before committing:** 
-- Update CLAUDE.md and memory files (in `.claude/projects/-Users-natalie-Sites-afsg/memory/`) with any new context, patterns, or decisions discovered during the session. This ensures future sessions have up-to-date guidance and understanding of the project.
-- If the project's scope or purpose has evolved, update `docs/project.md` to reflect the current state. The decision framework there guides future feature evaluations.
+This prevents wasted work and ensures alignment on approach.
+
+---
+
+## Quick Commands
+
+- **"ok commit"** → Simple git commit with conventional message (no doc updates)
+- **"session close"** → Comprehensive ritual: update all docs, then commit
+
+---
+
+## Git & Commit Workflow
+
+**"ok commit":** Use this when you've made changes that should be saved but don't represent a complete session:
+- Run `git add [files]` and commit with a conventional commit message
+- No doc updates — just the commit
+- Example: `feat: add dark mode toggle`
+
+**"session close":** Use this at the end of a work session to wrap up and document:
+- Claude updates CLAUDE.md, DECISIONS.md, METHODOLOGY.md, and docs/project.md
+- Claude creates the commit automatically
+- This increments the template review counter (at 20 session closes, you'll be reminded to run `/review-workflow`)
+
+**Commit message format (for "ok commit"):**
+- Use conventional commits: `feat:`, `fix:`, `refactor:`, `docs:`, `chore:`
+- Example: `feat: add equipment search filter`
+- Session close commits use: `docs: session close — [brief description]`
+
+**Do NOT push manually** — you handle that via GitHub Desktop
+
+**Before committing:**
+- Update CLAUDE.md and memory files (in `.claude/projects/-Users-natalie-Sites-afsg/memory/`) with any new context, patterns, or decisions discovered during the session.
+- If the project's scope or purpose has evolved, update `docs/project.md` to reflect the current state.
 - When implementing new features, consult `docs/project.md`'s decision framework to ensure alignment with core purpose and avoid scope creep.
 
 ## Structural Changes
@@ -99,3 +132,37 @@ When entering equipment quickly, these abbreviations expand to full brand names:
 - Don't commit without approval
 - Don't edit compiled CSS directly
 - Don't use feature flags or backwards-compat shims for unused code
+
+---
+
+## Accessibility & Security
+
+✓ **Keyboard navigation:** All interactive elements have keyboard focus states (visible outlines)
+✓ **External links:** All have `target="_blank" rel="noopener noreferrer"`
+✓ **Images:** All have meaningful `alt` text for screen readers
+✓ **Responsive design:** Adapts gracefully at breakpoints (mobile, tablet, desktop)
+✓ **WCAG AA minimum:** Color contrast, text sizing, interactive target sizes meet accessibility standards
+
+---
+
+## Quick Reference
+
+```bash
+# Check what changed before commit
+git status
+git diff
+
+# Compile SCSS (if applicable)
+sass styles.scss styles.css
+
+# Start dev server
+python -m http.server 8000
+```
+
+---
+
+## Important Notes
+
+- Edit CLAUDE.md as you learn more about the project — keep it up to date
+- Design tokens are universal; only compilation method varies by stack
+- When in doubt, ask yourself: "Is this aligned with the vision / scope / aesthetic I defined?"
