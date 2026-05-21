@@ -81,3 +81,30 @@ Log of session decisions, directional choices, and reasoning.
 **Patterns observed:**
 - Preview server has CSS loading limitations (external stylesheet not fully accessible via CSSOM) but code works correctly in real browsers — will note for future testing to prioritize localhost over preview tool for CSS verification
 - Grid layouts are a central pattern across the app; when one is fixed, verify all related views work together (gym page, tag page, tag+gym filtered view)
+
+---
+
+## 2026-05-21 Session 3 — Equipment brand name standardization
+
+**Built / decided:**
+- Standardized all equipment brand names across equipment.json for consistency
+  - "LifeFitness" → "Life Fitness" (26 instances)
+  - "Hammerstrength" → "Hammer Strength" (11 instances)
+  - "Glutebuilder" → "Glute Builder" (2 instances)
+  - "Technogym" already correct, no changes needed
+- Updated CLAUDE.md brand abbreviations documentation to reflect new names
+- Applied design token colors to clickable equipment styling (hardcoded hex → SCSS variables)
+
+**My reasoning:**
+- Brand names should be properly spaced and capitalized for professional appearance
+- Updating documentation keeps future reference accurate
+- Used design tokens instead of hardcoded colors for maintainability
+
+**Alternatives considered:**
+- None — straightforward data consistency work
+
+**Deferred:**
+- None
+
+**Patterns observed:**
+- You batch similar maintenance tasks together (brand standardization + design token cleanup) rather than splitting them across sessions, treating consistency improvements as part of normal work quality
