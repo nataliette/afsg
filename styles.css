@@ -853,9 +853,13 @@ header h1 {
   color: #333333;
   margin-top: 24px;
   margin-bottom: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
 }
 .equipment-gym-heading:first-of-type {
   margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 .equipment-gym-heading a {
   color: #2196f3;
@@ -867,7 +871,6 @@ header h1 {
 
 .equipment-item {
   padding: 12px 0;
-  border-bottom: 1px solid #e0e0e0;
   color: #666;
   line-height: 16px;
 }
