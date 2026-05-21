@@ -357,6 +357,10 @@
         updateSuggestions('');
         renderGymList();
         renderEquipmentResults(decodedMachineType);
+      } else if (gymFromUrl && tagFromUrl && INITIAL_TO_GYM[gymFromUrl]) {
+        // Both gym and tag are present - show filtered gym equipment
+        isLandingPage = false;
+        selectGym(INITIAL_TO_GYM[gymFromUrl], [tagFromUrl]);
       } else if (tagFromUrl) {
         isLandingPage = false;
         selectedTags = [tagFromUrl];
@@ -413,9 +417,9 @@
       document.body.classList.remove('menu-open');
     }
 
-    function selectGym(gym) {
+    function selectGym(gym, tagsToPreserve = []) {
       searchMode = false;
-      selectedTags = [];
+      selectedTags = tagsToPreserve;
       selectedEquipment = null;
       currentGym = gym;
       document.getElementById('searchInput').value = '';
@@ -426,7 +430,10 @@
       const closeIcon = document.querySelector('.close-icon');
       searchIcon.style.display = 'block';
       closeIcon.style.display = 'none';
-      window.history.pushState(null, '', `?gym=${GYM_INITIALS[gym].toLowerCase()}`);
+      const url = tagsToPreserve.length > 0
+        ? `?gym=${GYM_INITIALS[gym].toLowerCase()}&${tagsToPreserve.map(tag => `tag=${tag}`).join('&')}`
+        : `?gym=${GYM_INITIALS[gym].toLowerCase()}`;
+      window.history.pushState(null, '', url);
       renderGymList();
       renderEquipment();
     }
@@ -548,61 +555,65 @@
         return;
       }
 
-      const allMatches = [];
+      // Group matches by gym
+      const gymMatches = {};
       let totalMachines = 0;
-      const gymsWithMatches = new Set();
 
       for (const gymName of gyms) {
         const gymData = equipmentData.gyms[gymName];
+        const matches = [];
 
         for (const [category, machines] of Object.entries(gymData.categories || {})) {
           for (const machine of machines) {
             const machineMatches = selectedTags.some(tag => machine.tags.includes(tag));
             if (machineMatches) {
-              allMatches.push({ gymName, category, machine });
+              matches.push({ category, machine });
               totalMachines++;
-              gymsWithMatches.add(gymName);
             }
           }
         }
+
+        if (matches.length > 0) {
+          gymMatches[gymName] = matches.sort((a, b) => {
+            if (a.category !== b.category) return a.category.localeCompare(b.category);
+            return a.machine.name.localeCompare(b.machine.name);
+          });
+        }
       }
 
-      // Sort by category, then by gym
-      allMatches.sort((a, b) => {
-        if (a.category !== b.category) return a.category.localeCompare(b.category);
-        return a.gymName.localeCompare(b.gymName);
+      const gymsWithMatches = Object.keys(gymMatches);
+      const sortedGyms = gymsWithMatches.sort((a, b) => {
+        return gymMatches[b].length - gymMatches[a].length;
       });
 
-      let html = `<div class="search-result-header">${totalMachines} machines across ${gymsWithMatches.size} gyms matching: ${selectedTags.map(t => '<strong>' + t + '</strong>').join(', ')}</div>`;
+      let html = `<div class="search-result-header">${totalMachines} machines across ${gymsWithMatches.length} gyms matching: ${selectedTags.map(t => '<strong>' + t + '</strong>').join(', ')}</div>`;
 
-      const gridRows = allMatches.map(({ gymName, category, machine }) => {
+      // Gym summary cards (show count and preview)
+      const gymSummaryRows = sortedGyms.map(gymName => {
+        const matches = gymMatches[gymName];
         const gymInitial = GYM_INITIALS[gymName].toLowerCase();
-        const displayBrand = machine.brand === 'Unknown' ? '—' : machine.brand;
-        const tagsHtml = machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('');
-        const equipmentDisplay = machine.notes ? `${machine.name} <span class="equipment-notes">${machine.notes}</span>` : machine.name;
+        const equipmentNames = [...new Set(matches.map(m => m.machine.name))];
+        const preview = equipmentNames.slice(0, 3).join(', ') + (equipmentNames.length > 3 ? `, +${equipmentNames.length - 3} more` : '');
+        const tagParams = selectedTags.map(tag => `tag=${tag}`).join('&');
+
         return `
-          <div class="grid-row">
-            <div class="grid-cell"><a href="?gym=${gymInitial}" class="outlet-link">${gymName}</a></div>
-            <div class="grid-cell">${category}</div>
-            <div class="grid-cell brand">${displayBrand}</div>
-            <div class="grid-cell"><span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${equipmentDisplay}</span></div>
-            <div class="grid-cell tags-cell">
-              ${tagsHtml}
+          <div class="gym-summary-row">
+            <div class="gym-summary-count">${matches.length}</div>
+            <div class="gym-summary-info">
+              <a href="?gym=${gymInitial}&${tagParams}" class="gym-summary-name">${gymName}</a>
+              <div class="gym-summary-preview">${preview}</div>
             </div>
           </div>
         `;
       }).join('');
 
       html += `
-        <div class="results-grid" style="--grid-cols: 5">
-          <div class="grid-header">
-            <div class="grid-cell"><strong>Gym</strong></div>
-            <div class="grid-cell"><strong>Category</strong></div>
-            <div class="grid-cell"><strong>Brand</strong></div>
-            <div class="grid-cell"><strong>Equipment</strong></div>
-            <div class="grid-cell"><strong>Muscle Groups</strong></div>
+        <div class="gym-summaries">
+          <div class="gym-summary-header">
+            <div class="gym-summary-count-col">Equipment Count</div>
+            <div class="gym-summary-info-col">Gym & Preview</div>
           </div>
-          ${gridRows}
+          ${gymSummaryRows}
         </div>
       `;
 
@@ -642,7 +653,25 @@
         return;
       }
 
-      const gridRows = allMachines.map(({ category, machine }) => {
+      // Filter by tags if present in URL
+      let displayMachines = allMachines;
+      const filterTags = selectedTags.length > 0 ? selectedTags : [];
+      if (filterTags.length > 0) {
+        displayMachines = allMachines.filter(({ machine }) =>
+          filterTags.some(tag => machine.tags.includes(tag))
+        );
+        const matchCount = displayMachines.length;
+        const tagDisplay = filterTags.map(t => `<strong>${t}</strong>`).join(', ');
+        html += `<div class="search-result-header">${currentGym} has ${matchCount} machines matching: ${tagDisplay} — <a href="?gym=${GYM_INITIALS[currentGym].toLowerCase()}">view full equipment list</a></div>`;
+      }
+
+      if (displayMachines.length === 0) {
+        html += '<div class="empty-state">No equipment matches these filters</div>';
+        content.innerHTML = html;
+        return;
+      }
+
+      const gridRows = displayMachines.map(({ category, machine }) => {
         const displayBrand = machine.brand === 'Unknown' ? '—' : machine.brand;
         const tagsHtml = machine.tags.map(tag => `<span class="tag${isPrimaryTag(tag) ? ' primary' : ''}" onclick="selectTag('${tag}')">${tag}</span>`).join('');
         const equipmentDisplay = machine.notes ? `${machine.name} <span class="equipment-notes">${machine.notes}</span>` : machine.name;
