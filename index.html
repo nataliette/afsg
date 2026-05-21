@@ -516,33 +516,30 @@
         return;
       }
 
-      const uniqueGyms = new Set(locations.map(loc => loc.gym));
+      // Group locations by gym
+      const gymGroups = {};
+      locations.forEach(({ gym, brand, name, notes }) => {
+        if (!gymGroups[gym]) {
+          gymGroups[gym] = [];
+        }
+        gymGroups[gym].push({ brand, name, notes });
+      });
 
+      const uniqueGyms = new Set(locations.map(loc => loc.gym));
       let html = `<div class="search-result-header">${machineType} found in ${uniqueGyms.size} gym${uniqueGyms.size !== 1 ? 's' : ''}</div>`;
 
-      const gridRows = locations.map(({ gym, brand, name, notes }) => {
+      // Render grouped by gym
+      const gymList = Object.keys(gymGroups).sort();
+      gymList.forEach(gym => {
         const gymInitial = GYM_INITIALS[gym].toLowerCase();
-        const displayBrand = brand === 'Unknown' ? '—' : brand;
-        const equipmentDisplay = notes ? `${name} <span class="equipment-notes">${notes}</span>` : name;
-        return `
-          <div class="grid-row">
-            <div class="grid-cell"><a href="?gym=${gymInitial}" class="outlet-link">${gym}</a></div>
-            <div class="grid-cell brand">${displayBrand}</div>
-            <div class="grid-cell">${equipmentDisplay}</div>
-          </div>
-        `;
-      }).join('');
+        html += `<h3 class="equipment-gym-heading"><a href="?gym=${gymInitial}" class="outlet-link">${gym}</a></h3>`;
 
-      html += `
-        <div class="results-grid" style="--grid-cols: 3">
-          <div class="grid-header">
-            <div class="grid-cell"><strong>Gym</strong></div>
-            <div class="grid-cell"><strong>Brand</strong></div>
-            <div class="grid-cell"><strong>Equipment</strong></div>
-          </div>
-          ${gridRows}
-        </div>
-      `;
+        gymGroups[gym].forEach(({ brand, name, notes }) => {
+          const displayBrand = brand === 'Unknown' ? '—' : brand;
+          const equipmentDisplay = notes ? `${name} <span class="equipment-notes">${notes}</span>` : name;
+          html += `<div class="equipment-item"><strong>${displayBrand}</strong> ${equipmentDisplay}</div>`;
+        });
+      });
 
       content.innerHTML = html;
     }

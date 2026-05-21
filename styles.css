@@ -847,6 +847,35 @@ header h1 {
   color: #333333;
 }
 
+.equipment-gym-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.equipment-gym-heading:first-of-type {
+  margin-top: 0;
+}
+.equipment-gym-heading a {
+  color: #2196f3;
+  text-decoration: none;
+}
+.equipment-gym-heading a:hover {
+  text-decoration: underline;
+}
+
+.equipment-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #666;
+  line-height: 16px;
+}
+.equipment-item strong {
+  font-weight: 600;
+  color: #333333;
+}
+
 @media (max-width: 768px) {
   body {
     flex-direction: column;
