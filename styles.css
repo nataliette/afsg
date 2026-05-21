@@ -817,6 +817,36 @@ header h1 {
   background-color: #0d47a1;
 }
 
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols, 4), 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.grid-header {
+  display: contents;
+}
+
+.grid-row {
+  display: contents;
+}
+
+.grid-cell {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.grid-cell:first-child {
+  border-left: 1px solid #e0e0e0;
+}
+.grid-cell:last-child {
+  border-right: 1px solid #e0e0e0;
+}
+.grid-cell strong {
+  font-weight: 600;
+  color: #333333;
+}
+
 @media (max-width: 768px) {
   body {
     flex-direction: column;

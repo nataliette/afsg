@@ -225,3 +225,37 @@ header {
     background-color: $color-primary-darker;
   }
 }
+
+// Results Grid (Equipment display)
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols, 4), 1fr);
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+.grid-header {
+  display: contents;
+}
+
+.grid-row {
+  display: contents;
+}
+
+.grid-cell {
+  padding: $spacing-md;
+  border-bottom: 1px solid $color-gray-200;
+
+  &:first-child {
+    border-left: 1px solid $color-gray-200;
+  }
+
+  &:last-child {
+    border-right: 1px solid $color-gray-200;
+  }
+
+  strong {
+    font-weight: $font-weight-semibold;
+    color: $color-gray-900;
+  }
+}
