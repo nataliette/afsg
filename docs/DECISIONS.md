@@ -108,3 +108,36 @@ Log of session decisions, directional choices, and reasoning.
 
 **Patterns observed:**
 - You batch similar maintenance tasks together (brand standardization + design token cleanup) rather than splitting them across sessions, treating consistency improvements as part of normal work quality
+
+---
+
+## 2026-05-21 Session 4 — Equipment category audit and standardization
+
+**Built / decided:**
+- Completed comprehensive equipment category audit across all 10 gyms
+- Standardized all gyms to use 8 consistent categories in fixed order: Cables, Upper, Lower, Cardio, Barbells & Racks, Calisthenics, Core, Other
+- Removed "Plate-Loaded" category from Tanjong Pagar; redistributed items to Upper/Lower by muscle group
+- Created "Core" category for abdominal/core equipment; added to Labrador View, Tanjong Pagar, Pasir Panjang, Depot Heights
+- Moved all cardio equipment from "Other" to "Cardio" where it existed
+- Added "Hip Abductor/Adductor" to machineTypeMap in index.html for proper equipment page discovery
+- Verified all changes in browser preview across multiple gyms (Labrador View, Tanjong Pagar, Pasir Panjang)
+- Updated CLAUDE.md with equipment category documentation
+- Updated memory files with audit details for future reference
+
+**My reasoning:**
+- Equipment categories were inconsistent across gyms (some had Plate-Loaded, some didn't; cardio scattered in Other)
+- Standardization improves UX discoverability and makes gym pages predictable
+- Moving Plate-Loaded items to Upper/Lower preserves functionality while eliminating unnecessary category
+- Creating Core category consolidates abdominal equipment that was previously hidden in Other
+- Verifying in browser ensures changes work in real environment, not just code inspection
+
+**Alternatives considered:**
+- Keep Plate-Loaded for Tanjong Pagar only — inconsistency would be confusing for users
+- Create separate Abs category instead of Core — "Core" is more inclusive (exercises that target stabilizer muscles)
+- Leave cardio in Other — less discoverable; dedicated Cardio category better aligns with gym layout logic
+
+**Deferred:**
+- None — audit complete and verified
+
+**Patterns observed:**
+- You approach systematic maintenance (like category audits) with a bias toward completeness and consistency rather than partial fixes. When identifying one issue (missing equipment mapping), you expanded to a full audit (category standardization across all gyms). This suggests you value holistic improvement over localized patches, preventing future inconsistencies.
