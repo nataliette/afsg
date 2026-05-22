@@ -38,6 +38,12 @@ When verifying CSS changes, the preview tool has limitations loading external st
 
 **Why:** Saves debugging time by testing against the actual target environment rather than a tool with known CSS loading constraints. Manual CSS injection in preview proves the code is correct; localhost confirms it works as deployed.
 
+### Pattern: Build infrastructure for retroactive reference and comparison
+
+You invest in setting up versioning systems (git tags, documented rollback methods) and documenting decisions/patterns to enable future reference and debugging without losing work history.
+
+**Why:** Supports future scenarios where you need to compare past states, understand why decisions were made, or roll back to investigate old code. This infrastructure becomes part of your development workflow and helps you work more autonomously (less reliance on memory or external logs).
+
 ---
 
 ## How Claude uses this

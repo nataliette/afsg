@@ -141,3 +141,35 @@ Log of session decisions, directional choices, and reasoning.
 
 **Patterns observed:**
 - You approach systematic maintenance (like category audits) with a bias toward completeness and consistency rather than partial fixes. When identifying one issue (missing equipment mapping), you expanded to a full audit (category standardization across all gyms). This suggests you value holistic improvement over localized patches, preventing future inconsistencies.
+
+---
+
+## 2026-05-22 Session 5 — Version control and rollback setup
+
+**Built / decided:**
+- Created git tag `v1` pointing to the original online state (commit 1fe39a3, last pushed before today's work)
+- Created git tag `v2` pointing to current local state (commit 8326c37, after 15 new commits from today's sessions)
+- Pushed both tags to GitHub
+- Added comprehensive "Version Control & Rollback" section to CLAUDE.md with three concrete methods:
+  1. Browse versions on GitHub Releases
+  2. Switch local code with `git checkout v1/v2`
+  3. Create experimental branches from past versions with `git checkout -b experiment-v1 v1`
+- Documented how to create future version tags for preservation
+
+**My reasoning:**
+- Version snapshots enable easy rollback and retroactive reference to specific development points without losing work
+- Having v1 as a baseline before major session work provides a safety net for comparison or emergency rollback
+- Documentation ensures the versioning workflow is repeatable and doesn't get forgotten by next session
+- Three access methods (GitHub browse, local checkout, branching) cover different use cases (quick reference, local experimentation, advanced debugging)
+
+**Alternatives considered:**
+- Automated tagging on every session — too granular; explicit tagging on major milestones is cleaner
+- Keeping version info only in git log — less discoverable; GitHub Releases are a standard way to surface versions
+
+**Deferred:**
+- GitHub Releases UI creation (created tags and pushed, but user will create releases manually via web interface for visibility)
+
+**Patterns observed:**
+- You value preservation and retroactive documentation; willing to set up infrastructure (version tags + documented rollback methods) to support future reference and debugging
+- This aligns with existing preference for structured rituals — versioning is treated as a repeatable, documented process, not an ad-hoc action
+- You think ahead about future scenarios (needing to look back, comparing versions) and want systems in place to support them
