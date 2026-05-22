@@ -46,6 +46,42 @@ This prevents wasted work and ensures alignment on approach.
 - If the product's scope or purpose has evolved, update `PRODUCT.md` to reflect the current state.
 - When implementing new features, consult `PRODUCT.md`'s decision framework to ensure alignment with core purpose and avoid scope creep.
 
+## Version Control & Rollback
+
+This project uses **git tags** and **GitHub Releases** to preserve versioned snapshots. Currently:
+- **v1**: Baseline state (May 21, 2026) — the original online version before major session updates
+- **v2**: Current state with all May 2026 improvements — includes 15 commits with style, tooltip, and category standardization work
+
+**To view or rollback to a previous version:**
+
+**Option 1: Browse on GitHub**
+1. Go to repo → **Releases** tab
+2. Click on the version you want (v1, v2, etc.)
+3. Browse the code as it was at that point in time
+
+**Option 2: Switch your local code**
+```bash
+# Switch to v1 (original state)
+git checkout v1
+
+# Switch back to latest (v2)
+git checkout main
+```
+
+**Option 3: Create a new branch from a version**
+```bash
+# Create a new branch starting from v1 to experiment without affecting main
+git checkout -b experiment-v1 v1
+```
+
+**To create new version tags in the future:**
+When you want to preserve a major milestone:
+```bash
+git tag v3
+git push origin v3
+# Then create a release on GitHub for discoverability
+```
+
 ## Structural Changes
 **Before making any structural change, step back and review the entire structure at a high level.** Optimize holistically—don't hack together a function to solve the immediate problem. Consider:
 - How does this fit into the overall app flow and layout?
