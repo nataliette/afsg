@@ -651,6 +651,60 @@
             "brand": "Life Fitness",
             "name": "Dual Adjustable Pulley",
             "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Lat Pulldown",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Dual Pulley Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Low Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Cable",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Chin/Dip",
+            "notes": null
           }
         ],
         "Upper": [
@@ -668,11 +722,10 @@
             "tags": [
               "back",
               "chest",
-              "shoulders",
-              "triceps"
+              "shoulders"
             ],
             "brand": "Life Fitness",
-            "name": "Fly/Delt Machine",
+            "name": "Pectoral Fly / Rear Deltoid",
             "notes": null
           },
           {
@@ -712,8 +765,17 @@
               "shoulders",
               "triceps"
             ],
-            "brand": "Hammer Strength",
-            "name": "ISO Lateral Bench Press",
+            "brand": "Life Fitness",
+            "name": "Iso-Lateral Bench Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Triceps Press",
             "notes": null
           },
           {
@@ -804,7 +866,7 @@
               "legs"
             ],
             "brand": "Life Fitness",
-            "name": "Hip Ab/Ad",
+            "name": "Hip Abductor/Adductor",
             "notes": null
           },
           {
@@ -844,6 +906,52 @@
             "notes": null
           }
         ],
+        "Cardio": [
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Concept2",
+            "name": "RowErg",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Life Fitness",
+            "name": "Stationary Bike",
+            "notes": "x2 (standing/sitting)"
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Elliptical",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Stairmaster",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Life Fitness",
+            "name": "Treadmill",
+            "notes": "x7"
+          }
+        ],
         "Core": [
           {
             "tags": [
@@ -851,6 +959,14 @@
             ],
             "brand": "Life Fitness",
             "name": "Abdominal",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Unknown",
+            "name": "Ab Wheel",
             "notes": null
           }
         ],
@@ -891,9 +1007,46 @@
             "name": "Captain's Chair",
             "notes": null
           }
+        ],
+        "Other": [
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Unknown",
+            "name": "Bosu Ball",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "back",
+              "core"
+            ],
+            "brand": "Torque",
+            "name": "Relentless Ripper™ Pro",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Life Fitness",
+            "name": "Medicine Ball 55",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Life Fitness",
+            "name": "Medicine Ball 65",
+            "notes": null
+          }
         ]
       },
-      "lastUpdated": "15 May 2026"
+      "lastUpdated": "26 May 2026"
     },
     "Pasir Panjang": {
       "status": "complete",
@@ -1370,7 +1523,7 @@
               "legs"
             ],
             "brand": "Life Fitness",
-            "name": "Hip Abduction Machine",
+            "name": "Hip Abductor/Adductor",
             "notes": null
           },
           {
