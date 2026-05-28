@@ -173,3 +173,36 @@ Log of session decisions, directional choices, and reasoning.
 - You value preservation and retroactive documentation; willing to set up infrastructure (version tags + documented rollback methods) to support future reference and debugging
 - This aligns with existing preference for structured rituals — versioning is treated as a repeatable, documented process, not an ad-hoc action
 - You think ahead about future scenarios (needing to look back, comparing versions) and want systems in place to support them
+
+---
+
+## 2026-05-28 Session 6 — City Hall equipment, cable grouping, cross-gym reorganization
+
+**Built / decided:**
+- Added complete equipment list for City Hall (formerly AF Cityhall) with 70+ pieces across all 8 categories
+- Added `group` field to cable JSON items for modal grouping; updated `buildEquipmentIndex()` and `updateEquipmentModalText()` to display grouped cables under a heading (e.g., "Cable Station:") with indentation
+- Expanded cable items from single grouped entries into individual lines (each Precor cable station item as its own entry)
+- Reorganized equipment across three gyms:
+  - **LV (Labrador View):** Moved Precor Multistation from Upper → Cables; fixed pre-existing duplicate Cables section bug in JSON
+  - **PP (Pasir Panjang):** Moved Precor FTS Glide from Core → Cables
+  - **TP (Tanjong Pagar):** Added `"group": "Cable Station"` to all cable items; moved Chin/Dip from Cables → Calisthenics; moved Captain's Chair from Calisthenics → Core
+- Renamed gym "AF Cityhall" to "City Hall" in both `equipment.json` and `GYM_INITIALS` in `index.html`
+- Added `machineTypeMap` entries: `Longpull 302` → `"Cable Row"`, `Pulldown 304` → `"Lat Pulldown"`
+- Added Machine Type Groupings documentation to `PRODUCT.md`
+- CLAUDE.md significantly restructured by user: reference content (equipment categories, machine type mappings, brand abbreviations) consolidated into PRODUCT.md; CLAUDE.md now covers workflow only
+
+**My reasoning:**
+- Separating cable station items individually makes equipment pages useful (e.g. `?equipment=Lat_Pulldown` now includes Pulldown 304) while grouping in the modal preserves the "Cable Station" context for AI workout prompts
+- Cross-gym reorganization ensures consistent categorization: FTS Glide and Multistation are cable machines and belong under Cables; Chin/Dip is calisthenics; Captain's Chair is core
+- PRODUCT.md as single reference for data structure decisions reduces duplication and makes CLAUDE.md focused on workflow
+
+**Alternatives considered:**
+- Keep Chin/Dip under Cables (where it physically lives) — rejected; it's categorized by movement type, not location
+- Map Longpull 302 to "Seated Row" instead of "Cable Row" — rejected; user specified "Cable Row" as the distinct machine type
+
+**Deferred:**
+- None
+
+**Patterns observed:**
+- You treat individual equipment items as first-class searchable objects: when a cable station has multiple machines, each gets its own entry and URL, not just a group summary. Grouping is a display concern (modal/copy feature), not a data concern.
+- You proactively rationalize naming across the whole dataset when renaming (gym name, GYM_INITIALS) rather than patching just the visible string.

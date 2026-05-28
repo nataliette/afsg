@@ -127,6 +127,7 @@
     }
 
     const GYM_INITIALS = {
+      'City Hall': 'AC',
       'Cecil Street': 'CS',
       'Depot Heights': 'DH',
       'Grandtral Complex': 'GC',
@@ -235,7 +236,9 @@
       "Dual Adjustable Pulley": "Cable Station",
       "Multistation": "Cable Station",
       "Dual Pulley Pulldown": "Cable Station",
-      "FTS Glide": "Cable Station"
+      "FTS Glide": "Cable Station",
+      "Longpull 302": "Cable Row",
+      "Pulldown 304": "Lat Pulldown"
     };
 
     let equipmentData = null;
@@ -272,7 +275,8 @@
               brand: machine.brand,
               name: machine.name,
               notes: machine.notes,
-              tags: machine.tags
+              tags: machine.tags,
+              group: machine.group || null
             });
           }
         }
@@ -850,15 +854,41 @@
 
       let text = `I'm at ${currentGym}. Generate me a ${duration} ${focusArea} workout from these equipment:\n\n`;
 
-      // Organize by category
+      // Organize by category, then by group
       for (const [category, machines] of Object.entries(gymData.categories || {})) {
         if (!machines || machines.length === 0) continue;
         text += `${category}:\n`;
+
+        // Separate grouped and ungrouped machines
+        const groups = {};
+        const ungrouped = [];
+
         machines.forEach(machine => {
+          if (machine.group) {
+            if (!groups[machine.group]) groups[machine.group] = [];
+            groups[machine.group].push(machine);
+          } else {
+            ungrouped.push(machine);
+          }
+        });
+
+        // Display grouped machines first
+        for (const [groupName, groupMachines] of Object.entries(groups)) {
+          text += `  ${groupName}:\n`;
+          groupMachines.forEach(machine => {
+            const brandPart = machine.brand && machine.brand !== 'Unknown' ? `${machine.brand}: ` : '';
+            const equipmentLine = `${brandPart}${machine.name}${machine.notes ? ` (${machine.notes})` : ''}`;
+            text += `  - ${equipmentLine}\n`;
+          });
+        }
+
+        // Display ungrouped machines
+        ungrouped.forEach(machine => {
           const brandPart = machine.brand && machine.brand !== 'Unknown' ? `${machine.brand}: ` : '';
           const equipmentLine = `${brandPart}${machine.name}${machine.notes ? ` (${machine.notes})` : ''}`;
           text += `- ${equipmentLine}\n`;
         });
+
         text += `\n`;
       }
 
