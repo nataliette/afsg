@@ -21,6 +21,21 @@ h1 {
   font-weight: 600;
 }
 
+.home-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.home-link:hover {
+  opacity: 0.7;
+}
+
+.home-link h1 {
+  margin: 0;
+}
+
 h2 {
   font-size: 14px;
   font-weight: 600;
@@ -1169,6 +1184,226 @@ header h1 {
 @media (min-width: 769px) and (max-width: 1024px) {
   .category-cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Equipment Inventory View Styles */
+.inventory-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 0;
+}
+
+.summary-item {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.summary-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 8px;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inventory-gym-section {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.inventory-gym-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+}
+
+.inventory-gym-header h2 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.inventory-gym-meta {
+  font-size: 12px;
+  opacity: 0.9;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.status-badge.complete {
+  background: rgba(76, 175, 80, 0.3);
+  color: #4caf50;
+}
+
+.status-badge.ongoing {
+  background: rgba(255, 193, 7, 0.3);
+  color: #ffc107;
+}
+
+.inventory-categories {
+  padding: 20px;
+}
+
+.inventory-category {
+  margin-bottom: 20px;
+}
+
+.inventory-category-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #667eea;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 0;
+  border-bottom: 2px solid #667eea;
+  margin-bottom: 10px;
+}
+
+.inventory-equipment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.inventory-equipment-table th {
+  background: #f9f9f9;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.inventory-equipment-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.inventory-equipment-table tr:hover {
+  background: #fafafa;
+}
+
+.inventory-brand-col {
+  font-weight: 500;
+  color: #667eea;
+  width: 130px;
+  white-space: nowrap;
+}
+
+.inventory-name-col {
+  font-weight: 500;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.inventory-name-col:hover {
+  color: #667eea;
+  text-decoration: underline;
+}
+
+.inventory-tags-col {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.inventory-tag {
+  display: inline-block;
+  background: #e8eaf6;
+  color: #5e35b1;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.inventory-tag:hover {
+  background: #5e35b1;
+  color: white;
+}
+
+.inventory-notes-col {
+  color: #999;
+  font-size: 12px;
+  max-width: 150px;
+}
+
+
+@media (max-width: 768px) {
+  .inventory-summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .summary-item {
+    padding: 16px;
+  }
+
+  .inventory-gym-header {
+    padding: 16px;
+  }
+
+  .inventory-gym-header h2 {
+    font-size: 18px;
+  }
+
+  .inventory-categories {
+    padding: 16px;
+  }
+
+  .inventory-equipment-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .inventory-equipment-table th,
+  .inventory-equipment-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .inventory-brand-col {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .inventory-name-col {
+    width: 140px;
+    font-size: 12px;
+  }
+
+  .inventory-tag {
+    font-size: 10px;
+    padding: 2px 4px;
   }
 }
 

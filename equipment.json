@@ -626,8 +626,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Single Pulley",
-            "notes": null,
-            "group": "Cable Station"
+            "notes": null
           },
           {
             "tags": [
@@ -641,8 +640,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Dual Adjustable Pulley",
-            "notes": null,
-            "group": "Cable Station"
+            "notes": null
           },
           {
             "tags": [
@@ -652,8 +650,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Lat Pulldown",
-            "notes": "x2",
-            "group": "Cable Station"
+            "notes": "x2"
           },
           {
             "tags": [
@@ -663,8 +660,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Dual Pulley Row",
-            "notes": null,
-            "group": "Cable Station"
+            "notes": null
           },
           {
             "tags": [
@@ -674,8 +670,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Low Row",
-            "notes": null,
-            "group": "Cable Station"
+            "notes": null
           },
           {
             "tags": [
@@ -687,8 +682,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Cable",
-            "notes": "x2",
-            "group": "Cable Station"
+            "notes": "x2"
           }
         ],
         "Upper": [
@@ -1021,7 +1015,7 @@
               "core"
             ],
             "brand": "Torque",
-            "name": "Relentless Ripper™ Pro",
+            "name": "Relentless Ripper\u2122 Pro",
             "notes": null
           },
           {
@@ -1697,8 +1691,7 @@
             ],
             "brand": "Precor",
             "name": "Longpull 302",
-            "notes": "x2",
-            "group": "Cable Station"
+            "notes": "x2"
           },
           {
             "tags": [
@@ -1712,8 +1705,7 @@
             ],
             "brand": "Precor",
             "name": "Pulldown 304",
-            "notes": "x2",
-            "group": "Cable Station"
+            "notes": "x2"
           },
           {
             "tags": [
@@ -1727,8 +1719,7 @@
             ],
             "brand": "Precor",
             "name": "Adjustable Pulley",
-            "notes": "x4",
-            "group": "Cable Station"
+            "notes": "x4"
           }
         ],
         "Upper": [
