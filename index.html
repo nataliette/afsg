@@ -810,14 +810,14 @@ function selectEquipment(machineName) {
         const gymInitial = GYM_INITIALS[gymName].toLowerCase();
 
         html += `
-          <div class="inventory-gym-section">
-            <div class="inventory-gym-header">
-              <div>
+          <div class="inventory-gym-section" data-gym="${gymName}" data-expanded="true">
+            <div class="inventory-gym-header" onclick="toggleGymSection(this)">
+              <div class="inventory-gym-title-group">
+                <button class="inventory-accordion-toggle" aria-expanded="true">▼</button>
                 <h2>${gymName}</h2>
-                <div class="inventory-gym-meta">
-                  <span>Last Updated: ${gymData.lastUpdated}</span>
-                  <span class="status-badge ${gymData.status}">${gymData.status}</span>
-                </div>
+              </div>
+              <div class="inventory-gym-meta">
+                <span>${gymData.status === 'complete' ? '✓ Complete' : '⚠ Partial'} — updated ${gymData.lastUpdated}</span>
               </div>
             </div>
             <div class="inventory-categories">
@@ -826,33 +826,32 @@ function selectEquipment(machineName) {
         Object.entries(gymData.categories || {}).forEach(([categoryName, equipment]) => {
           html += `
             <div class="inventory-category">
-              <div class="inventory-category-title">${categoryName} (${equipment.length})</div>
-              <table class="inventory-equipment-table">
-                <colgroup>
-                  <col style="width: 130px;">
-                  <col style="width: 220px;">
-                  <col style="width: 1fr;">
-                  <col style="width: 120px;">
-                </colgroup>
-                <tbody>
+              <div class="inventory-category-title">
+                <span>${categoryName}</span>
+                <span class="inventory-count">(${equipment.length})</span>
+              </div>
+              <div class="inventory-equipment-grid">
           `;
 
           equipment.forEach(item => {
             const tagsHtml = item.tags.map(tag => `<span class="inventory-tag" onclick="selectTag('${tag}')">${tag}</span>`).join('');
 
             html += `
-              <tr>
-                <td class="inventory-brand-col">${item.brand}</td>
-                <td class="inventory-name-col" onclick="selectEquipment('${item.name.replace(/'/g, "\\'")}')">${item.name}</td>
-                <td class="inventory-tags-col">${tagsHtml}</td>
-                <td class="inventory-notes-col">${item.notes || '—'}</td>
-              </tr>
+              <div class="inventory-equipment-item">
+                <div class="inventory-equipment-left">
+                  <span class="inventory-brand">${item.brand}</span>
+                  <span class="inventory-name" onclick="selectEquipment('${item.name.replace(/'/g, "\\'")}')">${item.name}</span>
+                  ${item.notes ? `<span class="inventory-notes">${item.notes}</span>` : ''}
+                </div>
+                <div class="inventory-equipment-tags">
+                  ${tagsHtml}
+                </div>
+              </div>
             `;
           });
 
           html += `
-                </tbody>
-              </table>
+              </div>
             </div>
           `;
         });
@@ -864,6 +863,25 @@ function selectEquipment(machineName) {
       });
 
       content.innerHTML = html;
+    }
+
+    function toggleGymSection(headerElement) {
+      const section = headerElement.closest('.inventory-gym-section');
+      const categoriesDiv = section.querySelector('.inventory-categories');
+      const toggleBtn = headerElement.querySelector('.inventory-accordion-toggle');
+      const isExpanded = section.getAttribute('data-expanded') === 'true';
+
+      if (isExpanded) {
+        section.setAttribute('data-expanded', 'false');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.textContent = '▶';
+        categoriesDiv.classList.add('collapsed');
+      } else {
+        section.setAttribute('data-expanded', 'true');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.textContent = '▼';
+        categoriesDiv.classList.remove('collapsed');
+      }
     }
 
     // Equipment Modal Functions
