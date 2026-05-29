@@ -395,7 +395,10 @@
         if (!list) return;
         list.innerHTML = '';
 
-        gyms.forEach(gym => {
+        // Sort gyms alphabetically
+        const sortedGyms = [...gyms].sort();
+
+        sortedGyms.forEach(gym => {
           const link = document.createElement('a');
           link.className = 'gym-item' + (gym === currentGym ? ' active' : '');
           link.href = '?gym=' + GYM_INITIALS[gym].toLowerCase();
@@ -777,6 +780,14 @@ function selectEquipment(machineName) {
     function renderLandingPage() {
       const content = document.getElementById('content');
 
+      // Filter to only complete gyms and sort by lastUpdated (most recent first)
+      const completeGyms = gyms.filter(gymName => equipmentData.gyms[gymName].status === 'complete');
+      const sortedCompleteGyms = completeGyms.sort((a, b) => {
+        const dateA = new Date(equipmentData.gyms[a].lastUpdated);
+        const dateB = new Date(equipmentData.gyms[b].lastUpdated);
+        return dateB - dateA;
+      });
+
       // Calculate summary stats
       let totalEquipment = 0;
       const totalCategories = new Set();
@@ -791,7 +802,11 @@ function selectEquipment(machineName) {
         <div class="inventory-summary">
           <div class="summary-item">
             <div class="summary-value">${gyms.length}</div>
-            <div class="summary-label">Gyms</div>
+            <div class="summary-label">Gyms Visited</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-value">${completeGyms.length}</div>
+            <div class="summary-label">Gyms Completed</div>
           </div>
           <div class="summary-item">
             <div class="summary-value">${totalEquipment}</div>
@@ -804,8 +819,8 @@ function selectEquipment(machineName) {
         </div>
       `;
 
-      // Render all gyms with equipment
-      gyms.forEach(gymName => {
+      // Render only complete gyms with equipment, sorted by most recent update
+      sortedCompleteGyms.forEach(gymName => {
         const gymData = equipmentData.gyms[gymName];
         const gymInitial = GYM_INITIALS[gymName].toLowerCase();
 
@@ -817,7 +832,7 @@ function selectEquipment(machineName) {
                 <h2>${gymName}</h2>
               </div>
               <div class="inventory-gym-meta">
-                <span>${gymData.status === 'complete' ? '✓ Complete' : '⚠ Partial'} — updated ${gymData.lastUpdated}</span>
+                <span>updated ${gymData.lastUpdated}</span>
               </div>
             </div>
             <div class="inventory-categories">

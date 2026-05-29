@@ -1190,7 +1190,7 @@ header h1 {
 /* Equipment Inventory View Styles */
 .inventory-summary {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-bottom: 32px;
   padding: 0;
@@ -1299,7 +1299,7 @@ header h1 {
 .inventory-categories {
   max-height: 10000px;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease;
   padding: 20px;
 }
 
@@ -1387,9 +1387,10 @@ header h1 {
 
 .inventory-equipment-tags {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 4px;
-  align-items: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .inventory-tag {
@@ -1412,7 +1413,7 @@ header h1 {
 
 @media (max-width: 768px) {
   .inventory-summary {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
