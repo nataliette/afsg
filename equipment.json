@@ -872,6 +872,19 @@
             "brand": "Hammer Strength",
             "name": "Iso-Lateral Row",
             "notes": "unloaded 5.4kg"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Assisted Dip/Chin",
+            "notes": null
           }
         ],
         "Lower": [
@@ -1025,19 +1038,6 @@
             ],
             "brand": "Unknown",
             "name": "Pull-up Bar",
-            "notes": null
-          },
-          {
-            "tags": [
-              "arms",
-              "back",
-              "biceps",
-              "chest",
-              "core",
-              "triceps"
-            ],
-            "brand": "Life Fitness",
-            "name": "Assisted Dip/Chin",
             "notes": null
           },
           {
@@ -1287,7 +1287,19 @@
               "biceps"
             ],
             "brand": "Hammer Strength",
-            "name": "ISO Lateral Front Lat Pulldown",
+            "name": "Iso-Lateral Front Lat Pulldown",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Chin/Dip",
             "notes": null
           }
         ],
@@ -1486,20 +1498,6 @@
             "brand": "Unknown",
             "name": "Deadlift Platform",
             "notes": "x2"
-          }
-        ],
-        "Calisthenics": [
-          {
-            "tags": [
-              "arms",
-              "back",
-              "biceps",
-              "core",
-              "triceps"
-            ],
-            "brand": "Life Fitness",
-            "name": "Chin/Dip",
-            "notes": null
           }
         ],
         "Other": [
