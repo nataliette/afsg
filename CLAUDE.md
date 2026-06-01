@@ -123,6 +123,11 @@ sass --watch styles.scss:styles.css  # Watch mode
 
 ## Testing
 
+### Local preview (Caddy)
+Static site — Caddy serves the files directly, so just open **http://afsg.test/** (no dev server needed).
+
+**Port-80 caveat:** `.test` works only while Caddy is running and LocalWP is quit (both want port 80). Toggle on with `osascript -e 'quit app "Local"'` then `sudo brew services start caddy`; reverse to return to WordPress.
+
 ### Server Setup
 ```bash
 python -m http.server 8000  # Start HTTP server (project root)
