@@ -21,21 +21,6 @@ h1 {
   font-weight: 600;
 }
 
-.home-link {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.home-link:hover {
-  opacity: 0.7;
-}
-
-.home-link h1 {
-  margin: 0;
-}
-
 h2 {
   font-size: 14px;
   font-weight: 600;
@@ -1186,6 +1171,20 @@ header h1 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.home-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.home-link:hover {
+  opacity: 0.7;
+}
+
+.home-link h1 {
+  margin: 0;
+}
 
 /* Equipment Inventory View Styles */
 .inventory-summary {
@@ -1410,40 +1409,55 @@ header h1 {
   color: white;
 }
 
+.equipment-item--unavailable {
+  opacity: 0.65;
+}
+
+.equipment-unavailable {
+  color: #999999;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  cursor: default;
+}
+
+.inventory-equipment-item--unavailable {
+  opacity: 0.65;
+}
+
+.inventory-name--unavailable {
+  font-weight: 500;
+  font-size: 13px;
+  color: #999999;
+  text-decoration: line-through;
+  cursor: default;
+}
 
 @media (max-width: 768px) {
   .inventory-summary {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-
   .summary-item {
     padding: 16px;
   }
-
   .inventory-gym-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-
   .inventory-gym-meta {
     width: 100%;
   }
-
   .inventory-equipment-item {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-
   .inventory-equipment-tags {
     display: none;
   }
-
   .inventory-categories {
     padding: 16px;
   }
-
   .inventory-category-title {
     font-size: 13px;
     padding: 8px 0;

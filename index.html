@@ -264,6 +264,7 @@
         const gymData = equipmentData.gyms[gymName];
         for (const [category, machines] of Object.entries(gymData.categories || {})) {
           for (const machine of machines) {
+            if (machine.available === false) continue;
             // Map machine name to type, or use name if not in map
             const machineType = machineTypeMap[machine.name] || machine.name;
             if (!equipmentIndex[machineType]) {
@@ -574,6 +575,7 @@ function selectEquipment(machineName) {
 
         for (const [category, machines] of Object.entries(gymData.categories || {})) {
           for (const machine of machines) {
+            if (machine.available === false) continue;
             const machineMatches = selectedTags.some(tag => machine.tags.includes(tag));
             if (machineMatches) {
               matches.push({ category, machine });
@@ -665,7 +667,7 @@ function selectEquipment(machineName) {
       const filterTags = selectedTags.length > 0 ? selectedTags : [];
       if (filterTags.length > 0) {
         const matchCount = Object.values(categoryGroups).reduce((count, machines) => {
-          return count + machines.filter(m => filterTags.some(tag => m.tags.includes(tag))).length;
+          return count + machines.filter(m => m.available !== false && filterTags.some(tag => m.tags.includes(tag))).length;
         }, 0);
         const tagDisplay = filterTags.map(t => `<strong>${t}</strong>`).join(', ');
         html += `<div class="search-result-header">${currentGym} has ${matchCount} machines matching: ${tagDisplay} — <a href="?gym=${GYM_INITIALS[currentGym].toLowerCase()}">view full equipment list</a></div>`;
@@ -673,7 +675,7 @@ function selectEquipment(machineName) {
 
       // Check if any machines match filters
       const hasMatchingMachines = Object.values(categoryGroups).some(machines =>
-        filterTags.length === 0 || machines.some(m => filterTags.some(tag => m.tags.includes(tag)))
+        filterTags.length === 0 || machines.some(m => m.available !== false && filterTags.some(tag => m.tags.includes(tag)))
       );
 
       if (!hasMatchingMachines) {
@@ -686,7 +688,7 @@ function selectEquipment(machineName) {
       const categoryCards = Object.entries(categoryGroups).map(([category, machines]) => {
         // Filter machines by tags if present
         const displayedMachines = filterTags.length > 0
-          ? machines.filter(m => filterTags.some(tag => m.tags.includes(tag)))
+          ? machines.filter(m => m.available !== false && filterTags.some(tag => m.tags.includes(tag)))
           : machines;
 
         if (displayedMachines.length === 0) return '';
@@ -695,6 +697,16 @@ function selectEquipment(machineName) {
           const isBranded = machine.brand !== 'Unknown';
           const brandDisplay = isBranded ? `${machine.brand} ` : '';
           const tagsHtml = machine.tags.map(tag => `<span class="tag" onclick="selectTag('${tag}')">${tag}</span>`).join('');
+          if (machine.available === false) {
+            return `
+            <div class="equipment-item equipment-item--unavailable">
+              <span class="equipment-unavailable" title="Not available at ${currentGym}">${brandDisplay}<strong>${machine.name}</strong></span>
+              <div class="equipment-tags">
+                ${tagsHtml}
+              </div>
+            </div>
+          `;
+          }
           return `
             <div class="equipment-item">
               <span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${brandDisplay}<strong>${machine.name}</strong></span>
@@ -794,7 +806,7 @@ function selectEquipment(machineName) {
       Object.values(equipmentData.gyms).forEach(gym => {
         Object.keys(gym.categories).forEach(cat => {
           totalCategories.add(cat);
-          totalEquipment += gym.categories[cat].length;
+          totalEquipment += gym.categories[cat].filter(m => m.available !== false).length;
         });
       });
 
@@ -843,19 +855,23 @@ function selectEquipment(machineName) {
             <div class="inventory-category">
               <div class="inventory-category-title">
                 <span>${categoryName}</span>
-                <span class="inventory-count">(${equipment.length})</span>
+                <span class="inventory-count">(${equipment.filter(i => i.available !== false).length})</span>
               </div>
               <div class="inventory-equipment-grid">
           `;
 
           equipment.forEach(item => {
             const tagsHtml = item.tags.map(tag => `<span class="inventory-tag" onclick="selectTag('${tag}')">${tag}</span>`).join('');
+            const unavailable = item.available === false;
+            const nameSpan = unavailable
+              ? `<span class="inventory-name inventory-name--unavailable" title="Not available at ${gymName}">${item.name}</span>`
+              : `<span class="inventory-name" onclick="selectEquipment('${item.name.replace(/'/g, "\\'")}')">${item.name}</span>`;
 
             html += `
-              <div class="inventory-equipment-item">
+              <div class="inventory-equipment-item${unavailable ? ' inventory-equipment-item--unavailable' : ''}">
                 <div class="inventory-equipment-left">
                   <span class="inventory-brand">${item.brand}</span>
-                  <span class="inventory-name" onclick="selectEquipment('${item.name.replace(/'/g, "\\'")}')">${item.name}</span>
+                  ${nameSpan}
                   ${item.notes ? `<span class="inventory-notes">${item.notes}</span>` : ''}
                 </div>
                 <div class="inventory-equipment-tags">
@@ -937,12 +953,13 @@ function selectEquipment(machineName) {
 
       let text = `I'm at ${currentGym}. Generate me a ${duration} ${focusArea} workout from these equipment:\n\n`;
 
-      // Organize by category
+      // Organize by category (exclude explicitly-unavailable equipment)
       for (const [category, machines] of Object.entries(gymData.categories || {})) {
-        if (!machines || machines.length === 0) continue;
+        const availableMachines = (machines || []).filter(m => m.available !== false);
+        if (availableMachines.length === 0) continue;
         text += `${category}:\n`;
 
-        machines.forEach(machine => {
+        availableMachines.forEach(machine => {
           const brandPart = machine.brand && machine.brand !== 'Unknown' ? `${machine.brand}: ` : '';
           const equipmentLine = `${brandPart}${machine.name}${machine.notes ? ` (${machine.notes})` : ''}`;
           text += `- ${equipmentLine}\n`;
