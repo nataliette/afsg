@@ -1,4 +1,2 @@
-# Allow the wodgen app to fetch the equipment feed cross-origin.
-# CORS permits only one origin per header; update this when wodgen deploys.
 /equipment.json
-  Access-Control-Allow-Origin: http://wodgen.test
+  Access-Control-Allow-Origin: *
