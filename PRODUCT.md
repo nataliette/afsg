@@ -105,6 +105,11 @@ Maps individual equipment names to canonical machine types for `?equipment=` URL
 
 **Rule:** Brand-specific model names that map to known types should be added to machineTypeMap. Unique standalone types get their own URL.
 
+**Ball equipment naming convention:**
+- Exercise balls (stability/Swiss balls) are named with cm sizing: `Exercise Ball 55cm`, `Exercise Ball 65cm` — both map to `"Exercise Ball"`
+- These are **not** medicine balls — medicine balls are weighted and measured in kg/lb; exercise balls are inflated and measured by diameter in cm
+- If a ball entry has no size, use just `Exercise Ball`
+
 #### Equipment Brand Abbreviations
 Shorthand for rapid data entry (expands to full names in equipment.json):
 - **C2** = Concept2
@@ -186,7 +191,7 @@ When evaluating a feature request, ask:
 
 ## Known UX Issues (Deferred)
 
-**Tooltip interaction gap:** Equipment item tooltips disappear on `mouseleave`, preventing users from mousing into the tooltip to interact with tags. The desired behavior: hover item → tooltip appears → move mouse into tooltip → tags remain interactive. Needs redesigned `mouseenter/mouseleave` logic on both the item and the tooltip container itself. See `setupEquipmentTooltips()` in index.html and `.equipment-tooltip` in `_layout.scss`.
+None currently.
 
 ---
 
