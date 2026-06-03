@@ -206,3 +206,29 @@ Log of session decisions, directional choices, and reasoning.
 **Patterns observed:**
 - You treat individual equipment items as first-class searchable objects: when a cable station has multiple machines, each gets its own entry and URL, not just a group summary. Grouping is a display concern (modal/copy feature), not a data concern.
 - You proactively rationalize naming across the whole dataset when renaming (gym name, GYM_INITIALS) rather than patching just the visible string.
+
+---
+
+## 2026-06-03 Session 7 — Workflow: replace memory files with project docs
+
+**Built / decided:**
+- Changed session close ritual: no longer writes to `~/.claude/projects/.../memory/` files
+- All institutional knowledge now lives in version-controlled project docs (CLAUDE.md, PRODUCT.md, docs/DECISIONS.md)
+- Migrated three memory-file entries into project docs:
+  - SCSS `darken()` compiler bug → CLAUDE.md SCSS section
+  - Clipboard API HTTP fallback requirement → CLAUDE.md Testing section
+  - Tooltip UX deferred issue → PRODUCT.md Known UX Issues section
+- Updated CLAUDE.md session close instructions accordingly
+
+**My reasoning:**
+- External memory files (`~/.claude/`) are not version-controlled — knowledge captured there is invisible to git history and can't be reviewed alongside the code that prompted it
+- Project docs (CLAUDE.md, PRODUCT.md) are committed with the code, making institutional knowledge portable, reviewable, and durable across sessions
+
+**Alternatives considered:**
+- Keep both memory files and project docs in sync — too much duplication and friction; one source of truth is better
+
+**Deferred:**
+- None
+
+**Patterns observed:**
+- You prefer knowledge to live where you can see and control it — version-controlled docs over opaque tool-managed files. This is consistent with the preference for structured rituals: documentation as a first-class artifact of the work, not a side effect.
