@@ -1931,7 +1931,7 @@
       "lastUpdated": "19 May 2026"
     },
     "New Queensway": {
-      "status": "ongoing",
+      "status": "complete",
       "categories": {
         "Cables": [
           {
@@ -1944,8 +1944,41 @@
               "shoulders",
               "triceps"
             ],
+            "brand": "Life Fitness",
+            "name": "Dual Adjustable Pulley",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Matrix",
-            "name": "Adjustable Pulley",
+            "name": "Cable Station",
+            "notes": "2 triceps pressdown, 2 lat pulldown, 2 low row"
+          }
+        ],
+        "Upper": [
+          {
+            "tags": [
+              "arms",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Biceps Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Chest Press",
             "notes": null
           },
           {
@@ -1954,12 +1987,51 @@
               "back",
               "biceps"
             ],
-            "brand": "Matrix",
-            "name": "Low Row",
+            "brand": "Life Fitness",
+            "name": "Lat Pulldown",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "chest",
+              "shoulders"
+            ],
+            "brand": "Life Fitness",
+            "name": "Pectoral Fly / Rear Deltoid",
+            "notes": null
+          },
+          {
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Shoulder Press",
             "notes": null
           }
         ],
         "Lower": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Glute Drive",
+            "notes": null
+          },
+          {
+            "tags": [
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Leg Extension",
+            "notes": null
+          },
           {
             "tags": [
               "calves",
@@ -1969,10 +2041,31 @@
             ],
             "brand": "Matrix",
             "name": "Leg Press",
+            "notes": "unloaded 75.7kg"
+          },
+          {
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Seated Leg Curl",
             "notes": null
           }
         ],
         "Calisthenics": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Assisted Dip/Chin",
+            "notes": null
+          },
           {
             "tags": [
               "arms",
@@ -1984,9 +2077,147 @@
             "name": "Pull-up Bar",
             "notes": null
           }
+        ],
+        "Barbells & Racks": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Barbell Rack",
+            "notes": "x3"
+          },
+          {
+            "tags": [
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Unknown",
+            "name": "Deadlift Platform",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
+            "notes": null
+          }
+        ],
+        "Core": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings"
+            ],
+            "brand": "Life Fitness",
+            "name": "Back Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core"
+            ],
+            "brand": "Unknown",
+            "name": "Captain's Chair",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Life Fitness",
+            "name": "Decline Bench",
+            "notes": null
+          }
+        ],
+        "Cardio": [
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Bike",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Elliptical",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Seated Bike",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Stairmaster",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Life Fitness",
+            "name": "Treadmill",
+            "notes": "x5"
+          }
+        ],
+        "Other": [
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Unknown",
+            "name": "Bosu Ball",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Life Fitness",
+            "name": "Medicine Ball",
+            "notes": "55lb, 65lb"
+          }
         ]
       },
-      "lastUpdated": "15 May 2026"
+      "lastUpdated": "03 Jun 2026"
     },
     "Cecil Street": {
       "status": "ongoing",
@@ -2058,9 +2289,21 @@
       "lastUpdated": "15 May 2026"
     },
     "Grandtral Complex": {
-      "status": "ongoing",
+      "status": "complete",
       "categories": {
         "Cables": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Matrix",
+            "name": "Cable Station",
+            "notes": "lat pulldown, seated row, triceps pressdown"
+          },
           {
             "tags": [
               "core"
@@ -2068,20 +2311,152 @@
             "brand": "Matrix",
             "name": "Multistation",
             "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Matrix",
+            "name": "VS-VFT-S30",
+            "notes": null
           }
         ],
         "Upper": [
           {
             "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Matrix",
+            "name": "Chest Press",
+            "notes": null
+          },
+          {
+            "tags": [
               "back",
+              "chest",
               "shoulders"
             ],
             "brand": "Matrix",
             "name": "Fly/Delt Machine",
             "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Matrix",
+            "name": "Seated Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Matrix",
+            "name": "Shoulder Press",
+            "notes": null
           }
         ],
         "Lower": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings"
+            ],
+            "brand": "Matrix",
+            "name": "Back Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Matrix",
+            "name": "Glute",
+            "notes": null
+          },
+          {
+            "tags": [
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Matrix",
+            "name": "Glute Trainer",
+            "notes": null
+          },
+          {
+            "tags": [
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Matrix",
+            "name": "Hack Squat",
+            "notes": "unloaded 47.6kg"
+          },
+          {
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ],
+            "brand": "Matrix",
+            "name": "Hip Abductor/Adductor",
+            "notes": null
+          },
+          {
+            "tags": [
+              "legs",
+              "quads"
+            ],
+            "brand": "Matrix",
+            "name": "Leg Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Matrix",
+            "name": "Leg Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "glutes",
+              "legs",
+              "quads"
+            ],
+            "brand": "Matrix",
+            "name": "Leg Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Matrix",
+            "name": "Perfect Squat",
+            "notes": "unloaded 30.4kg"
+          },
           {
             "tags": [
               "hamstrings",
@@ -2089,6 +2464,31 @@
             ],
             "brand": "Matrix",
             "name": "Seated Leg Curl",
+            "notes": null
+          }
+        ],
+        "Calisthenics": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "triceps"
+            ],
+            "brand": "Matrix",
+            "name": "Chin/Dip",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core"
+            ],
+            "brand": "Unknown",
+            "name": "Pull-up Bar",
             "notes": null
           }
         ],
@@ -2103,24 +2503,162 @@
             ],
             "brand": "Unknown",
             "name": "Barbell Rack",
-            "notes": null
-          }
-        ],
-        "Calisthenics": [
+            "notes": "x3"
+          },
           {
             "tags": [
-              "arms",
-              "back",
-              "biceps",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Unknown",
+            "name": "Deadlift Platform",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Unknown",
+            "name": "Hip Thrust",
+            "notes": "barbell"
+          }
+        ],
+        "Core": [
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Matrix",
+            "name": "Abdominal",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings"
+            ],
+            "brand": "Matrix",
+            "name": "Back Extension Bench",
+            "notes": null
+          },
+          {
+            "tags": [
               "core"
             ],
             "brand": "Unknown",
-            "name": "Pull-up Bar",
+            "name": "Decline Bench",
             "notes": null
+          }
+        ],
+        "Cardio": [
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Matrix",
+            "name": "Climbmill",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Matrix",
+            "name": "Elliptical",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Matrix",
+            "name": "Rower",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Matrix",
+            "name": "Seated Bike",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Matrix",
+            "name": "SPT",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Matrix",
+            "name": "Spin Bike",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Matrix",
+            "name": "Treadmill",
+            "notes": "x3"
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Torque",
+            "name": "Air Bike",
+            "notes": null
+          }
+        ],
+        "Other": [
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Unknown",
+            "name": "Ab Wheel",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Unknown",
+            "name": "Bosu Ball",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "core",
+              "legs"
+            ],
+            "brand": "Ziva",
+            "name": "Kettlebell",
+            "notes": "55kg, 65kg"
           }
         ]
       },
-      "lastUpdated": "15 May 2026"
+      "lastUpdated": "03 Jun 2026"
     },
     "Wheelock Place": {
       "status": "ongoing",
