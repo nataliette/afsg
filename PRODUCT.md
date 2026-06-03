@@ -184,6 +184,10 @@ When evaluating a feature request, ask:
 - Workout history integration (different product)
 - Comparison with other gym chains (out of scope, different market)
 
+## Known UX Issues (Deferred)
+
+**Tooltip interaction gap:** Equipment item tooltips disappear on `mouseleave`, preventing users from mousing into the tooltip to interact with tags. The desired behavior: hover item → tooltip appears → move mouse into tooltip → tags remain interactive. Needs redesigned `mouseenter/mouseleave` logic on both the item and the tooltip container itself. See `setupEquipmentTooltips()` in index.html and `.equipment-tooltip` in `_layout.scss`.
+
 ---
 
 **For development workflow, testing, and architectural patterns, see [CLAUDE.md](CLAUDE.md).**

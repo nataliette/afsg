@@ -38,9 +38,9 @@ This prevents wasted work and ensures alignment on approach.
 - Example: `feat: add dark mode toggle`
 
 **"session close":** Use this at the end of a work session to wrap up and document:
-- Claude updates CLAUDE.md, memory files (in `.claude/projects/-Users-natalie-Sites-afsg/memory/`), and PRODUCT.md
+- Claude updates CLAUDE.md and/or PRODUCT.md with any new patterns, decisions, or gotchas
+- Claude appends a session entry to docs/DECISIONS.md
 - Claude creates the commit automatically
-- This increments the template review counter (at 20 session closes, you'll be reminded to run `/review-workflow`)
 
 **Commit message format (for "ok commit"):**
 - Use conventional commits: `feat:`, `fix:`, `refactor:`, `docs:`, `chore:`
@@ -50,7 +50,7 @@ This prevents wasted work and ensures alignment on approach.
 **Do NOT push manually** — you handle that via GitHub Desktop
 
 **When committing, check:**
-- Memory files are updated with new context, patterns, or decisions
+- Any new patterns or gotchas are captured in CLAUDE.md or PRODUCT.md (not external memory files)
 - If product scope has evolved, PRODUCT.md is updated
 - New features align with PRODUCT.md's decision framework
 
@@ -92,6 +92,10 @@ git push origin v3      # Push tag to GitHub
 sass styles.scss styles.css       # One-time compile
 sass --watch styles.scss:styles.css  # Watch mode
 ```
+
+**Gotcha — `darken()` compiles to invalid CSS:** Dart Sass compiles `darken()` to floating-point RGB values (e.g. `rgb(11.538...)`) which breaks the CSS parser. Use hardcoded hex instead:
+- `darken(#f5f5f5, 5%)` → `#ececec`
+- `darken(#2196f3, 10%)` → `#1976d2`
 
 ---
 
@@ -150,6 +154,7 @@ kill -9 <PID>     # Kill it
 **Key notes:**
 - equipment.json fetch works correctly with server
 - Mobile layout testing: rotate iPhone to verify 768px breakpoints
+- **Clipboard API on HTTP:** `navigator.clipboard` is unavailable on local network IPs (requires HTTPS). The Copy to Clipboard button uses a `document.execCommand('copy')` fallback — always keep that fallback in place.
 
 ---
 
