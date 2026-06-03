@@ -238,7 +238,11 @@
       "Dual Pulley Pulldown": "Cable Station",
       "FTS Glide": "Cable Station",
       "Longpull 302": "Cable Row",
-      "Pulldown 304": "Lat Pulldown"
+      "Pulldown 304": "Lat Pulldown",
+
+      // Exercise balls
+      "Exercise Ball 55cm": "Exercise Ball",
+      "Exercise Ball 65cm": "Exercise Ball"
     };
 
     let equipmentData = null;
@@ -738,7 +742,6 @@ function selectEquipment(machineName) {
       `;
 
       content.innerHTML = html;
-      setupEquipmentTooltips();
       styleClickableEquipment();
     }
 
@@ -746,42 +749,6 @@ function selectEquipment(machineName) {
       const equipmentElements = document.querySelectorAll('.clickable-equipment');
       equipmentElements.forEach(elem => {
         elem.style.color = '#333333';
-      });
-    }
-
-    function setupEquipmentTooltips() {
-      const equipmentItems = document.querySelectorAll('.category-card .equipment-item');
-      equipmentItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-          const tagsDiv = this.querySelector('.equipment-tags');
-          if (tagsDiv && tagsDiv.children.length > 0) {
-            let tooltip = this.querySelector('.equipment-tooltip');
-            if (!tooltip) {
-              tooltip = document.createElement('div');
-              tooltip.className = 'equipment-tooltip';
-              // Apply positioning styles inline to ensure they work
-              tooltip.style.position = 'absolute';
-              tooltip.style.left = '50%';
-              tooltip.style.top = '50%';
-              tooltip.style.transform = 'translateY(-50%)';
-              const tagsClone = tagsDiv.cloneNode(true);
-              tagsClone.style.display = 'flex';
-              tagsClone.style.gap = '2px';
-              tagsClone.className = '';
-              tagsClone.style.margin = '0';
-              tagsClone.style.padding = '0';
-              tooltip.appendChild(tagsClone);
-              this.appendChild(tooltip);
-            }
-          }
-        });
-
-        item.addEventListener('mouseleave', function() {
-          const tooltip = this.querySelector('.equipment-tooltip');
-          if (tooltip) {
-            tooltip.remove();
-          }
-        });
       });
     }
 

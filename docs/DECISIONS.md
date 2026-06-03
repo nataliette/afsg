@@ -232,3 +232,21 @@ Log of session decisions, directional choices, and reasoning.
 
 **Patterns observed:**
 - You prefer knowledge to live where you can see and control it — version-controlled docs over opaque tool-managed files. This is consistent with the preference for structured rituals: documentation as a first-class artifact of the work, not a side effect.
+
+---
+
+## Session — 03 Jun 2026
+
+**Changes:**
+- Completed equipment data for New Queensway and Grandtral Complex; both marked `complete`
+- All exercise balls (previously labelled "Medicine Ball") unified under `Exercise Ball` naming convention with cm sizing (e.g. `Exercise Ball 55cm`, `Exercise Ball 65cm`)
+- Added `machineTypeMap` entries to group `Exercise Ball 55cm` and `Exercise Ball 65cm` under `?equipment=Exercise_Ball`
+- Removed hover tooltip feature from equipment items
+
+**Removed feature — hover tooltip on equipment items:**
+The equipment item row had a `mouseenter`/`mouseleave` tooltip that cloned the hidden `.equipment-tags` div and displayed it as a floating overlay. The tooltip appeared to the right of the item on hover, styled with a left-pointing arrow caret. It was removed because it disappeared on `mouseleave`, preventing the user from interacting with the tags inside it.
+
+To reimplement: see git history for `setupEquipmentTooltips()` in `index.html` and `.equipment-tooltip` in `_layout.scss`. Key fix needed: use `pointer-events: auto` and switch from `mouseleave` to a click-toggle or a delayed hide so the user can reach the tooltip before it closes.
+
+**Deferred:**
+- None

@@ -1097,7 +1097,7 @@
               "legs"
             ],
             "brand": "Liveup",
-            "name": "Ball",
+            "name": "Exercise Ball",
             "notes": "x2"
           },
           {
@@ -1107,7 +1107,7 @@
               "legs"
             ],
             "brand": "Unknown",
-            "name": "Medicine Ball",
+            "name": "Exercise Ball",
             "notes": null
           }
         ]
@@ -1525,7 +1525,7 @@
               "core"
             ],
             "brand": "Life Fitness",
-            "name": "Medicine Ball 55",
+            "name": "Exercise Ball 55cm",
             "notes": null
           },
           {
@@ -1533,7 +1533,7 @@
               "core"
             ],
             "brand": "Life Fitness",
-            "name": "Medicine Ball 65",
+            "name": "Exercise Ball 65cm",
             "notes": null
           }
         ]
@@ -2212,8 +2212,16 @@
               "core"
             ],
             "brand": "Life Fitness",
-            "name": "Medicine Ball",
-            "notes": "55lb, 65lb"
+            "name": "Exercise Ball 55cm",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Life Fitness",
+            "name": "Exercise Ball 65cm",
+            "notes": null
           }
         ]
       },
@@ -2653,8 +2661,17 @@
               "legs"
             ],
             "brand": "Ziva",
-            "name": "Kettlebell",
-            "notes": "55kg, 65kg"
+            "name": "Exercise Ball 55cm",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "legs"
+            ],
+            "brand": "Ziva",
+            "name": "Exercise Ball 65cm",
+            "notes": null
           }
         ]
       },
@@ -3249,7 +3266,7 @@
               "core"
             ],
             "brand": "Ziva",
-            "name": "Ball 55",
+            "name": "Exercise Ball 55cm",
             "notes": null
           }
         ]
@@ -3599,7 +3616,7 @@
               "core"
             ],
             "brand": "Unknown",
-            "name": "Medicine Ball 65cm",
+            "name": "Exercise Ball 65cm",
             "notes": null
           },
           {

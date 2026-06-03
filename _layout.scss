@@ -373,39 +373,6 @@ header {
   gap: $spacing-xs;
 }
 
-.equipment-tooltip {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: $color-white;
-  color: $color-gray-900;
-  padding: $spacing-md $spacing-lg;
-  border-radius: $radius-sm;
-  border: 1px solid $color-gray-200;
-  z-index: 1000;
-  display: flex;
-  flex-wrap: wrap;
-  gap: $spacing-lg;
-  max-width: 300px;
-  font-size: $font-size-xs;
-  pointer-events: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -8px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-right: 6px solid $color-white;
-  }
-}
-
 .category-card .tag {
   background-color: $color-gray-200;
   color: $color-gray-700;

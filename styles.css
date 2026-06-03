@@ -950,38 +950,6 @@ header h1 {
   gap: 4px;
 }
 
-.equipment-tooltip {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #ffffff;
-  color: #333333;
-  padding: 12px 16px;
-  border-radius: 4px;
-  border: 1px solid #e0e0e0;
-  z-index: 1000;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  max-width: 300px;
-  font-size: 11px;
-  pointer-events: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-.equipment-tooltip::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -8px;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-right: 6px solid #ffffff;
-}
-
 .category-card .tag {
   background-color: #e0e0e0;
   color: #666;
