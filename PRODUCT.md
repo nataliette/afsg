@@ -81,7 +81,7 @@ When discussing pages, use these parameter-based names:
 ### Equipment Data Structure
 
 #### Equipment Categories (Standardized)
-All 10 gyms use this consistent order:
+All 11 gyms use this consistent order:
 1. **Cables** — Cable machines & pulleys
 2. **Upper** — Upper body machines (chest, back, shoulders, arms)
 3. **Lower** — Lower body machines (legs, quads, hamstrings, glutes, calves, hip ab/ad)
@@ -102,6 +102,10 @@ Maps individual equipment names to canonical machine types for `?equipment=` URL
 - `FTS Glide`, `Adjustable Pulley`, `Multistation` → `"Cable Station"`
 - `Diverging Lat Pulldown`, `ISO Lateral Front Lat Pulldown` → `"Lat Pulldown"`
 - `Diverging Seated Row`, `Low Row` → `"Seated Row"`
+- `Hack Squat`, `Linear Hack Squat` → `"Hack Squat"` (own type)
+- `Belt Squat` → `"Belt Squat"` (own type)
+- `Squat Machine`, `Perfect Squat`, `Super Squat Press` → `"Squat"` (generic squat machines)
+- `Pendulum X Squat` → own type (not grouped)
 
 **Rule:** Brand-specific model names that map to known types should be added to machineTypeMap. Unique standalone types get their own URL.
 
@@ -151,7 +155,7 @@ Each gym has a `lastUpdated` field in equipment.json (format: "DD MMM YYYY", e.g
 
 ## Success Metrics
 
-- ✅ Equipment database is complete for all 10 gyms
+- ✅ Equipment database is complete for all 11 gyms
 - ✅ You can quickly find which gym has what you want to use
 - ✅ You can easily copy equipment to generate AI workouts
 - ✅ App works smoothly on desktop and mobile

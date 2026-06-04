@@ -250,3 +250,32 @@ To reimplement: see git history for `setupEquipmentTooltips()` in `index.html` a
 
 **Deferred:**
 - None
+
+---
+
+## 2026-06-04 Session 9 — Buona Vista added, squat machine types split, City Hall initials fixed
+
+**Built / decided:**
+- Added complete equipment entry for Buona Vista (11th gym, status: complete, 34 items across 7 categories)
+- Fixed City Hall `GYM_INITIALS` from `'AC'` to `'CH'` (URL changes from `?gym=ac` to `?gym=ch`)
+- Split `machineTypeMap` squat types that were previously all grouped under `"Squat"`:
+  - `Hack Squat`, `Linear Hack Squat` → `"Hack Squat"` (own type)
+  - `Belt Squat` → `"Belt Squat"` (own type)
+  - `Squat Machine`, `Perfect Squat`, `Super Squat Press` → `"Squat"` (generic machines)
+  - `Pendulum X Squat` — left as its own standalone type (not grouped)
+
+**My reasoning:**
+- Buona Vista is a large gym with significant free weight infrastructure (HS racks, mini racks, deadlift platforms) alongside a full LF machine suite — needed a complete data entry pass
+- City Hall initials `AC` were incorrect; `CH` is the obvious correct code
+- Hack Squat and Belt Squat are mechanically distinct enough from generic squat machines to warrant their own `?equipment=` pages; previously they were all lumped together making the page misleading
+- Pendulum X Squat is mechanically unique (pendulum arc vs fixed track) so it stays standalone
+
+**Alternatives considered:**
+- Grouping Pendulum X Squat under Hack Squat — rejected; it's a distinct movement pattern
+- Grouping Super Squat Press under Leg Press — rejected; it's a squat-pattern machine
+
+**Deferred:**
+- None
+
+**Patterns observed:**
+- You audit machine type groupings when adding new gyms reveals gaps — adding BV's Hack Squat and Belt Squat alongside City Hall's Squat Machine made the existing flat grouping obviously wrong.
