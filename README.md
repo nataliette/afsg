@@ -4,7 +4,7 @@ Interactive equipment discovery app for Anytime Fitness gyms in Singapore — br
 machines by location, search by muscle group, and copy equipment lists to generate
 workout prompts.
 
-**Live:** [afsg.netlify.app](https://afsg.netlify.app) (Netlify)
+**Live:** [gymcat.natalie.sg](https://gymcat.natalie.sg) (Netlify)
 
 ## Quick start
 
