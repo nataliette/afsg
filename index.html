@@ -806,67 +806,23 @@ function selectEquipment(machineName) {
         </div>
       `;
 
-      // Render only complete gyms with equipment, sorted by most recent update
-      sortedCompleteGyms.forEach(gymName => {
+      // Recent updates: top 5 gyms sorted by lastUpdated
+      const recentGyms = [...gyms]
+        .filter(gymName => equipmentData.gyms[gymName].lastUpdated)
+        .sort((a, b) => new Date(equipmentData.gyms[b].lastUpdated) - new Date(equipmentData.gyms[a].lastUpdated))
+        .slice(0, 5);
+
+      html += `<div class="recent-updates"><h2 class="recent-updates-title">Recent Updates</h2><ul class="recent-updates-list">`;
+      recentGyms.forEach(gymName => {
         const gymData = equipmentData.gyms[gymName];
-        const gymInitial = GYM_INITIALS[gymName].toLowerCase();
-
         html += `
-          <div class="inventory-gym-section" data-gym="${gymName}" data-expanded="true">
-            <div class="inventory-gym-header" onclick="toggleGymSection(this)">
-              <div class="inventory-gym-title-group">
-                <button class="inventory-accordion-toggle" aria-expanded="true">▼</button>
-                <h2>${gymName}</h2>
-              </div>
-              <div class="inventory-gym-meta">
-                <span>updated ${gymData.lastUpdated}</span>
-              </div>
-            </div>
-            <div class="inventory-categories">
-        `;
-
-        Object.entries(gymData.categories || {}).forEach(([categoryName, equipment]) => {
-          html += `
-            <div class="inventory-category">
-              <div class="inventory-category-title">
-                <span>${categoryName}</span>
-                <span class="inventory-count">(${equipment.filter(i => i.available !== false).length})</span>
-              </div>
-              <div class="inventory-equipment-grid">
-          `;
-
-          equipment.forEach(item => {
-            const tagsHtml = item.tags.map(tag => `<span class="inventory-tag" onclick="selectTag('${tag}')">${tag}</span>`).join('');
-            const unavailable = item.available === false;
-            const nameSpan = unavailable
-              ? `<span class="inventory-name inventory-name--unavailable" title="Not available at ${gymName}">${item.name}</span>`
-              : `<span class="inventory-name" onclick="selectEquipment('${item.name.replace(/'/g, "\\'")}')">${item.name}</span>`;
-
-            html += `
-              <div class="inventory-equipment-item${unavailable ? ' inventory-equipment-item--unavailable' : ''}">
-                <div class="inventory-equipment-left">
-                  <span class="inventory-brand">${item.brand}</span>
-                  ${nameSpan}
-                  ${item.notes ? `<span class="inventory-notes">${item.notes}</span>` : ''}
-                </div>
-                <div class="inventory-equipment-tags">
-                  ${tagsHtml}
-                </div>
-              </div>
-            `;
-          });
-
-          html += `
-              </div>
-            </div>
-          `;
-        });
-
-        html += `
-            </div>
-          </div>
+          <li class="recent-update-item">
+            <button class="recent-update-gym" onclick="selectGym('${gymName.replace(/'/g, "\\'")}')">${gymName}</button>
+            <span class="recent-update-date">${gymData.lastUpdated}</span>
+          </li>
         `;
       });
+      html += `</ul></div>`;
 
       content.innerHTML = html;
     }

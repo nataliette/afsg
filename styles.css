@@ -1184,6 +1184,61 @@ header h1 {
   letter-spacing: 0.5px;
 }
 
+.recent-updates {
+  margin-top: 8px;
+}
+
+.recent-updates-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #999;
+  margin: 0 0 12px;
+}
+
+.recent-updates-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.recent-update-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.recent-update-item:last-child {
+  border-bottom: none;
+}
+
+.recent-update-gym {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2196f3;
+  cursor: pointer;
+  text-align: left;
+}
+.recent-update-gym:hover {
+  text-decoration: underline;
+}
+
+.recent-update-date {
+  font-size: 13px;
+  color: #999;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
 .inventory-gym-section {
   background: white;
   border-radius: 8px;
