@@ -117,7 +117,7 @@ sass --watch styles.scss:styles.css  # Watch mode
 1. Add/modify equipment in equipment.json
 2. Update the gym's `lastUpdated` field to today's date (format: "DD MMM YYYY" with 3-letter month, e.g., "21 May 2026")
 3. Commit with: `feat: update [Gym Name] equipment — 21 May 2026`
-4. After committing, share the local preview link: **[http://afsg.test/](http://afsg.test/)** so the user can verify the changes
+4. After committing, share the local preview link: **[http://gymcat.test/](http://gymcat.test/)** so the user can verify the changes
 
 **See PRODUCT.md for:**
 - Equipment category definitions
@@ -130,7 +130,7 @@ sass --watch styles.scss:styles.css  # Watch mode
 ## Testing
 
 ### Local preview (Caddy)
-Static site — Caddy serves the files directly, so just open **http://afsg.test/** (no dev server needed).
+Static site — Caddy serves the files directly, so just open **http://gymcat.test/** (no dev server needed).
 
 **Port-80 caveat:** `.test` works only while Caddy is running and LocalWP is quit (both want port 80). Toggle on with `osascript -e 'quit app "Local"'` then `sudo brew services start caddy`; reverse to return to WordPress.
 

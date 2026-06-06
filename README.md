@@ -1,4 +1,4 @@
-# AFSG Equipment Tracker
+# Gym Catalogue
 
 Interactive equipment discovery app for Anytime Fitness gyms in Singapore — browse
 machines by location, search by muscle group, and copy equipment lists to generate
