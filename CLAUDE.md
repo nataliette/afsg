@@ -40,6 +40,7 @@ This prevents wasted work and ensures alignment on approach.
 **"session close":** Use this at the end of a work session to wrap up and document:
 - Claude updates CLAUDE.md and/or PRODUCT.md with any new patterns, decisions, or gotchas
 - Claude appends a session entry to docs/DECISIONS.md
+- Claude updates README.md if the stack, quick-start steps, or doc list changed
 - Claude creates the commit automatically
 
 **Commit message format (for "ok commit"):**
