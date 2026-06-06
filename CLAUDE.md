@@ -116,6 +116,7 @@ sass --watch styles.scss:styles.css  # Watch mode
 1. Add/modify equipment in equipment.json
 2. Update the gym's `lastUpdated` field to today's date (format: "DD MMM YYYY" with 3-letter month, e.g., "21 May 2026")
 3. Commit with: `feat: update [Gym Name] equipment — 21 May 2026`
+4. After committing, share the local preview link: **[http://afsg.test/](http://afsg.test/)** so the user can verify the changes
 
 **See PRODUCT.md for:**
 - Equipment category definitions

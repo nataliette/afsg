@@ -2452,73 +2452,180 @@
       "lastUpdated": "03 Jun 2026"
     },
     "Cecil Street": {
-      "status": "ongoing",
+      "status": "complete",
       "categories": {
+        "Cardio": [
+          {
+            "tags": ["cardio", "legs"],
+            "brand": "Life Fitness",
+            "name": "Treadmill",
+            "notes": "x7"
+          },
+          {
+            "tags": ["cardio", "core", "legs"],
+            "brand": "Life Fitness",
+            "name": "Stairmaster",
+            "notes": null
+          },
+          {
+            "tags": ["cardio", "legs"],
+            "brand": "Life Fitness",
+            "name": "Bike",
+            "notes": null
+          },
+          {
+            "tags": ["cardio", "full body"],
+            "brand": "Life Fitness",
+            "name": "Elliptical",
+            "notes": "x2"
+          },
+          {
+            "tags": ["cardio", "core", "legs"],
+            "brand": "Life Fitness",
+            "name": "Seated Bike",
+            "notes": null
+          },
+          {
+            "tags": ["back", "cardio", "full body"],
+            "brand": "Concept2",
+            "name": "RowErg",
+            "notes": null
+          }
+        ],
         "Cables": [
           {
-            "tags": [
-              "arms",
-              "back",
-              "biceps",
-              "chest",
-              "core",
-              "shoulders",
-              "triceps"
-            ],
+            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
             "brand": "Life Fitness",
-            "name": "Dual Pulley Pulldown",
+            "name": "Dual Adjustable Pulley",
+            "notes": null
+          },
+          {
+            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "brand": "Life Fitness",
+            "name": "Multistation",
+            "notes": "dual pulley pulldown, dual pulley low, cable x2, assist dip/chin, cable crossover, lat pulldown, dual pulley row"
+          }
+        ],
+        "Upper": [
+          {
+            "tags": ["back", "chest", "shoulders"],
+            "brand": "Life Fitness",
+            "name": "Pectoral Fly / Rear Deltoid",
+            "notes": null
+          },
+          {
+            "tags": ["shoulders", "triceps"],
+            "brand": "Life Fitness",
+            "name": "Shoulder Press",
+            "notes": null
+          },
+          {
+            "tags": ["chest", "shoulders", "triceps"],
+            "brand": "Life Fitness",
+            "name": "Chest Press",
+            "notes": null
+          },
+          {
+            "tags": ["back", "core", "glutes", "hamstrings"],
+            "brand": "Life Fitness",
+            "name": "Back Extension",
+            "notes": null
+          },
+          {
+            "tags": ["chest", "shoulders", "triceps"],
+            "brand": "Life Fitness",
+            "name": "Decline Chest Press",
+            "notes": "2.7kg/arm"
+          },
+          {
+            "tags": ["arms", "biceps"],
+            "brand": "Life Fitness",
+            "name": "Arm Curl Bench",
             "notes": null
           }
         ],
         "Lower": [
           {
-            "tags": [
-              "abductors",
-              "adductors",
-              "legs"
-            ],
+            "tags": ["abductors", "adductors", "legs"],
             "brand": "Life Fitness",
             "name": "Hip Abductor/Adductor",
             "notes": null
           },
           {
-            "tags": [
-              "hamstrings",
-              "legs"
-            ],
-            "brand": "Unknown",
+            "tags": ["hamstrings", "legs"],
+            "brand": "Life Fitness",
             "name": "Seated Leg Curl",
+            "notes": null
+          },
+          {
+            "tags": ["calves", "glutes", "legs", "quads"],
+            "brand": "Life Fitness",
+            "name": "Seated Leg Press",
+            "notes": null
+          },
+          {
+            "tags": ["legs", "quads"],
+            "brand": "Life Fitness",
+            "name": "Leg Extension",
+            "notes": null
+          },
+          {
+            "tags": ["calves", "glutes", "legs", "quads"],
+            "brand": "Life Fitness",
+            "name": "Linear Leg Press",
+            "notes": "47kg starting weight"
+          }
+        ],
+        "Core": [
+          {
+            "tags": ["arms", "back", "biceps", "core", "triceps"],
+            "brand": "Bosu",
+            "name": "Captain's Chair",
+            "notes": null
+          },
+          {
+            "tags": ["core"],
+            "brand": "Unknown",
+            "name": "Decline Bench",
             "notes": null
           }
         ],
         "Barbells & Racks": [
           {
-            "tags": [
-              "core",
-              "glutes",
-              "hamstrings",
-              "legs",
-              "quads"
-            ],
+            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
             "brand": "Unknown",
-            "name": "Barbell Rack",
+            "name": "Deadlift Platform",
+            "notes": null
+          },
+          {
+            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "brand": "Hammer Strength",
+            "name": "Rack",
+            "notes": "x2"
+          },
+          {
+            "tags": ["chest", "core", "glutes", "hamstrings", "legs", "quads", "shoulders", "triceps"],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
             "notes": null
           }
         ],
         "Other": [
           {
-            "tags": [
-              "cardio",
-              "core",
-              "legs"
-            ],
-            "brand": "Unknown",
+            "tags": ["cardio", "core", "legs"],
+            "brand": "Bosu",
             "name": "Bosu Ball",
+            "notes": null
+          },
+          {
+            "tags": ["core"],
+            "brand": "Ziva",
+            "name": "Exercise Ball 65cm",
             "notes": null
           }
         ]
       },
-      "lastUpdated": "15 May 2026"
+      "lastUpdated": "05 Jun 2026"
     },
     "Grandtral Complex": {
       "status": "complete",
