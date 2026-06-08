@@ -12,11 +12,11 @@
   flex-shrink: 0;
 
   &.complete {
-    background-color: $color-status-success;
+    background-color: var(--status-complete);
   }
 
   &.ongoing {
-    background-color: $color-status-warning;
+    background-color: var(--status-partial);
   }
 }
 
@@ -31,16 +31,19 @@
   gap: $spacing-sm;
   transition: all $transition-fast;
   text-decoration: none;
-  color: $color-gray-900;
+  color: var(--text-primary);
+  text-align: left;
+  width: 100%;
 
   &:hover {
-    background-color: #e8e8e8;
+    background-color: var(--bg-surface);
   }
 
   &.active {
-    background-color: $color-secondary;
-    color: $color-white;
+    background-color: var(--accent-muted);
+    color: var(--accent);
     font-weight: $font-weight-medium;
+    box-shadow: inset 3px 0 0 var(--accent);
   }
 }
 
@@ -54,14 +57,15 @@
 
 .gym-initial {
   font-size: $font-size-xs;
-  color: $color-gray-600;
+  color: var(--text-tertiary);
   font-weight: $font-weight-medium;
   min-width: 20px;
   text-align: right;
 }
 
 .gym-item.active .gym-initial {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--accent);
+  opacity: 0.7;
 }
 
 .gym-header {
@@ -70,7 +74,7 @@
   align-items: center;
   margin-bottom: $spacing-lg;
   padding-bottom: $spacing-sm;
-  border-bottom: 2px solid $color-gray-200;
+  border-bottom: 2px solid var(--border);
 }
 
 .gym-title {
@@ -83,7 +87,7 @@
 
 .status-badge {
   font-size: $font-size-sm;
-  color: $color-gray-600;
+  color: var(--text-tertiary);
   margin-bottom: 0;
   white-space: nowrap;
 }
@@ -114,16 +118,38 @@ button {
   svg {
     width: 20px;
     height: 20px;
-    color: $color-gray-700;
+    color: var(--text-secondary);
     stroke-width: 1.5;
   }
 
   &:hover svg {
-    color: $color-gray-900;
+    color: var(--text-primary);
   }
 }
 
-.hamburger-btn,
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-sm;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: var(--accent);
+  }
+
+  // The SVG path has hardcoded inline fill — override it
+  svg path {
+    fill: currentColor !important;
+  }
+}
+
 .search-toggle-btn {
   display: none;
   background: none;
@@ -138,7 +164,7 @@ button {
   svg {
     width: 24px;
     height: 24px;
-    color: $color-gray-900;
+    color: var(--text-primary);
   }
 }
 
@@ -147,7 +173,7 @@ button {
   border: none;
   cursor: pointer;
   font-size: 28px;
-  color: $color-gray-900;
+  color: var(--text-primary);
   padding: 0;
   display: flex;
   align-items: center;
@@ -158,7 +184,28 @@ button {
   transition: color $transition-fast;
 
   &:hover {
-    color: $color-gray-700;
+    color: var(--text-secondary);
+  }
+}
+
+// Theme Toggle — hidden by default; kept for future colour explorations.
+// To re-expose: remove display:none. The toggle persists choice in localStorage
+// under key 'gymcat-theme'. Yellow is the default; purple is the alt theme.
+// See _themes.scss for both colour palettes.
+.theme-toggle {
+  display: none;
+  width: 22px;
+  height: 22px;
+  border-radius: $radius-full;
+  background: var(--toggle-preview);
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    transform: scale(1.15);
+    border-color: var(--text-secondary);
   }
 }
 
@@ -166,48 +213,54 @@ button {
 .tag {
   display: inline-block;
   padding: 2px 8px;
-  background-color: $color-gray-200;
+  background-color: var(--border);
   border-radius: $radius-lg;
   font-size: $font-size-sm;
-  color: $color-gray-700;
+  color: var(--text-secondary);
   white-space: nowrap;
   cursor: pointer;
   transition: all $transition-fast;
 
   &:hover {
-    background-color: $color-gray-500;
-    color: $color-white;
+    background-color: var(--accent);
+    color: var(--on-accent);
   }
 
   &.primary {
-    background-color: $color-gray-500;
-    color: $color-white;
+    background-color: var(--accent-muted);
+    color: var(--accent);
 
     &:hover {
-      background-color: $color-gray-600;
+      background-color: var(--accent);
+      color: var(--on-accent);
     }
   }
 }
 
 .suggestion-chip {
   padding: $spacing-xs $spacing-md;
-  background-color: $color-primary-light;
+  background-color: var(--bg-base);
+  border: 1px solid var(--border);
   border-radius: $radius-xl;
   cursor: pointer;
   font-size: 13px;
-  color: $color-primary-dark;
+  color: var(--text-primary);
   transition: all $transition-fast;
 
   &:hover {
-    background-color: $color-primary-lighter;
+    background-color: var(--accent);
+    color: var(--on-accent);
+    border-color: var(--accent);
   }
 
   &.primary {
-    background-color: $color-primary-dark;
-    color: $color-white;
+    background-color: var(--accent-muted);
+    color: var(--accent);
+    border-color: transparent;
 
     &:hover {
-      background-color: $color-primary-darker;
+      background-color: var(--accent);
+      color: var(--on-accent);
     }
   }
 }
@@ -215,7 +268,7 @@ button {
 // Table specific
 .brand {
   font-weight: $font-weight-medium;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .tags-cell {
@@ -229,7 +282,7 @@ button {
 
   td {
     padding: $spacing-md;
-    border-bottom: 1px solid $color-gray-200;
+    border-bottom: 1px solid var(--border);
   }
 
   .tags-cell {
@@ -238,7 +291,7 @@ button {
 }
 
 .outlet-link {
-  color: $color-secondary;
+  color: var(--accent);
   text-decoration: none;
   cursor: pointer;
 
@@ -247,28 +300,46 @@ button {
   }
 
   &:visited {
-    color: $color-secondary;
+    color: var(--accent);
   }
 }
 
-// Clickable Equipment
+// Clickable Equipment — all colours explicit, no inheritance dependencies.
+// Normal: brand + strong both --text-primary (weight differentiates them).
+// Hover: everything turns --accent; underline + arrow are also explicit.
 .clickable-equipment {
   cursor: pointer;
-  color: $color-gray-900;
+  color: var(--text-primary);
   text-decoration: none;
-  transition: color $transition-fast;
-  position: relative;
   display: inline-block;
+  transition: color $transition-fast;
 
-  &:hover {
-    color: $color-secondary;
-    text-decoration: underline;
+  strong {
+    color: var(--text-primary);
+    font-weight: $font-weight-semibold;
+    transition: color $transition-fast;
   }
 
+  .equipment-brand {
+    color: var(--text-primary);  // explicit — never relies on inheritance
+    transition: color $transition-fast;
+  }
+
+  &:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+
+    strong           { color: var(--accent); }
+    .equipment-brand { color: var(--accent); }
+  }
+
+  // Arrow hardcoded to accent so it never inherits a dark colour
   &::after {
     content: "↗";
-    margin-left: 4px;
-    font-size: 12px;
+    margin-left: 3px;
+    font-size: 11px;
+    color: var(--accent);
     opacity: 0;
     transition: opacity $transition-fast;
   }
@@ -281,10 +352,11 @@ button {
 // Search Result
 .search-result-header {
   font-size: $font-size-md;
-  color: $color-gray-700;
+  color: var(--text-secondary);
   margin-bottom: $spacing-lg;
   padding: $spacing-md;
-  background-color: $color-gray-100;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: $radius-sm;
 }
 
@@ -292,13 +364,13 @@ button {
 .empty-state {
   padding: $spacing-3xl;
   text-align: center;
-  color: #999999;
+  color: var(--text-tertiary);
 }
 
 .error {
   padding: $spacing-3xl;
   text-align: center;
-  color: $color-status-error;
+  color: var(--status-error);
 }
 
 // Modal Overlay
@@ -310,7 +382,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
@@ -332,9 +404,10 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: $color-white;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: $radius-md;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   width: 90vw;
   max-width: 600px;
   max-height: 85vh;
@@ -386,6 +459,7 @@ button {
     font-size: $font-size-base;
     margin-top: $spacing-xs;
     flex-shrink: 0;
+    color: var(--text-secondary);
   }
 
   .radio-group {
@@ -401,9 +475,9 @@ button {
 
 .pill-btn {
   padding: 2px 8px;
-  background-color: $color-gray-100;
-  color: $color-gray-900;
-  border: none;
+  background-color: var(--bg-base);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
   border-radius: $radius-lg;
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
@@ -412,17 +486,21 @@ button {
   white-space: nowrap;
 
   &:hover {
-    background-color: #ececec;
+    background-color: var(--border);
+    color: var(--text-primary);
   }
 
   &.active {
-    background-color: $color-secondary;
-    color: $color-white;
+    background-color: var(--accent);
+    color: var(--on-accent);
+    border-color: var(--accent);
+    font-weight: $font-weight-medium;
   }
 }
 
 .equipment-text {
-  background-color: $color-gray-100;
+  background-color: var(--bg-base);
+  color: var(--accent);
   padding: $spacing-md;
   border-radius: $radius-sm;
   font-family: 'Courier New', monospace;
@@ -432,14 +510,14 @@ button {
   white-space: pre-wrap;
   word-wrap: break-word;
   margin: 0;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border);
 }
 
 .modal-footer {
   display: flex;
   gap: $spacing-md;
   padding: $spacing-lg;
-  border-top: 1px solid $color-gray-200;
+  border-top: 1px solid var(--border);
   flex-shrink: 0;
   justify-content: flex-end;
 }
@@ -456,14 +534,16 @@ button {
   display: flex;
   align-items: center;
   gap: $spacing-sm;
+  font-family: $font-family-heading;
 }
 
 .btn-primary {
-  background-color: $color-secondary;
-  color: $color-white;
+  background-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: $font-weight-semibold;
 
   &:hover:not(:disabled) {
-    background-color: #1976d2;
+    background-color: var(--accent-hover);
   }
 
   &:disabled {
@@ -473,21 +553,23 @@ button {
 }
 
 .btn-secondary {
-  background-color: $color-gray-200;
-  color: $color-gray-900;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
 
   &:hover {
-    background-color: #d4d4d4;
+    background-color: var(--border);
   }
 }
 
 // Copy Equipment Button
 .btn-copy-equipment {
   padding: $spacing-sm $spacing-lg;
-  background-color: $color-secondary;
-  color: $color-white;
+  background-color: var(--accent);
+  color: var(--on-accent);
   border-radius: $radius-sm;
-  font-weight: $font-weight-medium;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-semibold;
   cursor: pointer;
   transition: all $transition-fast;
   border: none;
@@ -498,7 +580,7 @@ button {
   gap: $spacing-sm;
 
   &:hover {
-    background-color: #1976d2;
+    background-color: var(--accent-hover);
   }
 
   .btn-icon {
@@ -514,7 +596,7 @@ button {
 
 // Equipment notes
 .equipment-notes {
-  color: $color-gray-600;
+  color: var(--text-tertiary);
   font-size: $font-size-sm;
   font-style: italic;
 }
@@ -535,17 +617,15 @@ button {
   grid-template-columns: 70px 1fr;
   gap: $spacing-lg;
   padding: $spacing-lg;
-  background-color: $color-white;
-  border: 1px solid $color-gray-200;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: $radius-md;
   align-items: center;
   transition: all $transition-fast;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
   &:hover {
-    background-color: #fafafa;
-    border-color: $color-secondary;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent-muted);
   }
 }
 
@@ -553,10 +633,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: $font-family-heading;
   font-size: $font-size-xl;
-  font-weight: $font-weight-semibold;
-  color: $color-secondary;
-  background-color: rgba($color-secondary, 0.1);
+  font-weight: $font-weight-bold;
+  color: var(--accent);
+  background-color: var(--accent-muted);
   border-radius: $radius-md;
   padding: $spacing-md $spacing-sm;
   min-height: 60px;
@@ -573,19 +654,19 @@ button {
 .gym-summary-name {
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
-  color: $color-gray-900;
+  color: var(--text-primary);
   text-decoration: none;
   cursor: pointer;
   transition: color $transition-fast;
 
   &:hover {
-    color: $color-secondary;
+    color: var(--accent);
   }
 }
 
 .gym-summary-preview {
   font-size: $font-size-sm;
-  color: $color-gray-600;
+  color: var(--text-tertiary);
   line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;

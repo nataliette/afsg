@@ -279,3 +279,56 @@ To reimplement: see git history for `setupEquipmentTooltips()` in `index.html` a
 
 **Patterns observed:**
 - You audit machine type groupings when adding new gyms reveals gaps — adding BV's Hack Squat and Belt Squat alongside City Hall's Squat Machine made the existing flat grouping obviously wrong.
+
+---
+
+## 2026-06-06 Session 10 — Full dark theme restyle
+
+**Built / decided:**
+- Complete dark theme restyle across all SCSS partials (`_base`, `_layout`, `_components`, `_inventory`, `_responsive`)
+- All colours migrated from SCSS variables to CSS custom properties in a dedicated `_themes.scss` (imported once from `styles.scss` only — never from partials — to prevent `:root` duplication in compiled output)
+- Electric Yellow (`#FFE600`) as the single accent colour: active states, buttons, stat numbers, equipment text in modal, search result counts, gym names in recent updates
+- **Space Grotesk** (Google Fonts, 500/600/700) for headings and card titles; **Inter** (400/500/600) for body text — loaded via `<link>` in `<head>`
+- Active sidebar item redesigned: `box-shadow: inset 3px 0 0 var(--accent)` left-bar indicator instead of a solid fill, with `accent-muted` background
+- Fixed hamburger icon (SVG path has hardcoded `fill: rgb(0,0,0)` inline style): overridden with `fill: currentColor !important` in CSS; hamburger uses `var(--accent)` (yellow) for visibility against the dark header
+- Homepage gains a two-sentence app description above the stats, and a full gym list visible on mobile only (hidden on desktop where the sidebar serves the same purpose)
+
+**Hidden feature — theme toggle (purple AF theme):**
+A second theme (`[data-theme="purple"]`) is defined in `_themes.scss` and can be activated at any time. The toggle button (`#theme-toggle`, `.theme-toggle`) exists in the HTML and SCSS but is hidden via `display: none`. To re-expose it for future colour exploration:
+1. Remove `display: none` from `.theme-toggle` in `_components.scss`
+2. The button renders as a small coloured circle in the header showing the OTHER theme's colour
+3. Choice persists in `localStorage` under key `gymcat-theme` (`'yellow'` or `'purple'`)
+4. Both palettes live in `_themes.scss` — add new themes there as `[data-theme="X"]` overrides
+
+**Purple palette (for reference):**
+- Base: `#0f0f1a`, Surface: `#1a1025`, Sidebar: `#130e1e`
+- Accent: `#8B5CF6`, Hover: `#7C3AED`, Muted: `rgba(139, 92, 246, 0.15)`
+
+**Alternatives considered:**
+- Using SCSS variables for theming instead of CSS custom properties — rejected because runtime toggling requires CSS custom props
+- Making the purple toggle visible as a permanent UI feature — rejected; yellow is the right final choice; purple is kept as a quick experiment path, not a published feature
+
+**Deferred:**
+- None
+
+---
+
+## 2026-06-08 Session 11 — Dark theme polish
+
+**Built / decided:**
+- Fixed `.clickable-equipment` brand text readability: wrapped brand text in `<span class="equipment-brand">` with an explicit `color: var(--text-primary)` rule, eliminating the inherited `#333333` dark colour that was showing on `gymcat.test` due to a browser caching bug masking a CSS specificity conflict
+- Consolidated `.equipment-item` from two split definitions (one for colour, one for layout) into a single definition in `_layout.scss`; `.category-card .equipment-item` now only overrides padding (the one property that actually differs)
+- All three states of clickable equipment text (`normal`, `:hover`, `::after arrow`) are now fully explicit — no inheritance chains, no specificity conflicts:
+  - `.clickable-equipment .equipment-brand` → `color: var(--text-primary)` (explicit)
+  - `.clickable-equipment strong` → `color: var(--text-primary)` (explicit)
+  - `.clickable-equipment::after` → `color: var(--accent)` (hardcoded yellow, never dark)
+  - `text-decoration-color: var(--accent)` on hover (explicit underline colour)
+- Removed borders from category cards (`.category-card`) and stripped header background (`.category-card-header`); category names now float as yellow headings above equipment lists
+- Added `?v=X` cache-busting query string to the stylesheet `<link>` tag to force browser reload past Caddy's cache when deploying
+
+**Patterns observed:**
+- When brand text in a dark theme is set via an inheritance chain (`color: inherit` → parent → grandparent), browser cache from a previous CSS version can shadow the correct value. Always set colours explicitly on the element's own class.
+- `_themes.scss` must only be imported once (in `styles.scss`), never in individual partials — otherwise `:root {}` appears multiple times in the compiled output.
+
+**Deferred:**
+- None

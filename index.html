@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gym Catalogue</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script>
+    (function() {
+      var t = localStorage.getItem('gymcat-theme');
+      if (t === 'purple') document.documentElement.setAttribute('data-theme', 'purple');
+    })();
+  </script>
 </head>
 <body>
   <aside>
@@ -42,6 +51,7 @@
           </button>
           <div class="suggestions" id="suggestions"></div>
         </div>
+        <button id="theme-toggle" class="theme-toggle" title="Switch accent colour" aria-label="Switch accent colour"></button>
         <button class="search-toggle-btn" id="searchToggleBtn">
           <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: block;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
           <svg class="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -707,12 +717,12 @@ function selectEquipment(machineName) {
 
         const machinesHtml = displayedMachines.map(machine => {
           const isBranded = machine.brand !== 'Unknown';
-          const brandDisplay = isBranded ? `${machine.brand} ` : '';
+          const brandDisplay = isBranded ? `<span class="equipment-brand">${machine.brand}</span> ` : '';
           const tagsHtml = machine.tags.map(tag => `<span class="tag" onclick="selectTag('${tag}')">${tag}</span>`).join('');
           if (machine.available === false) {
             return `
             <div class="equipment-item equipment-item--unavailable">
-              <span class="equipment-unavailable" title="Not available at ${currentGym}">${brandDisplay}<strong>${machine.name}</strong></span>
+              <span class="equipment-unavailable" title="Not available at ${currentGym}"><span class="equipment-brand">${isBranded ? machine.brand : ''}</span>${isBranded ? ' ' : ''}<strong>${machine.name}</strong></span>
               <div class="equipment-tags">
                 ${tagsHtml}
               </div>
@@ -785,6 +795,13 @@ function selectEquipment(machineName) {
         });
       });
 
+      // Build mobile gym grid (complete gyms only, 2-per-row)
+      const completeGymButtons = gyms
+        .filter(gymName => equipmentData.gyms[gymName].status === 'complete')
+        .map(gymName => `<button class="gym-quick-btn" onclick="selectGym('${gymName.replace(/'/g, "\\'")}')">
+          ${gymName}
+        </button>`).join('');
+
       let html = `
         <div class="inventory-summary">
           <div class="summary-item">
@@ -803,6 +820,15 @@ function selectEquipment(machineName) {
             <div class="summary-value">${totalCategories.size}</div>
             <div class="summary-label">Categories</div>
           </div>
+        </div>
+
+        <div class="homepage-intro">
+          <p>An unofficial equipment catalogue for <strong>Anytime Fitness Singapore</strong> gyms — browse machines by location, search by muscle group, and copy an equipment list to generate an AI workout prompt.</p>
+          <p>Pick a gym to see what's on the floor. Search by muscle group to compare across locations.</p>
+        </div>
+
+        <div class="homepage-gym-index">
+          <div class="homepage-gym-grid">${completeGymButtons}</div>
         </div>
       `;
 
@@ -1121,6 +1147,18 @@ function selectEquipment(machineName) {
       window.history.pushState(null, '', '/');
       renderGymList();
       renderLandingPage();
+    });
+
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      var el = document.documentElement;
+      var isPurple = el.getAttribute('data-theme') === 'purple';
+      if (isPurple) {
+        el.removeAttribute('data-theme');
+        localStorage.setItem('gymcat-theme', 'yellow');
+      } else {
+        el.setAttribute('data-theme', 'purple');
+        localStorage.setItem('gymcat-theme', 'purple');
+      }
     });
 
     loadEquipment();

@@ -1,10 +1,6 @@
 // ============================================================================
 // Inventory View + Home Link
 // ============================================================================
-// These rules were previously hand-added directly to styles.css. They are
-// ported here so the SCSS source stays the single source of truth and a
-// recompile no longer wipes them.
-// ============================================================================
 
 .home-link {
   text-decoration: none;
@@ -31,22 +27,24 @@
 }
 
 .summary-item {
-  background: #f9f9f9;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 20px;
   text-align: center;
 }
 
 .summary-value {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  color: #2196f3;
+  color: var(--accent);
   margin-bottom: 8px;
 }
 
 .summary-label {
   font-size: 12px;
-  color: #999;
+  color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -60,7 +58,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #999;
+  color: var(--text-tertiary);
   margin: 0 0 12px;
 }
 
@@ -68,9 +66,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  background: white;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -79,7 +77,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 14px 20px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border);
 
   &:last-child {
     border-bottom: none;
@@ -92,7 +90,7 @@
   padding: 0;
   font-size: 15px;
   font-weight: 500;
-  color: #2196f3;
+  color: var(--accent);
   cursor: pointer;
   text-align: left;
 
@@ -103,34 +101,34 @@
 
 .recent-update-date {
   font-size: 13px;
-  color: #999;
+  color: var(--text-tertiary);
   white-space: nowrap;
   margin-left: 16px;
 }
 
 .inventory-gym-section {
-  background: white;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   margin-bottom: 32px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
 .inventory-gym-header {
-  background: #f5f5f5;
-  color: #333333;
+  background: var(--bg-base);
+  color: var(--text-primary);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid var(--border);
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .inventory-gym-header:hover {
-  background-color: #efefef;
+  background-color: var(--border);
 }
 
 .inventory-gym-title-group {
@@ -140,10 +138,13 @@
 }
 
 .inventory-gym-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  color: #333333;
+  color: var(--text-primary);
   margin: 0;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .inventory-accordion-toggle {
@@ -151,7 +152,7 @@
   border: none;
   cursor: pointer;
   font-size: 14px;
-  color: #333333;
+  color: var(--text-primary);
   padding: 0 8px;
   transition: transform 0.2s ease;
   width: 24px;
@@ -164,7 +165,7 @@
 
 .inventory-gym-meta {
   font-size: 12px;
-  color: #999;
+  color: var(--text-tertiary);
   white-space: nowrap;
 }
 
@@ -174,17 +175,17 @@
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .status-badge.complete {
-  background: rgba(76, 175, 80, 0.3);
-  color: #4caf50;
+  background: rgba(34, 197, 94, 0.2);
+  color: var(--status-complete);
 }
 
 .status-badge.ongoing {
-  background: rgba(255, 193, 7, 0.3);
-  color: #ffc107;
+  background: rgba(249, 115, 22, 0.2);
+  color: var(--status-partial);
 }
 
 .inventory-categories {
@@ -208,20 +209,21 @@
 }
 
 .inventory-category-title {
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  color: #333333;
+  color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 10px 0;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid var(--border);
   margin-bottom: 12px;
   display: flex;
   gap: 4px;
 }
 
 .inventory-count {
-  color: #999;
+  color: var(--text-tertiary);
   font-weight: 600;
 }
 
@@ -237,7 +239,7 @@
   gap: 16px;
   align-items: flex-start;
   padding: 12px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .inventory-equipment-item:last-child {
@@ -254,25 +256,25 @@
 
 .inventory-brand {
   font-weight: 500;
-  color: #333333;
+  color: var(--text-primary);
   font-size: 13px;
 }
 
 .inventory-name {
   font-weight: 500;
   cursor: pointer;
-  color: #333333;
+  color: var(--text-primary);
   transition: color 0.2s ease;
   font-size: 13px;
 }
 
 .inventory-name:hover {
-  color: #2196f3;
+  color: var(--accent);
   text-decoration: underline;
 }
 
 .inventory-notes {
-  color: #999;
+  color: var(--text-tertiary);
   font-size: 12px;
 }
 
@@ -286,8 +288,8 @@
 
 .inventory-tag {
   display: inline-block;
-  background: #f0f0f0;
-  color: #666;
+  background: var(--border);
+  color: var(--text-secondary);
   padding: 2px 8px;
   border-radius: 3px;
   font-size: 11px;
@@ -297,8 +299,72 @@
 }
 
 .inventory-tag:hover {
-  background: #999;
-  color: white;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+// Homepage intro
+.homepage-intro {
+  margin-bottom: 28px;
+
+  p {
+    font-size: $font-size-md;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 6px;
+
+    strong {
+      color: var(--text-primary);
+      font-weight: $font-weight-semibold;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Homepage gym index — shown only on mobile (sidebar handles desktop)
+.homepage-gym-index {
+  display: none;
+  margin-bottom: 28px;
+}
+
+.homepage-gym-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-sm;
+}
+
+.gym-quick-btn {
+  padding: $spacing-md;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: $radius-md;
+  color: var(--text-primary);
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1.3;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-muted);
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-intro p {
+    font-size: $font-size-base;
+  }
+
+  .homepage-gym-index {
+    display: block;
+  }
 }
 
 // Explicitly-unavailable equipment — shown struck-through so it reads as
@@ -308,7 +374,7 @@
 }
 
 .equipment-unavailable {
-  color: #999999;
+  color: var(--text-tertiary);
   text-decoration: line-through;
   text-decoration-thickness: 1px;
   cursor: default;
@@ -321,7 +387,7 @@
 .inventory-name--unavailable {
   font-weight: 500;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-tertiary);
   text-decoration: line-through;
   cursor: default;
 }

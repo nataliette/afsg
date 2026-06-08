@@ -12,8 +12,8 @@
 
 body {
   font-family: $font-family-base;
-  background-color: $color-white;
-  color: $color-gray-900;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
   display: flex;
   min-height: 100vh;
 
@@ -23,23 +23,26 @@ body {
 }
 
 h1 {
+  font-family: $font-family-heading;
   font-size: $font-size-xl;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
+  letter-spacing: -0.5px;
 }
 
 h2 {
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
-  color: $color-gray-700;
+  color: var(--text-tertiary);
   margin-bottom: $spacing-md;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 h3 {
+  font-family: $font-family-heading;
   font-size: $font-size-md;
   font-weight: $font-weight-semibold;
-  color: $color-gray-900;
+  color: var(--text-primary);
 }
 
 table {
@@ -49,7 +52,7 @@ table {
 }
 
 table thead {
-  background-color: $color-gray-100;
+  background-color: var(--bg-surface);
 }
 
 table th {
@@ -57,7 +60,7 @@ table th {
   text-align: left;
   font-weight: $font-weight-semibold;
   font-size: $font-size-base;
-  border-bottom: 2px solid $color-gray-200;
+  border-bottom: 2px solid var(--border);
 }
 
 table td {
@@ -71,7 +74,7 @@ table tr:not(.tags-row) td {
 }
 
 table tr:hover {
-  background-color: $color-gray-50;
+  background-color: var(--bg-surface);
 }
 
 a {

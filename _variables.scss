@@ -3,7 +3,8 @@
 // ============================================================================
 
 // Typography
-$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
 $font-size-sm: 12px;
 $font-size-xs: 11px;
@@ -15,33 +16,10 @@ $font-size-xl: 24px;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
+$font-weight-bold: 700;
 
 $line-height-tight: 1.2;
 $line-height-normal: 1.5;
-
-// Colors - Primary
-$color-primary-dark: #1565c0;
-$color-primary-darker: #0d47a1;
-$color-primary-light: #e3f2fd;
-$color-primary-lighter: #bbdefb;
-
-// Colors - Secondary
-$color-secondary: #2196f3;
-
-// Colors - Status
-$color-status-success: #4caf50;
-$color-status-warning: #ff9800;
-$color-status-error: #d32f2f;
-
-// Colors - Neutral
-$color-white: #ffffff;
-$color-gray-50: #fafafa;
-$color-gray-100: #f5f5f5;
-$color-gray-200: #e0e0e0;
-$color-gray-500: #999999;
-$color-gray-600: #999;
-$color-gray-700: #666;
-$color-gray-900: #333333;
 
 // Spacing - Base unit is 4px
 $spacing-xs: 4px;
@@ -61,7 +39,7 @@ $radius-xl: 16px;
 $radius-full: 50%;
 
 // Shadows
-$shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
 
 // Transitions
 $transition-fast: 0.2s;
@@ -73,3 +51,4 @@ $bp-mobile: 768px;
 // Z-index scale
 $z-overlay: 999;
 $z-menu: 1000;
+

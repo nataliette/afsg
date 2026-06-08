@@ -47,7 +47,7 @@
 
 **Mobile Considerations:** Must be usable at the gym on a phone (small screen, quick lookup)
 
-**Design System:** Spacing (4px scale), typography hierarchy, neutral color palette (blue/gray/green status dots).
+**Design System:** Dark theme, Electric Yellow (`#FFE600`) accent, Space Grotesk + Inter fonts, CSS custom properties in `_themes.scss`.
 
 ---
 
@@ -128,18 +128,41 @@ Each gym has a `lastUpdated` field in equipment.json (format: "DD MMM YYYY", e.g
 - Commit message format: `feat: update [Gym Name] equipment — 21 May 2026`
 
 ### Design System & Tokens
+
+**Theme:** Dark — near-black base with Electric Yellow (`#FFE600`) accent. A second purple theme (`#8B5CF6`) exists in `_themes.scss` as a hidden easter egg (toggle button hidden via `display:none`; see DECISIONS.md Session 10).
+
 **File Structure:**
-- `styles.scss` (compiled output)
-- `_variables.scss` — colors, spacing (4px scale), typography, transitions
-- `_base.scss` → `_components.scss` → `_layout.scss` → `_responsive.scss`
+- `styles.scss` — import wrapper only; compiled to `styles.css`
+- `_themes.scss` — CSS custom properties for both themes (imported ONCE in `styles.scss` — never from partials)
+- `_variables.scss` — SCSS variables for spacing, typography, radii, transitions
+- `_base.scss` → `_components.scss` → `_layout.scss` → `_responsive.scss` → `_inventory.scss`
 
-**Token categories:**
-- Colors: `$primary-blue` (interaction), `$neutral-gray` (backgrounds), `$status-green` (complete), `$status-orange` (ongoing)
-- Spacing: 4px baseline (4px, 8px, 12px, 16px, 24px, 32px...)
-- Typography: heading scale (H1–H4), body text, monospace for equipment names
-- Transitions: smooth 200ms ease for hover/focus states
+**CSS Custom Properties (design tokens):**
+| Token | Value | Usage |
+|---|---|---|
+| `--bg-base` | `#111111` | Page background |
+| `--bg-surface` | `#1a1a1a` | Cards, modals |
+| `--bg-sidebar` / `--bg-header` | `#161616` | Sidebar, header |
+| `--border` | `#2a2a2a` | All borders |
+| `--text-primary` | `#f0f0f0` | Main text |
+| `--text-secondary` | `#c0c0c0` | Subdued labels |
+| `--text-tertiary` | `#888888` | Placeholders, meta |
+| `--accent` | `#FFE600` | CTAs, active states, headings |
+| `--accent-hover` | `#FFC700` | Hover state of accent |
+| `--accent-muted` | `rgba(255,230,0,0.12)` | Subtle accent backgrounds |
+| `--on-accent` | `#111111` | Text on accent backgrounds |
+| `--status-complete` | `#22c55e` | Green status dot |
+| `--status-partial` | `#f97316` | Orange status dot |
 
-**Important:** Never edit `styles.css` directly. Modify SCSS partials and recompile with `sass styles.scss:styles.css` (or watch mode: `sass --watch styles.scss:styles.css`).
+**Fonts:** Space Grotesk (headings/card titles, 500–700) + Inter (body, 400–600) via Google Fonts.
+
+**Spacing:** 4px baseline — `$spacing-xs` (4) through `$spacing-4xl` (40).
+
+**Important:**
+- Never edit `styles.css` directly. Modify SCSS partials and recompile: `sass styles.scss styles.css`
+- `_themes.scss` must only be imported in `styles.scss`, never in individual partials (causes `:root` duplication)
+- All colour rules on equipment items must be **explicit** (never `color: inherit`) — see DECISIONS.md Session 11 for why
+- Increment `?v=X` on the `<link rel="stylesheet">` in `index.html` when deploying to bust Caddy's cache
 
 **Note on CSS Grid styling:** Equipment displays use `.results-grid` (4 columns on gym page, managed via `--grid-cols` CSS custom property). Gym summary cards use `.gym-summary-row`. Both are fully styled and functional; preview tool has CSS loading limitations but all CSS compiles correctly.
 

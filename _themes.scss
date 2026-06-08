@@ -1,0 +1,51 @@
+// ============================================================================
+// Theme — CSS Custom Properties
+// Imported once from styles.scss (never from partials) to avoid duplication.
+// ============================================================================
+
+:root {
+  /* Base backgrounds */
+  --bg-base: #111111;
+  --bg-surface: #1a1a1a;
+  --bg-sidebar: #161616;
+  --bg-header: #161616;
+
+  /* Borders */
+  --border: #2a2a2a;
+  --border-subtle: #1e1e1e;
+
+  /* Text */
+  --text-primary: #f0f0f0;
+  --text-secondary: #c0c0c0;
+  --text-tertiary: #888888;
+
+  /* Accent — Electric Yellow */
+  --accent: #FFE600;
+  --accent-hover: #FFC700;
+  --accent-muted: rgba(255, 230, 0, 0.12);
+  --on-accent: #111111;
+
+  /* Status */
+  --status-complete: #22c55e;
+  --status-partial: #f97316;
+  --status-error: #ef4444;
+
+  /* Theme toggle — shows the OTHER theme's color */
+  --toggle-preview: #8B5CF6;
+}
+
+[data-theme="purple"] {
+  --bg-base: #0f0f1a;
+  --bg-surface: #1a1025;
+  --bg-sidebar: #130e1e;
+  --bg-header: #130e1e;
+  --border: #2a1f3a;
+  --border-subtle: #1f1530;
+  --text-secondary: #c4b8d8;
+  --text-tertiary: #8a7ea0;
+  --accent: #8B5CF6;
+  --accent-hover: #7C3AED;
+  --accent-muted: rgba(139, 92, 246, 0.15);
+  --on-accent: #ffffff;
+  --toggle-preview: #FFE600;
+}
