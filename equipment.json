@@ -3961,6 +3961,266 @@
         ]
       },
       "lastUpdated": "21 May 2026"
+    },
+    "Henderson CC": {
+      "status": "complete",
+      "categories": {
+        "Cables": [
+          {
+            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "brand": "Precor",
+            "name": "Cable Station",
+            "notes": "assist dip/chin, low row, lat pulldown, adjustable pulley"
+          },
+          {
+            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "brand": "Precor",
+            "name": "Dual Adjustable Pulley",
+            "notes": null
+          }
+        ],
+        "Upper": [
+          {
+            "tags": ["arms", "biceps"],
+            "brand": "Unknown",
+            "name": "Biceps Curl Bench",
+            "notes": null
+          },
+          {
+            "tags": ["chest", "shoulders", "triceps"],
+            "brand": "Precor",
+            "name": "Incline Chest Press",
+            "notes": null
+          },
+          {
+            "tags": ["arms", "back", "biceps"],
+            "brand": "Precor",
+            "name": "Seated Row",
+            "notes": null
+          },
+          {
+            "tags": ["back", "biceps"],
+            "brand": "Precor",
+            "name": "Chest Supported T-Bar Row",
+            "notes": null
+          },
+          {
+            "tags": ["back", "chest", "shoulders"],
+            "brand": "Precor",
+            "name": "Rear Delt / Pec Fly",
+            "notes": null
+          },
+          {
+            "tags": ["chest", "shoulders", "triceps"],
+            "brand": "Precor",
+            "name": "Converging Chest Press",
+            "notes": null
+          },
+          {
+            "tags": ["arms", "biceps"],
+            "brand": "Precor",
+            "name": "Biceps Curl",
+            "notes": null
+          },
+          {
+            "tags": ["shoulders", "triceps"],
+            "brand": "Precor",
+            "name": "Converging Shoulder Press",
+            "notes": null
+          }
+        ],
+        "Lower": [
+          {
+            "tags": ["glutes", "hamstrings", "legs"],
+            "brand": "Booty Builder",
+            "name": "GluteBuilder",
+            "notes": null
+          },
+          {
+            "tags": ["back", "glutes", "hamstrings"],
+            "brand": "The Abs Company",
+            "name": "Dual 45 Hip Extension",
+            "notes": null
+          },
+          {
+            "tags": ["hamstrings", "legs"],
+            "brand": "Precor",
+            "name": "Prone Leg Curl",
+            "notes": null
+          },
+          {
+            "tags": ["legs", "quads"],
+            "brand": "Precor",
+            "name": "Leg Extension",
+            "notes": null
+          },
+          {
+            "tags": ["glutes", "legs"],
+            "brand": "Booty Builder",
+            "name": "3D Multi-Abductor",
+            "notes": null
+          },
+          {
+            "tags": ["glutes", "hamstrings"],
+            "brand": "Booty Builder",
+            "name": "Hip Thrust Elite",
+            "notes": null
+          },
+          {
+            "tags": ["glutes", "hamstrings", "legs"],
+            "brand": "Booty Builder",
+            "name": "Glute Press",
+            "notes": null
+          },
+          {
+            "tags": ["glutes", "legs", "quads"],
+            "brand": "Booty Builder",
+            "name": "Glute Squat",
+            "notes": null
+          }
+        ],
+        "Cardio": [
+          {
+            "tags": ["cardio", "legs"],
+            "brand": "Precor",
+            "name": "Treadmill",
+            "notes": "x4"
+          },
+          {
+            "tags": ["cardio", "full body"],
+            "brand": "Precor",
+            "name": "Elliptical",
+            "notes": "x2"
+          },
+          {
+            "tags": ["cardio", "core", "legs"],
+            "brand": "Precor",
+            "name": "Stairmaster",
+            "notes": null
+          },
+          {
+            "tags": ["cardio", "legs"],
+            "brand": "Precor",
+            "name": "Recumbent Bike",
+            "notes": null
+          },
+          {
+            "tags": ["cardio", "legs"],
+            "brand": "Precor",
+            "name": "Upright Bike",
+            "notes": null
+          },
+          {
+            "tags": ["back", "cardio", "full body"],
+            "brand": "Assault Fitness",
+            "name": "AssaultRower Pro",
+            "notes": null
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "brand": "Precor",
+            "name": "Smith Machine",
+            "notes": null
+          },
+          {
+            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "brand": "Precor",
+            "name": "Mini Rack",
+            "notes": "x2"
+          },
+          {
+            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "brand": "Power Lift",
+            "name": "Deadlift Platform",
+            "notes": "x1"
+          },
+          {
+            "tags": ["chest", "shoulders", "triceps"],
+            "brand": "Unknown",
+            "name": "Decline Bench",
+            "notes": null
+          }
+        ],
+        "Core": [
+          {
+            "tags": ["core"],
+            "brand": "The Abs Company",
+            "name": "Vertical Crunch",
+            "notes": null
+          },
+          {
+            "tags": ["core"],
+            "brand": "Precor",
+            "name": "Captain's Chair",
+            "notes": null
+          },
+          {
+            "tags": ["core"],
+            "brand": "Unknown",
+            "name": "Ab Wheel",
+            "notes": null
+          }
+        ],
+        "Other": [
+          {
+            "tags": ["core"],
+            "brand": "Unknown",
+            "name": "Exercise Ball 55cm",
+            "notes": null
+          },
+          {
+            "tags": ["core"],
+            "brand": "Unknown",
+            "name": "Exercise Ball 65cm",
+            "notes": null
+          },
+          {
+            "tags": ["core", "legs"],
+            "brand": "Ziva",
+            "name": "Bosu Ball",
+            "notes": null
+          },
+          {
+            "tags": ["full body", "legs"],
+            "brand": "Unknown",
+            "name": "Farmer's Carry",
+            "notes": "10/15/20kg"
+          },
+          {
+            "tags": ["full body"],
+            "brand": "Unknown",
+            "name": "Kettlebells",
+            "notes": "8/10/12/16/20kg"
+          },
+          {
+            "tags": ["core", "full body"],
+            "brand": "Unknown",
+            "name": "Medicine Ball",
+            "notes": "2/3/4/5/6kg"
+          },
+          {
+            "tags": ["full body"],
+            "brand": "Unknown",
+            "name": "Resistance Bands",
+            "notes": null
+          },
+          {
+            "tags": ["cardio", "full body"],
+            "brand": "Unknown",
+            "name": "Punching Bag",
+            "notes": null
+          },
+          {
+            "tags": ["core", "full body"],
+            "brand": "Ziva",
+            "name": "TRX",
+            "notes": null
+          }
+        ]
+      },
+      "lastUpdated": "17 Jun 2026"
     }
   }
 }
