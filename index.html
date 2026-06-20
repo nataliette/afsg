@@ -582,7 +582,8 @@ function selectEquipment(machineName) {
         gymGroups[gym].forEach(({ brand, name, notes }) => {
           const isBranded = brand && brand !== 'Unknown';
           const brandDisplay = isBranded ? `<strong>${brand}</strong> ` : '';
-          html += `<div class="equipment-item"><span>${brandDisplay}${name}</span></div>`;
+          const notesHtml = notes ? `<span class="equipment-notes">${notes}</span>` : '';
+          html += `<div class="equipment-item"><span>${brandDisplay}${name}${notesHtml ? ' ' + notesHtml : ''}</span></div>`;
         });
       });
 
@@ -739,9 +740,10 @@ function selectEquipment(machineName) {
             </div>
           `;
           }
+          const notesHtml = machine.notes ? `<span class="equipment-notes">${machine.notes}</span>` : '';
           return `
             <div class="equipment-item">
-              <span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${brandDisplay}<strong>${machine.name}</strong></span>
+              <span class="clickable-equipment" onclick="selectEquipment('${machine.name.replace(/'/g, "\\'")}')">${brandDisplay}<strong>${machine.name}</strong>${notesHtml ? ' ' + notesHtml : ''}</span>
               <div class="equipment-tags">
                 ${tagsHtml}
               </div>
