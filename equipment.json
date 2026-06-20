@@ -313,7 +313,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Rack",
-            "notes": "Smith Machine, x2"
+            "notes": "x2"
           },
           {
             "tags": [
@@ -361,6 +361,21 @@
             ],
             "brand": "Hammer Strength",
             "name": "Deadlift Platform",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "chest",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
             "notes": "x2"
           }
         ],
@@ -689,7 +704,7 @@
             ],
             "brand": "Precor",
             "name": "Rack",
-            "notes": "x3 (Smith Machine, unloaded 6.8kg, x3, Mini, x2)"
+            "notes": "x3 (unloaded 6.8kg, x3, Mini, x2)"
           },
           {
             "tags": [
@@ -726,6 +741,18 @@
             "brand": "PowerLift",
             "name": "Deadlift Platform",
             "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Precor",
+            "name": "Smith Machine",
+            "notes": "x3 (unloaded 6.8kg, x3, Mini, x2)"
           }
         ],
         "Calisthenics": [
@@ -1390,7 +1417,7 @@
             ],
             "brand": "Hammer Strength",
             "name": "Rack",
-            "notes": "Smith Machine"
+            "notes": null
           },
           {
             "tags": [
@@ -1402,6 +1429,18 @@
             ],
             "brand": "Hammer Strength",
             "name": "Power Rack",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Smith Machine",
             "notes": null
           }
         ],
@@ -2200,7 +2239,7 @@
             ],
             "brand": "Precor",
             "name": "Rack",
-            "notes": "Smith Machine, unloaded 11.4kg"
+            "notes": "unloaded 11.4kg"
           },
           {
             "tags": [
@@ -2242,6 +2281,18 @@
             "brand": "Unknown",
             "name": "Deadlift Platform",
             "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Precor",
+            "name": "Smith Machine",
+            "notes": "unloaded 11.4kg"
           }
         ],
         "Calisthenics": [
@@ -2517,7 +2568,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Rack",
-            "notes": "Smith Machine"
+            "notes": null
           },
           {
             "tags": [
@@ -2528,6 +2579,18 @@
             ],
             "brand": "Unknown",
             "name": "Deadlift Platform",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
             "notes": null
           }
         ],
@@ -2908,7 +2971,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Rack",
-            "notes": "Smith Machine"
+            "notes": null
           },
           {
             "tags": [
@@ -2920,6 +2983,21 @@
             ],
             "brand": "Unknown",
             "name": "Deadlift Platform",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
             "notes": null
           }
         ],
@@ -3824,7 +3902,7 @@
             ],
             "brand": "Precor",
             "name": "Rack",
-            "notes": "x2 (x8, Smith Machine)"
+            "notes": "x2 (x8)"
           },
           {
             "tags": [
@@ -3837,6 +3915,18 @@
             "brand": "Unknown",
             "name": "Platform",
             "notes": "x3"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Precor",
+            "name": "Smith Machine",
+            "notes": "x2 (x8)"
           }
         ],
         "Core": [
@@ -4198,7 +4288,19 @@
             ],
             "brand": "Life Fitness",
             "name": "Rack",
-            "notes": "Smith Machine"
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
+            "notes": null
           }
         ],
         "Core": [
@@ -4516,7 +4618,7 @@
             ],
             "brand": "Precor",
             "name": "Rack",
-            "notes": "x2 (Smith Machine, Mini, x2)"
+            "notes": "x2 (Mini, x2)"
           },
           {
             "tags": [
@@ -4551,6 +4653,18 @@
             "brand": "Power Lift",
             "name": "Deadlift Platform",
             "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Precor",
+            "name": "Smith Machine",
+            "notes": "x2 (Mini, x2)"
           }
         ],
         "Core": [
@@ -4994,7 +5108,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Rack",
-            "notes": "Smith Machine"
+            "notes": null
           },
           {
             "tags": [
@@ -5007,6 +5121,18 @@
             "brand": "Hammer Strength",
             "name": "Deadlift Platform",
             "notes": "x3"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
+            "notes": null
           }
         ],
         "Calisthenics": [
@@ -5317,7 +5443,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Rack",
-            "notes": "Smith Machine"
+            "notes": null
           },
           {
             "tags": [
@@ -5330,6 +5456,18 @@
             "brand": "Hammer Strength",
             "name": "Deadlift Platform",
             "notes": "x2"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
+            "notes": null
           }
         ],
         "Calisthenics": [
@@ -5685,7 +5823,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Rack",
-            "notes": "Smith Machine"
+            "notes": null
           },
           {
             "tags": [
@@ -5698,6 +5836,18 @@
             "brand": "Hammer Strength",
             "name": "Deadlift Platform",
             "notes": "x3"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
+            "notes": null
           }
         ],
         "Calisthenics": [
