@@ -312,8 +312,8 @@
               "triceps"
             ],
             "brand": "Life Fitness",
-            "name": "Smith Machine",
-            "notes": "x2"
+            "name": "Rack",
+            "notes": "Smith Machine, x2"
           },
           {
             "tags": [
@@ -336,8 +336,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Mini Rack",
-            "notes": "x4"
+            "name": "Rack",
+            "notes": "Mini, x4"
           },
           {
             "tags": [
@@ -348,8 +348,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Deadlift Platform",
-            "notes": "x3"
+            "name": "Rack",
+            "notes": "Deadlift Platform, x3"
           },
           {
             "tags": [
@@ -688,8 +688,8 @@
               "quads"
             ],
             "brand": "Precor",
-            "name": "Smith Machine Icarian Line",
-            "notes": "unloaded 6.8kg"
+            "name": "Rack",
+            "notes": "Smith Machine, unloaded 6.8kg"
           },
           {
             "tags": [
@@ -700,7 +700,7 @@
               "quads"
             ],
             "brand": "Unknown",
-            "name": "Barbell Rack",
+            "name": "Rack",
             "notes": null
           },
           {
@@ -724,8 +724,8 @@
               "quads"
             ],
             "brand": "Precor",
-            "name": "Mini Rack",
-            "notes": "x2"
+            "name": "Rack",
+            "notes": "Mini, x2"
           },
           {
             "tags": [
@@ -736,8 +736,8 @@
               "quads"
             ],
             "brand": "PowerLift",
-            "name": "Deadlift Platform",
-            "notes": "x2"
+            "name": "Rack",
+            "notes": "Deadlift Platform, x2"
           }
         ],
         "Calisthenics": [
@@ -846,8 +846,8 @@
               "quads"
             ],
             "brand": "Precor",
-            "name": "Smith Machine",
-            "notes": "unloaded 15.9kg"
+            "name": "Rack",
+            "notes": "Smith Machine, unloaded 15.9kg"
           },
           {
             "tags": [
@@ -1014,8 +1014,8 @@
               "quads"
             ],
             "brand": "Ziva",
-            "name": "Deadlift Platform",
-            "notes": null
+            "name": "Rack",
+            "notes": "Deadlift Platform"
           },
           {
             "tags": [
@@ -1389,8 +1389,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           },
           {
             "tags": [
@@ -1873,8 +1873,8 @@
               "legs"
             ],
             "brand": "Unknown",
-            "name": "Deadlift Platform",
-            "notes": "x2"
+            "name": "Rack",
+            "notes": "Deadlift Platform, x2"
           }
         ],
         "Other": [
@@ -2185,8 +2185,8 @@
               "quads"
             ],
             "brand": "Precor",
-            "name": "Smith Machine",
-            "notes": "unloaded 11.4kg"
+            "name": "Rack",
+            "notes": "Smith Machine, unloaded 11.4kg"
           },
           {
             "tags": [
@@ -2212,8 +2212,8 @@
               "legs"
             ],
             "brand": "Unknown",
-            "name": "Deadlift Platform",
-            "notes": "x2"
+            "name": "Rack",
+            "notes": "Deadlift Platform, x2"
           }
         ],
         "Calisthenics": [
@@ -2465,7 +2465,7 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Barbell Rack",
+            "name": "Rack",
             "notes": "x3"
           },
           {
@@ -2476,8 +2476,8 @@
               "quads"
             ],
             "brand": "Unknown",
-            "name": "Deadlift Platform",
-            "notes": null
+            "name": "Rack",
+            "notes": "Deadlift Platform"
           },
           {
             "tags": [
@@ -2488,8 +2488,8 @@
               "quads"
             ],
             "brand": "Life Fitness",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           }
         ],
         "Core": [
@@ -2841,8 +2841,8 @@
               "quads"
             ],
             "brand": "Unknown",
-            "name": "Deadlift Platform",
-            "notes": null
+            "name": "Rack",
+            "notes": "Deadlift Platform"
           },
           {
             "tags": [
@@ -2868,8 +2868,8 @@
               "triceps"
             ],
             "brand": "Life Fitness",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           }
         ],
         "Other": [
@@ -3109,7 +3109,7 @@
               "quads"
             ],
             "brand": "Unknown",
-            "name": "Barbell Rack",
+            "name": "Rack",
             "notes": "x3"
           },
           {
@@ -3120,8 +3120,8 @@
               "quads"
             ],
             "brand": "Unknown",
-            "name": "Deadlift Platform",
-            "notes": null
+            "name": "Rack",
+            "notes": "Deadlift Platform"
           },
           {
             "tags": [
@@ -3311,7 +3311,7 @@
               "quads"
             ],
             "brand": "Unknown",
-            "name": "Barbell Rack",
+            "name": "Rack",
             "notes": null
           }
         ],
@@ -3807,8 +3807,8 @@
               "quads"
             ],
             "brand": "Precor",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           }
         ],
         "Core": [
@@ -4169,8 +4169,8 @@
               "quads"
             ],
             "brand": "Life Fitness",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           }
         ],
         "Core": [
@@ -4487,8 +4487,8 @@
               "quads"
             ],
             "brand": "Precor",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           },
           {
             "tags": [
@@ -4499,8 +4499,8 @@
               "quads"
             ],
             "brand": "Precor",
-            "name": "Mini Rack",
-            "notes": "x2"
+            "name": "Rack",
+            "notes": "Mini, x2"
           },
           {
             "tags": [
@@ -4511,8 +4511,8 @@
               "quads"
             ],
             "brand": "Power Lift",
-            "name": "Deadlift Platform",
-            "notes": "x1"
+            "name": "Rack",
+            "notes": "Deadlift Platform, x1"
           },
           {
             "tags": [
@@ -4971,8 +4971,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Deadlift Platform",
-            "notes": null
+            "name": "Rack",
+            "notes": "Deadlift Platform"
           },
           {
             "tags": [
@@ -4983,8 +4983,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Mini Rack",
-            "notes": null
+            "name": "Rack",
+            "notes": "Mini"
           },
           {
             "tags": [
@@ -5007,8 +5007,8 @@
               "quads"
             ],
             "brand": "Life Fitness",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           }
         ],
         "Calisthenics": [
@@ -5240,8 +5240,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Mini Rack",
-            "notes": null
+            "name": "Rack",
+            "notes": "Mini"
           },
           {
             "tags": [
@@ -5318,8 +5318,8 @@
               "quads"
             ],
             "brand": "Life Fitness",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           },
           {
             "tags": [
@@ -5330,8 +5330,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Deadlift Platform",
-            "notes": null
+            "name": "Rack",
+            "notes": "Deadlift Platform"
           }
         ],
         "Calisthenics": [
@@ -5713,8 +5713,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Mini Rack",
-            "notes": null
+            "name": "Rack",
+            "notes": "Mini"
           },
           {
             "tags": [
@@ -5725,8 +5725,8 @@
               "quads"
             ],
             "brand": "Life Fitness",
-            "name": "Smith Machine",
-            "notes": null
+            "name": "Rack",
+            "notes": "Smith Machine"
           },
           {
             "tags": [
@@ -5737,8 +5737,8 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Deadlift Platform",
-            "notes": "x2"
+            "name": "Rack",
+            "notes": "Deadlift Platform, x2"
           }
         ],
         "Calisthenics": [
