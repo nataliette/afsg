@@ -337,7 +337,7 @@
             ],
             "brand": "Hammer Strength",
             "name": "Rack",
-            "notes": "x2 (Mini, x4, Deadlift Platform, x3)"
+            "notes": "x2 (Mini, x4, x3)"
           },
           {
             "tags": [
@@ -350,6 +350,18 @@
             "brand": "Torque",
             "name": "Rack",
             "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Deadlift Platform",
+            "notes": "x2"
           }
         ],
         "Other": [
@@ -701,7 +713,19 @@
             ],
             "brand": "PowerLift",
             "name": "Rack",
-            "notes": "Deadlift Platform, x2"
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "PowerLift",
+            "name": "Deadlift Platform",
+            "notes": null
           }
         ],
         "Calisthenics": [
@@ -992,6 +1016,18 @@
             "brand": "Ziva",
             "name": "Power Rack",
             "notes": "XP Half Rack with Storage 2.0, x3"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Ziva",
+            "name": "Deadlift Platform",
+            "notes": null
           }
         ],
         "Calisthenics": [
@@ -1838,7 +1874,21 @@
             ],
             "brand": "Unknown",
             "name": "Rack",
-            "notes": "Deadlift Platform, x2"
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Unknown",
+            "name": "Deadlift Platform",
+            "notes": null
           }
         ],
         "Other": [
@@ -2177,7 +2227,21 @@
             ],
             "brand": "Unknown",
             "name": "Rack",
-            "notes": "Deadlift Platform, x2"
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Unknown",
+            "name": "Deadlift Platform",
+            "notes": null
           }
         ],
         "Calisthenics": [
@@ -2454,6 +2518,17 @@
             "brand": "Life Fitness",
             "name": "Rack",
             "notes": "Smith Machine"
+          },
+          {
+            "tags": [
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Unknown",
+            "name": "Deadlift Platform",
+            "notes": null
           }
         ],
         "Core": [
@@ -2834,6 +2909,18 @@
             "brand": "Life Fitness",
             "name": "Rack",
             "notes": "Smith Machine"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Unknown",
+            "name": "Deadlift Platform",
+            "notes": null
           }
         ],
         "Other": [
@@ -3062,7 +3149,7 @@
             ],
             "brand": "Unknown",
             "name": "Rack",
-            "notes": "x3, Deadlift Platform"
+            "notes": "x3"
           },
           {
             "tags": [
@@ -3074,6 +3161,18 @@
             "brand": "Unknown",
             "name": "Hip Thrust",
             "notes": "barbell"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Unknown",
+            "name": "Deadlift Platform",
+            "notes": "x3"
           }
         ],
         "Core": [
@@ -4429,7 +4528,7 @@
             ],
             "brand": "Power Lift",
             "name": "Rack",
-            "notes": "Deadlift Platform, x1"
+            "notes": "x1"
           },
           {
             "tags": [
@@ -4439,6 +4538,18 @@
             ],
             "brand": "Unknown",
             "name": "Decline Bench",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Power Lift",
+            "name": "Deadlift Platform",
             "notes": null
           }
         ],
@@ -4871,7 +4982,7 @@
             ],
             "brand": "Hammer Strength",
             "name": "Rack",
-            "notes": "x3 (Deadlift Platform, Mini)"
+            "notes": "x3 (Mini)"
           },
           {
             "tags": [
@@ -4884,6 +4995,18 @@
             "brand": "Life Fitness",
             "name": "Rack",
             "notes": "Smith Machine"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Deadlift Platform",
+            "notes": "x3"
           }
         ],
         "Calisthenics": [
@@ -5182,7 +5305,7 @@
             ],
             "brand": "Hammer Strength",
             "name": "Rack",
-            "notes": "x2 (Deadlift Platform)"
+            "notes": "x2 ()"
           },
           {
             "tags": [
@@ -5195,6 +5318,18 @@
             "brand": "Life Fitness",
             "name": "Rack",
             "notes": "Smith Machine"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Deadlift Platform",
+            "notes": "x2"
           }
         ],
         "Calisthenics": [
@@ -5538,7 +5673,7 @@
             ],
             "brand": "Hammer Strength",
             "name": "Rack",
-            "notes": "x3 (x3, Mini, Deadlift Platform, x2)"
+            "notes": "x3 (x3, Mini, x2)"
           },
           {
             "tags": [
@@ -5551,6 +5686,18 @@
             "brand": "Life Fitness",
             "name": "Rack",
             "notes": "Smith Machine"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Deadlift Platform",
+            "notes": "x3"
           }
         ],
         "Calisthenics": [
