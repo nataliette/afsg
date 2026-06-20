@@ -1029,8 +1029,8 @@
               "quads"
             ],
             "brand": "Ziva",
-            "name": "Rack",
-            "notes": "Deadlift Platform"
+            "name": "Deadlift Platform",
+            "notes": null
           },
           {
             "tags": [
@@ -2932,8 +2932,8 @@
               "quads"
             ],
             "brand": "Unknown",
-            "name": "Rack",
-            "notes": "Deadlift Platform"
+            "name": "Deadlift Platform",
+            "notes": null
           },
           {
             "tags": [
