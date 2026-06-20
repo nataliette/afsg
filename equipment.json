@@ -5,31 +5,48 @@
       "categories": {
         "Cardio": [
           {
-            "tags": ["cardio", "full body"],
+            "tags": [
+              "cardio",
+              "full body"
+            ],
             "brand": "Octane",
             "name": "Airdyne2",
             "notes": null
           },
           {
-            "tags": ["back", "cardio", "full body"],
+            "tags": [
+              "back",
+              "cardio",
+              "full body"
+            ],
             "brand": "Concept2",
             "name": "RowErg",
             "notes": null
           },
           {
-            "tags": ["cardio", "core", "legs"],
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Stairmaster",
             "notes": null
           },
           {
-            "tags": ["cardio", "full body"],
+            "tags": [
+              "cardio",
+              "full body"
+            ],
             "brand": "Life Fitness",
             "name": "Elliptical",
             "notes": "x3"
           },
           {
-            "tags": ["cardio", "legs"],
+            "tags": [
+              "cardio",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Treadmill",
             "notes": "x6"
@@ -37,13 +54,29 @@
         ],
         "Cables": [
           {
-            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Multistation",
             "notes": "dual pulley high, cable, dual pulley row, lat pulldown, assist dip/chin, dual pulley pulldown, cable crossover"
           },
           {
-            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Dual Adjustable Pulley",
             "notes": null
@@ -51,55 +84,88 @@
         ],
         "Upper": [
           {
-            "tags": ["back", "core", "glutes", "hamstrings"],
+            "tags": [
+              "back",
+              "core",
+              "glutes",
+              "hamstrings"
+            ],
             "brand": "Life Fitness",
             "name": "Back Extension",
             "notes": null
           },
           {
-            "tags": ["arms", "back", "biceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
             "brand": "Life Fitness",
             "name": "Row",
             "notes": "x2"
           },
           {
-            "tags": ["shoulders", "triceps"],
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Shoulder Press",
             "notes": "4.5kg/arm starting weight"
           },
           {
-            "tags": ["chest", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Decline Chest Press",
             "notes": "2.7kg/arm starting weight"
           },
           {
-            "tags": ["back", "chest", "shoulders"],
+            "tags": [
+              "back",
+              "chest",
+              "shoulders"
+            ],
             "brand": "Life Fitness",
             "name": "Rear Delt / Pec Fly",
             "notes": null
           },
           {
-            "tags": ["chest", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Chest Press",
             "notes": null
           },
           {
-            "tags": ["arms", "biceps"],
+            "tags": [
+              "arms",
+              "biceps"
+            ],
             "brand": "Life Fitness",
             "name": "Biceps Curl",
             "notes": null
           },
           {
-            "tags": ["arms", "triceps"],
+            "tags": [
+              "arms",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Triceps Press",
             "notes": null
           },
           {
-            "tags": ["arms", "biceps"],
+            "tags": [
+              "arms",
+              "biceps"
+            ],
             "brand": "Unknown",
             "name": "Arm Curl Bench",
             "notes": null
@@ -107,55 +173,97 @@
         ],
         "Lower": [
           {
-            "tags": ["calves", "legs"],
+            "tags": [
+              "calves",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Seated Calf Raise",
             "notes": null
           },
           {
-            "tags": ["core", "glutes", "hamstrings", "legs"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
             "brand": "Hammer Strength",
             "name": "Glute Drive",
             "notes": null
           },
           {
-            "tags": ["calves", "core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "calves",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Hammer Strength",
             "name": "Belt Squat",
             "notes": null
           },
           {
-            "tags": ["calves", "glutes", "legs", "quads"],
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ],
             "brand": "Life Fitness",
             "name": "Linear Leg Press",
             "notes": "47kg starting weight"
           },
           {
-            "tags": ["calves", "core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "calves",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Hammer Strength",
             "name": "Hack Squat",
             "notes": null
           },
           {
-            "tags": ["abductors", "adductors", "legs"],
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Hip Abductor/Adductor",
             "notes": null
           },
           {
-            "tags": ["calves", "glutes", "legs", "quads"],
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ],
             "brand": "Life Fitness",
             "name": "Seated Leg Press",
             "notes": null
           },
           {
-            "tags": ["hamstrings", "legs"],
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Seated Leg Curl",
             "notes": null
           },
           {
-            "tags": ["legs", "quads"],
+            "tags": [
+              "legs",
+              "quads"
+            ],
             "brand": "Life Fitness",
             "name": "Leg Extension",
             "notes": null
@@ -163,19 +271,29 @@
         ],
         "Core": [
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Life Fitness",
             "name": "Abdominal",
             "notes": null
           },
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Unknown",
             "name": "Decline Bench",
             "notes": null
           },
           {
-            "tags": ["arms", "back", "biceps", "core", "triceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "triceps"
+            ],
             "brand": "Bosu",
             "name": "Captain's Chair",
             "notes": null
@@ -183,31 +301,64 @@
         ],
         "Barbells & Racks": [
           {
-            "tags": ["chest", "core", "glutes", "hamstrings", "legs", "quads", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Smith Machine",
             "notes": "x2"
           },
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Hammer Strength",
             "name": "Power Rack",
             "notes": "x2"
           },
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Hammer Strength",
             "name": "Mini Rack",
             "notes": "x4"
           },
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Hammer Strength",
             "name": "Deadlift Platform",
             "notes": "x3"
           },
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Torque",
             "name": "Rack",
             "notes": null
@@ -215,7 +366,9 @@
         ],
         "Other": [
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Life Fitness",
             "name": "Exercise Ball 65cm",
             "notes": null
@@ -2456,37 +2609,58 @@
       "categories": {
         "Cardio": [
           {
-            "tags": ["cardio", "legs"],
+            "tags": [
+              "cardio",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Treadmill",
             "notes": "x7"
           },
           {
-            "tags": ["cardio", "core", "legs"],
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Stairmaster",
             "notes": null
           },
           {
-            "tags": ["cardio", "legs"],
+            "tags": [
+              "cardio",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Bike",
             "notes": null
           },
           {
-            "tags": ["cardio", "full body"],
+            "tags": [
+              "cardio",
+              "full body"
+            ],
             "brand": "Life Fitness",
             "name": "Elliptical",
             "notes": "x2"
           },
           {
-            "tags": ["cardio", "core", "legs"],
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Seated Bike",
             "notes": null
           },
           {
-            "tags": ["back", "cardio", "full body"],
+            "tags": [
+              "back",
+              "cardio",
+              "full body"
+            ],
             "brand": "Concept2",
             "name": "RowErg",
             "notes": null
@@ -2494,13 +2668,29 @@
         ],
         "Cables": [
           {
-            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Dual Adjustable Pulley",
             "notes": null
           },
           {
-            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Multistation",
             "notes": "dual pulley pulldown, dual pulley low, cable x2, assist dip/chin, cable crossover, lat pulldown, dual pulley row"
@@ -2508,37 +2698,60 @@
         ],
         "Upper": [
           {
-            "tags": ["back", "chest", "shoulders"],
+            "tags": [
+              "back",
+              "chest",
+              "shoulders"
+            ],
             "brand": "Life Fitness",
             "name": "Pectoral Fly / Rear Deltoid",
             "notes": null
           },
           {
-            "tags": ["shoulders", "triceps"],
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Shoulder Press",
             "notes": null
           },
           {
-            "tags": ["chest", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Chest Press",
             "notes": null
           },
           {
-            "tags": ["back", "core", "glutes", "hamstrings"],
+            "tags": [
+              "back",
+              "core",
+              "glutes",
+              "hamstrings"
+            ],
             "brand": "Life Fitness",
             "name": "Back Extension",
             "notes": null
           },
           {
-            "tags": ["chest", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Decline Chest Press",
             "notes": "2.7kg/arm"
           },
           {
-            "tags": ["arms", "biceps"],
+            "tags": [
+              "arms",
+              "biceps"
+            ],
             "brand": "Life Fitness",
             "name": "Arm Curl Bench",
             "notes": null
@@ -2546,31 +2759,51 @@
         ],
         "Lower": [
           {
-            "tags": ["abductors", "adductors", "legs"],
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Hip Abductor/Adductor",
             "notes": null
           },
           {
-            "tags": ["hamstrings", "legs"],
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
             "brand": "Life Fitness",
             "name": "Seated Leg Curl",
             "notes": null
           },
           {
-            "tags": ["calves", "glutes", "legs", "quads"],
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ],
             "brand": "Life Fitness",
             "name": "Seated Leg Press",
             "notes": null
           },
           {
-            "tags": ["legs", "quads"],
+            "tags": [
+              "legs",
+              "quads"
+            ],
             "brand": "Life Fitness",
             "name": "Leg Extension",
             "notes": null
           },
           {
-            "tags": ["calves", "glutes", "legs", "quads"],
+            "tags": [
+              "calves",
+              "glutes",
+              "legs",
+              "quads"
+            ],
             "brand": "Life Fitness",
             "name": "Linear Leg Press",
             "notes": "47kg starting weight"
@@ -2578,13 +2811,21 @@
         ],
         "Core": [
           {
-            "tags": ["arms", "back", "biceps", "core", "triceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "core",
+              "triceps"
+            ],
             "brand": "Bosu",
             "name": "Captain's Chair",
             "notes": null
           },
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Unknown",
             "name": "Decline Bench",
             "notes": null
@@ -2592,19 +2833,40 @@
         ],
         "Barbells & Racks": [
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Unknown",
             "name": "Deadlift Platform",
             "notes": null
           },
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Hammer Strength",
             "name": "Rack",
             "notes": "x2"
           },
           {
-            "tags": ["chest", "core", "glutes", "hamstrings", "legs", "quads", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Life Fitness",
             "name": "Smith Machine",
             "notes": null
@@ -2612,13 +2874,19 @@
         ],
         "Other": [
           {
-            "tags": ["cardio", "core", "legs"],
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
             "brand": "Bosu",
             "name": "Bosu Ball",
             "notes": null
           },
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Ziva",
             "name": "Exercise Ball 65cm",
             "notes": null
@@ -3967,13 +4235,29 @@
       "categories": {
         "Cables": [
           {
-            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Precor",
             "name": "Cable Station",
             "notes": "assist dip/chin, low row, lat pulldown, adjustable pulley"
           },
           {
-            "tags": ["arms", "back", "biceps", "chest", "core", "shoulders", "triceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Precor",
             "name": "Dual Adjustable Pulley",
             "notes": null
@@ -3981,49 +4265,77 @@
         ],
         "Upper": [
           {
-            "tags": ["arms", "biceps"],
+            "tags": [
+              "arms",
+              "biceps"
+            ],
             "brand": "Unknown",
             "name": "Biceps Curl Bench",
             "notes": null
           },
           {
-            "tags": ["chest", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Precor",
             "name": "Incline Chest Press",
             "notes": null
           },
           {
-            "tags": ["arms", "back", "biceps"],
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
             "brand": "Precor",
             "name": "Seated Row",
             "notes": null
           },
           {
-            "tags": ["back", "biceps"],
+            "tags": [
+              "back",
+              "biceps"
+            ],
             "brand": "Precor",
             "name": "Chest Supported T-Bar Row",
             "notes": null
           },
           {
-            "tags": ["back", "chest", "shoulders"],
+            "tags": [
+              "back",
+              "chest",
+              "shoulders"
+            ],
             "brand": "Precor",
             "name": "Rear Delt / Pec Fly",
             "notes": null
           },
           {
-            "tags": ["chest", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Precor",
             "name": "Converging Chest Press",
             "notes": null
           },
           {
-            "tags": ["arms", "biceps"],
+            "tags": [
+              "arms",
+              "biceps"
+            ],
             "brand": "Precor",
             "name": "Biceps Curl",
             "notes": null
           },
           {
-            "tags": ["shoulders", "triceps"],
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Precor",
             "name": "Converging Shoulder Press",
             "notes": null
@@ -4031,49 +4343,77 @@
         ],
         "Lower": [
           {
-            "tags": ["glutes", "hamstrings", "legs"],
+            "tags": [
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
             "brand": "Booty Builder",
             "name": "GluteBuilder",
             "notes": null
           },
           {
-            "tags": ["back", "glutes", "hamstrings"],
+            "tags": [
+              "back",
+              "glutes",
+              "hamstrings"
+            ],
             "brand": "The Abs Company",
             "name": "Dual 45 Hip Extension",
             "notes": null
           },
           {
-            "tags": ["hamstrings", "legs"],
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
             "brand": "Precor",
             "name": "Prone Leg Curl",
             "notes": null
           },
           {
-            "tags": ["legs", "quads"],
+            "tags": [
+              "legs",
+              "quads"
+            ],
             "brand": "Precor",
             "name": "Leg Extension",
             "notes": null
           },
           {
-            "tags": ["glutes", "legs"],
+            "tags": [
+              "glutes",
+              "legs"
+            ],
             "brand": "Booty Builder",
             "name": "3D Multi-Abductor",
             "notes": null
           },
           {
-            "tags": ["glutes", "hamstrings"],
+            "tags": [
+              "glutes",
+              "hamstrings"
+            ],
             "brand": "Booty Builder",
             "name": "Hip Thrust Elite",
             "notes": null
           },
           {
-            "tags": ["glutes", "hamstrings", "legs"],
+            "tags": [
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
             "brand": "Booty Builder",
             "name": "Glute Press",
             "notes": null
           },
           {
-            "tags": ["glutes", "legs", "quads"],
+            "tags": [
+              "glutes",
+              "legs",
+              "quads"
+            ],
             "brand": "Booty Builder",
             "name": "Glute Squat",
             "notes": null
@@ -4081,37 +4421,57 @@
         ],
         "Cardio": [
           {
-            "tags": ["cardio", "legs"],
+            "tags": [
+              "cardio",
+              "legs"
+            ],
             "brand": "Precor",
             "name": "Treadmill",
             "notes": "x4"
           },
           {
-            "tags": ["cardio", "full body"],
+            "tags": [
+              "cardio",
+              "full body"
+            ],
             "brand": "Precor",
             "name": "Elliptical",
             "notes": "x2"
           },
           {
-            "tags": ["cardio", "core", "legs"],
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
             "brand": "Precor",
             "name": "Stairmaster",
             "notes": null
           },
           {
-            "tags": ["cardio", "legs"],
+            "tags": [
+              "cardio",
+              "legs"
+            ],
             "brand": "Precor",
             "name": "Recumbent Bike",
             "notes": null
           },
           {
-            "tags": ["cardio", "legs"],
+            "tags": [
+              "cardio",
+              "legs"
+            ],
             "brand": "Precor",
             "name": "Upright Bike",
             "notes": null
           },
           {
-            "tags": ["back", "cardio", "full body"],
+            "tags": [
+              "back",
+              "cardio",
+              "full body"
+            ],
             "brand": "Assault Fitness",
             "name": "AssaultRower Pro",
             "notes": null
@@ -4119,25 +4479,47 @@
         ],
         "Barbells & Racks": [
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Precor",
             "name": "Smith Machine",
             "notes": null
           },
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Precor",
             "name": "Mini Rack",
             "notes": "x2"
           },
           {
-            "tags": ["core", "glutes", "hamstrings", "legs", "quads"],
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
             "brand": "Power Lift",
             "name": "Deadlift Platform",
             "notes": "x1"
           },
           {
-            "tags": ["chest", "shoulders", "triceps"],
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
             "brand": "Unknown",
             "name": "Decline Bench",
             "notes": null
@@ -4145,19 +4527,25 @@
         ],
         "Core": [
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "The Abs Company",
             "name": "Vertical Crunch",
             "notes": null
           },
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Precor",
             "name": "Captain's Chair",
             "notes": null
           },
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Unknown",
             "name": "Ab Wheel",
             "notes": null
@@ -4165,55 +4553,78 @@
         ],
         "Other": [
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Unknown",
             "name": "Exercise Ball 55cm",
             "notes": null
           },
           {
-            "tags": ["core"],
+            "tags": [
+              "core"
+            ],
             "brand": "Unknown",
             "name": "Exercise Ball 65cm",
             "notes": null
           },
           {
-            "tags": ["core", "legs"],
+            "tags": [
+              "core",
+              "legs"
+            ],
             "brand": "Ziva",
             "name": "Bosu Ball",
             "notes": null
           },
           {
-            "tags": ["full body", "legs"],
+            "tags": [
+              "full body",
+              "legs"
+            ],
             "brand": "Unknown",
             "name": "Farmer's Carry",
             "notes": "10/15/20kg"
           },
           {
-            "tags": ["full body"],
+            "tags": [
+              "full body"
+            ],
             "brand": "Unknown",
             "name": "Kettlebells",
             "notes": "8/10/12/16/20kg"
           },
           {
-            "tags": ["core", "full body"],
+            "tags": [
+              "core",
+              "full body"
+            ],
             "brand": "Unknown",
             "name": "Medicine Ball",
             "notes": "2/3/4/5/6kg"
           },
           {
-            "tags": ["full body"],
+            "tags": [
+              "full body"
+            ],
             "brand": "Unknown",
             "name": "Resistance Bands",
             "notes": null
           },
           {
-            "tags": ["cardio", "full body"],
+            "tags": [
+              "cardio",
+              "full body"
+            ],
             "brand": "Unknown",
             "name": "Punching Bag",
             "notes": null
           },
           {
-            "tags": ["core", "full body"],
+            "tags": [
+              "core",
+              "full body"
+            ],
             "brand": "Ziva",
             "name": "TRX",
             "notes": null
@@ -4221,6 +4632,1169 @@
         ]
       },
       "lastUpdated": "17 Jun 2026"
+    },
+    "AF Tiong Bahru Plaza": {
+      "status": "complete",
+      "categories": {
+        "Cardio": [
+          {
+            "tags": [
+              "back",
+              "cardio",
+              "full body"
+            ],
+            "brand": "Concept2",
+            "name": "RowErg",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "full body"
+            ],
+            "brand": "Concept2",
+            "name": "SkiErg",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "legs"
+            ],
+            "brand": "Concept2",
+            "name": "BikeErg",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "full body"
+            ],
+            "brand": "Life Fitness",
+            "name": "Elliptical",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Life Fitness",
+            "name": "LifeCycle",
+            "notes": "standing"
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Life Fitness",
+            "name": "LifeCycle",
+            "notes": "seated"
+          },
+          {
+            "tags": [
+              "cardio",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Treadmill",
+            "notes": "x5"
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Stairmaster",
+            "notes": null
+          }
+        ],
+        "Cables": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Multistation",
+            "notes": "dip/chin, lat pulldown, row, 2 adjustable pulleys, dual pulley high crossover"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Dual Adjustable Pulley",
+            "notes": null
+          }
+        ],
+        "Upper": [
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Decline Bench",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "biceps"
+            ],
+            "brand": "Unknown",
+            "name": "Plate Loaded Chest Supported Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Biceps Curl Bench",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Decline Chest Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Incline Chest Press",
+            "notes": "5kg/arm starting weight"
+          },
+          {
+            "tags": [
+              "back",
+              "chest",
+              "shoulders"
+            ],
+            "brand": "Life Fitness",
+            "name": "Rear Delt / Pec Fly",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Row",
+            "notes": "isolateral, 5.5kg/arm starting weight"
+          },
+          {
+            "tags": [
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Lat Pulldown",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Triceps Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "biceps",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Biceps Curl/Triceps Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Biceps Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Shoulder Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Chest Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "core",
+              "glutes",
+              "hamstrings"
+            ],
+            "brand": "Life Fitness",
+            "name": "Back Extension",
+            "notes": null
+          }
+        ],
+        "Lower": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Linear Leg Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "V-Squat",
+            "notes": "24.5kg unloaded"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Glute Drive",
+            "notes": null
+          },
+          {
+            "tags": [
+              "calves",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Seated Calf Raise",
+            "notes": null
+          },
+          {
+            "tags": [
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Leg Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Seated Leg Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Hip Abduction/Adduction Machine",
+            "notes": null
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Deadlift Platform",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Mini Rack",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Rack",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
+            "notes": null
+          }
+        ],
+        "Calisthenics": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "triceps"
+            ],
+            "brand": "Bosu",
+            "name": "Captain's Chair",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "arms",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Unknown",
+            "name": "TRX",
+            "notes": null
+          }
+        ],
+        "Core": [
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "The Abs Company",
+            "name": "Vertical Crunch",
+            "notes": null
+          }
+        ],
+        "Other": [
+          {
+            "tags": [
+              "cardio",
+              "full body"
+            ],
+            "brand": "Torque",
+            "name": "Punching Bag",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "full body"
+            ],
+            "brand": "Unknown",
+            "name": "Medicine Ball",
+            "notes": "1-5kg"
+          },
+          {
+            "tags": [
+              "full body",
+              "legs"
+            ],
+            "brand": "Ziva",
+            "name": "Farmer's Carry",
+            "notes": "5/10/15/20/25kg"
+          },
+          {
+            "tags": [
+              "full body"
+            ],
+            "brand": "Unknown",
+            "name": "Kettlebells",
+            "notes": "8/12/16/20kg"
+          },
+          {
+            "tags": [
+              "full body"
+            ],
+            "brand": "Unknown",
+            "name": "Battle Rope",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "arms",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Unknown",
+            "name": "TRX",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "legs"
+            ],
+            "brand": "Bosu",
+            "name": "Ball",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Unknown",
+            "name": "Exercise Ball 65cm",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Unknown",
+            "name": "Evolt 360 Body Scan",
+            "notes": null
+          }
+        ]
+      },
+      "lastUpdated": "20 Jun 2026"
+    },
+    "AF Kim Seng CC": {
+      "status": "complete",
+      "categories": {
+        "Cardio": [
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Life Fitness",
+            "name": "LifeCycle",
+            "notes": "seated"
+          },
+          {
+            "tags": [
+              "back",
+              "cardio",
+              "full body"
+            ],
+            "brand": "Unknown",
+            "name": "Air Rower",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "full body"
+            ],
+            "brand": "Life Fitness",
+            "name": "Elliptical",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "cardio",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Treadmill",
+            "notes": "x4"
+          }
+        ],
+        "Cables": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Cable Station",
+            "notes": "dual pulley row, dip/chin, adjustable pulley, dual pulley pulldown"
+          }
+        ],
+        "Upper": [
+          {
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Shoulder Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Decline Chest Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "chest",
+              "shoulders"
+            ],
+            "brand": "Life Fitness",
+            "name": "Rear Delt / Pec Fly",
+            "notes": null
+          }
+        ],
+        "Lower": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Mini Rack",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Linear Leg Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Seated Leg Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Leg Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Seated Leg Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Chest Press",
+            "notes": null
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Rack",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Deadlift Platform",
+            "notes": null
+          }
+        ],
+        "Calisthenics": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "triceps"
+            ],
+            "brand": "Bosu",
+            "name": "Captain's Chair",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "arms",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Unknown",
+            "name": "TRX",
+            "notes": null
+          }
+        ],
+        "Other": [
+          {
+            "tags": [
+              "full body"
+            ],
+            "brand": "Les Mills",
+            "name": "Equipment",
+            "notes": null
+          },
+          {
+            "tags": [
+              "full body",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Farmer's Carry",
+            "notes": "5-25kg"
+          },
+          {
+            "tags": [
+              "core"
+            ],
+            "brand": "Unknown",
+            "name": "Exercise Ball",
+            "notes": "55/65cm"
+          },
+          {
+            "tags": [
+              "full body"
+            ],
+            "brand": "Unknown",
+            "name": "Kettlebells",
+            "notes": "8-20kg"
+          },
+          {
+            "tags": [
+              "cardio",
+              "full body"
+            ],
+            "brand": "Fairtax",
+            "name": "Punching Bag",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "full body"
+            ],
+            "brand": "Unknown",
+            "name": "Medicine Ball",
+            "notes": "1-5kg"
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Dual Adjustable Pulley",
+            "notes": null
+          }
+        ]
+      },
+      "lastUpdated": "20 Jun 2026"
+    },
+    "AF Havelock Outram": {
+      "status": "complete",
+      "categories": {
+        "Cardio": [
+          {
+            "tags": [
+              "back",
+              "cardio",
+              "full body"
+            ],
+            "brand": "Concept2",
+            "name": "RowErg",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio",
+              "full body"
+            ],
+            "brand": "Life Fitness",
+            "name": "Elliptical",
+            "notes": "x2"
+          },
+          {
+            "tags": [
+              "cardio",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Treadmill",
+            "notes": "x5"
+          },
+          {
+            "tags": [
+              "cardio",
+              "core",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Stairmaster",
+            "notes": null
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Life Fitness",
+            "name": "LifeCycle",
+            "notes": "seated"
+          },
+          {
+            "tags": [
+              "cardio"
+            ],
+            "brand": "Life Fitness",
+            "name": "LifeCycle",
+            "notes": "standing"
+          }
+        ],
+        "Cables": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Multistation",
+            "notes": "2 lat pulldown, 3 adjustable pulleys, 1 seated row, 1 dual pulley row, assist chin/dip"
+          }
+        ],
+        "Upper": [
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Row",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Row",
+            "notes": "isolateral"
+          },
+          {
+            "tags": [
+              "back",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Lat Pulldown",
+            "notes": null
+          },
+          {
+            "tags": [
+              "arms",
+              "biceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Biceps Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "back",
+              "chest",
+              "shoulders"
+            ],
+            "brand": "Life Fitness",
+            "name": "Rear Delt / Pec Fly",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Chest Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Shoulder Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Shoulder Press",
+            "notes": "isolateral"
+          },
+          {
+            "tags": [
+              "back",
+              "core",
+              "glutes",
+              "hamstrings"
+            ],
+            "brand": "Life Fitness",
+            "name": "Back Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "chest",
+              "shoulders",
+              "triceps"
+            ],
+            "brand": "Life Fitness",
+            "name": "Decline Bench",
+            "notes": null
+          }
+        ],
+        "Lower": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Linear Leg Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Seated Leg Press",
+            "notes": null
+          },
+          {
+            "tags": [
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Leg Extension",
+            "notes": null
+          },
+          {
+            "tags": [
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Seated Leg Curl",
+            "notes": null
+          },
+          {
+            "tags": [
+              "abductors",
+              "adductors",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Hip Abduction/Adduction Machine",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Glute Drive",
+            "notes": null
+          },
+          {
+            "tags": [
+              "calves",
+              "legs"
+            ],
+            "brand": "Life Fitness",
+            "name": "Seated Calf Raise",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "V-Squat",
+            "notes": "24.5kg unloaded"
+          }
+        ],
+        "Barbells & Racks": [
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Rack",
+            "notes": "x3"
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Mini Rack",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Life Fitness",
+            "name": "Smith Machine",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "glutes",
+              "hamstrings",
+              "legs",
+              "quads"
+            ],
+            "brand": "Hammer Strength",
+            "name": "Deadlift Platform",
+            "notes": "x2"
+          }
+        ],
+        "Calisthenics": [
+          {
+            "tags": [
+              "args",
+              "back",
+              "biceps",
+              "chest",
+              "core",
+              "triceps"
+            ],
+            "brand": "Bosu",
+            "name": "Captain's Chair",
+            "notes": null
+          }
+        ],
+        "Other": [
+          {
+            "tags": [
+              "core",
+              "legs"
+            ],
+            "brand": "Bosu",
+            "name": "Ball",
+            "notes": null
+          },
+          {
+            "tags": [
+              "core",
+              "full body"
+            ],
+            "brand": "Unknown",
+            "name": "Medicine Ball",
+            "notes": "1-5kg"
+          },
+          {
+            "tags": [
+              "full body",
+              "legs"
+            ],
+            "brand": "Unknown",
+            "name": "Farmer's Carry",
+            "notes": null
+          },
+          {
+            "tags": [
+              "full body"
+            ],
+            "brand": "Unknown",
+            "name": "Kettlebells",
+            "notes": "up to 32kg"
+          }
+        ]
+      },
+      "lastUpdated": "20 Jun 2026"
     }
   }
 }
