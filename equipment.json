@@ -10,7 +10,7 @@
               "full body"
             ],
             "brand": "Octane",
-            "name": "Airdyne2",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -1366,7 +1366,7 @@
               "cardio"
             ],
             "brand": "Life Fitness",
-            "name": "Lifecycle Bike",
+            "name": "Bike",
             "notes": "95RS x1, 95C x1"
           },
           {
@@ -1394,7 +1394,7 @@
               "cardio"
             ],
             "brand": "Torque",
-            "name": "Air Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -1830,7 +1830,7 @@
               "cardio"
             ],
             "brand": "Life Fitness",
-            "name": "Stationary Bike",
+            "name": "Bike",
             "notes": "x2 (standing/sitting)"
           },
           {
@@ -2323,7 +2323,7 @@
               "cardio"
             ],
             "brand": "Assault",
-            "name": "Air Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -2357,7 +2357,7 @@
               "cardio"
             ],
             "brand": "Precor",
-            "name": "Stationary Bike",
+            "name": "Bike",
             "notes": "x3"
           }
         ],
@@ -2642,7 +2642,7 @@
               "legs"
             ],
             "brand": "Life Fitness",
-            "name": "Seated Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -2743,7 +2743,7 @@
               "legs"
             ],
             "brand": "Life Fitness",
-            "name": "Seated Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -3306,7 +3306,7 @@
               "legs"
             ],
             "brand": "Matrix",
-            "name": "Seated Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -3322,7 +3322,7 @@
               "cardio"
             ],
             "brand": "Matrix",
-            "name": "Spin Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -3338,7 +3338,7 @@
               "cardio"
             ],
             "brand": "Torque",
-            "name": "Air Bike",
+            "name": "Bike",
             "notes": null
           }
         ],
@@ -3824,7 +3824,7 @@
               "cardio"
             ],
             "brand": "Assault",
-            "name": "Air Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -3850,7 +3850,7 @@
               "cardio"
             ],
             "brand": "Precor",
-            "name": "Stationary Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -4194,7 +4194,7 @@
               "cardio"
             ],
             "brand": "Life Fitness",
-            "name": "Stationary Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -4202,7 +4202,7 @@
               "cardio"
             ],
             "brand": "Torque",
-            "name": "Air Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -4573,7 +4573,7 @@
               "legs"
             ],
             "brand": "Precor",
-            "name": "Recumbent Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -4582,7 +4582,7 @@
               "legs"
             ],
             "brand": "Precor",
-            "name": "Upright Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -4793,7 +4793,7 @@
               "legs"
             ],
             "brand": "Concept2",
-            "name": "BikeErg",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -4810,7 +4810,7 @@
               "cardio"
             ],
             "brand": "Life Fitness",
-            "name": "LifeCycle",
+            "name": "Bike",
             "notes": "x2 (standing, seated)"
           },
           {
@@ -5255,7 +5255,7 @@
               "cardio"
             ],
             "brand": "Life Fitness",
-            "name": "LifeCycle",
+            "name": "Bike",
             "notes": "seated"
           },
           {
@@ -5603,7 +5603,7 @@
               "cardio"
             ],
             "brand": "Life Fitness",
-            "name": "LifeCycle",
+            "name": "Bike",
             "notes": "x2 (seated, standing)"
           }
         ],
