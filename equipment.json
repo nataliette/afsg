@@ -324,7 +324,7 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Power Rack",
+            "name": "Rack",
             "notes": "x2"
           },
           {
@@ -663,7 +663,7 @@
               "cardio"
             ],
             "brand": "Assault",
-            "name": "Rower Elite",
+            "name": "Rower",
             "notes": "x2"
           },
           {
@@ -671,7 +671,7 @@
               "cardio"
             ],
             "brand": "Assault",
-            "name": "Bike Pro",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -1015,7 +1015,7 @@
               "legs"
             ],
             "brand": "Precor",
-            "name": "Inner/Outer Thigh",
+            "name": "Hip Ab/Ad",
             "notes": null
           }
         ],
@@ -1041,7 +1041,7 @@
               "quads"
             ],
             "brand": "Ziva",
-            "name": "Power Rack",
+            "name": "Rack",
             "notes": "XP Half Rack with Storage 2.0, x3"
           },
           {
@@ -1104,7 +1104,7 @@
               "cardio"
             ],
             "brand": "Stages",
-            "name": "Solo",
+            "name": "Bike",
             "notes": "stationary bike"
           },
           {
@@ -1376,7 +1376,7 @@
               "legs"
             ],
             "brand": "Life Fitness",
-            "name": "FlexStrider 95F-S",
+            "name": "Elliptical",
             "notes": null
           },
           {
@@ -1386,7 +1386,7 @@
               "legs"
             ],
             "brand": "Life Fitness",
-            "name": "Elliptical 95X",
+            "name": "Elliptical",
             "notes": null
           },
           {
@@ -1402,7 +1402,7 @@
               "cardio"
             ],
             "brand": "Assault",
-            "name": "Rower Elite",
+            "name": "Rower",
             "notes": null
           }
         ],
@@ -1428,7 +1428,7 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Power Rack",
+            "name": "Rack",
             "notes": null
           },
           {
@@ -1898,7 +1898,7 @@
               "quads"
             ],
             "brand": "Unknown",
-            "name": "Squat Rack",
+            "name": "Rack",
             "notes": "x6"
           },
           {
@@ -2213,7 +2213,7 @@
               "legs"
             ],
             "brand": "Precor",
-            "name": "Inner/Outer Thigh",
+            "name": "Hip Ab/Ad",
             "notes": null
           },
           {
@@ -2251,7 +2251,7 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Squat Rack",
+            "name": "Rack",
             "notes": "x5"
           },
           {
@@ -3278,7 +3278,7 @@
               "legs"
             ],
             "brand": "Matrix",
-            "name": "Climbmill",
+            "name": "Stairmaster",
             "notes": null
           },
           {
@@ -3431,7 +3431,7 @@
               "hamstrings"
             ],
             "brand": "Unknown",
-            "name": "Back Extension Machine",
+            "name": "Back Extension",
             "notes": null
           }
         ]
@@ -3842,7 +3842,7 @@
               "cardio"
             ],
             "brand": "Les Mills",
-            "name": "Stages Bike",
+            "name": "Bike",
             "notes": null
           },
           {
@@ -3868,7 +3868,7 @@
               "cardio"
             ],
             "brand": "Assault",
-            "name": "Rower Elite",
+            "name": "Rower",
             "notes": null
           },
           {
@@ -4252,7 +4252,7 @@
               "quads"
             ],
             "brand": "Hammer Strength",
-            "name": "Power Rack",
+            "name": "Rack",
             "notes": "double x1, single x1"
           },
           {
@@ -4592,7 +4592,7 @@
               "full body"
             ],
             "brand": "Assault Fitness",
-            "name": "AssaultRower Pro",
+            "name": "Rower",
             "notes": null
           }
         ],
@@ -5265,7 +5265,7 @@
               "full body"
             ],
             "brand": "Unknown",
-            "name": "Air Rower",
+            "name": "Rower",
             "notes": null
           },
           {
