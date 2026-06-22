@@ -203,16 +203,6 @@
     input.tag-add::placeholder { color: #bbb; }
 
     /* ── Equipment type cell ── */
-    .type-slug {
-      font-family: monospace;
-      font-size: 10px;
-      color: #94a3b8;
-      margin-bottom: 3px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .type-slug.mapped { color: #d97706; }
     select.type-ovr {
       width: 100%;
       border: 1px solid #e2e8f0;
@@ -411,10 +401,7 @@ function tagsHtml(tags, key) {
 // ── Type cell HTML ─────────────────────────────────────────────────────────
 function typeCellHtml(name, ovr) {
   const res = resolve(name);
-  const isMapped = res !== name;
-  const s = slug(name);
-  return `<div class="type-slug${isMapped?' mapped':''}" title="${e(res)}">?equipment=${e(s)}</div>
-    <select class="type-ovr${ovr?' set':''}" data-field="ovr">
+  return `<select class="type-ovr${ovr?' set':''}" data-field="ovr">
       <option value="">— auto (${e(res)}) —</option>
       ${ALL_TYPES.map(t=>`<option value="${e(t)}"${ovr===t?' selected':''}>${e(t)}</option>`).join('')}
     </select>`;
