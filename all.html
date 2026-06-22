@@ -234,6 +234,7 @@
       <option value="changed">Changed only</option>
       <option value="mapped">Mapped only</option>
     </select>
+    <select id="typeF"><option value="">All machine types</option></select>
     <button class="btn" id="addRowBtn">+ Add row</button>
     <div class="stats" id="stats"></div>
     <button class="btn btn-primary" id="exportBtn">Export JSON</button>
@@ -430,6 +431,7 @@ function applyFilters() {
   const gymF = document.getElementById('gymF').value;
   const catF = document.getElementById('catF').value;
   const showF = document.getElementById('showF').value;
+  const typeF = document.getElementById('typeF').value;
   let shown = 0;
 
   document.querySelectorAll('#tbody tr[data-key]').forEach(tr => {
@@ -439,10 +441,12 @@ function applyFilters() {
     const m = data.gyms[gymName].categories[cat][idx];
     const changed = changedKeys.has(tr.dataset.key);
     const mapped = resolve(m.name) !== m.name;
+    const resolvedType = m._ovr || resolve(m.name);
 
     let vis = true;
     if (gymF && gymName !== gymF) vis = false;
     if (catF && cat !== catF) vis = false;
+    if (typeF && resolvedType !== typeF) vis = false;
     if (showF === 'changed' && !changed) vis = false;
     if (showF === 'mapped' && !mapped) vis = false;
     if (q) {
@@ -573,10 +577,14 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   init();
 });
 
-['q','gymF','catF','showF'].forEach(id => {
+['q','gymF','catF','showF','typeF'].forEach(id => {
   document.getElementById(id).addEventListener('input', applyFilters);
   document.getElementById(id).addEventListener('change', applyFilters);
 });
+
+// Populate machine type dropdown from static ALL_TYPES list
+const typeF = document.getElementById('typeF');
+ALL_TYPES.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; typeF.appendChild(o); });
 
 async function init() {
   const res = await fetch('equipment.json?' + Date.now());
