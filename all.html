@@ -135,10 +135,19 @@
       color: inherit;
       min-width: 0;
     }
-    td input.f:hover { border-color: #ddd; background: #fff; }
-    td input.f:focus { border-color: #94a3b8; background: #fff; outline: none; box-shadow: 0 0 0 2px rgba(100,130,200,.15); }
+    td input.f, td select.f { appearance: none; -webkit-appearance: none; }
+    td input.f:hover,
+    td select.f:hover  { border-color: #ddd; background: #fff; }
+    td input.f:focus,
+    td select.f:focus  { border-color: #94a3b8; background: #fff; outline: none; box-shadow: 0 0 0 2px rgba(100,130,200,.15); }
     td select.f { cursor: pointer; }
-    td select.f:hover, td select.f:focus { border-color: #94a3b8; background: #fff; outline: none; }
+    td select.f:hover,
+    td select.f:focus  {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 5px center;
+      padding-right: 18px;
+    }
 
     /* ── Tags ── */
     .tags-wrap {
@@ -186,17 +195,31 @@
     /* ── Equipment type cell ── */
     select.type-ovr {
       width: 100%;
-      border: 1px solid #e2e8f0;
+      border: 1px solid transparent;
       border-radius: 3px;
       padding: 2px 4px;
       font-size: 11px;
       font-family: monospace;
       color: #64748b;
-      background: #f8fafc;
+      background: transparent;
       cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
     }
-    select.type-ovr.mapped { border-color: #fcd34d; color: #92400e; background: #fffbeb; }
-    select.type-ovr.set    { border-color: #86efac; color: #166534; background: #f0fdf4; font-weight: 600; }
+    select.type-ovr:hover,
+    select.type-ovr:focus {
+      border-color: #ddd;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 5px center;
+      padding-right: 18px;
+      outline: none;
+    }
+    select.type-ovr.mapped { border-color: #fcd34d; color: #92400e; background-color: #fffbeb; }
+    select.type-ovr.set    { border-color: #86efac; color: #166534; background-color: #f0fdf4; font-weight: 600; }
+    select.type-ovr.mapped:hover, select.type-ovr.mapped:focus { border-color: #f59e0b; background-color: #fffbeb; }
+    select.type-ovr.set:hover,    select.type-ovr.set:focus    { border-color: #4ade80; background-color: #f0fdf4; }
 
     /* ── Delete btn ── */
     button.del {
@@ -534,6 +557,7 @@ document.getElementById('tbody').addEventListener('click', e => {
 });
 
 document.getElementById('tbody').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.matches('input.f')) { e.preventDefault(); e.target.blur(); return; }
   if (e.target.dataset.action !== 'add-tag') return;
   if (e.key !== 'Enter' && e.key !== ',' && e.key !== 'Tab') return;
   e.preventDefault();
