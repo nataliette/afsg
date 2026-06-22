@@ -67,23 +67,22 @@
     .stats strong { color: #111; }
 
     /* ── Column headers (thead sticky) ── */
-    thead {
-      position: sticky;
-      top: var(--head-h, 44px);
-      z-index: 50;
-    }
-    thead th {
+    /* ── Column headers row ── */
+    .col-head {
+      display: flex;
       background: #f8f9fa;
       border-top: 1px solid #e8e8e8;
-      border-bottom: 1px solid #e8e8e8;
-      border-right: 1px solid #eee;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .col-head span {
+      flex-shrink: 0;
       padding: 6px 8px;
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: #666;
       font-weight: 600;
-      text-align: left;
+      border-right: 1px solid #eee;
     }
 
     /* ── Table ── */
@@ -93,19 +92,18 @@
       width: 100%;
       border-collapse: collapse;
       background: #fff;
-      min-width: 1118px;
       table-layout: fixed;
     }
 
-    /* Column widths — must match .col-head spans */
-    td:nth-child(1) { width: 140px; }
-    td:nth-child(2) { width: 130px; }
-    td:nth-child(3) { width: 130px; }
-    td:nth-child(4) { width: 160px; }
-    td:nth-child(5) { width: 130px; }
-    td:nth-child(6) { width: 240px; }
-    td:nth-child(7) { width: 160px; }
-    td:nth-child(8) { width: 28px;  }
+    /* Column widths — same selector targets both col-head spans and tds */
+    .col-head span:nth-child(1), td:nth-child(1) { width: 13%; }
+    .col-head span:nth-child(2), td:nth-child(2) { width: 12%; }
+    .col-head span:nth-child(3), td:nth-child(3) { width: 12%; }
+    .col-head span:nth-child(4), td:nth-child(4) { width: 14%; }
+    .col-head span:nth-child(5), td:nth-child(5) { width: 12%; }
+    .col-head span:nth-child(6), td:nth-child(6) { width: 21%; }
+    .col-head span:nth-child(7), td:nth-child(7) { width: 14%; }
+    .col-head span:nth-child(8), td:nth-child(8) { width:  2%; }
 
     tbody tr { border-bottom: 1px solid #f0f0f0; }
     tbody tr:hover td { background: #fafbfc; }
@@ -263,6 +261,16 @@
     <button class="btn btn-primary" id="exportBtn">Export JSON</button>
     <button class="btn" id="resetBtn">Reset all</button>
   </div>
+  <div class="col-head">
+    <span>Gym</span>
+    <span>Category</span>
+    <span>Brand</span>
+    <span>Name</span>
+    <span>Notes</span>
+    <span>Tags</span>
+    <span>→ Equipment Type</span>
+    <span></span>
+  </div>
 </div>
 
 <!-- autocomplete datalists -->
@@ -279,18 +287,6 @@
 
 <div class="table-wrap">
   <table>
-    <thead>
-      <tr>
-        <th style="width:140px">Gym</th>
-        <th style="width:130px">Category</th>
-        <th style="width:130px">Brand</th>
-        <th style="width:160px">Name</th>
-        <th style="width:130px">Notes</th>
-        <th style="width:240px">Tags</th>
-        <th style="width:160px">→ Equipment Type</th>
-        <th style="width:28px"></th>
-      </tr>
-    </thead>
     <tbody id="tbody"></tbody>
   </table>
   <div class="no-results" id="empty" style="display:none">No equipment matches your filters.</div>
@@ -612,11 +608,6 @@ document.getElementById('resetBtn').addEventListener('click', () => {
 const typeF = document.getElementById('typeF');
 ALL_TYPES.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; typeF.appendChild(o); });
 
-// Keep thead sticky-top in sync with toolbar height
-const stickyHead = document.querySelector('.sticky-head');
-new ResizeObserver(() => {
-  document.documentElement.style.setProperty('--head-h', stickyHead.offsetHeight + 'px');
-}).observe(stickyHead);
 
 async function init() {
   const res = await fetch('equipment.json?' + Date.now());
