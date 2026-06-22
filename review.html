@@ -3,425 +3,650 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipment Review</title>
+  <title>Equipment Editor</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: Inter, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 13px;
-      background: #0f0f0f;
-      color: #e0e0e0;
-      padding: 24px;
+      background: #f0f2f5;
+      color: #111;
+      min-height: 100vh;
     }
 
-    h1 { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: #fff; }
-    .subtitle { color: #666; margin-bottom: 20px; font-size: 12px; }
-
+    /* ── Toolbar ── */
     .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 8px 16px;
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 16px;
     }
 
-    .toolbar input, .toolbar select {
-      background: #1e1e1e;
-      border: 1px solid #333;
-      color: #e0e0e0;
-      padding: 6px 10px;
-      border-radius: 6px;
+    .toolbar h1 { font-size: 14px; font-weight: 700; white-space: nowrap; }
+    .toolbar-sep { width: 1px; height: 20px; background: #ddd; }
+
+    .toolbar input[type="text"],
+    .toolbar select {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 4px 8px;
       font-size: 12px;
       font-family: inherit;
+      background: #fff;
+      height: 28px;
     }
-
-    .toolbar input { width: 200px; }
-
-    label { font-size: 12px; color: #888; }
+    .toolbar input[type="text"] { width: 180px; }
 
     .btn {
-      padding: 6px 14px;
-      border-radius: 6px;
-      border: none;
+      height: 28px;
+      padding: 0 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
       cursor: pointer;
       font-size: 12px;
       font-family: inherit;
-      font-weight: 600;
+      font-weight: 500;
+      white-space: nowrap;
     }
+    .btn:hover { background: #f5f5f5; }
+    .btn-primary { background: #1e293b; color: #fff; border-color: #1e293b; }
+    .btn-primary:hover { background: #334155; }
 
-    .btn-primary { background: #e8ff47; color: #000; }
-    .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+    .stats { font-size: 12px; color: #888; margin-left: auto; white-space: nowrap; }
+    .stats strong { color: #111; }
 
-    .stats {
-      font-size: 12px;
-      color: #555;
-      margin-left: auto;
-    }
-
-    .stats span { color: #e8ff47; }
+    /* ── Table wrap ── */
+    .table-wrap { overflow-x: auto; }
 
     table {
       width: 100%;
       border-collapse: collapse;
+      background: #fff;
+      min-width: 1280px;
       table-layout: fixed;
     }
 
     thead th {
+      background: #f8f9fa;
+      border-bottom: 2px solid #e0e0e0;
+      border-right: 1px solid #eee;
+      padding: 7px 8px;
       text-align: left;
-      padding: 8px 10px;
-      background: #1a1a1a;
-      border-bottom: 1px solid #333;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #666;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-
-    th:nth-child(1) { width: 14%; }
-    th:nth-child(2) { width: 10%; }
-    th:nth-child(3) { width: 13%; }
-    th:nth-child(4) { width: 16%; }
-    th:nth-child(5) { width: 12%; }
-    th:nth-child(6) { width: 35%; }
-
-    tbody tr {
-      border-bottom: 1px solid #1e1e1e;
-    }
-
-    tbody tr:hover { background: #161616; }
-
-    tbody tr.changed { background: #1a1f00; }
-    tbody tr.changed:hover { background: #202500; }
-
-    tbody tr.mismatch { background: #1a1000; }
-    tbody tr.mismatch:hover { background: #201500; }
-
-    td {
-      padding: 6px 10px;
-      vertical-align: middle;
-    }
-
-    td.gym { color: #aaa; }
-    td.category { color: #666; font-size: 11px; }
-    td.brand { color: #888; }
-    td.name { color: #e0e0e0; font-weight: 500; }
-    td.resolved { font-family: monospace; font-size: 11px; }
-
-    .resolved-match { color: #666; }
-    .resolved-mapped { color: #e8ff47; }
-    .resolved-changed { color: #88ff88; }
-
-    .pill {
-      display: inline-block;
-      padding: 1px 7px;
-      border-radius: 10px;
       font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #666;
       font-weight: 600;
-      margin-left: 6px;
-      vertical-align: middle;
+      position: sticky;
+      top: 45px;
+      z-index: 2;
     }
 
-    .pill-changed { background: #2a3a00; color: #b8ff47; }
-    .pill-mismatch { background: #3a2000; color: #ffb047; }
+    th:nth-child(1)  { width: 140px; }  /* gym */
+    th:nth-child(2)  { width: 130px; }  /* category */
+    th:nth-child(3)  { width: 130px; }  /* brand */
+    th:nth-child(4)  { width: 160px; }  /* name */
+    th:nth-child(5)  { width: 130px; }  /* notes */
+    th:nth-child(6)  { width: 240px; }  /* tags */
+    th:nth-child(7)  { width: 160px; }  /* → type */
+    th:nth-child(8)  { width: 28px;  }  /* × */
 
-    select.type-select {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      color: #e0e0e0;
-      padding: 3px 6px;
-      border-radius: 4px;
+    tbody tr { border-bottom: 1px solid #f0f0f0; }
+    tbody tr:hover td { background: #fafbfc; }
+    tbody tr.changed td { background: #f0fff4; }
+    tbody tr.changed:hover td { background: #e8fef0; }
+
+    td { padding: 3px 5px; vertical-align: middle; }
+
+    td.gym-cell {
+      font-size: 11px;
+      color: #888;
+      padding-left: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ── Gym section header ── */
+    tr.gym-header td {
+      background: #1e293b;
+      color: #fff;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 5px 10px;
+      border: none;
+    }
+    tr.gym-header td span.count { opacity: 0.45; font-weight: 400; font-size: 11px; margin-left: 8px; }
+    tr.gym-header button {
+      float: right;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      border-radius: 3px;
+      padding: 1px 8px;
+      font-size: 11px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    tr.gym-header button:hover { background: rgba(255,255,255,0.22); }
+
+    /* ── Inline field inputs ── */
+    td input.f, td select.f {
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      padding: 3px 5px;
+      font-size: 12px;
+      font-family: inherit;
+      background: transparent;
+      color: inherit;
+      min-width: 0;
+    }
+    td input.f:hover { border-color: #ddd; background: #fff; }
+    td input.f:focus { border-color: #94a3b8; background: #fff; outline: none; box-shadow: 0 0 0 2px rgba(100,130,200,.15); }
+    td select.f { cursor: pointer; }
+    td select.f:hover, td select.f:focus { border-color: #94a3b8; background: #fff; outline: none; }
+
+    /* ── Tags ── */
+    .tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      align-items: center;
+      padding: 2px 0;
+      min-height: 26px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      border-radius: 3px;
+      padding: 1px 5px 1px 6px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .chip button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #93c5fd;
+      font-size: 12px;
+      line-height: 1;
+      padding: 0 0 1px 0;
+    }
+    .chip button:hover { color: #dc2626; }
+    input.tag-add {
+      border: none;
+      background: transparent;
+      font-size: 11px;
+      font-family: inherit;
+      outline: none;
+      width: 72px;
+      color: #444;
+      padding: 2px 3px;
+    }
+    input.tag-add::placeholder { color: #bbb; }
+
+    /* ── Equipment type cell ── */
+    .type-slug {
+      font-family: monospace;
+      font-size: 10px;
+      color: #94a3b8;
+      margin-bottom: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .type-slug.mapped { color: #d97706; }
+    select.type-ovr {
+      width: 100%;
+      border: 1px solid #e2e8f0;
+      border-radius: 3px;
+      padding: 2px 4px;
       font-size: 11px;
       font-family: monospace;
-      width: 100%;
+      color: #64748b;
+      background: #f8fafc;
       cursor: pointer;
     }
+    select.type-ovr.set { border-color: #86efac; color: #166534; background: #f0fdf4; font-weight: 600; }
 
-    select.type-select.changed {
-      border-color: #88ff88;
-      color: #88ff88;
+    /* ── Delete btn ── */
+    button.del {
+      background: none;
+      border: none;
+      color: #d1d5db;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 1;
+      padding: 2px 4px;
+      display: block;
+      margin: auto;
     }
+    button.del:hover { color: #dc2626; }
 
-    .no-results {
-      text-align: center;
-      padding: 40px;
-      color: #444;
-    }
-
-    .section-header {
-      background: #141414;
-      padding: 6px 10px;
-      font-size: 11px;
-      font-weight: 700;
-      color: #555;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      border-bottom: 1px solid #222;
-    }
+    .no-results { text-align: center; padding: 60px 20px; color: #aaa; font-size: 14px; }
   </style>
 </head>
 <body>
 
-<h1>Equipment Review</h1>
-<p class="subtitle">Check equipment → type mappings. Changed rows are highlighted green; yellow = name differs from resolved type.</p>
-
 <div class="toolbar">
-  <input type="text" id="filterInput" placeholder="Filter gym, brand, name…">
-  <label>Gym</label>
-  <select id="gymFilter"><option value="">All gyms</option></select>
-  <label>Type</label>
-  <select id="typeFilter"><option value="">All types</option></select>
-  <label>Show</label>
-  <select id="showFilter">
-    <option value="">All</option>
-    <option value="mismatch">Name ≠ Type only</option>
+  <h1>Equipment Editor</h1>
+  <div class="toolbar-sep"></div>
+  <input type="text" id="q" placeholder="Search…">
+  <select id="gymF"><option value="">All gyms</option></select>
+  <select id="catF">
+    <option value="">All categories</option>
+    <option>Cardio</option><option>Cables</option><option>Upper</option>
+    <option>Lower</option><option>Barbells &amp; Racks</option>
+    <option>Calisthenics</option><option>Core</option><option>Other</option>
+  </select>
+  <select id="showF">
+    <option value="">All rows</option>
     <option value="changed">Changed only</option>
+    <option value="mapped">Mapped only</option>
   </select>
   <div class="stats" id="stats"></div>
   <button class="btn btn-primary" id="exportBtn">Export JSON</button>
-  <button class="btn btn-secondary" id="resetBtn">Reset changes</button>
+  <button class="btn" id="resetBtn">Reset all</button>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Gym</th>
-      <th>Category</th>
-      <th>Brand</th>
-      <th>Name (in JSON)</th>
-      <th>Notes</th>
-      <th>Equipment Type → Reassign</th>
-    </tr>
-  </thead>
-  <tbody id="tableBody"></tbody>
-</table>
-<div class="no-results" id="noResults" style="display:none">No equipment matches your filters.</div>
+<!-- autocomplete datalists -->
+<datalist id="dl-brand"></datalist>
+<datalist id="dl-name"></datalist>
+<datalist id="dl-tag">
+  <option value="cardio"><option value="full body">
+  <option value="chest"><option value="back"><option value="shoulders">
+  <option value="arms"><option value="biceps"><option value="triceps">
+  <option value="legs"><option value="quads"><option value="hamstrings">
+  <option value="glutes"><option value="calves"><option value="core">
+  <option value="adductors"><option value="abductors"><option value="calisthenics">
+</datalist>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Gym</th>
+        <th>Category</th>
+        <th>Brand</th>
+        <th>Name</th>
+        <th>Notes</th>
+        <th>Tags</th>
+        <th>→ Equipment Type</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="no-results" id="empty" style="display:none">No equipment matches your filters.</div>
+</div>
 
 <script>
-const machineTypeMap = {
-  "Bike": "Bike", "Airdyne2": "Bike", "Airdyne": "Bike", "Assault Bike Pro": "Bike",
-  "Assault Air Bike": "Bike", "Bike Pro": "Bike", "Lifecycle Bike": "Bike", "LifeCycle": "Bike",
-  "Stages Bike": "Bike", "Solo": "Bike", "Air Bike": "Bike", "Stationary Bike": "Bike",
-  "Seated Bike": "Bike", "Spin Bike": "Bike", "BikeErg": "Bike", "Echo Bike": "Bike",
-  "Rower": "Rower", "Rower Elite": "Rower", "AssaultRower Pro": "Rower", "Air Rower": "Rower",
-  "Chest Press": "Chest Press", "Machine Chest Press": "Chest Press", "Iso-Lateral Chest Press": "Chest Press",
-  "Incline Chest Press": "Chest Press", "Decline Chest Press": "Chest Press",
-  "Plate-Loaded Chest Press": "Chest Press", "Converging Chest Press": "Chest Press",
-  "Iso-Lateral Bench Press": "Chest Press",
-  "Seated Row": "Seated Row", "Machine Row": "Seated Row", "Iso-Lateral Row": "Seated Row",
-  "Seal Row": "Seated Row", "Plate-Loaded Row": "Seated Row", "Plate-Loaded Seated Row": "Seated Row",
-  "Row": "Seated Row", "Low Row": "Seated Row",
-  "Lat Pulldown": "Lat Pulldown", "Machine Lat Pulldown": "Lat Pulldown",
-  "Iso-Lateral Lat Pulldown": "Lat Pulldown", "Wide-Grip Lat Pulldown": "Lat Pulldown",
-  "Close-Grip Lat Pulldown": "Lat Pulldown", "Iso-Lateral Front Lat Pulldown": "Lat Pulldown",
-  "Pulldown": "Lat Pulldown", "Pulldown 304": "Lat Pulldown",
-  "Leg Press": "Leg Press", "45-Degree Leg Press": "Leg Press", "Angled Leg Press": "Leg Press",
-  "Horizontal Leg Press": "Leg Press", "Vertical Leg Press": "Leg Press",
-  "Seated Leg Press": "Leg Press", "Linear Leg Press": "Leg Press",
-  "Hack Squat": "Hack Squat", "Linear Hack Squat": "Hack Squat",
-  "Belt Squat": "Belt Squat",
-  "Squat Machine": "Squat", "Perfect Squat": "Squat", "Super Squat Press": "Squat",
-  "Shoulder Press": "Shoulder Press", "Converging Shoulder Press": "Shoulder Press",
-  "Multi-Press": "Shoulder Press",
-  "Leg Curl": "Leg Curl", "Seated Leg Curl": "Leg Curl", "Prone Leg Curl": "Leg Curl",
-  "Hip Ab/Ad": "Hip Ab/Ad", "Hip Abduction Machine": "Hip Ab/Ad", "Hip Adduction Machine": "Hip Ab/Ad",
-  "Hip Abductor/Adductor": "Hip Ab/Ad", "Hip Abduction/Adduction Machine": "Hip Ab/Ad",
-  "Inner/Outer Thigh Machine": "Hip Ab/Ad", "Inner/Outer Thigh": "Hip Ab/Ad",
-  "Hip Thrust": "Hip Thrust", "Hip Thrust Machine": "Hip Thrust",
-  "Hip Thrust Elite": "Hip Thrust", "Glute Drive": "Hip Thrust",
-  "Pec Delt Fly": "Pec Delt Fly", "Rear Delt Fly": "Pec Delt Fly",
-  "Rear Delt Reverse Fly Machine": "Pec Delt Fly", "Fly/Delt Machine": "Pec Delt Fly",
-  "Rear Delt Machine": "Pec Delt Fly", "Rear Delt / Pec Fly": "Pec Delt Fly",
-  "Pec Fly / Rear Delt": "Pec Delt Fly", "Pectoral Fly / Rear Deltoid": "Pec Delt Fly",
-  "Rear Delt Pec Fly": "Pec Delt Fly",
-  "Abdominal": "Abdominal", "Abdominal Crunch": "Abdominal", "Vertical Crunch": "Abdominal",
-  "Back Extension": "Back Extension", "Back Extension Bench": "Back Extension",
-  "Back Extension Machine": "Back Extension",
-  "Smith Machine": "Smith Machine",
-  "Deadlift Platform": "Deadlift Platform",
-  "Lateral Raise": "Lateral Raise", "Standing Lateral Raise": "Lateral Raise",
-  "Plate Loaded Lat Raise": "Lateral Raise",
-  "Cable Station": "Cable Station", "Dual Cable Station": "Cable Station",
-  "Adjustable Pulley": "Cable Station", "Multistation Adjustable Pulley": "Cable Station",
-  "Single Pulley": "Cable Station", "Dual Adjustable Pulley": "Cable Station",
-  "Multistation": "Cable Station", "Dual Pulley Pulldown": "Cable Station",
-  "FTS Glide": "Cable Station", "Cable": "Cable Station", "Cable Tower": "Cable Station",
-  "Longpull 302": "Cable Station",
-  "Exercise Ball 55cm": "Exercise Ball", "Exercise Ball 65cm": "Exercise Ball",
-  "Exercise Ball": "Exercise Ball",
+const CATS = ['Cardio','Cables','Upper','Lower','Barbells & Racks','Calisthenics','Core','Other'];
+
+const TYPE_MAP = {
+  "Bike":"Bike","Airdyne2":"Bike","Airdyne":"Bike","Assault Bike Pro":"Bike",
+  "Assault Air Bike":"Bike","Bike Pro":"Bike","Lifecycle Bike":"Bike","LifeCycle":"Bike",
+  "Stages Bike":"Bike","Solo":"Bike","Air Bike":"Bike","Stationary Bike":"Bike",
+  "Seated Bike":"Bike","Spin Bike":"Bike","BikeErg":"Bike","Echo Bike":"Bike",
+  "Rower":"Rower","Rower Elite":"Rower","AssaultRower Pro":"Rower","Air Rower":"Rower",
+  "RowErg":"RowErg",
+  "Chest Press":"Chest Press","Machine Chest Press":"Chest Press",
+  "Iso-Lateral Chest Press":"Chest Press","Incline Chest Press":"Chest Press",
+  "Decline Chest Press":"Chest Press","Plate-Loaded Chest Press":"Chest Press",
+  "Converging Chest Press":"Chest Press","Iso-Lateral Bench Press":"Chest Press",
+  "Seated Row":"Seated Row","Machine Row":"Seated Row","Iso-Lateral Row":"Seated Row",
+  "Seal Row":"Seated Row","Plate-Loaded Row":"Seated Row","Plate-Loaded Seated Row":"Seated Row",
+  "Row":"Seated Row","Low Row":"Seated Row",
+  "Lat Pulldown":"Lat Pulldown","Machine Lat Pulldown":"Lat Pulldown",
+  "Iso-Lateral Lat Pulldown":"Lat Pulldown","Wide-Grip Lat Pulldown":"Lat Pulldown",
+  "Close-Grip Lat Pulldown":"Lat Pulldown","Iso-Lateral Front Lat Pulldown":"Lat Pulldown",
+  "ISO-Lateral Front Lat Pulldown":"Lat Pulldown","Pulldown":"Lat Pulldown","Pulldown 304":"Lat Pulldown",
+  "Leg Press":"Leg Press","45-Degree Leg Press":"Leg Press","Angled Leg Press":"Leg Press",
+  "Horizontal Leg Press":"Leg Press","Vertical Leg Press":"Leg Press",
+  "Seated Leg Press":"Leg Press","Linear Leg Press":"Leg Press",
+  "Hack Squat":"Hack Squat","Linear Hack Squat":"Hack Squat",
+  "Belt Squat":"Belt Squat",
+  "Squat Machine":"Squat","Perfect Squat":"Squat","Super Squat Press":"Squat",
+  "Shoulder Press":"Shoulder Press","Converging Shoulder Press":"Shoulder Press",
+  "Multi-Press":"Shoulder Press","Iso-Lateral Shoulder Press":"Shoulder Press",
+  "Leg Curl":"Leg Curl","Seated Leg Curl":"Leg Curl","Prone Leg Curl":"Leg Curl",
+  "Hip Ab/Ad":"Hip Ab/Ad","Hip Abduction Machine":"Hip Ab/Ad","Hip Adduction Machine":"Hip Ab/Ad",
+  "Hip Abductor/Adductor":"Hip Ab/Ad","Hip Abduction/Adduction Machine":"Hip Ab/Ad",
+  "Inner/Outer Thigh Machine":"Hip Ab/Ad","Inner/Outer Thigh":"Hip Ab/Ad",
+  "Hip Thrust":"Hip Thrust","Hip Thrust Machine":"Hip Thrust",
+  "Hip Thrust Elite":"Hip Thrust","Glute Drive":"Hip Thrust",
+  "Pec Delt Fly":"Pec Delt Fly","Rear Delt Fly":"Pec Delt Fly",
+  "Rear Delt Reverse Fly Machine":"Pec Delt Fly","Fly/Delt Machine":"Pec Delt Fly",
+  "Rear Delt Machine":"Pec Delt Fly","Rear Delt / Pec Fly":"Pec Delt Fly",
+  "Pec Fly / Rear Delt":"Pec Delt Fly","Pectoral Fly / Rear Deltoid":"Pec Delt Fly",
+  "Rear Delt Pec Fly":"Pec Delt Fly",
+  "Abdominal":"Abdominal","Abdominal Crunch":"Abdominal","Vertical Crunch":"Abdominal",
+  "Back Extension":"Back Extension","Back Extension Bench":"Back Extension",
+  "Back Extension Machine":"Back Extension",
+  "Smith Machine":"Smith Machine",
+  "Deadlift Platform":"Deadlift Platform",
+  "Lateral Raise":"Lateral Raise","Standing Lateral Raise":"Lateral Raise",
+  "Plate Loaded Lat Raise":"Lateral Raise",
+  "Cable Station":"Cable Station","Dual Cable Station":"Cable Station",
+  "Adjustable Pulley":"Cable Station","Multistation Adjustable Pulley":"Cable Station",
+  "Single Pulley":"Cable Station","Dual Adjustable Pulley":"Cable Station",
+  "Multistation":"Cable Station","Dual Pulley Pulldown":"Cable Station",
+  "FTS Glide":"Cable Station","Cable":"Cable Station","Cable Tower":"Cable Station",
+  "Longpull 302":"Cable Station",
+  "Exercise Ball 55cm":"Exercise Ball","Exercise Ball 65cm":"Exercise Ball",
+  "Exercise Ball":"Exercise Ball",
 };
 
 const ALL_TYPES = [...new Set([
-  ...Object.values(machineTypeMap),
-  'Bike', 'Rower', 'RowErg', 'Elliptical', 'Treadmill', 'Stairmaster',
-  'Rack', 'Smith Machine', 'Deadlift Platform',
-  'Chest Press', 'Incline Chest Press', 'Decline Chest Press',
-  'Shoulder Press', 'Row', 'Seated Row', 'Lat Pulldown',
-  'Leg Press', 'Hack Squat', 'Belt Squat', 'Leg Curl', 'Leg Extension',
-  'Hip Ab/Ad', 'Hip Thrust', 'Pec Delt Fly', 'Back Extension',
-  'Abdominal', 'Lateral Raise', 'Seated Calf Raise', 'Calf Raise',
-  'Cable Station', 'Dual Adjustable Pulley',
-  'Biceps Curl', 'Triceps Press', 'Biceps Curl/Triceps Extension',
-  'Captain\'s Chair', 'Chin/Dip', 'Pull-up Bar', 'TRX', 'Battle Rope',
-  'Punching Bag', 'Kettlebells', 'Medicine Ball', 'Farmer\'s Carry',
-  'Exercise Ball', 'Bosu Ball', 'Resistance Bands',
-  'T-Bar Row', 'Belt Squat', 'Rotary Torso',
-  'Other',
+  ...Object.values(TYPE_MAP),
+  'Bike','Rower','RowErg','Elliptical','Treadmill','Stairmaster',
+  'Rack','Smith Machine','Deadlift Platform',
+  'Chest Press','Incline Chest Press','Decline Chest Press',
+  'Shoulder Press','Row','Seated Row','Lat Pulldown',
+  'Leg Press','Leg Extension','Hack Squat','Belt Squat','Leg Curl',
+  'Hip Ab/Ad','Hip Thrust','Pec Delt Fly','Back Extension',
+  'Abdominal','Lateral Raise','Seated Calf Raise','Calf Raise',
+  'Cable Station','Dual Adjustable Pulley',
+  'Biceps Curl','Triceps Press','Biceps Curl/Triceps Extension',
+  "Captain's Chair",'Chin/Dip','Pull-up Bar','TRX','Battle Rope',
+  'Punching Bag','Kettlebells','Medicine Ball',"Farmer's Carry",
+  'Exercise Ball','Bosu Ball','Resistance Bands',
+  'T-Bar Row','Rotary Torso','V-Squat','Abdominal',
 ])].sort();
 
-let originalData = null;
-let workingData = null;
-let overrides = {}; // key: `gym||category||index` → new type name
+const TYPE_OPT_HTML = ALL_TYPES.map(t => `<option value="${e(t)}">${e(t)}</option>`).join('');
 
-function resolve(name) {
-  return machineTypeMap[name] || name;
+let data = null;
+const changedKeys = new Set(); // row keys marked as changed
+
+function resolve(name) { return TYPE_MAP[name] || name; }
+function slug(name) { return resolve(name).replace(/ /g,'_').replace(/\//g,'-'); }
+function e(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ── Datalists ──────────────────────────────────────────────────────────────
+function refreshDataLists() {
+  const brands = new Set(), names = new Set([...Object.keys(TYPE_MAP),...Object.values(TYPE_MAP)]);
+  for (const gd of Object.values(data.gyms))
+    for (const ms of Object.values(gd.categories||{}))
+      for (const m of ms) { if (m.brand) brands.add(m.brand); if (m.name) names.add(m.name); }
+  document.getElementById('dl-brand').innerHTML = [...brands].sort().map(b=>`<option value="${e(b)}">`).join('');
+  document.getElementById('dl-name').innerHTML = [...names].sort().map(n=>`<option value="${e(n)}">`).join('');
 }
 
-async function init() {
-  const res = await fetch('equipment.json');
-  originalData = await res.json();
-  workingData = JSON.parse(JSON.stringify(originalData));
-
-  // Populate gym filter
-  const gymFilter = document.getElementById('gymFilter');
-  Object.keys(workingData.gyms).sort().forEach(gym => {
-    const opt = document.createElement('option');
-    opt.value = gym;
-    opt.textContent = gym;
-    gymFilter.appendChild(opt);
-  });
-
-  // Populate type filter
-  const typeFilter = document.getElementById('typeFilter');
-  ALL_TYPES.forEach(t => {
-    const opt = document.createElement('option');
-    opt.value = t;
-    opt.textContent = t;
-    typeFilter.appendChild(opt);
-  });
-
-  render();
+// ── Row key ────────────────────────────────────────────────────────────────
+function rowKey(gymName, cat, idx) { return `${gymName}¦${cat}¦${idx}`; }
+function parseKey(key) {
+  const parts = key.split('¦');
+  return { gymName: parts[0], cat: parts[1], idx: parseInt(parts[2]) };
+}
+function getMachine(key) {
+  const {gymName,cat,idx} = parseKey(key);
+  return data.gyms[gymName].categories[cat][idx];
 }
 
-function render() {
-  const filter = document.getElementById('filterInput').value.toLowerCase();
-  const gymFilter = document.getElementById('gymFilter').value;
-  const typeFilter = document.getElementById('typeFilter').value;
-  const showFilter = document.getElementById('showFilter').value;
+// ── Tag chips HTML ─────────────────────────────────────────────────────────
+function tagsHtml(tags, key) {
+  const chips = (tags||[]).map((t,ti) =>
+    `<span class="chip">${e(t)}<button type="button" data-action="rm-tag" data-key="${e(key)}" data-ti="${ti}">×</button></span>`
+  ).join('');
+  return `<div class="tags-wrap">${chips}<input class="tag-add" list="dl-tag" placeholder="add tag…" data-action="add-tag" data-key="${e(key)}"></div>`;
+}
 
-  const tbody = document.getElementById('tableBody');
-  tbody.innerHTML = '';
+// ── Type cell HTML ─────────────────────────────────────────────────────────
+function typeCellHtml(name, ovr) {
+  const res = resolve(name);
+  const isMapped = res !== name;
+  const s = slug(name);
+  return `<div class="type-slug${isMapped?' mapped':''}" title="${e(res)}">?equipment=${e(s)}</div>
+    <select class="type-ovr${ovr?' set':''}" data-field="ovr">
+      <option value="">— auto (${e(res)}) —</option>
+      ${ALL_TYPES.map(t=>`<option value="${e(t)}"${ovr===t?' selected':''}>${e(t)}</option>`).join('')}
+    </select>`;
+}
 
-  let total = 0, shown = 0, changedCount = 0, mismatchCount = 0;
+// ── Render full table ──────────────────────────────────────────────────────
+function renderAll() {
+  const tbody = document.getElementById('tbody');
+  const gymSel = document.getElementById('gymF');
+  const prevGym = gymSel.value;
 
-  for (const [gymName, gymData] of Object.entries(workingData.gyms)) {
-    if (!gymData.categories) continue;
-    if (gymFilter && gymName !== gymFilter) continue;
+  let html = '';
+  const gyms = Object.keys(data.gyms).sort();
 
-    for (const [category, machines] of Object.entries(gymData.categories)) {
-      machines.forEach((machine, idx) => {
-        total++;
-        const key = `${gymName}||${category}||${idx}`;
-        const currentName = machine.name;
-        const resolvedType = resolve(currentName);
-        const isChanged = overrides[key] !== undefined;
-        const displayType = isChanged ? overrides[key] : resolvedType;
-        const isMismatch = !isChanged && currentName !== resolvedType;
+  for (const gymName of gyms) {
+    const gd = data.gyms[gymName];
+    if (!gd.categories) continue;
+    const total = Object.values(gd.categories).reduce((s,ms)=>s+ms.length,0);
+    html += `<tr class="gym-header" data-gym="${e(gymName)}"><td colspan="8">${e(gymName)}<span class="count">${total} items</span>
+      <button type="button" data-action="add-row" data-gym="${e(gymName)}">+ Add row</button></td></tr>`;
 
-        if (typeFilter && displayType !== typeFilter) return;
-
-        const searchStr = [gymName, category, machine.brand, currentName, machine.notes || ''].join(' ').toLowerCase();
-        if (filter && !searchStr.includes(filter)) return;
-
-        if (showFilter === 'mismatch' && !isMismatch) return;
-        if (showFilter === 'changed' && !isChanged) return;
-
-        shown++;
-        if (isChanged) changedCount++;
-        if (isMismatch) mismatchCount++;
-
-        const tr = document.createElement('tr');
-        tr.className = isChanged ? 'changed' : isMismatch ? 'mismatch' : '';
-
-        // Build type select
-        const selectHtml = `<select class="type-select${isChanged ? ' changed' : ''}" data-key="${key}" data-original="${resolvedType}">
-          <option value="">— same as name (${resolvedType}) —</option>
-          ${ALL_TYPES.map(t => `<option value="${t}"${(isChanged && overrides[key] === t) ? ' selected' : ''}>${t}</option>`).join('')}
-        </select>`;
-
-        const pill = isChanged
-          ? `<span class="pill pill-changed">changed</span>`
-          : isMismatch
-          ? `<span class="pill pill-mismatch">mapped</span>`
-          : '';
-
-        tr.innerHTML = `
-          <td class="gym">${gymName}</td>
-          <td class="category">${category}</td>
-          <td class="brand">${machine.brand || '—'}</td>
-          <td class="name">${currentName}</td>
-          <td class="category">${machine.notes || ''}</td>
-          <td>${selectHtml}${pill}</td>
-        `;
-
-        tbody.appendChild(tr);
+    for (const [cat, machines] of Object.entries(gd.categories)) {
+      machines.forEach((m, idx) => {
+        const key = rowKey(gymName, cat, idx);
+        const wasChanged = changedKeys.has(key);
+        html += `<tr data-gym="${e(gymName)}" data-cat="${e(cat)}" data-idx="${idx}" data-key="${e(key)}"${wasChanged?' class="changed"':''}>
+          <td class="gym-cell" title="${e(gymName)}">${e(gymName)}</td>
+          <td><select class="f" data-field="cat" data-key="${e(key)}">
+            ${CATS.map(c=>`<option${c===cat?' selected':''}>${e(c)}</option>`).join('')}
+          </select></td>
+          <td><input class="f" list="dl-brand" value="${e(m.brand||'')}" data-field="brand" data-key="${e(key)}" placeholder="Brand"></td>
+          <td><input class="f" list="dl-name"  value="${e(m.name||'')}"  data-field="name"  data-key="${e(key)}" placeholder="Name"></td>
+          <td><input class="f" value="${e(m.notes||'')}" data-field="notes" data-key="${e(key)}" placeholder="Notes"></td>
+          <td>${tagsHtml(m.tags, key)}</td>
+          <td data-type-cell data-key="${e(key)}">${typeCellHtml(m.name, m._ovr)}</td>
+          <td><button class="del" data-action="del" data-key="${e(key)}" title="Delete">×</button></td>
+        </tr>`;
       });
     }
   }
 
-  // Attach change listeners
-  tbody.querySelectorAll('select.type-select').forEach(sel => {
-    sel.addEventListener('change', (e) => {
-      const key = e.target.dataset.key;
-      const val = e.target.value;
-      if (val) {
-        overrides[key] = val;
-      } else {
-        delete overrides[key];
-      }
-      render();
-    });
+  tbody.innerHTML = html;
+
+  // Restore gym filter options
+  gymSel.innerHTML = '<option value="">All gyms</option>' + gyms.map(g=>`<option${g===prevGym?' selected':''}>${e(g)}</option>`).join('');
+
+  refreshDataLists();
+  applyFilters();
+}
+
+// ── Filters ────────────────────────────────────────────────────────────────
+function applyFilters() {
+  const q = document.getElementById('q').value.toLowerCase();
+  const gymF = document.getElementById('gymF').value;
+  const catF = document.getElementById('catF').value;
+  const showF = document.getElementById('showF').value;
+
+  let shown = 0, total = 0;
+
+  document.querySelectorAll('#tbody tr[data-key]').forEach(tr => {
+    total++;
+    const gymName = tr.dataset.gym;
+    const cat = tr.dataset.cat;
+    const idx = parseInt(tr.dataset.idx);
+    const m = data.gyms[gymName].categories[cat][idx];
+    const changed = changedKeys.has(tr.dataset.key);
+    const mapped = resolve(m.name) !== m.name;
+
+    let vis = true;
+    if (gymF && gymName !== gymF) vis = false;
+    if (catF && cat !== catF) vis = false;
+    if (showF === 'changed' && !changed) vis = false;
+    if (showF === 'mapped' && !mapped) vis = false;
+    if (q) {
+      const hay = [gymName, cat, m.brand, m.name, m.notes||'', (m.tags||[]).join(' ')].join(' ').toLowerCase();
+      if (!hay.includes(q)) vis = false;
+    }
+
+    tr.style.display = vis ? '' : 'none';
+    if (vis) shown++;
   });
 
-  document.getElementById('noResults').style.display = shown === 0 ? 'block' : 'none';
-  document.getElementById('stats').innerHTML =
-    `Showing <span>${shown}</span> of ${total} &nbsp;|&nbsp; <span>${changedCount}</span> changed &nbsp;|&nbsp; <span>${mismatchCount}</span> mapped`;
+  // Show/hide gym headers
+  document.querySelectorAll('#tbody tr.gym-header').forEach(hdr => {
+    const g = hdr.dataset.gym;
+    const any = [...document.querySelectorAll(`#tbody tr[data-gym="${CSS.escape(g)}"]`)]
+      .some(r => r.style.display !== 'none');
+    hdr.style.display = any ? '' : 'none';
+  });
+
+  document.getElementById('empty').style.display = shown === 0 ? 'block' : 'none';
+  document.getElementById('stats').innerHTML = `<strong>${shown}</strong> rows · <strong>${changedKeys.size}</strong> changed`;
 }
 
-function buildExport() {
-  const out = JSON.parse(JSON.stringify(workingData));
+// ── Mark changed ───────────────────────────────────────────────────────────
+function markChanged(key) {
+  changedKeys.add(key);
+  const tr = document.querySelector(`#tbody tr[data-key="${CSS.escape(key)}"]`);
+  if (tr) tr.classList.add('changed');
+  document.getElementById('stats').innerHTML = document.getElementById('stats').innerHTML
+    .replace(/\d+ changed/, `${changedKeys.size} changed`);
+}
 
-  for (const [key, newType] of Object.entries(overrides)) {
-    const [gymName, category, idx] = key.split('||');
-    out.gyms[gymName].categories[category][parseInt(idx)].name = newType;
+// ── Event delegation: change ───────────────────────────────────────────────
+document.getElementById('tbody').addEventListener('change', e => {
+  const el = e.target;
+  const key = el.dataset.key;
+  const field = el.dataset.field;
+  if (!key || !field) return;
+
+  const {gymName, cat, idx} = parseKey(key);
+  const m = data.gyms[gymName].categories[cat][idx];
+
+  if (field === 'brand') {
+    m.brand = el.value;
+    markChanged(key);
+    refreshDataLists();
+
+  } else if (field === 'name') {
+    m.name = el.value;
+    markChanged(key);
+    refreshDataLists();
+    // Update the type cell
+    const typeCell = document.querySelector(`#tbody td[data-type-cell][data-key="${CSS.escape(key)}"]`);
+    if (typeCell) typeCell.innerHTML = typeCellHtml(m.name, m._ovr);
+
+  } else if (field === 'notes') {
+    m.notes = el.value.trim() || null;
+    markChanged(key);
+
+  } else if (field === 'cat') {
+    const newCat = el.value;
+    if (newCat !== cat) {
+      if (!data.gyms[gymName].categories[newCat]) data.gyms[gymName].categories[newCat] = [];
+      data.gyms[gymName].categories[newCat].push(m);
+      data.gyms[gymName].categories[cat].splice(idx, 1);
+      // New key for this machine in its new position
+      const newIdx = data.gyms[gymName].categories[newCat].length - 1;
+      changedKeys.add(rowKey(gymName, newCat, newIdx));
+      renderAll();
+    }
+
+  } else if (field === 'ovr') {
+    m._ovr = el.value || undefined;
+    el.className = 'type-ovr' + (el.value ? ' set' : '');
+    markChanged(key);
   }
+});
 
-  return out;
-}
+// ── Event delegation: click ────────────────────────────────────────────────
+document.getElementById('tbody').addEventListener('click', e => {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const action = btn.dataset.action;
 
-document.getElementById('filterInput').addEventListener('input', render);
-document.getElementById('gymFilter').addEventListener('change', render);
-document.getElementById('typeFilter').addEventListener('change', render);
-document.getElementById('showFilter').addEventListener('change', render);
+  if (action === 'rm-tag') {
+    const key = btn.dataset.key;
+    const ti = parseInt(btn.dataset.ti);
+    const m = getMachine(key);
+    m.tags.splice(ti, 1);
+    markChanged(key);
+    btn.closest('td').innerHTML = tagsHtml(m.tags, key);
 
+  } else if (action === 'del') {
+    const key = btn.dataset.key;
+    const {gymName, cat, idx} = parseKey(key);
+    const m = data.gyms[gymName].categories[cat][idx];
+    if (confirm(`Delete "${m.name}" from ${gymName}?`)) {
+      data.gyms[gymName].categories[cat].splice(idx, 1);
+      changedKeys.delete(key);
+      renderAll();
+    }
+
+  } else if (action === 'add-row') {
+    const gymName = btn.dataset.gym;
+    if (!data.gyms[gymName].categories.Other) data.gyms[gymName].categories.Other = [];
+    data.gyms[gymName].categories.Other.push({ tags: [], brand: '', name: '', notes: null });
+    renderAll();
+    // Scroll to and focus the new row's name field
+    const rows = document.querySelectorAll(`#tbody tr[data-gym="${CSS.escape(gymName)}"][data-cat="Other"]`);
+    const last = rows[rows.length - 1];
+    if (last) {
+      last.scrollIntoView({ block: 'center' });
+      last.querySelector('input[data-field="name"]')?.focus();
+    }
+  }
+});
+
+// ── Tag input: keydown ─────────────────────────────────────────────────────
+document.getElementById('tbody').addEventListener('keydown', e => {
+  if (e.target.dataset.action !== 'add-tag') return;
+  if (e.key !== 'Enter' && e.key !== ',' && e.key !== 'Tab') return;
+  e.preventDefault();
+
+  const val = e.target.value.trim().replace(/,$/,'');
+  if (!val) return;
+
+  const key = e.target.dataset.key;
+  const m = getMachine(key);
+  if (!m.tags) m.tags = [];
+  if (!m.tags.includes(val)) { m.tags.push(val); markChanged(key); }
+  e.target.value = '';
+  e.target.closest('td').innerHTML = tagsHtml(m.tags, key);
+});
+
+// ── Export ─────────────────────────────────────────────────────────────────
 document.getElementById('exportBtn').addEventListener('click', () => {
-  const json = JSON.stringify(buildExport(), null, 2);
-  const blob = new Blob([json], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'equipment.json';
+  const out = JSON.parse(JSON.stringify(data));
+  for (const gd of Object.values(out.gyms))
+    for (const ms of Object.values(gd.categories||{}))
+      for (const m of ms) delete m._ovr;
+  const blob = new Blob([JSON.stringify(out, null, 2)], {type:'application/json'});
+  const a = Object.assign(document.createElement('a'), {href: URL.createObjectURL(blob), download:'equipment.json'});
   a.click();
-  URL.revokeObjectURL(url);
 });
 
+// ── Reset ──────────────────────────────────────────────────────────────────
 document.getElementById('resetBtn').addEventListener('click', () => {
-  overrides = {};
-  render();
+  if (!confirm('Reset all changes?')) return;
+  changedKeys.clear();
+  init();
 });
+
+// ── Filter controls ────────────────────────────────────────────────────────
+['q','gymF','catF','showF'].forEach(id => {
+  document.getElementById(id).addEventListener('input', applyFilters);
+  document.getElementById(id).addEventListener('change', applyFilters);
+});
+
+// ── Init ───────────────────────────────────────────────────────────────────
+async function init() {
+  const res = await fetch('equipment.json?' + Date.now());
+  data = await res.json();
+  renderAll();
+}
 
 init();
 </script>
