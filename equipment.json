@@ -854,18 +854,6 @@
         "Upper": [
           {
             "tags": [
-              "core",
-              "glutes",
-              "hamstrings",
-              "legs",
-              "quads"
-            ],
-            "brand": "Precor",
-            "name": "Rack",
-            "notes": "Smith Machine, unloaded 15.9kg"
-          },
-          {
-            "tags": [
               "shoulders",
               "triceps"
             ],
@@ -1046,15 +1034,16 @@
           },
           {
             "tags": [
-              "core",
-              "glutes",
-              "hamstrings",
               "legs",
-              "quads"
+              "chest",
+              "shoulders",
+              "back",
+              "arms",
+              "full body"
             ],
-            "brand": "Ziva",
-            "name": "Deadlift Platform",
-            "notes": null
+            "brand": "Precor",
+            "name": "Smith Machine",
+            "notes": "unloaded 15.9kg"
           }
         ],
         "Calisthenics": [
