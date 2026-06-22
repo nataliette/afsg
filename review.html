@@ -214,7 +214,8 @@
       background: #f8fafc;
       cursor: pointer;
     }
-    select.type-ovr.set { border-color: #86efac; color: #166534; background: #f0fdf4; font-weight: 600; }
+    select.type-ovr.mapped { border-color: #fcd34d; color: #92400e; background: #fffbeb; }
+    select.type-ovr.set    { border-color: #86efac; color: #166534; background: #f0fdf4; font-weight: 600; }
 
     /* ── Delete btn ── */
     button.del {
@@ -401,8 +402,13 @@ function tagsHtml(tags, key) {
 // ── Type cell HTML ─────────────────────────────────────────────────────────
 function typeCellHtml(name, ovr) {
   const res = resolve(name);
-  return `<select class="type-ovr${ovr?' set':''}" data-field="ovr">
-      <option value="">— auto (${e(res)}) —</option>
+  const isMapped = res !== name;
+  const cls = ovr ? 'set' : isMapped ? 'mapped' : '';
+  const defaultLabel = ovr ? `— ${e(res)} —`
+    : isMapped ? `${e(name)} → ${e(res)}`
+    : `— ${e(res)} —`;
+  return `<select class="type-ovr${cls?' '+cls:''}" data-field="ovr">
+      <option value="">${defaultLabel}</option>
       ${ALL_TYPES.map(t=>`<option value="${e(t)}"${ovr===t?' selected':''}>${e(t)}</option>`).join('')}
     </select>`;
 }
