@@ -21,7 +21,6 @@
       top: 0;
       z-index: 100;
       background: #fff;
-      border-bottom: 2px solid #e0e0e0;
       box-shadow: 0 1px 4px rgba(0,0,0,.06);
     }
 
@@ -67,23 +66,24 @@
     .stats { font-size: 12px; color: #888; margin-left: auto; white-space: nowrap; }
     .stats strong { color: #111; }
 
-    /* ── Column headers row ── */
-    .col-head {
-      display: flex;
+    /* ── Column headers (thead sticky) ── */
+    thead {
+      position: sticky;
+      top: var(--head-h, 44px);
+      z-index: 50;
+    }
+    thead th {
       background: #f8f9fa;
       border-top: 1px solid #e8e8e8;
-      overflow: hidden;
-      min-width: 1118px;
-    }
-    .col-head span {
-      flex-shrink: 0;
+      border-bottom: 1px solid #e8e8e8;
+      border-right: 1px solid #eee;
       padding: 6px 8px;
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: #666;
       font-weight: 600;
-      border-right: 1px solid #eee;
+      text-align: left;
     }
 
     /* ── Table ── */
@@ -240,16 +240,6 @@
     <button class="btn btn-primary" id="exportBtn">Export JSON</button>
     <button class="btn" id="resetBtn">Reset all</button>
   </div>
-  <div class="col-head">
-    <span style="width:140px">Gym</span>
-    <span style="width:130px">Category</span>
-    <span style="width:130px">Brand</span>
-    <span style="width:160px">Name</span>
-    <span style="width:130px">Notes</span>
-    <span style="width:240px">Tags</span>
-    <span style="width:160px">→ Equipment Type</span>
-    <span style="width:28px"></span>
-  </div>
 </div>
 
 <!-- autocomplete datalists -->
@@ -266,6 +256,18 @@
 
 <div class="table-wrap">
   <table>
+    <thead>
+      <tr>
+        <th style="width:140px">Gym</th>
+        <th style="width:130px">Category</th>
+        <th style="width:130px">Brand</th>
+        <th style="width:160px">Name</th>
+        <th style="width:130px">Notes</th>
+        <th style="width:240px">Tags</th>
+        <th style="width:160px">→ Equipment Type</th>
+        <th style="width:28px"></th>
+      </tr>
+    </thead>
     <tbody id="tbody"></tbody>
   </table>
   <div class="no-results" id="empty" style="display:none">No equipment matches your filters.</div>
@@ -585,6 +587,12 @@ document.getElementById('resetBtn').addEventListener('click', () => {
 // Populate machine type dropdown from static ALL_TYPES list
 const typeF = document.getElementById('typeF');
 ALL_TYPES.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; typeF.appendChild(o); });
+
+// Keep thead sticky-top in sync with toolbar height
+const stickyHead = document.querySelector('.sticky-head');
+new ResizeObserver(() => {
+  document.documentElement.style.setProperty('--head-h', stickyHead.offsetHeight + 'px');
+}).observe(stickyHead);
 
 async function init() {
   const res = await fetch('equipment.json?' + Date.now());
