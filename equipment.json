@@ -376,7 +376,7 @@
             ],
             "brand": "Life Fitness",
             "name": "Smith Machine",
-            "notes": "x2"
+            "notes": null
           }
         ],
         "Other": [
@@ -752,7 +752,7 @@
             ],
             "brand": "Precor",
             "name": "Smith Machine",
-            "notes": "x3 (unloaded 6.8kg, x3, Mini, x2)"
+            "notes": null
           }
         ],
         "Calisthenics": [
@@ -2292,7 +2292,7 @@
             ],
             "brand": "Precor",
             "name": "Smith Machine",
-            "notes": "unloaded 11.4kg"
+            "notes": null
           }
         ],
         "Calisthenics": [
@@ -3915,7 +3915,7 @@
             ],
             "brand": "Precor",
             "name": "Smith Machine",
-            "notes": "x2 (x8)"
+            "notes": null
           }
         ],
         "Core": [
@@ -4653,7 +4653,7 @@
             ],
             "brand": "Precor",
             "name": "Smith Machine",
-            "notes": "x2 (Mini, x2)"
+            "notes": null
           }
         ],
         "Core": [
