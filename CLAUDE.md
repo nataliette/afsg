@@ -119,6 +119,8 @@ sass --watch styles.scss:styles.css  # Watch mode
 3. Commit with: `feat: update [Gym Name] equipment — 21 May 2026`
 4. After committing, share the local preview link: **[http://gymcat.test/](http://gymcat.test/)** so the user can verify the changes
 
+**When splitting a Smith Machine out of a Rack entry:** the notes field is copied verbatim. Always audit Smith Machine notes afterwards — quantity/variant notes (`x3`, `Mini`, `x2`) belong on the Rack only; only bar weight (`unloaded Xkg`) notes are Smith Machine-specific.
+
 **See PRODUCT.md for:**
 - Equipment category definitions
 - Machine type mappings (machineTypeMap)

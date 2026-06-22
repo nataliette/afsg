@@ -332,3 +332,31 @@ A second theme (`[data-theme="purple"]`) is defined in `_themes.scss` and can be
 
 **Deferred:**
 - None
+
+---
+
+## 2026-06-22 Session 12 — Data cleanup, all.html editor refinements
+
+**Built / decided:**
+- Renamed Life Fitness "Hip Ab/Ad" → "Hip Abductor / Hip Adductor" across 8 gyms (BV, TB, TP, CS, DH, TBP, HO, OC); added mapping in both `index.html` and `all.html` machineTypeMaps
+- Added machine type filter dropdown to `all.html` toolbar (next to "All rows") — filters rows by resolved equipment type including manual overrides
+- Cleared Smith Machine notes incorrectly copied from Rack entries in 5 gyms (BV, HF, PP, CH, HC) — happened because the Smith Machine was split from the same Rack entry and notes were duplicated verbatim
+- Fixed Labrador View: converted `Precor Rack` with notes `"Smith Machine, unloaded 15.9kg"` into a proper `Precor Smith Machine` entry in `Barbells & Racks`; also removed a pre-existing duplicate `Ziva Deadlift Platform`
+- `all.html`: "Unknown" brand now displays as `—` in the editor (stored value unchanged); round-trips correctly if left as `—` when editing
+- `all.html` column alignment: replaced `<thead position:sticky>` + ResizeObserver approach with the simpler `.col-head` div; column widths defined once via combined CSS selector `.col-head span:nth-child(n), td:nth-child(n)` using `%` values — impossible to drift
+- `all.html` field styling: `appearance: none` on all `<select>` elements hides native dropdown arrow; chevron shown via `background-image` on `:hover`/`:focus` only; Enter key on text inputs calls `.blur()` to trigger the existing `change` handler (autosave)
+
+**My reasoning:**
+- Smith Machine notes cleanup: after decoupling equipment types that share a source Rack entry, copied notes describe rack quantity/variants, not the Smith Machine — should be null unless specifically relevant (e.g. bar weight)
+- `<thead sticky>` with ResizeObserver is correct in principle but adds JS complexity and timing risk; the `.col-head` div with shared `%` CSS rules is simpler and alignment is guaranteed by definition
+- Hidden dropdown arrow until hover: keeps the table visually quiet at rest; the border on hover is enough affordance that a cell is interactive
+
+**Alternatives considered:**
+- Keep `<thead>` sticky approach — rejected by user; simpler `%` col-head approach is preferred
+- Retaining "unloaded Xkg" notes on Smith Machines where Rack had the same — removed per explicit instruction
+
+**Gotcha — Smith Machine decoupling:**
+When splitting a Smith Machine out of a Rack entry, the notes field is copied verbatim from the source. Always audit Smith Machine notes afterwards: quantity/variant notes (`x3`, `Mini`, `x2`) belong on the Rack only; only bar weight notes (`unloaded Xkg`) are specific to the Smith Machine.
+
+**Deferred:**
+- None
