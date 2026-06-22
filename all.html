@@ -409,7 +409,7 @@ function renderAll() {
           <td><select class="f" data-field="cat" data-key="${e(key)}">
             ${CATS.map(c=>`<option${c===cat?' selected':''}>${e(c)}</option>`).join('')}
           </select></td>
-          <td><input class="f" list="dl-brand" value="${e(m.brand||'')}" data-field="brand" data-key="${e(key)}" placeholder="Brand"></td>
+          <td><input class="f" list="dl-brand" value="${m.brand === 'Unknown' ? '—' : e(m.brand||'')}" data-field="brand" data-key="${e(key)}" placeholder="Brand"></td>
           <td><input class="f" list="dl-name"  value="${e(m.name||'')}"  data-field="name"  data-key="${e(key)}" placeholder="Name"></td>
           <td><input class="f" value="${e(m.notes||'')}" data-field="notes" data-key="${e(key)}" placeholder="Notes"></td>
           <td>${tagsHtml(m.tags, key)}</td>
@@ -479,7 +479,7 @@ document.getElementById('tbody').addEventListener('change', e => {
   const m = data.gyms[gymName].categories[cat][idx];
 
   if (field === 'brand') {
-    m.brand = el.value;
+    m.brand = el.value === '—' ? 'Unknown' : el.value;
     markChanged(key);
     refreshDataLists();
   } else if (field === 'name') {
