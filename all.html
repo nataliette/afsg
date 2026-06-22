@@ -15,13 +15,17 @@
       min-height: 100vh;
     }
 
-    /* ── Toolbar ── */
-    .toolbar {
+    /* ── Sticky header (toolbar + col headers as one unit) ── */
+    .sticky-head {
       position: sticky;
       top: 0;
       z-index: 100;
       background: #fff;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 2px solid #e0e0e0;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+
+    .toolbar {
       padding: 8px 16px;
       display: flex;
       gap: 8px;
@@ -30,7 +34,7 @@
     }
 
     .toolbar h1 { font-size: 14px; font-weight: 700; white-space: nowrap; }
-    .toolbar-sep { width: 1px; height: 20px; background: #ddd; }
+    .toolbar-sep { width: 1px; height: 20px; background: #ddd; flex-shrink: 0; }
 
     .toolbar input[type="text"],
     .toolbar select {
@@ -63,41 +67,45 @@
     .stats { font-size: 12px; color: #888; margin-left: auto; white-space: nowrap; }
     .stats strong { color: #111; }
 
-    /* ── Table wrap ── */
+    /* ── Column headers row ── */
+    .col-head {
+      display: flex;
+      background: #f8f9fa;
+      border-top: 1px solid #e8e8e8;
+      overflow: hidden;
+      min-width: 1118px;
+    }
+    .col-head span {
+      flex-shrink: 0;
+      padding: 6px 8px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #666;
+      font-weight: 600;
+      border-right: 1px solid #eee;
+    }
+
+    /* ── Table ── */
     .table-wrap { overflow-x: auto; }
 
     table {
       width: 100%;
       border-collapse: collapse;
       background: #fff;
-      min-width: 1280px;
+      min-width: 1118px;
       table-layout: fixed;
     }
 
-    thead th {
-      background: #f8f9fa;
-      border-bottom: 2px solid #e0e0e0;
-      border-right: 1px solid #eee;
-      padding: 7px 8px;
-      text-align: left;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #666;
-      font-weight: 600;
-      position: sticky;
-      top: 44px;
-      z-index: 2;
-    }
-
-    th:nth-child(1)  { width: 140px; }  /* gym */
-    th:nth-child(2)  { width: 130px; }  /* category */
-    th:nth-child(3)  { width: 130px; }  /* brand */
-    th:nth-child(4)  { width: 160px; }  /* name */
-    th:nth-child(5)  { width: 130px; }  /* notes */
-    th:nth-child(6)  { width: 240px; }  /* tags */
-    th:nth-child(7)  { width: 160px; }  /* → type */
-    th:nth-child(8)  { width: 28px;  }  /* × */
+    /* Column widths — must match .col-head spans */
+    td:nth-child(1) { width: 140px; }
+    td:nth-child(2) { width: 130px; }
+    td:nth-child(3) { width: 130px; }
+    td:nth-child(4) { width: 160px; }
+    td:nth-child(5) { width: 130px; }
+    td:nth-child(6) { width: 240px; }
+    td:nth-child(7) { width: 160px; }
+    td:nth-child(8) { width: 28px;  }
 
     tbody tr { border-bottom: 1px solid #f0f0f0; }
     tbody tr:hover td { background: #fafbfc; }
@@ -114,30 +122,6 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-
-    /* ── Gym section header ── */
-    tr.gym-header td {
-      background: #ebebeb;
-      color: #333;
-      font-weight: 600;
-      font-size: 12px;
-      padding: 5px 10px;
-      border-top: 1px solid #d5d5d5;
-      border-bottom: 1px solid #d5d5d5;
-    }
-    tr.gym-header td span.count { color: #999; font-weight: 400; font-size: 11px; margin-left: 8px; }
-    tr.gym-header button {
-      float: right;
-      background: #fff;
-      border: 1px solid #ccc;
-      color: #444;
-      border-radius: 3px;
-      padding: 1px 8px;
-      font-size: 11px;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    tr.gym-header button:hover { background: #f0f0f0; }
 
     /* ── Inline field inputs ── */
     td input.f, td select.f {
@@ -233,25 +217,38 @@
 </head>
 <body>
 
-<div class="toolbar">
-  <h1>Equipment Editor</h1>
-  <div class="toolbar-sep"></div>
-  <input type="text" id="q" placeholder="Search…">
-  <select id="gymF"><option value="">All gyms</option></select>
-  <select id="catF">
-    <option value="">All categories</option>
-    <option>Cardio</option><option>Cables</option><option>Upper</option>
-    <option>Lower</option><option>Barbells &amp; Racks</option>
-    <option>Calisthenics</option><option>Core</option><option>Other</option>
-  </select>
-  <select id="showF">
-    <option value="">All rows</option>
-    <option value="changed">Changed only</option>
-    <option value="mapped">Mapped only</option>
-  </select>
-  <div class="stats" id="stats"></div>
-  <button class="btn btn-primary" id="exportBtn">Export JSON</button>
-  <button class="btn" id="resetBtn">Reset all</button>
+<div class="sticky-head">
+  <div class="toolbar">
+    <h1>Equipment Editor</h1>
+    <div class="toolbar-sep"></div>
+    <input type="text" id="q" placeholder="Search…">
+    <select id="gymF"><option value="">All gyms</option></select>
+    <select id="catF">
+      <option value="">All categories</option>
+      <option>Cardio</option><option>Cables</option><option>Upper</option>
+      <option>Lower</option><option>Barbells &amp; Racks</option>
+      <option>Calisthenics</option><option>Core</option><option>Other</option>
+    </select>
+    <select id="showF">
+      <option value="">All rows</option>
+      <option value="changed">Changed only</option>
+      <option value="mapped">Mapped only</option>
+    </select>
+    <button class="btn" id="addRowBtn">+ Add row</button>
+    <div class="stats" id="stats"></div>
+    <button class="btn btn-primary" id="exportBtn">Export JSON</button>
+    <button class="btn" id="resetBtn">Reset all</button>
+  </div>
+  <div class="col-head">
+    <span style="width:140px">Gym</span>
+    <span style="width:130px">Category</span>
+    <span style="width:130px">Brand</span>
+    <span style="width:160px">Name</span>
+    <span style="width:130px">Notes</span>
+    <span style="width:240px">Tags</span>
+    <span style="width:160px">→ Equipment Type</span>
+    <span style="width:28px"></span>
+  </div>
 </div>
 
 <!-- autocomplete datalists -->
@@ -268,18 +265,6 @@
 
 <div class="table-wrap">
   <table>
-    <thead>
-      <tr>
-        <th>Gym</th>
-        <th>Category</th>
-        <th>Brand</th>
-        <th>Name</th>
-        <th>Notes</th>
-        <th>Tags</th>
-        <th>→ Equipment Type</th>
-        <th></th>
-      </tr>
-    </thead>
     <tbody id="tbody"></tbody>
   </table>
   <div class="no-results" id="empty" style="display:none">No equipment matches your filters.</div>
@@ -358,16 +343,12 @@ const ALL_TYPES = [...new Set([
   'T-Bar Row','Rotary Torso','V-Squat','Abdominal',
 ])].sort();
 
-const TYPE_OPT_HTML = ALL_TYPES.map(t => `<option value="${e(t)}">${e(t)}</option>`).join('');
-
 let data = null;
-const changedKeys = new Set(); // row keys marked as changed
+const changedKeys = new Set();
 
 function resolve(name) { return TYPE_MAP[name] || name; }
-function slug(name) { return resolve(name).replace(/ /g,'_').replace(/\//g,'-'); }
 function e(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-// ── Datalists ──────────────────────────────────────────────────────────────
 function refreshDataLists() {
   const brands = new Set(), names = new Set([...Object.keys(TYPE_MAP),...Object.values(TYPE_MAP)]);
   for (const gd of Object.values(data.gyms))
@@ -377,7 +358,6 @@ function refreshDataLists() {
   document.getElementById('dl-name').innerHTML = [...names].sort().map(n=>`<option value="${e(n)}">`).join('');
 }
 
-// ── Row key ────────────────────────────────────────────────────────────────
 function rowKey(gymName, cat, idx) { return `${gymName}¦${cat}¦${idx}`; }
 function parseKey(key) {
   const parts = key.split('¦');
@@ -388,7 +368,6 @@ function getMachine(key) {
   return data.gyms[gymName].categories[cat][idx];
 }
 
-// ── Tag chips HTML ─────────────────────────────────────────────────────────
 function tagsHtml(tags, key) {
   const chips = (tags||[]).map((t,ti) =>
     `<span class="chip">${e(t)}<button type="button" data-action="rm-tag" data-key="${e(key)}" data-ti="${ti}">×</button></span>`
@@ -396,7 +375,6 @@ function tagsHtml(tags, key) {
   return `<div class="tags-wrap">${chips}<input class="tag-add" list="dl-tag" placeholder="add tag…" data-action="add-tag" data-key="${e(key)}"></div>`;
 }
 
-// ── Type cell HTML ─────────────────────────────────────────────────────────
 function typeCellHtml(name, ovr) {
   const res = resolve(name);
   const isMapped = res !== name;
@@ -410,7 +388,6 @@ function typeCellHtml(name, ovr) {
     </select>`;
 }
 
-// ── Render full table ──────────────────────────────────────────────────────
 function renderAll() {
   const tbody = document.getElementById('tbody');
   const gymSel = document.getElementById('gymF');
@@ -422,10 +399,6 @@ function renderAll() {
   for (const gymName of gyms) {
     const gd = data.gyms[gymName];
     if (!gd.categories) continue;
-    const total = Object.values(gd.categories).reduce((s,ms)=>s+ms.length,0);
-    html += `<tr class="gym-header" data-gym="${e(gymName)}"><td colspan="8">${e(gymName)}<span class="count">${total} items</span>
-      <button type="button" data-action="add-row" data-gym="${e(gymName)}">+ Add row</button></td></tr>`;
-
     for (const [cat, machines] of Object.entries(gd.categories)) {
       machines.forEach((m, idx) => {
         const key = rowKey(gymName, cat, idx);
@@ -447,25 +420,19 @@ function renderAll() {
   }
 
   tbody.innerHTML = html;
-
-  // Restore gym filter options
   gymSel.innerHTML = '<option value="">All gyms</option>' + gyms.map(g=>`<option${g===prevGym?' selected':''}>${e(g)}</option>`).join('');
-
   refreshDataLists();
   applyFilters();
 }
 
-// ── Filters ────────────────────────────────────────────────────────────────
 function applyFilters() {
   const q = document.getElementById('q').value.toLowerCase();
   const gymF = document.getElementById('gymF').value;
   const catF = document.getElementById('catF').value;
   const showF = document.getElementById('showF').value;
-
-  let shown = 0, total = 0;
+  let shown = 0;
 
   document.querySelectorAll('#tbody tr[data-key]').forEach(tr => {
-    total++;
     const gymName = tr.dataset.gym;
     const cat = tr.dataset.cat;
     const idx = parseInt(tr.dataset.idx);
@@ -482,24 +449,14 @@ function applyFilters() {
       const hay = [gymName, cat, m.brand, m.name, m.notes||'', (m.tags||[]).join(' ')].join(' ').toLowerCase();
       if (!hay.includes(q)) vis = false;
     }
-
     tr.style.display = vis ? '' : 'none';
     if (vis) shown++;
-  });
-
-  // Show/hide gym headers
-  document.querySelectorAll('#tbody tr.gym-header').forEach(hdr => {
-    const g = hdr.dataset.gym;
-    const any = [...document.querySelectorAll(`#tbody tr[data-gym="${CSS.escape(g)}"]`)]
-      .some(r => r.style.display !== 'none');
-    hdr.style.display = any ? '' : 'none';
   });
 
   document.getElementById('empty').style.display = shown === 0 ? 'block' : 'none';
   document.getElementById('stats').innerHTML = `<strong>${shown}</strong> rows · <strong>${changedKeys.size}</strong> changed`;
 }
 
-// ── Mark changed ───────────────────────────────────────────────────────────
 function markChanged(key) {
   changedKeys.add(key);
   const tr = document.querySelector(`#tbody tr[data-key="${CSS.escape(key)}"]`);
@@ -508,7 +465,6 @@ function markChanged(key) {
     .replace(/\d+ changed/, `${changedKeys.size} changed`);
 }
 
-// ── Event delegation: change ───────────────────────────────────────────────
 document.getElementById('tbody').addEventListener('change', e => {
   const el = e.target;
   const key = el.dataset.key;
@@ -522,39 +478,31 @@ document.getElementById('tbody').addEventListener('change', e => {
     m.brand = el.value;
     markChanged(key);
     refreshDataLists();
-
   } else if (field === 'name') {
     m.name = el.value;
     markChanged(key);
     refreshDataLists();
-    // Update the type cell
     const typeCell = document.querySelector(`#tbody td[data-type-cell][data-key="${CSS.escape(key)}"]`);
     if (typeCell) typeCell.innerHTML = typeCellHtml(m.name, m._ovr);
-
   } else if (field === 'notes') {
     m.notes = el.value.trim() || null;
     markChanged(key);
-
   } else if (field === 'cat') {
     const newCat = el.value;
     if (newCat !== cat) {
       if (!data.gyms[gymName].categories[newCat]) data.gyms[gymName].categories[newCat] = [];
       data.gyms[gymName].categories[newCat].push(m);
       data.gyms[gymName].categories[cat].splice(idx, 1);
-      // New key for this machine in its new position
-      const newIdx = data.gyms[gymName].categories[newCat].length - 1;
-      changedKeys.add(rowKey(gymName, newCat, newIdx));
+      changedKeys.add(rowKey(gymName, newCat, data.gyms[gymName].categories[newCat].length - 1));
       renderAll();
     }
-
   } else if (field === 'ovr') {
     m._ovr = el.value || undefined;
-    el.className = 'type-ovr' + (el.value ? ' set' : '');
+    el.className = 'type-ovr' + (el.value ? ' set' : (resolve(m.name) !== m.name ? ' mapped' : ''));
     markChanged(key);
   }
 });
 
-// ── Event delegation: click ────────────────────────────────────────────────
 document.getElementById('tbody').addEventListener('click', e => {
   const btn = e.target.closest('[data-action]');
   if (!btn) return;
@@ -567,7 +515,6 @@ document.getElementById('tbody').addEventListener('click', e => {
     m.tags.splice(ti, 1);
     markChanged(key);
     btn.closest('td').innerHTML = tagsHtml(m.tags, key);
-
   } else if (action === 'del') {
     const key = btn.dataset.key;
     const {gymName, cat, idx} = parseKey(key);
@@ -577,31 +524,15 @@ document.getElementById('tbody').addEventListener('click', e => {
       changedKeys.delete(key);
       renderAll();
     }
-
-  } else if (action === 'add-row') {
-    const gymName = btn.dataset.gym;
-    if (!data.gyms[gymName].categories.Other) data.gyms[gymName].categories.Other = [];
-    data.gyms[gymName].categories.Other.push({ tags: [], brand: '', name: '', notes: null });
-    renderAll();
-    // Scroll to and focus the new row's name field
-    const rows = document.querySelectorAll(`#tbody tr[data-gym="${CSS.escape(gymName)}"][data-cat="Other"]`);
-    const last = rows[rows.length - 1];
-    if (last) {
-      last.scrollIntoView({ block: 'center' });
-      last.querySelector('input[data-field="name"]')?.focus();
-    }
   }
 });
 
-// ── Tag input: keydown ─────────────────────────────────────────────────────
 document.getElementById('tbody').addEventListener('keydown', e => {
   if (e.target.dataset.action !== 'add-tag') return;
   if (e.key !== 'Enter' && e.key !== ',' && e.key !== 'Tab') return;
   e.preventDefault();
-
   const val = e.target.value.trim().replace(/,$/,'');
   if (!val) return;
-
   const key = e.target.dataset.key;
   const m = getMachine(key);
   if (!m.tags) m.tags = [];
@@ -610,31 +541,43 @@ document.getElementById('tbody').addEventListener('keydown', e => {
   e.target.closest('td').innerHTML = tagsHtml(m.tags, key);
 });
 
-// ── Export ─────────────────────────────────────────────────────────────────
+document.getElementById('addRowBtn').addEventListener('click', () => {
+  const gymF = document.getElementById('gymF').value;
+  if (!gymF) {
+    alert('Select a gym in the filter first.');
+    return;
+  }
+  if (!data.gyms[gymF].categories.Other) data.gyms[gymF].categories.Other = [];
+  data.gyms[gymF].categories.Other.push({ tags: [], brand: '', name: '', notes: null });
+  renderAll();
+  const rows = document.querySelectorAll(`#tbody tr[data-gym="${CSS.escape(gymF)}"][data-cat="Other"]`);
+  const last = rows[rows.length - 1];
+  if (last) {
+    last.scrollIntoView({ block: 'center' });
+    last.querySelector('input[data-field="name"]')?.focus();
+  }
+});
+
 document.getElementById('exportBtn').addEventListener('click', () => {
   const out = JSON.parse(JSON.stringify(data));
   for (const gd of Object.values(out.gyms))
     for (const ms of Object.values(gd.categories||{}))
       for (const m of ms) delete m._ovr;
   const blob = new Blob([JSON.stringify(out, null, 2)], {type:'application/json'});
-  const a = Object.assign(document.createElement('a'), {href: URL.createObjectURL(blob), download:'equipment.json'});
-  a.click();
+  Object.assign(document.createElement('a'), {href: URL.createObjectURL(blob), download:'equipment.json'}).click();
 });
 
-// ── Reset ──────────────────────────────────────────────────────────────────
 document.getElementById('resetBtn').addEventListener('click', () => {
   if (!confirm('Reset all changes?')) return;
   changedKeys.clear();
   init();
 });
 
-// ── Filter controls ────────────────────────────────────────────────────────
 ['q','gymF','catF','showF'].forEach(id => {
   document.getElementById(id).addEventListener('input', applyFilters);
   document.getElementById(id).addEventListener('change', applyFilters);
 });
 
-// ── Init ───────────────────────────────────────────────────────────────────
 async function init() {
   const res = await fetch('equipment.json?' + Date.now());
   data = await res.json();
